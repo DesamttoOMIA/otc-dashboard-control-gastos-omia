@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "OTC - Omia Cost Control Tower"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5d841ef0-4c8b-4572-9f5d-c963e411f897"
+  }
+}
