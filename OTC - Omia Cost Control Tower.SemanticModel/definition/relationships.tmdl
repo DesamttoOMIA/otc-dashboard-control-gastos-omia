@@ -1,0 +1,40 @@
+relationship 9a5372b2-50ff-4ffe-95fa-90c4bd13edd7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 1%20ABA%20Solped%20status'.'Fecha de documento'
+	toColumn: LocalDateTable_41e63a8a-44db-4328-a5af-9b267d7d013f.Date
+
+relationship c591c0f6-e93e-4845-8bf2-ba22b31d778c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 1%20ABA%20Solped%20status'.'Fecha de creación'
+	toColumn: LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d.Date
+
+relationship b92833ba-05f5-43a1-a3c2-3ef2d719836c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 1%20ABA%20Solped%20status'.'Fecha necesaria'
+	toColumn: LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9.Date
+
+relationship ad738768-1228-4d28-9105-d8111e3fa2e0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 10 2%20Facturas%20Conformadas'.'Fecha de contabilización'
+	toColumn: LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c.Date
+
+relationship c20a0880-7e2c-4365-9bbc-c25fd351a363
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'.'Fecha de contabilización'
+	toColumn: LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80.Date
+
+relationship 0f6961a5-c9bd-476f-be86-85a6ea8f6aa9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'.'Fecha de creación'
+	toColumn: LocalDateTable_af58a76f-b096-4eb1-866f-516d04a1790b.Date
+
+relationship 6d2e37c8-b15d-4f3a-bdea-5b8af3179749
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'.'Fecha creacion Solped'
+	toColumn: LocalDateTable_da5a38e1-315f-4e24-b315-fa2ce0bc96c8.Date
+
+relationship e19b716b-f0e5-4f0e-8249-4a24369c4688
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'.'F. Entrega línea'
+	toColumn: LocalDateTable_a4ff216e-af5d-49ae-88e3-bc4a5bea1210.Date
+

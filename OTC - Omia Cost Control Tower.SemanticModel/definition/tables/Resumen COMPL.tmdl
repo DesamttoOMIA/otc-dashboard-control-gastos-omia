@@ -1,0 +1,160 @@
+table 'Resumen COMPL'
+	lineageTag: 91f64d79-3d31-4577-9109-85f45ce56bc2
+
+	column Column1
+		dataType: string
+		lineageTag: 14f9476a-c956-443c-8773-5d591dc24ab5
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: a455f7b6-0aa4-4861-9978-30b194f9e233
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 1e07b2ec-a0e3-4700-9539-03adb339d428
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 7e18e4be-1544-4088-9e0c-f07958b3212d
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 402a7e46-a37b-4d68-aa45-d1c9e02738a1
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: c1f47d0d-5fbf-48cb-bb24-aff13e639d76
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 7ed57b4b-2c3b-40b4-8ddc-0145f2fb7d02
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: bb642277-f4d7-4e70-8c0f-380f62a444d5
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 972976b8-baba-45aa-aec5-5018dac4b198
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 1516dc9c-6ed8-4b1b-b12e-0f1ca2847a6f
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c413e08-494f-4053-a39a-94cbc4c314e3
+		summarizeBy: sum
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: acb75eb3-af91-46d8-b68b-0105c6c7eb75
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: f36c2b61-efc9-4ba2-96e8-ce027d764794
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column14
+		dataType: string
+		lineageTag: 8e9f2536-3855-4747-91b2-8c3b5a00cf24
+		summarizeBy: none
+		sourceColumn: Column14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column15
+		dataType: string
+		lineageTag: 740f1a66-91cf-4b44-9e4b-c8a8488ea633
+		summarizeBy: none
+		sourceColumn: Column15
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column16
+		dataType: string
+		lineageTag: 3a7d0714-b245-4127-815c-66168bf41d53
+		summarizeBy: none
+		sourceColumn: Column16
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column17
+		dataType: string
+		lineageTag: c30a972b-06d2-4ed3-9a37-fa78a57e7a49
+		summarizeBy: none
+		sourceColumn: Column17
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column18
+		dataType: string
+		lineageTag: b5d3de12-bac9-47f8-b0ea-32df01eb7c76
+		summarizeBy: none
+		sourceColumn: Column18
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Resumen COMPL' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Copia%20de%20REE%20Continental%20Mtto%20Electrico%202025%20REV0_0511_12%20Meses.xlsx"), null, true),
+				    #"Resumen COMPL_Sheet" = Origen{[Item="Resumen COMPL",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Resumen COMPL_Sheet",{{"Column1", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type text}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", Int64.Type}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
