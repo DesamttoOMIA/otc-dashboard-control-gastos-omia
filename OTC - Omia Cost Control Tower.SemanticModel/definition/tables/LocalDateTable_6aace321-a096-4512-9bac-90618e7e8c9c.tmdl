@@ -110,7 +110,7 @@ table LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c
 
 	partition LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('N 10 2%20Facturas%20Conformadas'[Fecha de contabilización])), 1, 1), Date(Year(MAX('N 10 2%20Facturas%20Conformadas'[Fecha de contabilización])), 12, 31))
+		source = Calendar(Date(Year(MIN('Facturas Conformadas'[Fecha de contabilización])), 1, 1), Date(Year(MAX('Facturas Conformadas'[Fecha de contabilización])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

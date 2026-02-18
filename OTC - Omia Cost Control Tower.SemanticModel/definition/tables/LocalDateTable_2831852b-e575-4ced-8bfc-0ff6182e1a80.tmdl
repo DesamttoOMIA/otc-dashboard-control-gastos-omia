@@ -110,7 +110,7 @@ table LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80
 
 	partition LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'[Fecha de contabilización])), 1, 1), Date(Year(MAX('N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'[Fecha de contabilización])), 12, 31))
+		source = Calendar(Date(Year(MIN('Ordenes de Compra'[Fecha de contabilización])), 1, 1), Date(Year(MAX('Ordenes de Compra'[Fecha de contabilización])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

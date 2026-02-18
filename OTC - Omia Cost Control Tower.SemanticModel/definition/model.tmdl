@@ -10,21 +10,23 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["N 1%20ABA%20Solped%20status","N 10 2%20Facturas%20Conformadas","N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)","Resumen COMPL"]
+annotation PBI_QueryOrder = ["Solicitud de Pedido","Facturas Conformadas","Ordenes de Compra","Costos Directos","Costos Indirectos","Dim_proyecto"]
 
-ref table 'N 1%20ABA%20Solped%20status'
+ref table 'Solicitud de Pedido'
 ref table DateTableTemplate_ed8c9b5c-6c6d-4dd4-b169-5feb3f6cd842
 ref table LocalDateTable_41e63a8a-44db-4328-a5af-9b267d7d013f
 ref table LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d
 ref table LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9
-ref table 'N 10 2%20Facturas%20Conformadas'
+ref table 'Facturas Conformadas'
 ref table LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c
-ref table 'N 4 4%20ABA%20OC_Solped_DirProv_ClasArt%20(1)'
+ref table 'Ordenes de Compra'
 ref table LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80
 ref table LocalDateTable_af58a76f-b096-4eb1-866f-516d04a1790b
 ref table LocalDateTable_da5a38e1-315f-4e24-b315-fa2ce0bc96c8
 ref table LocalDateTable_a4ff216e-af5d-49ae-88e3-bc4a5bea1210
-ref table 'Resumen COMPL'
+ref table 'Costos Directos'
+ref table 'Costos Indirectos'
+ref table Dim_proyecto
 
 ref cultureInfo es-CO
 

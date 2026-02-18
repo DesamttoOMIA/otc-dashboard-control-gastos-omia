@@ -110,7 +110,7 @@ table LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9
 
 	partition LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9 = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('N 1%20ABA%20Solped%20status'[Fecha necesaria])), 1, 1), Date(Year(MAX('N 1%20ABA%20Solped%20status'[Fecha necesaria])), 12, 31))
+		source = Calendar(Date(Year(MIN('Solicitud de Pedido'[Fecha necesaria])), 1, 1), Date(Year(MAX('Solicitud de Pedido'[Fecha necesaria])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

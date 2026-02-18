@@ -1,0 +1,288 @@
+table 'Solicitud de Pedido'
+	lineageTag: 34017f5b-ed79-4eaa-b7e1-64165f44a057
+
+	column #
+		dataType: int64
+		formatString: 0
+		lineageTag: 81b75db7-f2b8-4bdd-8fea-cc0e2e1d4c4c
+		summarizeBy: sum
+		sourceColumn: #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ID de documento interno'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bdfa681-71a3-4310-a1a2-208cd090dd4d
+		summarizeBy: sum
+		sourceColumn: ID de documento interno
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Número de documento'
+		dataType: int64
+		formatString: 0
+		lineageTag: ac45d6c5-293d-4161-9805-8f1e3672a569
+		summarizeBy: sum
+		sourceColumn: Número de documento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de usuario'
+		dataType: string
+		lineageTag: a32ced17-e46e-4e23-bdf5-ccc45d46b91f
+		summarizeBy: none
+		sourceColumn: Nombre de usuario
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de documento'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c4540e61-745f-404a-ab9d-42fafd0b2644
+		summarizeBy: none
+		sourceColumn: Fecha de documento
+
+		variation Variación
+			isDefault
+			relationship: 9a5372b2-50ff-4ffe-95fa-90c4bd13edd7
+			defaultHierarchy: LocalDateTable_41e63a8a-44db-4328-a5af-9b267d7d013f.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fecha de creación'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fe037ae5-806c-4bb7-929b-5bd5fdc0f478
+		summarizeBy: none
+		sourceColumn: Fecha de creación
+
+		variation Variación
+			isDefault
+			relationship: c591c0f6-e93e-4845-8bf2-ba22b31d778c
+			defaultHierarchy: LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Fecha necesaria'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 563dbb0a-d64e-4408-ae11-4f938128618c
+		summarizeBy: none
+		sourceColumn: Fecha necesaria
+
+		variation Variación
+			isDefault
+			relationship: b92833ba-05f5-43a1-a3c2-3ef2d719836c
+			defaultHierarchy: LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Prioridad
+		dataType: int64
+		formatString: 0
+		lineageTag: ec9340ee-daf6-4cf4-ae7a-6f98debdfe07
+		summarizeBy: sum
+		sourceColumn: Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adjudicacion Directa'
+		dataType: string
+		lineageTag: 940b9146-3601-4601-8034-8ddb978c3c59
+		summarizeBy: none
+		sourceColumn: Adjudicacion Directa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reembolsable
+		dataType: int64
+		formatString: 0
+		lineageTag: 70b5d83e-2f0c-4a3c-a035-27f2d8d26292
+		summarizeBy: sum
+		sourceColumn: Reembolsable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de proyecto'
+		dataType: string
+		lineageTag: 8c4802d6-2ef2-41c9-9908-a560b16324ad
+		summarizeBy: none
+		sourceColumn: Código de proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comentarios
+		dataType: string
+		lineageTag: ea3aefcc-cddd-4f6d-bb1d-7f32e52f476c
+		summarizeBy: none
+		sourceColumn: Comentarios
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Norma de reparto'
+		dataType: string
+		lineageTag: 021e164c-ea2b-425d-b40d-55b6f8402ad8
+		summarizeBy: none
+		sourceColumn: Norma de reparto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código del cálculo del costo 2'
+		dataType: string
+		lineageTag: a2a1f95a-faa1-48cd-9250-00f339d5c090
+		summarizeBy: none
+		sourceColumn: Código del cálculo del costo 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código del cálculo del costo 3'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1182ab04-dd4d-48d1-a50d-78fd9fa60d01
+		summarizeBy: sum
+		sourceColumn: Código del cálculo del costo 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Descripción artículo/serv.'
+		dataType: string
+		lineageTag: f9703846-8c27-4be1-a54a-972b21d439ad
+		summarizeBy: none
+		sourceColumn: Descripción artículo/serv.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Texto
+		dataType: string
+		lineageTag: 905c4099-6d7b-4952-b275-eb382510d3e0
+		summarizeBy: none
+		sourceColumn: Texto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: double
+		lineageTag: 220b0685-a546-4132-b593-063616313e66
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Precio tras el descuento'
+		dataType: decimal
+		lineageTag: 0d8f2d73-b962-499b-a23a-3f4c9e796f26
+		summarizeBy: sum
+		sourceColumn: Precio tras el descuento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total líneas'
+		dataType: decimal
+		lineageTag: 368cbd8e-6328-4487-bdf8-64f6a75d2a8a
+		summarizeBy: sum
+		sourceColumn: Total líneas
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unidad
+		dataType: string
+		lineageTag: 75e9c9ff-36c6-456d-8291-3532a5f21892
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status de la línea'
+		dataType: string
+		lineageTag: 3aca4b5e-dc52-44e4-82b4-8db79fd52884
+		summarizeBy: none
+		sourceColumn: Status de la línea
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Línea cerrada manualmente'
+		dataType: string
+		lineageTag: 17b217ae-60d4-4d37-88c3-4f7495885f52
+		summarizeBy: none
+		sourceColumn: Línea cerrada manualmente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cancelado
+		dataType: string
+		lineageTag: 1c14fd3e-58a3-4bd1-9b8d-aa3c98a6b59b
+		summarizeBy: none
+		sourceColumn: Cancelado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Clase de documento de destino'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07fb69e7-d85a-419d-be0e-036748ffda71
+		summarizeBy: sum
+		sourceColumn: Clase de documento de destino
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comprador
+		dataType: string
+		lineageTag: 4dead116-4b2f-445b-94a6-9fa606df2d70
+		summarizeBy: none
+		sourceColumn: Comprador
+
+		annotation SummarizationSetBy = Automatic
+
+	column Antiguedad
+		dataType: int64
+		formatString: 0
+		lineageTag: 716a63ab-8058-455d-b4a0-be2587e13938
+		summarizeBy: sum
+		sourceColumn: Antiguedad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tiempo Necesidad'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b77bcf2-3b84-4f4a-93fd-b86d1d06014c
+		summarizeBy: sum
+		sourceColumn: Tiempo Necesidad
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Solicitud de Pedido' = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.1%20ABA%20Solped%20status.txt"),[Delimiter="	", Columns=30, Encoding=1200, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"ID de documento interno", Int64.Type}, {"Número de documento", Int64.Type}, {"Nombre de usuario", type text}, {"Fecha de documento", type date}, {"Fecha de creación", type date}, {"Fecha necesaria", type date}, {"Prioridad", Int64.Type}, {"Adjudicacion Directa", type text}, {"Reembolsable", Int64.Type}, {"Código de proyecto", type text}, {"Comentarios", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Número de artículo", Int64.Type}, {"Descripción artículo/serv.", type text}, {"Texto", type text}, {"Cantidad", type number}, {"Precio tras el descuento", type number}, {"Total líneas", type number}, {"Unidad", type text}, {"Status de la línea", type text}, {"Línea cerrada manualmente", type text}, {"Cancelado", type text}, {"Clase de documento de destino", Int64.Type}, {"Comprador", type text}, {"Antiguedad", Int64.Type}, {"Tiempo Necesidad", Int64.Type}, {"", type text}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Número de artículo", Int64.Type}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{""}),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Total líneas", Currency.Type}, {"Precio tras el descuento", Currency.Type}}),
+				    #"Tipo cambiado con configuración regional" = Table.TransformColumnTypes(#"Tipo cambiado2", {{"Número de artículo", type text}}, "es-CO"),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Tipo cambiado con configuración regional",{{"Número de artículo", type text}}),
+				    #"Texto limpio" = Table.TransformColumns(#"Tipo cambiado3",{{"Número de artículo", Text.Clean, type text}}),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Texto limpio",{{"Número de artículo", type text}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado4",{"Número de artículo"})
+				in
+				    #"Columnas quitadas1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

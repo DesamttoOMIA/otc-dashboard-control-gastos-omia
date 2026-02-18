@@ -110,7 +110,7 @@ table LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d
 
 	partition LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('N 1%20ABA%20Solped%20status'[Fecha de creación])), 1, 1), Date(Year(MAX('N 1%20ABA%20Solped%20status'[Fecha de creación])), 12, 31))
+		source = Calendar(Date(Year(MIN('Solicitud de Pedido'[Fecha de creación])), 1, 1), Date(Year(MAX('Solicitud de Pedido'[Fecha de creación])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

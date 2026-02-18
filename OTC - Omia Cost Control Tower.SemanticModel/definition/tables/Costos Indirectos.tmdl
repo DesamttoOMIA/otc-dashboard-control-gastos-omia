@@ -1,0 +1,82 @@
+table 'Costos Indirectos'
+	lineageTag: 2765178b-cd74-4b13-8d82-ebef44041013
+
+	column 'COSTOS INDIRECTOS'
+		dataType: string
+		lineageTag: 636478e4-20ab-4306-9b65-eeff3c202a4e
+		summarizeBy: none
+		sourceColumn: COSTOS INDIRECTOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incidencia
+		dataType: double
+		lineageTag: d4994ac2-86f5-4c9d-8bba-9cc7250daa12
+		summarizeBy: sum
+		sourceColumn: Incidencia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COP
+		dataType: decimal
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 98ad0d4c-9ded-4751-a01f-0fab840e57e4
+		summarizeBy: sum
+		sourceColumn: COP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	column US$
+		dataType: decimal
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 1cc24343-0fed-4290-8684-edc095db0720
+		summarizeBy: sum
+		sourceColumn: US$
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	partition 'Costos Indirectos' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Copia%20de%20REE%20Continental%20Mtto%20Electrico%202025%20REV0_0511_12%20Meses.xlsx"), null, true),
+				    #"Resumen COMPL_Sheet" = Origen{[Item="Resumen COMPL",Kind="Sheet"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Resumen COMPL_Sheet",{{"Column1", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type text}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", Int64.Type}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Column1", "Column7", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18"}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Columnas quitadas", [PromoteAllScalars=true]),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Tipo cambiado1", [PromoteAllScalars=true]),
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"OMIA COLOMBIA SAS", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos2" = Table.PromoteHeaders(#"Tipo cambiado2", [PromoteAllScalars=true]),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Encabezados promovidos2",{{"MANTENIMIENTO ELECTRICO CONTINENTAL", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos3" = Table.PromoteHeaders(#"Tipo cambiado3", [PromoteAllScalars=true]),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Encabezados promovidos3",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos4" = Table.PromoteHeaders(#"Tipo cambiado4", [PromoteAllScalars=true]),
+				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Encabezados promovidos4",{{"RESUMEN DE COSTO Y VENTA ", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos5" = Table.PromoteHeaders(#"Tipo cambiado5", [PromoteAllScalars=true]),
+				    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Encabezados promovidos5",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"REV 0", type any}}),
+				    #"Encabezados promovidos6" = Table.PromoteHeaders(#"Tipo cambiado6", [PromoteAllScalars=true]),
+				    #"Tipo cambiado7" = Table.TransformColumnTypes(#"Encabezados promovidos6",{{"MANTENIMIENTO ELECTRICO CONTINENTAL GOLD", type any}, {"Column2", type text}, {"OFERTA BASICA 12 MESES", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Encabezados promovidos7" = Table.PromoteHeaders(#"Tipo cambiado7", [PromoteAllScalars=true]),
+				    #"Tipo cambiado8" = Table.TransformColumnTypes(#"Encabezados promovidos7",{{"Descripción", type any}, {"Column2", type text}, {"Incidencia", type any}, {"COP", type any}, {"US$", type any}}),
+				    #"Encabezados promovidos8" = Table.PromoteHeaders(#"Tipo cambiado8", [PromoteAllScalars=true]),
+				    #"Tipo cambiado9" = Table.TransformColumnTypes(#"Encabezados promovidos8",{{"1", type any}, {"COSTOS DIRECTOS", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado9",{"1"}),
+				    #"Filas superiores quitadas" = Table.Skip(#"Columnas quitadas1",25),
+				    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas",42),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas inferiores quitadas",{{"Column3", "Incidencia"}, {"Column4", "COP"}, {"Column5", "US$"}, {"COSTOS DIRECTOS", "COSTOS INDIRECTOS"}}),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado",null,0,Replacer.ReplaceValue,{"Incidencia", "COP", "US$"}),
+				    #"Tipo cambiado10" = Table.TransformColumnTypes(#"Valor reemplazado",{{"Incidencia", Percentage.Type}, {"COP", Currency.Type}, {"US$", Currency.Type}})
+				in
+				    #"Tipo cambiado10"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

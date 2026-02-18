@@ -1,0 +1,43 @@
+table Dim_proyecto
+	lineageTag: cb17ece2-4ae8-4ef0-b220-05c63d715efe
+
+	column #
+		dataType: int64
+		formatString: 0
+		lineageTag: 8527eaa3-9fee-48c4-8085-db30be88afb4
+		summarizeBy: sum
+		sourceColumn: #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de proyecto'
+		dataType: string
+		lineageTag: 26e31d26-43e1-4810-b4c6-337e76e17397
+		summarizeBy: none
+		sourceColumn: Código de proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de proyecto'
+		dataType: string
+		lineageTag: 519d45a5-357f-4623-b569-569fb58e5e34
+		summarizeBy: none
+		sourceColumn: Nombre de proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_proyecto = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Lista%20de%20Proyectos%20(1).xlsx"), null, true),
+				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
