@@ -11,13 +11,12 @@ table 'Costos Indirectos'
 
 	column Incidencia
 		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: d4994ac2-86f5-4c9d-8bba-9cc7250daa12
 		summarizeBy: sum
 		sourceColumn: Incidencia
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column COP
 		dataType: decimal
