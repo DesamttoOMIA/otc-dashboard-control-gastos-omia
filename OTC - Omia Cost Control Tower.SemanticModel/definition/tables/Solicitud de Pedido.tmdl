@@ -59,11 +59,6 @@ table 'Solicitud de Pedido'
 		summarizeBy: none
 		sourceColumn: Fecha de creación
 
-		variation Variación
-			isDefault
-			relationship: c591c0f6-e93e-4845-8bf2-ba22b31d778c
-			defaultHierarchy: LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -143,10 +138,9 @@ table 'Solicitud de Pedido'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Código del cálculo del costo 3'
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 1182ab04-dd4d-48d1-a50d-78fd9fa60d01
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Código del cálculo del costo 3
 
 		annotation SummarizationSetBy = Automatic
@@ -278,9 +272,11 @@ table 'Solicitud de Pedido'
 				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Tipo cambiado con configuración regional",{{"Número de artículo", type text}}),
 				    #"Texto limpio" = Table.TransformColumns(#"Tipo cambiado3",{{"Número de artículo", Text.Clean, type text}}),
 				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Texto limpio",{{"Número de artículo", type text}}),
-				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado4",{"Número de artículo"})
+				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado4",{"Número de artículo"}),
+				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas1", each ([Cancelado] = "N") and ([Status de la línea] = "O")),
+				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Filas filtradas",{{"Código del cálculo del costo 3", type text}})
 				in
-				    #"Columnas quitadas1"
+				    #"Tipo cambiado5"
 
 	annotation PBI_ResultType = Table
 

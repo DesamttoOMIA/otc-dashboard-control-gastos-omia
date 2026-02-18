@@ -44,11 +44,6 @@ table 'Facturas Conformadas'
 		summarizeBy: none
 		sourceColumn: Fecha de contabilización
 
-		variation Variación
-			isDefault
-			relationship: ad738768-1228-4d28-9105-d8111e3fa2e0
-			defaultHierarchy: LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -104,10 +99,9 @@ table 'Facturas Conformadas'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Grupo de artículos'
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 6aec2cd2-c482-4135-9487-c10a17991a8a
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Grupo de artículos
 
 		annotation SummarizationSetBy = Automatic
@@ -342,7 +336,7 @@ table 'Facturas Conformadas'
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", Int64.Type}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"DOCDESTINO", type text}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
 				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Número de artículo", type text}}),
 				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{""}),
-				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Total líneas", Currency.Type}, {"Total antes de IVA", Currency.Type}})
+				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Total líneas", Currency.Type}, {"Total antes de IVA", Currency.Type}, {"Grupo de artículos", type text}})
 				in
 				    #"Tipo cambiado2"
 

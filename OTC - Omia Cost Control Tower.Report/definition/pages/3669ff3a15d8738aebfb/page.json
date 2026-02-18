@@ -60,7 +60,14 @@
           ]
         },
         "howCreated": "User",
-        "isLockedInViewMode": true
+        "isLockedInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
       }
     ]
   },

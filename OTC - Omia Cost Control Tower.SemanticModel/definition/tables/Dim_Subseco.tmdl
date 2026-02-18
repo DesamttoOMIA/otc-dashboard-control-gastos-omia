@@ -1,0 +1,25 @@
+table Dim_Subseco
+	lineageTag: 4c475b82-8f87-4c8d-a5a6-066999bfbd9f
+
+	column Subseco
+		lineageTag: ce709693-15b5-4cc1-acac-d38d17632c26
+		summarizeBy: none
+		sourceColumn: Solicitud de Pedido[Código del cálculo del costo 3]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Dim_Subseco = calculated
+		mode: import
+		source =
+				DISTINCT (
+				    UNION (
+				        SELECTCOLUMNS( 'Solicitud de Pedido', 'Solicitud de Pedido'[Código del cálculo del costo 3]),
+				        SELECTCOLUMNS( 'Ordenes de Compra', 'Ordenes de Compra'[Grupo de artículos]),
+				        SELECTCOLUMNS( 'Facturas Conformadas', 'Facturas Conformadas'[Grupo de artículos] )
+				    )
+				)
+
+	annotation PBI_Id = be616762ca7c4a099e4bb1d8e834c275
+

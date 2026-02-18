@@ -3,30 +3,15 @@ relationship 9a5372b2-50ff-4ffe-95fa-90c4bd13edd7
 	fromColumn: 'Solicitud de Pedido'.'Fecha de documento'
 	toColumn: LocalDateTable_41e63a8a-44db-4328-a5af-9b267d7d013f.Date
 
-relationship c591c0f6-e93e-4845-8bf2-ba22b31d778c
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Solicitud de Pedido'.'Fecha de creación'
-	toColumn: LocalDateTable_47fce6dc-7b36-4fc7-9f40-8957e83a1c2d.Date
-
 relationship b92833ba-05f5-43a1-a3c2-3ef2d719836c
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'Solicitud de Pedido'.'Fecha necesaria'
 	toColumn: LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9.Date
 
-relationship ad738768-1228-4d28-9105-d8111e3fa2e0
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Facturas Conformadas'.'Fecha de contabilización'
-	toColumn: LocalDateTable_6aace321-a096-4512-9bac-90618e7e8c9c.Date
-
 relationship c20a0880-7e2c-4365-9bbc-c25fd351a363
 	joinOnDateBehavior: datePartOnly
 	fromColumn: 'Ordenes de Compra'.'Fecha de contabilización'
 	toColumn: LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80.Date
-
-relationship 0f6961a5-c9bd-476f-be86-85a6ea8f6aa9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'Ordenes de Compra'.'Fecha de creación'
-	toColumn: LocalDateTable_af58a76f-b096-4eb1-866f-516d04a1790b.Date
 
 relationship 6d2e37c8-b15d-4f3a-bdea-5b8af3179749
 	joinOnDateBehavior: datePartOnly
@@ -49,4 +34,48 @@ relationship 85e7175c-fd6a-27a4-f945-68f231081bff
 relationship b20e9ad4-40a3-e348-627c-d06bb299aa52
 	fromColumn: 'Ordenes de Compra'.'Código Proyecto'
 	toColumn: Dim_proyecto.'Código de proyecto'
+
+relationship 4c0a998c-401f-499c-bacf-2b4f0f8743ef
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_12e6d868-4468-4d3c-b814-1494be5b418c.Date
+
+relationship 320bf15b-0cb1-4f9f-9a1e-07491df66498
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.CierreSemana
+	toColumn: LocalDateTable_1594aff1-b512-498d-997c-b9bacc592413.Date
+
+relationship 92175f54-ede3-46ba-858b-3a359cac2632
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.InicioMes
+	toColumn: LocalDateTable_2f249474-8a41-4a97-ba77-3853c55d286e.Date
+
+relationship 49c71214-3b56-4435-b69c-c0a69d7fb6f6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.FinMes
+	toColumn: LocalDateTable_65ed765e-6d8f-4f7b-a9e4-232eb9c5df52.Date
+
+relationship eb619fc7-4275-357a-f848-33f7299e053a
+	fromColumn: 'Solicitud de Pedido'.'Fecha de creación'
+	toColumn: Calendario.Date
+
+relationship ec91535e-32e3-90cc-fa05-7a803401bd38
+	fromColumn: 'Facturas Conformadas'.'Fecha de contabilización'
+	toColumn: Calendario.Date
+
+relationship e82653a2-e3e0-4a07-9247-c4e82bec125c
+	fromColumn: 'Ordenes de Compra'.'Fecha de creación'
+	toColumn: Calendario.Date
+
+relationship 0e8e201c-2b72-a65b-3b9a-d907470fbdc1
+	fromColumn: 'Solicitud de Pedido'.'Código del cálculo del costo 3'
+	toColumn: Dim_Subseco.Subseco
+
+relationship c6e6b99b-36c6-69ca-5e73-f8b2e0a89d8d
+	fromColumn: 'Facturas Conformadas'.'Grupo de artículos'
+	toColumn: Dim_Subseco.Subseco
+
+relationship 7e06dfe8-631f-ec08-e916-47dacdca6ef3
+	fromColumn: 'Ordenes de Compra'.'Grupo de artículos'
+	toColumn: Dim_Subseco.Subseco
 

@@ -46,8 +46,8 @@
         },
         {
           "location": {
-            "x": 860,
-            "y": 337
+            "x": 1140,
+            "y": 0
           },
           "nodeIndex": "Costos Indirectos",
           "nodeLineageTag": "2765178b-cd74-4b13-8d82-ebef44041013",
@@ -71,8 +71,8 @@
         },
         {
           "location": {
-            "x": 3,
-            "y": 541.5
+            "x": 0,
+            "y": 509.5
           },
           "nodeIndex": "Dim_proyecto",
           "nodeLineageTag": "cb17ece2-4ae8-4ef0-b220-05c63d715efe",
@@ -81,6 +81,32 @@
             "width": 234
           },
           "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 790,
+            "y": 423.75
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "1204d9b0-08e1-4fd3-bd73-92d6810bc558",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 449,
+            "y": 625.75
+          },
+          "nodeIndex": "Dim_Subseco",
+          "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
