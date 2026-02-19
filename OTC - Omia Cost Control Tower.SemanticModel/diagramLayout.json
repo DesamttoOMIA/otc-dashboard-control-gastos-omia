@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 76
       },
       "nodes": [
         {
@@ -18,7 +18,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
@@ -30,19 +30,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 852,
-            "y": 0
-          },
-          "nodeIndex": "Costos Directos",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 3
+          "zIndex": 8
         },
         {
           "location": {
@@ -106,7 +94,20 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 803,
+            "y": 648.375
+          },
+          "nodeIndex": "Presupuesto",
+          "nodeLineageTag": "91f64d79-3d31-4577-9109-85f45ce56bc2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
         }
       ],
       "name": "Todas las tablas",

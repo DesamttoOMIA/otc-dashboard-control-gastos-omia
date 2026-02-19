@@ -103,10 +103,10 @@ table Dim_Subseco
 			    "", 
 			    IF(
 			        LEFT(Equiv, 2) = "1.", 
-			        "Costos Directos", 
+			        "Directo", 
 			        IF(
 			            LEFT(Equiv, 2) = "2.", 
-			            "Costos Indirectos", 
+			            "Indirecto", 
 			            ""
 			        )
 			    )

@@ -75,3 +75,7 @@ relationship 0b58918b-6943-0531-7189-74fab76b923a
 	fromColumn: 'Facturas Conformadas'.'Código del cálculo del costo 3'
 	toColumn: Dim_Subseco.Subseco
 
+relationship a07b32db-4154-717d-a45f-73dbd6db6347
+	fromColumn: Dim_Subseco.Equivalencia
+	toColumn: Presupuesto.'Categoria de costos'
+
