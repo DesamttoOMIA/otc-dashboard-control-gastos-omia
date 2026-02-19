@@ -99,7 +99,8 @@ table 'Facturas Conformadas'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Grupo de artículos'
-		dataType: string
+		dataType: int64
+		formatString: 0
 		lineageTag: 6aec2cd2-c482-4135-9487-c10a17991a8a
 		summarizeBy: none
 		sourceColumn: Grupo de artículos
@@ -225,7 +226,7 @@ table 'Facturas Conformadas'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Total antes de IVA'
-		dataType: decimal
+		dataType: double
 		lineageTag: 21df2957-47f4-4f77-8e83-d1a42182abc1
 		summarizeBy: sum
 		sourceColumn: Total antes de IVA
@@ -235,7 +236,7 @@ table 'Facturas Conformadas'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Total líneas'
-		dataType: decimal
+		dataType: double
 		lineageTag: 1562fd27-1c13-45cb-a105-a76f85d4f02b
 		summarizeBy: sum
 		sourceColumn: Total líneas
@@ -333,12 +334,10 @@ table 'Facturas Conformadas'
 				let
 				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.10.2%20Facturas%20Conformadas.txt"),[Delimiter="	", Columns=39, Encoding=1200, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", Int64.Type}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"DOCDESTINO", type text}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Número de artículo", type text}}),
-				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado1",{""}),
-				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Total líneas", Currency.Type}, {"Total antes de IVA", Currency.Type}, {"Grupo de artículos", type text}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"DOCDESTINO", type text}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{""})
 				in
-				    #"Tipo cambiado2"
+				    #"Columnas quitadas"
 
 	annotation PBI_ResultType = Table
 
