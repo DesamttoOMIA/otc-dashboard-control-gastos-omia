@@ -211,7 +211,7 @@ table 'Facturas Conformadas'
 		dataType: int64
 		formatString: 0
 		lineageTag: 2f025da0-47a6-410e-8ff5-6b5d49c2a748
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Código del cálculo del costo 3
 
 		annotation SummarizationSetBy = Automatic

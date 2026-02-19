@@ -71,11 +71,7 @@ relationship 0e8e201c-2b72-a65b-3b9a-d907470fbdc1
 	fromColumn: 'Solicitud de Pedido'.'Código del cálculo del costo 3'
 	toColumn: Dim_Subseco.Subseco
 
-relationship c6e6b99b-36c6-69ca-5e73-f8b2e0a89d8d
-	fromColumn: 'Facturas Conformadas'.'Grupo de artículos'
-	toColumn: Dim_Subseco.Subseco
-
-relationship 7e06dfe8-631f-ec08-e916-47dacdca6ef3
-	fromColumn: 'Ordenes de Compra'.'Grupo de artículos'
+relationship 0b58918b-6943-0531-7189-74fab76b923a
+	fromColumn: 'Facturas Conformadas'.'Código del cálculo del costo 3'
 	toColumn: Dim_Subseco.Subseco
 
