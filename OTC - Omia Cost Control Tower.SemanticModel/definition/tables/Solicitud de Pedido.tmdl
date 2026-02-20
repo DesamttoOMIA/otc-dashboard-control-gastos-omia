@@ -20,10 +20,9 @@ table 'Solicitud de Pedido'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Número de documento'
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: ac45d6c5-293d-4161-9805-8f1e3672a569
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Número de documento
 
 		annotation SummarizationSetBy = Automatic
@@ -183,13 +182,12 @@ table 'Solicitud de Pedido'
 
 	column 'Total líneas'
 		dataType: decimal
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 368cbd8e-6328-4487-bdf8-64f6a75d2a8a
 		summarizeBy: sum
 		sourceColumn: Total líneas
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Unidad
 		dataType: string
@@ -274,7 +272,7 @@ table 'Solicitud de Pedido'
 				    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Texto limpio",{{"Número de artículo", type text}}),
 				    #"Columnas quitadas1" = Table.RemoveColumns(#"Tipo cambiado4",{"Número de artículo"}),
 				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas1", each ([Cancelado] = "N") and ([Status de la línea] = "O")),
-				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Filas filtradas",{{"Código del cálculo del costo 3", type text}})
+				    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Filas filtradas",{{"Código del cálculo del costo 3", type text}, {"Número de documento", type text}})
 				in
 				    #"Tipo cambiado5"
 
