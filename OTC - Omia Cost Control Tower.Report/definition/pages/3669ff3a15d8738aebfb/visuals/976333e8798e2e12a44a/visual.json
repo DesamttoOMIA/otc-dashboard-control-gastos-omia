@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "976333e8798e2e12a44a",
+  "position": {
+    "x": 27.27272727272727,
+    "y": 709.090909090909,
+    "z": 5001,
+    "height": 390.90909090909088,
+    "width": 1224.5454545454545,
+    "tabOrder": 5001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Presupuesto"
+                    }
+                  },
+                  "Property": "Categoria de costos"
+                }
+              },
+              "queryRef": "Presupuesto.Categoria de costos",
+              "nativeQueryRef": "Categoria de costos"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

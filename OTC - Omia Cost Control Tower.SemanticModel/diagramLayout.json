@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 75
+        "y": 354.1875
       },
       "nodes": [
         {
@@ -36,7 +36,7 @@
         {
           "location": {
             "x": 0,
-            "y": 1037
+            "y": 867
           },
           "nodeIndex": "Costos Indirectos",
           "nodeLineageTag": "2765178b-cd74-4b13-8d82-ebef44041013",
@@ -112,13 +112,26 @@
         },
         {
           "location": {
-            "x": 0,
-            "y": 734.1875
+            "x": 1397,
+            "y": 863.1875
           },
           "nodeIndex": "N 2%20ABA%20Ordenes%20de%20Compra",
           "nodeLineageTag": "ad396fd3-3dc2-41fa-8d46-c9f5b2f3f112",
           "size": {
             "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1144,
+            "y": 470.5
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "4083414b-79ed-4e5c-8305-daebc257801b",
+          "size": {
+            "height": 272,
             "width": 234
           },
           "zIndex": 1

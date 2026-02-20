@@ -1,6 +1,14 @@
 table Presupuesto
 	lineageTag: 91f64d79-3d31-4577-9109-85f45ce56bc2
 
+	column 'Categoria de costos'
+		dataType: string
+		lineageTag: 90794e73-b477-4b07-a48e-f387c87c904c
+		summarizeBy: none
+		sourceColumn: Categoria de costos
+
+		annotation SummarizationSetBy = Automatic
+
 	column Incidencia
 		dataType: double
 		lineageTag: 8891638a-7155-485f-91ae-7b01b21feadb
@@ -21,14 +29,6 @@ table Presupuesto
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	column 'Categoria de costos'
-		dataType: string
-		lineageTag: 90794e73-b477-4b07-a48e-f387c87c904c
-		summarizeBy: none
-		sourceColumn: Categoria de costos
-
-		annotation SummarizationSetBy = Automatic
 
 	column USD
 		dataType: decimal

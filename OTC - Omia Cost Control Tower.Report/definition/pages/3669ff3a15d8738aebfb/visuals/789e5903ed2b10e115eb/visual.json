@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "789e5903ed2b10e115eb",
   "position": {
-    "x": 455,
-    "y": 22,
-    "z": 1,
+    "x": 456.54539249958754,
+    "y": 64.6198978763051,
+    "z": 1000,
     "height": 143,
     "width": 257,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -17,23 +17,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Ordenes de Compra"
-                        }
-                      },
-                      "Property": "Total Líneas OC $Cop"
+                    "SourceRef": {
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Costo ejecutado"
                 }
               },
-              "queryRef": "Sum(Ordenes de Compra.Total Líneas OC $Cop)",
-              "nativeQueryRef": "Suma de Total Líneas OC $Cop",
-              "format": "\\$ #,0.0;-\\$ #,0.0;\\$ #,0.0"
+              "queryRef": "_Medidas.Costo ejecutado",
+              "nativeQueryRef": "Costo ejecutado"
             }
           ]
         }
@@ -42,18 +36,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Ordenes de Compra"
-                      }
-                    },
-                    "Property": "Total Líneas OC $Cop"
+                  "SourceRef": {
+                    "Entity": "_Medidas"
                   }
                 },
-                "Function": 0
+                "Property": "Costo ejecutado"
               }
             },
             "direction": "Descending"
@@ -96,7 +85,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Ordenes de Compra.Total Líneas OC $Cop)"
+            "metadata": "_Medidas.Costo ejecutado"
           }
         }
       ],
@@ -125,7 +114,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Ordenes de Compra.Total Líneas OC $Cop)"
+            "metadata": "_Medidas.Costo ejecutado"
           }
         }
       ]
