@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo ejecutado"
+                  "Property": "Costo ejecutado 2"
                 }
               },
-              "queryRef": "_Medidas.Costo ejecutado",
-              "nativeQueryRef": "Costo ejecutado"
+              "queryRef": "_Medidas.Costo ejecutado 2",
+              "nativeQueryRef": "Costo ejecutado 2"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Costo ejecutado"
+                "Property": "Costo ejecutado 2"
               }
             },
             "direction": "Descending"
@@ -61,6 +61,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
             }
           },
           "selector": {
@@ -75,17 +82,10 @@
                   "Value": "'Costo ejecutado'"
                 }
               }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'aboveValue'"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Costo ejecutado"
+            "metadata": "_Medidas.Costo ejecutado 2"
           }
         }
       ],
@@ -100,21 +100,19 @@
               }
             }
           }
-        }
-      ],
-      "spacing": [
+        },
         {
           "properties": {
-            "verticalSpacing": {
+            "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "10L"
+                  "Value": "1L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Costo ejecutado"
+            "metadata": "_Medidas.Costo ejecutado 2"
           }
         }
       ]

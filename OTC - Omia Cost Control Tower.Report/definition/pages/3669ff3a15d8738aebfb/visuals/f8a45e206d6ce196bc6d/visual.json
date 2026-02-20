@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente"
+                  "Property": "Presupuesto remanente 2"
                 }
               },
-              "queryRef": "_Medidas.Disponible",
-              "nativeQueryRef": "Presupuesto remanente"
+              "queryRef": "_Medidas.Presupuesto remanente 2",
+              "nativeQueryRef": "Presupuesto remanente 2"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto remanente"
+                "Property": "Presupuesto remanente 2"
               }
             },
             "direction": "Descending"
@@ -61,6 +61,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
             }
           },
           "selector": {
@@ -72,7 +79,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Presupuesto remanente'"
+                  "Value": "'Costo comprometido'"
                 }
               }
             },
@@ -85,7 +92,21 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Disponible"
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Presupuesto remanente'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Presupuesto remanente 2"
           }
         }
       ],
@@ -114,7 +135,21 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Disponible"
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        },
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -127,6 +162,62 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

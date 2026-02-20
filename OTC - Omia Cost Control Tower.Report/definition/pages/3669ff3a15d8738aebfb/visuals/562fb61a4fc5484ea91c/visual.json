@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "562fb61a4fc5484ea91c",
   "position": {
-    "x": 27.27272727272727,
-    "y": 223.63636363636363,
+    "x": 18,
+    "y": 198,
     "z": 4000,
-    "height": 474.5454545454545,
-    "width": 747.27272727272725,
+    "height": 474,
+    "width": 748,
     "tabOrder": 4000
   },
   "visual": {
@@ -262,5 +262,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7a14edb15ede99ec545a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Presupuesto"
+              }
+            },
+            "Property": "Categoria de costos"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ecdbe0f3a0e9d2185fff",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Costo ejecutado"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6f640f605735fa4e40cd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Costo comprometido"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "814039623c63f5e0f1e2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto remanente"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

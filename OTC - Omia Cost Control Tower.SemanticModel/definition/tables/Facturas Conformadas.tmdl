@@ -335,15 +335,9 @@ table 'Facturas Conformadas'
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"DOCDESTINO", type text}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
 				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{""}),
-<<<<<<< HEAD
-				    #"Filas filtradas" = Table.SelectRows(#"Columnas quitadas", each true)
-				in
-				    #"Filas filtradas"
-=======
 				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Número interno", type text}})
 				in
 				    #"Tipo cambiado1"
->>>>>>> development
 
 	annotation PBI_ResultType = Table
 
