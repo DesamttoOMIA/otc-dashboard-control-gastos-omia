@@ -1,0 +1,452 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "531b3537a370821f1f1a",
+  "position": {
+    "x": 36.0128617363344,
+    "y": 333.37620578778132,
+    "z": 0,
+    "height": 343.66559485530547,
+    "width": 1206.9453376205788,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "#"
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.#)",
+              "nativeQueryRef": "#"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Cancelado"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Cancelado",
+              "nativeQueryRef": "Cancelado"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Fecha de creación"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Fecha de creación",
+              "nativeQueryRef": "Fecha de creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_proyecto"
+                    }
+                  },
+                  "Property": "Nombre de proyecto"
+                }
+              },
+              "queryRef": "Dim_proyecto.Nombre de proyecto",
+              "nativeQueryRef": "Nombre de proyecto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Orden de Compra"
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.Orden de Compra)",
+              "nativeQueryRef": "Orden de Compra"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Descripción general"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Descripción general",
+              "nativeQueryRef": "Descripción general"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Comentarios adicionales"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Comentarios adicionales",
+              "nativeQueryRef": "Comentarios adicionales"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Detalle adicional"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Detalle adicional",
+              "nativeQueryRef": "Detalle adicional"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Cantidad OC"
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.Cantidad OC)",
+              "nativeQueryRef": "Cantidad OC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Ordenes de Compra"
+                    }
+                  },
+                  "Property": "Unidad Medida OC"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Unidad Medida OC",
+              "nativeQueryRef": "Unidad Medida OC"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Ordenes de Compra"
+                        }
+                      },
+                      "Property": "Total Líneas OC $Cop"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.Total Líneas OC $Cop)",
+              "nativeQueryRef": "Suma de Total Líneas OC $Cop"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ordenes de Compra"
+                  }
+                },
+                "Property": "Fecha de creación"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Número de documento)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Solicitud de Pedido.Adjudicacion Directa"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_proyecto.Nombre de proyecto"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Cantidad)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.17985611510791D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

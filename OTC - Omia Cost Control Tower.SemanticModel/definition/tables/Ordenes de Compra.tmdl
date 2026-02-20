@@ -20,12 +20,13 @@ table 'Ordenes de Compra'
 
 	column 'Orden de Compra'
 		dataType: int64
-		formatString: 0
 		lineageTag: de2adc4b-fa5f-424f-b598-a01ef2f9274f
 		summarizeBy: sum
 		sourceColumn: Orden de Compra
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Código Proveedor'
 		dataType: string

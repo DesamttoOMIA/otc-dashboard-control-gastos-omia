@@ -1,0 +1,390 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "808f30f16c1e5632f166",
+  "position": {
+    "x": 36.0128617363344,
+    "y": 333.37620578778132,
+    "z": 0,
+    "height": 343.66559485530547,
+    "width": 1206.9453376205788,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "#"
+                }
+              },
+              "queryRef": "Sum(Solicitud de Pedido.#)",
+              "nativeQueryRef": "ID interno",
+              "displayName": "ID interno"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Número de documento"
+                }
+              },
+              "queryRef": "Sum(Solicitud de Pedido.Número de documento)",
+              "nativeQueryRef": "Número de documento SOLPED",
+              "displayName": "Número de documento SOLPED"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Adjudicacion Directa"
+                }
+              },
+              "queryRef": "Solicitud de Pedido.Adjudicacion Directa",
+              "nativeQueryRef": "Adjudicacion Directa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_proyecto"
+                    }
+                  },
+                  "Property": "Nombre de proyecto"
+                }
+              },
+              "queryRef": "Dim_proyecto.Nombre de proyecto",
+              "nativeQueryRef": "Nombre de proyecto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Fecha de creación"
+                }
+              },
+              "queryRef": "Solicitud de Pedido.Fecha de creación",
+              "nativeQueryRef": "Fecha de creación"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Solicitud de Pedido"
+                        }
+                      },
+                      "Property": "Cantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Solicitud de Pedido.Cantidad)",
+              "nativeQueryRef": "Cantidad solicitada",
+              "displayName": "Cantidad solicitada"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Unidad"
+                }
+              },
+              "queryRef": "Solicitud de Pedido.Unidad",
+              "nativeQueryRef": "Unidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Descripción artículo/serv."
+                }
+              },
+              "queryRef": "Solicitud de Pedido.Descripción artículo/serv.",
+              "nativeQueryRef": "Descripción artículo/serv."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Comentarios"
+                }
+              },
+              "queryRef": "Solicitud de Pedido.Comentarios",
+              "nativeQueryRef": "Comentarios"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Solicitud de Pedido"
+                    }
+                  },
+                  "Property": "Total líneas"
+                }
+              },
+              "queryRef": "Sum(Solicitud de Pedido.Total líneas)",
+              "nativeQueryRef": "Total líneas"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Subseco"
+                    }
+                  },
+                  "Property": "Equivalencia"
+                }
+              },
+              "queryRef": "Dim_Subseco.Equivalencia",
+              "nativeQueryRef": "Equivalencia"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Número de documento)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Solicitud de Pedido.Adjudicacion Directa"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_proyecto.Nombre de proyecto"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Cantidad)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            },
+            "styleTotal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.17985611510791D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

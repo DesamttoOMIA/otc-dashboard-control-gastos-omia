@@ -1,0 +1,245 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "18609ebc0fabb2a5833e",
+  "position": {
+    "x": 36.0128617363344,
+    "y": 333.37620578778132,
+    "z": 0,
+    "height": 343.66559485530547,
+    "width": 1206.9453376205788,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "#"
+                }
+              },
+              "queryRef": "Sum(Facturas Conformadas.#)",
+              "nativeQueryRef": "#"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Número interno"
+                }
+              },
+              "queryRef": "Facturas Conformadas.Número interno",
+              "nativeQueryRef": "Número interno"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_proyecto"
+                    }
+                  },
+                  "Property": "Nombre de proyecto"
+                }
+              },
+              "queryRef": "Dim_proyecto.Nombre de proyecto",
+              "nativeQueryRef": "Nombre de proyecto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Fecha de contabilización"
+                }
+              },
+              "queryRef": "Facturas Conformadas.Fecha de contabilización",
+              "nativeQueryRef": "Fecha de contabilización"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Comentarios"
+                }
+              },
+              "queryRef": "Facturas Conformadas.Comentarios",
+              "nativeQueryRef": "Comentarios"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Cantidad"
+                }
+              },
+              "queryRef": "Sum(Facturas Conformadas.Cantidad)",
+              "nativeQueryRef": "Cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Unidad"
+                }
+              },
+              "queryRef": "Facturas Conformadas.Unidad",
+              "nativeQueryRef": "Unidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Facturas Conformadas"
+                    }
+                  },
+                  "Property": "Total líneas"
+                }
+              },
+              "queryRef": "Sum(Facturas Conformadas.Total líneas)",
+              "nativeQueryRef": "Total líneas"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Subseco"
+                    }
+                  },
+                  "Property": "Equivalencia"
+                }
+              },
+              "queryRef": "Dim_Subseco.Equivalencia",
+              "nativeQueryRef": "Equivalencia"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
