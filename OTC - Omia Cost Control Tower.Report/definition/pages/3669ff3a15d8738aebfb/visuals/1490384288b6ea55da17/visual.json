@@ -119,5 +119,80 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2309a8402cd76451e575",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Presupuesto"
+              }
+            },
+            "Property": "Categoria de costos"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6c8cca6312abdf792985",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Presupuesto"
+                  }
+                },
+                "Property": "COP"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "66a3d523b8a9fc970bcf",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Ordenes de Compra"
+                  }
+                },
+                "Property": "Total Líneas OC $Cop"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "273538bb8c66d3074ccc",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Solicitud de Pedido"
+                  }
+                },
+                "Property": "Total líneas"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

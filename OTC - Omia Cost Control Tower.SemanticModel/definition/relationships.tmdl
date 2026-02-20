@@ -79,3 +79,18 @@ relationship a07b32db-4154-717d-a45f-73dbd6db6347
 	fromColumn: Dim_Subseco.Equivalencia
 	toColumn: Presupuesto.'Categoria de costos'
 
+relationship 2f6c7c26-9609-4a13-900b-0f7764e726e7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de contabilización'
+	toColumn: LocalDateTable_e6413f18-6015-4d64-b2bf-46c608cfb1aa.Date
+
+relationship 89feada9-f6c6-42f6-9a65-6c8111228f3f
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de creación'
+	toColumn: LocalDateTable_d41954e2-e151-489f-987a-a4dd42ab2eaa.Date
+
+relationship 2a38313c-f9bc-4547-810e-2e2c6cd7734c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de entrega de la línea'
+	toColumn: LocalDateTable_be705c30-6d70-428a-ae77-66538bcbcdfb.Date
+
