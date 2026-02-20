@@ -94,3 +94,7 @@ relationship 2a38313c-f9bc-4547-810e-2e2c6cd7734c
 	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de entrega de la línea'
 	toColumn: LocalDateTable_be705c30-6d70-428a-ae77-66538bcbcdfb.Date
 
+relationship 9e72b7ec-f19d-ae81-7ee8-4cdfe52bbb4a
+	fromColumn: 'Ordenes de Compra'.'Código del cálculo del costo 3'
+	toColumn: Dim_Subseco.Subseco
+
