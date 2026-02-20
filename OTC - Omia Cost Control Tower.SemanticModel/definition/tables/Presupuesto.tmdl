@@ -1,14 +1,6 @@
 table Presupuesto
 	lineageTag: 91f64d79-3d31-4577-9109-85f45ce56bc2
 
-	column 'Categoria de costos'
-		dataType: string
-		lineageTag: 90794e73-b477-4b07-a48e-f387c87c904c
-		summarizeBy: none
-		sourceColumn: Categoria de costos
-
-		annotation SummarizationSetBy = Automatic
-
 	column Incidencia
 		dataType: double
 		lineageTag: 8891638a-7155-485f-91ae-7b01b21feadb
@@ -30,6 +22,14 @@ table Presupuesto
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
+	column 'Categoria de costos'
+		dataType: string
+		lineageTag: 90794e73-b477-4b07-a48e-f387c87c904c
+		summarizeBy: none
+		sourceColumn: Categoria de costos
+
+		annotation SummarizationSetBy = Automatic
+
 	column USD
 		dataType: decimal
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
@@ -46,6 +46,30 @@ table Presupuesto
 		lineageTag: bece8375-f7c7-4e2f-909f-db4dc5d00901
 		summarizeBy: none
 		sourceColumn: Tipo costo
+
+		annotation SummarizationSetBy = Automatic
+
+	column jerarquia = ```
+			
+			VAR Codigo = LEFT('Presupuesto'[Categoria de costos], 3)
+			
+			RETURN
+			SWITCH(
+			    Codigo,
+			    "1.1", "1.1  Materiales y/o repuestos",
+			    "1.2", "1.2  Remuneraciones",
+			    "1.5", "1.5  Herramientas, Instrumentos y Consumibles",
+			    "1.6", "1.6  Equipos Directos",
+			    "1.7", "1.7  Fletes y Transportes:",
+			    "2.1", "2.1  Remuneraciones",
+			    "2.2", "2.2  Equipos Indirectos",
+			    -- Si NO es un grupo azul (ej. 1.3, 1.4, 1.8, 1.9, 2.3), 
+			    -- devuelve su propio nombre para que quede alineado correctamente:
+			    'Presupuesto'[Categoria de costos] 
+			)
+			```
+		lineageTag: 318e67ce-3c07-488c-953f-c439626dd519
+		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic
 

@@ -20,6 +20,29 @@
           }
         },
         "type": "Categorical",
+        "howCreated": "User",
+        "isLockedInViewMode": true,
+        "objects": {
+          "general": [
+            {
+              "properties": {}
+            }
+          ]
+        }
+      },
+      {
+        "name": "b7ab8244b81bfb7bbbb4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_proyecto"
+              }
+            },
+            "Property": "Nombre de proyecto"
+          }
+        },
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
@@ -59,15 +82,7 @@
             }
           ]
         },
-        "howCreated": "User",
-        "isLockedInViewMode": true,
-        "objects": {
-          "general": [
-            {
-              "properties": {}
-            }
-          ]
-        }
+        "howCreated": "User"
       }
     ]
   },
