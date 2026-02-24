@@ -11,7 +11,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Solicitud de Pedido","Facturas Conformadas","Ordenes de Compra","Presupuesto","Costos Indirectos","Dim_proyecto","N 2%20ABA%20Ordenes%20de%20Compra","_Medidas"]
+annotation PBI_QueryOrder = ["Solicitud de Pedido","Facturas Conformadas","Ordenes de Compra","Presupuesto","Costos Indirectos","Dim_proyecto","N 2%20ABA%20Ordenes%20de%20Compra","_Medidas","Dim_categoria"]
 
 ref table 'Solicitud de Pedido'
 ref table DateTableTemplate_ed8c9b5c-6c6d-4dd4-b169-5feb3f6cd842
@@ -36,6 +36,7 @@ ref table 'N 2%20ABA%20Ordenes%20de%20Compra'
 ref table LocalDateTable_e6413f18-6015-4d64-b2bf-46c608cfb1aa
 ref table LocalDateTable_d41954e2-e151-489f-987a-a4dd42ab2eaa
 ref table LocalDateTable_be705c30-6d70-428a-ae77-66538bcbcdfb
+ref table Dim_categoria
 
 ref cultureInfo es-CO
 
