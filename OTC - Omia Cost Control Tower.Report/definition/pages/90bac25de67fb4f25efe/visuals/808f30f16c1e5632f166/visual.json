@@ -382,6 +382,20 @@
           "selector": {
             "metadata": "Sum(Solicitud de Pedido.Total líneas)"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "379.3765613363919D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_proyecto.Nombre de proyecto"
+          }
         }
       ]
     },

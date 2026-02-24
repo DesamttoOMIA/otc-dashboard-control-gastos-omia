@@ -31,11 +31,11 @@ ref table LocalDateTable_1594aff1-b512-498d-997c-b9bacc592413
 ref table LocalDateTable_2f249474-8a41-4a97-ba77-3853c55d286e
 ref table LocalDateTable_65ed765e-6d8f-4f7b-a9e4-232eb9c5df52
 ref table Dim_Subseco
+ref table _Medidas
 ref table 'N 2%20ABA%20Ordenes%20de%20Compra'
 ref table LocalDateTable_e6413f18-6015-4d64-b2bf-46c608cfb1aa
 ref table LocalDateTable_d41954e2-e151-489f-987a-a4dd42ab2eaa
 ref table LocalDateTable_be705c30-6d70-428a-ae77-66538bcbcdfb
-ref table _Medidas
 
 ref cultureInfo es-CO
 

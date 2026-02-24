@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente 2"
+                  "Property": "Presupuesto remanente"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente 2",
-              "nativeQueryRef": "Presupuesto remanente 2"
+              "queryRef": "_Medidas.Presupuesto remanente",
+              "nativeQueryRef": "Presupuesto remanente"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto remanente 2"
+                "Property": "Presupuesto remanente"
               }
             },
             "direction": "Descending"
@@ -93,20 +93,6 @@
           },
           "selector": {
             "metadata": "Sum(Solicitud de Pedido.Total líneas)"
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Presupuesto remanente'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente 2"
           }
         }
       ],
@@ -226,5 +212,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b1eab60aa337125de0b0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto remanente"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

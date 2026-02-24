@@ -42,20 +42,6 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo ejecutado"
-                }
-              },
-              "queryRef": "_Medidas.Costo ejecutado",
-              "nativeQueryRef": "Costo ejecutado"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
                   "Property": "Costo comprometido"
                 }
               },
@@ -75,6 +61,20 @@
               },
               "queryRef": "_Medidas.Remanente",
               "nativeQueryRef": "Presupuesto remanente"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Costo ejecutado"
+                }
+              },
+              "queryRef": "_Medidas.Costo ejecutado",
+              "nativeQueryRef": "Costo ejecutado"
             }
           ]
         }
@@ -89,7 +89,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Costo ejecutado"
+                "Property": "Costo comprometido"
               }
             },
             "direction": "Descending"
@@ -180,25 +180,6 @@
         }
       ],
       "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Costo ejecutado"
-          }
-        },
         {
           "properties": {
             "fill": {

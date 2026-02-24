@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo ejecutado 2"
+                  "Property": "Costo ejecutado"
                 }
               },
-              "queryRef": "_Medidas.Costo ejecutado 2",
-              "nativeQueryRef": "Costo ejecutado 2"
+              "queryRef": "_Medidas.Costo ejecutado",
+              "nativeQueryRef": "Costo ejecutado"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Costo ejecutado 2"
+                "Property": "Costo ejecutado"
               }
             },
             "direction": "Descending"
@@ -73,20 +73,6 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Costo ejecutado'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Costo ejecutado 2"
-          }
         }
       ],
       "value": [
@@ -99,20 +85,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Costo ejecutado 2"
           }
         }
       ]
@@ -133,5 +105,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6c65c22c2e0109cb833a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Costo ejecutado"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

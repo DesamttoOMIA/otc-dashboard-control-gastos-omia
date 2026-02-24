@@ -10,7 +10,7 @@ table _Medidas
 
 	measure 'Costo ejecutado' = ```
 			
-			    //SUM('Ordenes de Compra'[Total Líneas OC $Cop]) +
+			    SUM('Ordenes de Compra'[Total Líneas OC $Cop]) +
 			    SUM('Facturas Conformadas'[Total líneas])
 			```
 		displayFolder: Medidas principales
@@ -78,26 +78,6 @@ table _Medidas
 			
 			```
 		lineageTag: b719cd37-7b6e-45d0-ac6f-4c581759b5e4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Costo ejecutado 2' = ```
-			
-			    SUM('Ordenes de Compra'[Total Líneas OC $Cop]) +
-			    SUM('Facturas Conformadas'[Total líneas])
-			```
-		lineageTag: f3dab431-5775-4bd3-bb39-d8793999172a
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Presupuesto remanente 2' = ```
-			
-			[Presupuesto total] 
-			- [Costo ejecutado 2] 
-			- [Costo comprometido] 
-			// - [Costo entrante]
-			```
-		lineageTag: 9979becc-96f2-4c78-9190-89345e7db557
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
