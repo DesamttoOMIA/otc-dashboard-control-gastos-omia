@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Ordenes de Compra"
+                          "Entity": "Fact_ordenes_de_compra"
                         }
                       },
                       "Property": "#"
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Ordenes de Compra"
+                        "Entity": "Fact_ordenes_de_compra"
                       }
                     },
                     "Property": "#"

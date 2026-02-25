@@ -1,7 +1,7 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Presupuesto total' = SUM(Presupuesto[COP])
+	measure 'Presupuesto total' = SUM(Fact_presupuesto[COP])
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas principales
 		lineageTag: 9c723d8d-3af9-4f4a-a9c1-a9a45983b868
@@ -10,15 +10,15 @@ table _Medidas
 
 	measure 'Costo ejecutado' = ```
 			
-			    SUM('Ordenes de Compra'[Total Líneas OC $Cop]) +
-			    SUM('Facturas Conformadas'[Total líneas])
+			    SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
+			    SUM('Fact_facturas_conformadas'[Total líneas])
 			```
 		displayFolder: Medidas principales
 		lineageTag: 670411b9-5073-45c2-ac7b-7b9f70fe0fbc
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Costo comprometido' = SUM('Solicitud de Pedido'[Total líneas])
+	measure 'Costo comprometido' = SUM('Fact_solicitud_de_pedido'[Total líneas])
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas principales
 		lineageTag: 115d40b4-d7a4-4b72-9a80-e2b510b714ac

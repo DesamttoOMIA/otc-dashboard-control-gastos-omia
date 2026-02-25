@@ -1,0 +1,177 @@
+table 'Dim_Subseco stanby'
+	isHidden
+	lineageTag: 4c475b82-8f87-4c8d-a5a6-066999bfbd9f
+
+	column 'Distribución Costos' =
+			
+			SWITCH(
+			    TRUE(),
+			    'Dim_Subseco stanby'[Subseco] IN {"121", "122", "131", "132", "133", "135", "136", "137", "138", "211", "212"}, "Mano de Obra",
+			    'Dim_Subseco stanby'[Subseco] IN {"161", "162", "163", "221", "222", "223"}, "Equipos",
+			    'Dim_Subseco stanby'[Subseco] IN {"111", "112", "113", "151", "152", "153"}, "Materiales & Suministros",
+			    'Dim_Subseco stanby'[Subseco] IN {"141", "181"}, "Subcontratos",
+			    'Dim_Subseco stanby'[Subseco] IN {"171", "182", "231", "232", "321", "331", "341", "351", "361", "371"}, "Otros Costos",
+			    'Dim_Subseco stanby'[Subseco] IN {"134", "191", "381"}, "Contingencia",
+			    "No Categorizado" -- Valor por defecto si no coincide con ninguno
+			)
+		isHidden
+		lineageTag: 5c624feb-c0a4-48bc-8a07-2afa107673d9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subseco
+		isHidden
+		lineageTag: f13b1f93-ffa6-4c22-899b-bc4979674584
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Subseco]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripción
+		isHidden
+		lineageTag: 2a8c63e1-10d3-4228-b52e-048ccf9bf85f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Descripción]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Equivalencia =
+			
+			VAR Codigo = 'Dim_Subseco stanby'[Subseco]
+			VAR Distribucion = 'Dim_Subseco stanby'[Distribución Costos]
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    -- REGLA: Si es Contingencia o pertenece a la serie 300 (Imprevistos/Impuestos), dejar en BLANCO
+			    Distribucion = "Contingencia" || LEFT(Codigo, 1) = "3", "",
+			
+			    -- 1.1 Materiales y/o repuestos
+			    Codigo = "111", "1.1.1  Materiales de Mantenimiento",
+			    Codigo = "112", "1.1.2  Materiales de Operación",
+			    Codigo = "113", "1.1.3  Combustibles y Lubricantes del Cliente",
+			
+			    -- 1.2 Remuneraciones
+			    Codigo = "121", "1.2.1  Mano de Obra Directa",
+			    Codigo = "122", "1.2.2  Cargas Sociales Mano de Obra Directa",
+			
+			    -- 1.3 Gastos de Personal
+			    Codigo IN {"131", "132", "133", "135", "136", "137", "138"}, "1.3  Gastos de Personal",
+			
+			    -- 1.4 Sub-Contratos
+			    Codigo IN {"141", "181"}, "1.4  Sub-Contratos",
+			
+			    -- 1.5 Herramientas, Instrumentos y Consumibles
+			    Codigo = "151", "1.5.1  Herramientas",
+			    Codigo = "152", "1.5.2  Instrumentos",
+			    Codigo = "153", "1.5.2  Consumibles",
+			
+			    -- 1.6 Equipos Directos
+			    Codigo IN {"161", "162"}, "1.6.2  Vehiculos alquilados a terceros",
+			    Codigo = "163", "1.6.3  Mantenimiento",
+			
+			    -- 1.7 Fletes y Transportes
+			    Codigo = "171", "1.7.1  De materiales y repuestos",
+			
+			    -- 1.8 Gastos Varios Directos (Solo el 182 que pertenece a esta categoría)
+			    Codigo = "182", "1.8  Gastos Varios Directos",
+			
+			    -- 2.1 Remuneraciones Indirectas
+			    Codigo = "211", "2.1.1  Mano de Obra Indirecta",
+			    Codigo = "212", "2.1.2  Cargas Sociales Mano de Obra Indirecta",
+			
+			    -- 2.2 Equipos Indirectos
+			    Codigo = "221", "2.2.2  Vehiculos Alquilados a terceros",
+			    Codigo = "222", "2.2.2  Combustible vehiculos Propios/Alquilados Indirectos",
+			    Codigo = "223", "2.2.3  Mantenimiento",
+			
+			    -- 2.3 Gastos varios Indirectos
+			    Codigo IN {"231", "232"}, "2.3  Gastos varios Indirectos",
+			
+			    -- Valor por defecto para cualquier otro caso no contemplado
+			    ""
+			)
+		isHidden
+		lineageTag: fc10e10a-3617-4cdf-8e57-8ced4fdd2734
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de Costo' = ```
+			
+			VAR Equiv = 'Dim_Subseco stanby'[Equivalencia]
+			RETURN
+			IF(
+			    Equiv = "", 
+			    "", 
+			    IF(
+			        LEFT(Equiv, 2) = "1.", 
+			        "Directo", 
+			        IF(
+			            LEFT(Equiv, 2) = "2.", 
+			            "Indirecto", 
+			            ""
+			        )
+			    )
+			)
+			```
+		isHidden
+		lineageTag: 48779b7d-c8b7-4dfd-a726-d0839a46f1d0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim_Subseco stanby' = calculated
+		mode: import
+		source = ```
+				
+				DATATABLE (
+				    "Subseco", STRING, 
+				    "Descripción", STRING,
+				    {
+				        {"111", "Materiales de Mantenimiento"},
+				        {"112", "Materiales de Operación"},
+				        {"113", "Combustibles y lubricantes"},
+				        {"121", "Sueldos y salarios personal directo"},
+				        {"122", "Contribuciones sociales personal directo"},
+				        {"131", "Consultas y exámenes médicos"},
+				        {"132", "Capacitación"},
+				        {"133", "Gastos médicos"},
+				        {"134", "Gastos de representación"},
+				        {"135", "Ticket alimentación"},
+				        {"136", "Viajes, traslados y hospedaje"},
+				        {"137", "Alquiler de inmuebles y condominio"},
+				        {"138", "Ropa de trabajo (EPP)"},
+				        {"141", "Otros Subcontratos"},
+				        {"151", "Herramientas de la compañía"},
+				        {"152", "Instrumentos de la compañía"},
+				        {"153", "Materiales consumibles"},
+				        {"161", "Vehículos alquilados a terceros"},
+				        {"162", "Equipos Alquilados a terceros"},
+				        {"163", "Mantenimiento de equipos"},
+				        {"171", "Fletes y transp. de materiales y repuestos"},
+				        {"181", "Teléfonos y servicios de telecomunicaciones"},
+				        {"182", "Otros gastos varios directos"},
+				        {"191", "Provisiones por Despidos"},
+				        {"211", "Sueldos y salarios personal indirectos"},
+				        {"212", "Contribuciones sociales personal indirectos"},
+				        {"221", "Transporte de personal servicios/obras"},
+				        {"222", "Combustibles"},
+				        {"223", "Mantenimiento"},
+				        {"231", "Gastos varios Indirectos"},
+				        {"232", "Tecnologias de la información y comunicación"},
+				        {"321", "Costos Imprevistos"},
+				        {"331", "Otros impuestos nacionales"},
+				        {"341", "Gastos financieros"},
+				        {"351", "Seguros y fianzas"},
+				        {"361", "Impuestos municipales"},
+				        {"371", "Costos de Área de Servicio"},
+				        {"381", "Contingencias por penalidades"}
+				    }
+				)
+				```
+
+	annotation PBI_Id = be616762ca7c4a099e4bb1d8e834c275
+

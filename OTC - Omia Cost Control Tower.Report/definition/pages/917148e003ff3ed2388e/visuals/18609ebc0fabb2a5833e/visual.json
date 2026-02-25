@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "#"
@@ -34,7 +34,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Número interno"
@@ -62,7 +62,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Fecha de contabilización"
@@ -76,7 +76,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Comentarios"
@@ -90,7 +90,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Cantidad"
@@ -104,7 +104,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Unidad"
@@ -118,7 +118,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Total líneas"
@@ -132,7 +132,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Subseco"
+                      "Entity": "Dim_Subseco stanby"
                     }
                   },
                   "Property": "Equivalencia"

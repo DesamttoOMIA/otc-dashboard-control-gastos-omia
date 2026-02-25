@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Presupuesto"
+                      "Entity": "Fact_presupuesto"
                     }
                   },
                   "Property": "Categoria de costos"

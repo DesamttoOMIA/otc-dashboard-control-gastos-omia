@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Adjudicacion Directa"

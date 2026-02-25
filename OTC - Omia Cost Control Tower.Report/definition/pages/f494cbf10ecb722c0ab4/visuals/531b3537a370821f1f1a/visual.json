@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "#"
@@ -34,7 +34,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Cancelado"
@@ -48,7 +48,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Fecha de creación"
@@ -76,7 +76,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Orden de Compra"
@@ -90,7 +90,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Descripción general"
@@ -104,7 +104,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Comentarios adicionales"
@@ -118,7 +118,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Detalle adicional"
@@ -132,7 +132,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Cantidad OC"
@@ -146,7 +146,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Ordenes de Compra"
+                      "Entity": "Fact_ordenes_de_compra"
                     }
                   },
                   "Property": "Unidad Medida OC"
@@ -162,7 +162,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Ordenes de Compra"
+                          "Entity": "Fact_ordenes_de_compra"
                         }
                       },
                       "Property": "Total Líneas OC $Cop"
@@ -184,7 +184,7 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Ordenes de Compra"
+                    "Entity": "Fact_ordenes_de_compra"
                   }
                 },
                 "Property": "Fecha de creación"

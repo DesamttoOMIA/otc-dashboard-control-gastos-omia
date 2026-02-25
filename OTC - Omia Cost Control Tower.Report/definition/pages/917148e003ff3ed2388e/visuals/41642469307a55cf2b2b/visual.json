@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Facturas Conformadas"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
                   "Property": "Status de documento"

@@ -1,9 +1,18 @@
 table Dim_categoria
-	lineageTag: eb2445ad-7593-472e-adf9-2f5df56f5c3f
+	lineageTag: bf4da922-b70d-4f67-b3c2-a0c43114d8dc
+
+	column 'Id categoria'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c9dbd92-f4e6-4584-9e7f-0ed2876583bc
+		summarizeBy: sum
+		sourceColumn: Id categoria
+
+		annotation SummarizationSetBy = Automatic
 
 	column Codigo
 		dataType: string
-		lineageTag: 9b441d2c-1716-409a-9b3b-23c31e9695d5
+		lineageTag: cf638db5-97e6-48a8-bd06-389b2c3730a8
 		summarizeBy: none
 		sourceColumn: Codigo
 
@@ -11,79 +20,48 @@ table Dim_categoria
 
 	column Descripción
 		dataType: string
-		lineageTag: 734a99b1-d85f-42d4-8c14-e6caba0e3848
+		lineageTag: 068ca715-7c5a-4ba5-9d83-01a65381bd50
 		summarizeBy: none
 		sourceColumn: Descripción
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Tipo costo'
-		dataType: string
-		lineageTag: 991192e1-923b-4f9c-a258-4810c23c94cd
-		summarizeBy: none
-		sourceColumn: Tipo costo
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Id categoria'
-		dataType: string
-		lineageTag: 730b46e7-bcdb-4e55-80fd-f636cac53314
-		summarizeBy: none
-		sourceColumn: Id categoria
-
-		annotation SummarizationSetBy = Automatic
-
-	column Nivel
-		dataType: string
-		lineageTag: ada5944b-6b21-4455-9d24-e27b8e2277ba
-		summarizeBy: none
-		sourceColumn: Nivel
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Codigo padre'
 		dataType: string
-		lineageTag: 810a0c0f-b8af-4051-a900-df2e6853079c
+		lineageTag: 443c8bf2-c54a-4f16-9c7e-fd592fbaf488
 		summarizeBy: none
 		sourceColumn: Codigo padre
 
 		annotation SummarizationSetBy = Automatic
 
+	column Nivel
+		dataType: string
+		lineageTag: 0c832369-1549-496b-9927-32092006527e
+		summarizeBy: none
+		sourceColumn: Nivel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo costo'
+		dataType: string
+		lineageTag: 199635b7-4a0e-4616-be9f-088df0af18f1
+		summarizeBy: none
+		sourceColumn: Tipo costo
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dim_categoria = m
 		mode: import
-		source = ```
+		source =
 				let
-				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Copia%20de%20REE%20Continental%20Mtto%20Electrico%202025%20REV0_0511_12%20Meses.xlsx"), null, true),
-				    #"Resumen COMPL_Sheet" = Origen{[Item="Resumen COMPL",Kind="Sheet"]}[Data],
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Resumen COMPL_Sheet",{{"Column1", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type text}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", Int64.Type}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}}),
-				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Column1", "Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18"}),
-				    #"Filas superiores quitadas" = Table.Skip(#"Columnas quitadas",7),
-				    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Filas superiores quitadas",42),
-				    #"Columnas quitadas1" = Table.RemoveColumns(#"Filas inferiores quitadas",{"Column2"}),
-				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Columnas quitadas1", [PromoteAllScalars=true]),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type text}, {"Incidencia", type number}, {"COP", type number}, {"US$", type number}, {"TIPO COSTO", type text}}),
-				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each ([Column1] <> null and [Column1] <> "COSTOS DIRECTOS" and [Column1] <> "COSTOS INDIRECTOS")),
-				    #"Columnas quitadas2" = Table.RemoveColumns(#"Filas filtradas",{"Incidencia", "COP", "US$"}),
-				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columnas quitadas2", "Column1", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Column1.1", "Column1.2"}),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Dividir columna por delimitador",{{"Column1.1", "Codigo"}, {"Column1.2", "Descripción"}, {"TIPO COSTO", "Tipo costo"}}),
-				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Columnas con nombre cambiado",{{"Codigo", type text}}),
-				    #"Rellenar hacia abajo" = Table.FillDown(#"Tipo cambiado2",{"Tipo costo"}),
-				    #"Valor reemplazado" = Table.ReplaceValue(#"Rellenar hacia abajo",null,"DIRECTO",Replacer.ReplaceValue,{"Tipo costo"}),
-				    #"Personalizada agregada" = Table.AddColumn(#"Valor reemplazado", "Nivel", each List.Count(Text.Split([Codigo], "."))),
-				    #"Personalizada agregada1" = Table.AddColumn(#"Personalizada agregada", "Codigo padre", each let 
-				    parts = Text.Split([Codigo], "."),
-				    parentParts = if List.Count(parts) <= 1 then null else List.FirstN(parts, List.Count(parts)-1),
-				    parent = if parentParts = null then null else Text.Combine(parentParts, ".")
+				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Dimenciones.xlsx"), null, true),
+				    Dim_categoria_Sheet = Origen{[Item="Dim_categoria",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Dim_categoria_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id categoria", Int64.Type}, {"Codigo", type text}, {"Codigo padre", type text}, {"Nivel", type text}, {"Tipo costo", type text}})
 				in
-				    parent),
-				    #"Personalizada agregada2" = Table.AddColumn(#"Personalizada agregada1", "Id categoria", each Text.Upper(Text.Trim([Tipo costo])) & "|" & Text.Trim([Codigo])),
-				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada2",{"Id categoria", "Tipo costo", "Codigo", "Descripción", "Nivel", "Codigo padre"}),
-				    #"Duplicados quitados" = Table.Distinct(#"Columnas reordenadas", {"Id categoria"})
-				in
-				    #"Duplicados quitados"
-				```
-
-	annotation PBI_NavigationStepName = Navegación
+				    #"Tipo cambiado"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
 

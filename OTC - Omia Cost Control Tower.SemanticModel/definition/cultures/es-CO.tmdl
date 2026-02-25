@@ -8,7 +8,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido"
+			          "ConceptualEntity": "Fact_solicitud_de_pedido"
 			        }
 			      },
 			      "State": "Generated",
@@ -23,7 +23,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.v_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "#"
 			        }
 			      },
@@ -49,7 +49,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.ID_de_documento_interno": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "ID de documento interno"
 			        }
 			      },
@@ -105,7 +105,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.número_de_documento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Número de documento"
 			        }
 			      },
@@ -131,7 +131,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.nombre_de_usuario": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Nombre de usuario"
 			        }
 			      },
@@ -147,7 +147,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Fecha de documento"
 			        }
 			      },
@@ -170,7 +170,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento.jerarquía_de_fecha": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha de documento",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas"
@@ -188,7 +188,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento.año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha de documento",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -212,7 +212,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento.trimestre": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha de documento",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -236,7 +236,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento.me": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha de documento",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -260,7 +260,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_documento.día": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha de documento",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -284,7 +284,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_de_creación": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Fecha de creación"
 			        }
 			      },
@@ -307,7 +307,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Fecha necesaria"
 			        }
 			      },
@@ -330,7 +330,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria.jerarquía_de_fecha": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha necesaria",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas"
@@ -348,7 +348,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria.año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha necesaria",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -372,7 +372,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria.trimestre": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha necesaria",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -396,7 +396,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria.me": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha necesaria",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -420,7 +420,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.fecha_necesaria.día": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "VariationSource": "Fecha necesaria",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -444,7 +444,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.prioridad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Prioridad"
 			        }
 			      },
@@ -460,7 +460,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.adjudicacion_directa": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Adjudicacion Directa"
 			        }
 			      },
@@ -486,7 +486,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.reembolsable": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Reembolsable"
 			        }
 			      },
@@ -502,7 +502,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.código_de_proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Código de proyecto"
 			        }
 			      },
@@ -521,7 +521,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.comentario": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Comentarios"
 			        }
 			      },
@@ -537,7 +537,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.norma_de_reparto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Norma de reparto"
 			        }
 			      },
@@ -553,7 +553,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Código del cálculo del costo 2"
 			        }
 			      },
@@ -569,7 +569,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.código_del_cálculo_del_costo_3": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Código del cálculo del costo 3"
 			        }
 			      },
@@ -588,7 +588,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.descripción_artículo_serv_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Descripción artículo/serv."
 			        }
 			      },
@@ -622,7 +622,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.texto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Texto"
 			        }
 			      },
@@ -638,7 +638,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.cantidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Cantidad"
 			        }
 			      },
@@ -654,7 +654,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.precio_tras_el_descuento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Precio tras el descuento"
 			        }
 			      },
@@ -677,7 +677,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.total_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Total líneas"
 			        }
 			      },
@@ -713,7 +713,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.unidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Unidad"
 			        }
 			      },
@@ -729,7 +729,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.status_de_la_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Status de la línea"
 			        }
 			      },
@@ -845,7 +845,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.línea_cerrada_manualmente": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Línea cerrada manualmente"
 			        }
 			      },
@@ -861,7 +861,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.cancelado": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Cancelado"
 			        }
 			      },
@@ -877,7 +877,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.clase_de_documento_de_destino": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Clase de documento de destino"
 			        }
 			      },
@@ -893,7 +893,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.comprador": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Comprador"
 			        }
 			      },
@@ -909,7 +909,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.antiguedad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Antiguedad"
 			        }
 			      },
@@ -925,7 +925,7 @@ cultureInfo es-CO
 			    "solicitud_de_pedido.tiempo_necesidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Solicitud de Pedido",
+			          "ConceptualEntity": "Fact_solicitud_de_pedido",
 			          "ConceptualProperty": "Tiempo Necesidad"
 			        }
 			      },
@@ -941,7 +941,7 @@ cultureInfo es-CO
 			    "facturas_conformada": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas"
+			          "ConceptualEntity": "Fact_facturas_conformadas"
 			        }
 			      },
 			      "State": "Generated",
@@ -963,7 +963,7 @@ cultureInfo es-CO
 			    "facturas_conformada.v_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "#"
 			        }
 			      },
@@ -979,7 +979,7 @@ cultureInfo es-CO
 			    "facturas_conformada.número_interno": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Número interno"
 			        }
 			      },
@@ -995,7 +995,7 @@ cultureInfo es-CO
 			    "facturas_conformada.entrada_mercancía": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Entrada mercancías"
 			        }
 			      },
@@ -1011,7 +1011,7 @@ cultureInfo es-CO
 			    "facturas_conformada.serie": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Serie"
 			        }
 			      },
@@ -1027,7 +1027,7 @@ cultureInfo es-CO
 			    "facturas_conformada.fecha_de_contabilización": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Fecha de contabilización"
 			        }
 			      },
@@ -1050,7 +1050,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_de_cliente_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código de cliente/proveedor"
 			        }
 			      },
@@ -1084,7 +1084,7 @@ cultureInfo es-CO
 			    "facturas_conformada.nombre_de_cliente_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Nombre de cliente/proveedor"
 			        }
 			      },
@@ -1118,7 +1118,7 @@ cultureInfo es-CO
 			    "facturas_conformada.número_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Número de artículo"
 			        }
 			      },
@@ -1134,7 +1134,7 @@ cultureInfo es-CO
 			    "facturas_conformada.descripción_artículo_serv_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Descripción artículo/serv."
 			        }
 			      },
@@ -1168,7 +1168,7 @@ cultureInfo es-CO
 			    "facturas_conformada.cantidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Cantidad"
 			        }
 			      },
@@ -1184,7 +1184,7 @@ cultureInfo es-CO
 			    "facturas_conformada.unidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Unidad"
 			        }
 			      },
@@ -1200,7 +1200,7 @@ cultureInfo es-CO
 			    "facturas_conformada.grupo_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Grupo de artículos"
 			        }
 			      },
@@ -1216,7 +1216,7 @@ cultureInfo es-CO
 			    "facturas_conformada.nombre_de_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Nombre de grupo"
 			        }
 			      },
@@ -1232,7 +1232,7 @@ cultureInfo es-CO
 			    "facturas_conformada.sub_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Sub Grupo"
 			        }
 			      },
@@ -1248,7 +1248,7 @@ cultureInfo es-CO
 			    "facturas_conformada.linea_mat_serv": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Linea Mat/Serv"
 			        }
 			      },
@@ -1388,7 +1388,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_de_cuenta": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código de cuenta"
 			        }
 			      },
@@ -1404,7 +1404,7 @@ cultureInfo es-CO
 			    "facturas_conformada.precio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Precio"
 			        }
 			      },
@@ -1420,7 +1420,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_de_almacén": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código de almacén"
 			        }
 			      },
@@ -1436,7 +1436,7 @@ cultureInfo es-CO
 			    "facturas_conformada.nombre_de_almacén": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Nombre de almacén"
 			        }
 			      },
@@ -1452,7 +1452,7 @@ cultureInfo es-CO
 			    "facturas_conformada.destino_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Destino Compra"
 			        }
 			      },
@@ -1468,7 +1468,7 @@ cultureInfo es-CO
 			    "facturas_conformada.proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Proyecto"
 			        }
 			      },
@@ -1487,7 +1487,7 @@ cultureInfo es-CO
 			    "facturas_conformada.nombre_de_proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Nombre de proyecto"
 			        }
 			      },
@@ -1503,7 +1503,7 @@ cultureInfo es-CO
 			    "facturas_conformada.norma_de_reparto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Norma de reparto"
 			        }
 			      },
@@ -1519,7 +1519,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código del cálculo del costo 2"
 			        }
 			      },
@@ -1535,7 +1535,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_del_cálculo_del_costo_3": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código del cálculo del costo 3"
 			        }
 			      },
@@ -1554,7 +1554,7 @@ cultureInfo es-CO
 			    "facturas_conformada.código_del_cálculo_del_costo_4": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Código del cálculo del costo 4"
 			        }
 			      },
@@ -1570,7 +1570,7 @@ cultureInfo es-CO
 			    "facturas_conformada.total_antes_de_IVA": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Total antes de IVA"
 			        }
 			      },
@@ -1613,7 +1613,7 @@ cultureInfo es-CO
 			    "facturas_conformada.total_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Total líneas"
 			        }
 			      },
@@ -1649,7 +1649,7 @@ cultureInfo es-CO
 			    "facturas_conformada.reembolsable": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Reembolsable"
 			        }
 			      },
@@ -1665,7 +1665,7 @@ cultureInfo es-CO
 			    "facturas_conformada.procedencia__entrada_de_mercancia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Procedencia  Entrada de Mercancia"
 			        }
 			      },
@@ -1687,7 +1687,7 @@ cultureInfo es-CO
 			    "facturas_conformada.orden_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Orden de Compra"
 			        }
 			      },
@@ -1703,7 +1703,7 @@ cultureInfo es-CO
 			    "facturas_conformada.referencia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Referencia"
 			        }
 			      },
@@ -1719,7 +1719,7 @@ cultureInfo es-CO
 			    "facturas_conformada.status_de_documento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Status de documento"
 			        }
 			      },
@@ -1835,7 +1835,7 @@ cultureInfo es-CO
 			    "facturas_conformada.solicitud_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Solicitud de compra"
 			        }
 			      },
@@ -1851,7 +1851,7 @@ cultureInfo es-CO
 			    "facturas_conformada.clase_de_documento_de_destino": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Clase de documento de destino"
 			        }
 			      },
@@ -1867,7 +1867,7 @@ cultureInfo es-CO
 			    "facturas_conformada.docdestino": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "DOCDESTINO"
 			        }
 			      },
@@ -1883,7 +1883,7 @@ cultureInfo es-CO
 			    "facturas_conformada.creador_EM": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Creador EM"
 			        }
 			      },
@@ -1899,7 +1899,7 @@ cultureInfo es-CO
 			    "facturas_conformada.comentario": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Facturas Conformadas",
+			          "ConceptualEntity": "Fact_facturas_conformadas",
 			          "ConceptualProperty": "Comentarios"
 			        }
 			      },
@@ -1915,7 +1915,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra"
+			          "ConceptualEntity": "Fact_ordenes_de_compra"
 			        }
 			      },
 			      "State": "Generated",
@@ -1937,7 +1937,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.v_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "#"
 			        }
 			      },
@@ -1953,7 +1953,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.cancelado": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Cancelado"
 			        }
 			      },
@@ -1969,7 +1969,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.orden_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Orden de Compra"
 			        }
 			      },
@@ -1985,7 +1985,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código Proveedor"
 			        }
 			      },
@@ -2001,7 +2001,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.nombre_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Nombre Proveedor"
 			        }
 			      },
@@ -2017,7 +2017,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Fecha de contabilización"
 			        }
 			      },
@@ -2040,7 +2040,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización.jerarquía_de_fecha": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha de contabilización",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas"
@@ -2058,7 +2058,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización.año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha de contabilización",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2082,7 +2082,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización.trimestre": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha de contabilización",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2106,7 +2106,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización.me": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha de contabilización",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2130,7 +2130,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_contabilización.día": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha de contabilización",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2154,7 +2154,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_de_creación": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Fecha de creación"
 			        }
 			      },
@@ -2177,7 +2177,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.pedido_visual": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Pedido visual"
 			        }
 			      },
@@ -2193,7 +2193,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.no__solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "No. Solped"
 			        }
 			      },
@@ -2219,7 +2219,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.PU_solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "PU Solped"
 			        }
 			      },
@@ -2235,7 +2235,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.cantidad_solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Cantidad Solped"
 			        }
 			      },
@@ -2251,7 +2251,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.moneda_solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Moneda Solped"
 			        }
 			      },
@@ -2267,7 +2267,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.tipo_de_cambio_solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Tipo de cambio Solped"
 			        }
 			      },
@@ -2283,7 +2283,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.total_lineas_solped_cop": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Total Lineas Solped $Cop"
 			        }
 			      },
@@ -2336,7 +2336,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Fecha creacion Solped"
 			        }
 			      },
@@ -2359,7 +2359,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped.jerarquía_de_fecha": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha creacion Solped",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas"
@@ -2377,7 +2377,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped.año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha creacion Solped",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2401,7 +2401,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped.trimestre": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha creacion Solped",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2425,7 +2425,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped.me": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha creacion Solped",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2449,7 +2449,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.fecha_creacion_solped.día": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "Fecha creacion Solped",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -2473,7 +2473,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.número_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Número de artículo"
 			        }
 			      },
@@ -2489,7 +2489,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.descripción_general": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Descripción general"
 			        }
 			      },
@@ -2505,7 +2505,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.detalle_adicional": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Detalle adicional"
 			        }
 			      },
@@ -2521,7 +2521,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.comentarios_adicionale": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Comentarios adicionales"
 			        }
 			      },
@@ -2544,7 +2544,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.equipo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Equipo"
 			        }
 			      },
@@ -2560,7 +2560,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.grupo_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Grupo de artículos"
 			        }
 			      },
@@ -2576,7 +2576,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.nombre_de_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Nombre de grupo"
 			        }
 			      },
@@ -2592,7 +2592,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.sub_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Sub Grupo"
 			        }
 			      },
@@ -2608,7 +2608,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.linea_mat_serv": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Linea Mat/Serv"
 			        }
 			      },
@@ -2748,7 +2748,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.referencia_uso_raiz": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Referencia Uso/Raiz"
 			        }
 			      },
@@ -2782,7 +2782,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.cantidad_OC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Cantidad OC"
 			        }
 			      },
@@ -2798,7 +2798,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.unidad_medida_OC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Unidad Medida OC"
 			        }
 			      },
@@ -2814,7 +2814,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.pu_oc": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "PU OC"
 			        }
 			      },
@@ -2830,7 +2830,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.moneda_del_precio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Moneda del precio"
 			        }
 			      },
@@ -2846,7 +2846,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.tipo_de_cambio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Tipo de cambio"
 			        }
 			      },
@@ -2862,7 +2862,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.total_líneas_OC_cop": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Total Líneas OC $Cop"
 			        }
 			      },
@@ -2915,7 +2915,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.status_línea_OC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Status línea OC"
 			        }
 			      },
@@ -3031,7 +3031,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.prioridad_OC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Prioridad OC"
 			        }
 			      },
@@ -3047,7 +3047,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.adjudicacion_directa": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Adjudicacion Directa"
 			        }
 			      },
@@ -3063,7 +3063,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.reembolsable": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Reembolsable"
 			        }
 			      },
@@ -3079,7 +3079,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "F. Entrega línea"
 			        }
 			      },
@@ -3102,7 +3102,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea.jerarquía_de_fecha": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "F. Entrega línea",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas"
@@ -3120,7 +3120,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea.año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "F. Entrega línea",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -3144,7 +3144,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea.trimestre": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "F. Entrega línea",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -3168,7 +3168,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea.me": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "F. Entrega línea",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -3192,7 +3192,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.f__entrega_línea.día": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "VariationSource": "F. Entrega línea",
 			          "VariationSet": "Variación",
 			          "Hierarchy": "Jerarquía de fechas",
@@ -3216,7 +3216,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código Proyecto"
 			        }
 			      },
@@ -3235,7 +3235,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.nombre_proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Nombre Proyecto"
 			        }
 			      },
@@ -3251,7 +3251,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_almacen": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código Almacen"
 			        }
 			      },
@@ -3267,7 +3267,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.nombre_almacen": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Nombre Almacen"
 			        }
 			      },
@@ -3283,7 +3283,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.norma_reparto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Norma Reparto"
 			        }
 			      },
@@ -3299,7 +3299,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código del cálculo del costo 2"
 			        }
 			      },
@@ -3315,7 +3315,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.cantidad_abierta_restante": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Cantidad abierta restante"
 			        }
 			      },
@@ -3331,7 +3331,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_Resp_de_CC_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código Resp.de C&C Línea"
 			        }
 			      },
@@ -3347,7 +3347,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.nombre_Resp_de_CC_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Nombre Resp.de C&C Línea"
 			        }
 			      },
@@ -3363,7 +3363,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.comprador": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Comprador"
 			        }
 			      },
@@ -3379,7 +3379,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.tipo_de_OC_1Normal_2OC_de_CM_3OCLV": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Tipo de OC 1Normal 2OC de CM 3OC-LV"
 			        }
 			      },
@@ -3401,7 +3401,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.número_cto_marco": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Número Cto Marco"
 			        }
 			      },
@@ -3417,7 +3417,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.tipo_OP_uso_exclusivo_de_ALOC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Tipo OP (Uso Exclusivo de A&L-OC)"
 			        }
 			      },
@@ -3445,7 +3445,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.CM_lic____adj__dir": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "CM Lic. / Adj. Dir"
 			        }
 			      },
@@ -3479,7 +3479,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.desviación_cop_PU": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Desviación $Cop (PU)"
 			        }
 			      },
@@ -3501,7 +3501,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.desviación_cop_PU_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Desviación $Cop (PU) %"
 			        }
 			      },
@@ -3517,7 +3517,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.ko": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Ko"
 			        }
 			      },
@@ -3533,7 +3533,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.ind__días_de_tratamiento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Ind.: Días de tratamiento"
 			        }
 			      },
@@ -3556,7 +3556,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.ind__rango_días_de_tratamiento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Ind.: Rango Días de tratamiento"
 			        }
 			      },
@@ -3579,7 +3579,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.ind__días_p__entrega_prov_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Ind.: Días p/ entrega Prov."
 			        }
 			      },
@@ -3634,7 +3634,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.indic_entregado_cop": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Indic.:Entregado $Cop"
 			        }
 			      },
@@ -3650,7 +3650,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.indic__entrega": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Indic.:% Entrega"
 			        }
 			      },
@@ -3686,7 +3686,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.código_de_condiciones_de_pago": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Código de condiciones de pago"
 			        }
 			      },
@@ -3709,7 +3709,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.condiciones_de_pago": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Condiciones de Pago"
 			        }
 			      },
@@ -3732,7 +3732,7 @@ cultureInfo es-CO
 			    "ordenes_de_compra.ind_días_para_creación_OC_SAP": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Ordenes de Compra",
+			          "ConceptualEntity": "Fact_ordenes_de_compra",
 			          "ConceptualProperty": "Ind.:Días para Creación OC/SAP"
 			        }
 			      },
@@ -3887,7 +3887,7 @@ cultureInfo es-CO
 			    "presupuesto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Presupuesto"
+			          "ConceptualEntity": "Fact_presupuesto"
 			        }
 			      },
 			      "State": "Generated",
@@ -3902,7 +3902,7 @@ cultureInfo es-CO
 			    "presupuesto.incidencia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Presupuesto",
+			          "ConceptualEntity": "Fact_presupuesto",
 			          "ConceptualProperty": "Incidencia"
 			        }
 			      },
@@ -3918,7 +3918,7 @@ cultureInfo es-CO
 			    "presupuesto.cop": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Presupuesto",
+			          "ConceptualEntity": "Fact_presupuesto",
 			          "ConceptualProperty": "COP"
 			        }
 			      },
@@ -3927,172 +3927,6 @@ cultureInfo es-CO
 			        {
 			          "cop": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "presupuesto.categoria_de_costo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Presupuesto",
-			          "ConceptualProperty": "Categoria de costos"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "categoria de costo": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "presupuesto.usd": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Presupuesto",
-			          "ConceptualProperty": "USD"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "usd": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "presupuesto.tipo_costo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Presupuesto",
-			          "ConceptualProperty": "Tipo costo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "tipo costo": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "costos_indirecto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Costos Indirectos"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "costos indirecto": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "costo indirecto": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "costos_indirecto.costos_indirecto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Costos Indirectos",
-			          "ConceptualProperty": "COSTOS INDIRECTOS"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "costos indirecto": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "costo indirecto": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "costos_indirecto.incidencia": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Costos Indirectos",
-			          "ConceptualProperty": "Incidencia"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "incidencia": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "costos_indirecto.cop": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Costos Indirectos",
-			          "ConceptualProperty": "COP"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "cop": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "costos_indirecto.us": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Costos Indirectos",
-			          "ConceptualProperty": "US$"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "us$": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "us dollar": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.75
 			          }
 			        }
 			      ]
@@ -4115,22 +3949,6 @@ cultureInfo es-CO
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "dim_proyecto.v_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_proyecto",
-			          "ConceptualProperty": "#"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "#": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -5829,7 +5647,7 @@ cultureInfo es-CO
 			    "dim_subseco": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco"
+			          "ConceptualEntity": "Dim_Subseco stanby"
 			        }
 			      },
 			      "State": "Generated",
@@ -5851,7 +5669,7 @@ cultureInfo es-CO
 			    "dim_subseco.distribución_costo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco",
+			          "ConceptualEntity": "Dim_Subseco stanby",
 			          "ConceptualProperty": "Distribución Costos"
 			        }
 			      },
@@ -5867,7 +5685,7 @@ cultureInfo es-CO
 			    "dim_subseco.subseco": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco",
+			          "ConceptualEntity": "Dim_Subseco stanby",
 			          "ConceptualProperty": "Subseco"
 			        }
 			      },
@@ -5883,7 +5701,7 @@ cultureInfo es-CO
 			    "dim_subseco.descripción": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco",
+			          "ConceptualEntity": "Dim_Subseco stanby",
 			          "ConceptualProperty": "Descripción"
 			        }
 			      },
@@ -5899,7 +5717,7 @@ cultureInfo es-CO
 			    "dim_subseco.equivalencia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco",
+			          "ConceptualEntity": "Dim_Subseco stanby",
 			          "ConceptualProperty": "Equivalencia"
 			        }
 			      },
@@ -5918,7 +5736,7 @@ cultureInfo es-CO
 			    "dim_subseco.tipo_de_costo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Dim_Subseco",
+			          "ConceptualEntity": "Dim_Subseco stanby",
 			          "ConceptualProperty": "Tipo de Costo"
 			        }
 			      },
@@ -8700,7 +8518,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_me_has_ordenes_de_compra_f__entrega_línea_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8766,7 +8584,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_trimestre_has_ordenes_de_compra_f__entrega_línea_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8832,7 +8650,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_año_has_ordenes_de_compra_f__entrega_línea_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8898,7 +8716,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_jerarquía_de_fecha_has_ordenes_de_compra_f__entrega_línea_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8931,7 +8749,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_jerarquía_de_fecha_has_ordenes_de_compra_f__entrega_línea_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8964,7 +8782,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_jerarquía_de_fecha_has_ordenes_de_compra_f__entrega_línea_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8997,7 +8815,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_jerarquía_de_fecha_has_ordenes_de_compra_f__entrega_línea_año": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9030,7 +8848,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_f__entrega_línea_has_jerarquía_de_fecha": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9063,7 +8881,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_me_has_ordenes_de_compra_fecha_creacion_solped_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9129,7 +8947,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_trimestre_has_ordenes_de_compra_fecha_creacion_solped_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9195,7 +9013,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_año_has_ordenes_de_compra_fecha_creacion_solped_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9261,7 +9079,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_jerarquía_de_fecha_has_ordenes_de_compra_fecha_creacion_solped_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9294,7 +9112,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_jerarquía_de_fecha_has_ordenes_de_compra_fecha_creacion_solped_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9327,7 +9145,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_jerarquía_de_fecha_has_ordenes_de_compra_fecha_creacion_solped_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9360,7 +9178,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_jerarquía_de_fecha_has_ordenes_de_compra_fecha_creacion_solped_año": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9393,7 +9211,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_creacion_solped_has_jerarquía_de_fecha": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9426,7 +9244,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_me_has_ordenes_de_compra_fecha_de_contabilización_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9492,7 +9310,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_trimestre_has_ordenes_de_compra_fecha_de_contabilización_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9558,7 +9376,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_año_has_ordenes_de_compra_fecha_de_contabilización_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9624,7 +9442,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_jerarquía_de_fecha_has_ordenes_de_compra_fecha_de_contabilización_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9657,7 +9475,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_jerarquía_de_fecha_has_ordenes_de_compra_fecha_de_contabilización_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9690,7 +9508,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_jerarquía_de_fecha_has_ordenes_de_compra_fecha_de_contabilización_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9723,7 +9541,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_jerarquía_de_fecha_has_ordenes_de_compra_fecha_de_contabilización_año": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9756,7 +9574,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_fecha_de_contabilización_has_jerarquía_de_fecha": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9789,7 +9607,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_me_has_solicitud_de_pedido_fecha_necesaria_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9855,7 +9673,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_trimestre_has_solicitud_de_pedido_fecha_necesaria_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9921,7 +9739,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_año_has_solicitud_de_pedido_fecha_necesaria_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -9987,7 +9805,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_necesaria_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10020,7 +9838,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_necesaria_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10053,7 +9871,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_necesaria_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10086,7 +9904,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_necesaria_año": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10119,7 +9937,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_necesaria_has_jerarquía_de_fecha": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10152,7 +9970,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_me_has_solicitud_de_pedido_fecha_de_documento_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10218,7 +10036,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_trimestre_has_solicitud_de_pedido_fecha_de_documento_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10284,7 +10102,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_año_has_solicitud_de_pedido_fecha_de_documento_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10350,7 +10168,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_de_documento_día": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10383,7 +10201,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_de_documento_me": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10416,7 +10234,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_de_documento_trimestre": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10449,7 +10267,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_jerarquía_de_fecha_has_solicitud_de_pedido_fecha_de_documento_año": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10482,7 +10300,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_fecha_de_documento_has_jerarquía_de_fecha": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10515,7 +10333,7 @@ cultureInfo es-CO
 			    },
 			    "dim_subseco_has_presupuesto": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Subseco"
+			        "ConceptualEntity": "Dim_Subseco stanby"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10561,7 +10379,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_calendario": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10607,7 +10425,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_dim_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10653,7 +10471,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_dim_subseco": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10706,7 +10524,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_calendario": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10752,7 +10570,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_dim_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10798,7 +10616,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_dim_subseco": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10851,7 +10669,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_calendario": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10897,7 +10715,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_dim_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10943,7 +10761,7 @@ cultureInfo es-CO
 			    },
 			    "dim_subseco_has_tipo_de_costo": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Subseco"
+			        "ConceptualEntity": "Dim_Subseco stanby"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -10976,7 +10794,7 @@ cultureInfo es-CO
 			    },
 			    "dim_subseco_has_descripción": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Subseco"
+			        "ConceptualEntity": "Dim_Subseco stanby"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11009,7 +10827,7 @@ cultureInfo es-CO
 			    },
 			    "dim_subseco_has_subseco": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Subseco"
+			        "ConceptualEntity": "Dim_Subseco stanby"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11042,7 +10860,7 @@ cultureInfo es-CO
 			    },
 			    "dim_subseco_has_distribución_costo": {
 			      "Binding": {
-			        "ConceptualEntity": "Dim_Subseco"
+			        "ConceptualEntity": "Dim_Subseco stanby"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11801,7 +11619,7 @@ cultureInfo es-CO
 			    },
 			    "presupuesto_has_tipo_costo": {
 			      "Binding": {
-			        "ConceptualEntity": "Presupuesto"
+			        "ConceptualEntity": "Fact_presupuesto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11834,7 +11652,7 @@ cultureInfo es-CO
 			    },
 			    "presupuesto_has_usd": {
 			      "Binding": {
-			        "ConceptualEntity": "Presupuesto"
+			        "ConceptualEntity": "Fact_presupuesto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11894,7 +11712,7 @@ cultureInfo es-CO
 			    },
 			    "presupuesto_has_categoria_de_costo": {
 			      "Binding": {
-			        "ConceptualEntity": "Presupuesto"
+			        "ConceptualEntity": "Fact_presupuesto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11927,7 +11745,7 @@ cultureInfo es-CO
 			    },
 			    "presupuesto_has_cop": {
 			      "Binding": {
-			        "ConceptualEntity": "Presupuesto"
+			        "ConceptualEntity": "Fact_presupuesto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11987,7 +11805,7 @@ cultureInfo es-CO
 			    },
 			    "presupuesto_has_incidencia": {
 			      "Binding": {
-			        "ConceptualEntity": "Presupuesto"
+			        "ConceptualEntity": "Fact_presupuesto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12020,7 +11838,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_ind_días_para_creación_OC_SAP": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12053,7 +11871,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_condiciones_de_pago": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12086,7 +11904,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_código_de_condiciones_de_pago": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12119,7 +11937,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_indic__entrega": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12152,7 +11970,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_indic_entregado_cop": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12185,7 +12003,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_ind__días_p__entrega_prov_": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12218,7 +12036,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_ind__rango_días_de_tratamiento": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12251,7 +12069,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_ind__días_de_tratamiento": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12284,7 +12102,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_ko": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12317,7 +12135,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_desviación_cop_PU_": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12350,7 +12168,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_desviación_cop_PU": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12383,7 +12201,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_CM_lic____adj__dir": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12416,7 +12234,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_tipo_OP_uso_exclusivo_de_ALOC": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12449,7 +12267,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_número_cto_marco": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12482,7 +12300,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_tipo_de_OC_1Normal_2OC_de_CM_3OCLV": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12515,7 +12333,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_comprador": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12548,7 +12366,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_nombre_Resp_de_CC_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12581,7 +12399,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_código_Resp_de_CC_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12614,7 +12432,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_cantidad_abierta_restante": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12647,7 +12465,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_código_del_cálculo_del_costo_2": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12680,7 +12498,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_norma_reparto": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12713,7 +12531,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_nombre_almacen": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12746,7 +12564,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_código_almacen": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12779,7 +12597,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_nombre_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12812,7 +12630,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_f__entrega_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12845,7 +12663,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_reembolsable": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12878,7 +12696,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_adjudicacion_directa": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12911,7 +12729,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_prioridad_OC": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12944,7 +12762,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_status_línea_OC": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12977,7 +12795,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_total_líneas_OC_cop": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13037,7 +12855,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_tipo_de_cambio": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13070,7 +12888,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_moneda_del_precio": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13103,7 +12921,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_pu_oc": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13136,7 +12954,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_unidad_medida_OC": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13169,7 +12987,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_cantidad_OC": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13202,7 +13020,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_referencia_uso_raiz": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13235,7 +13053,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_linea_mat_serv": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13268,7 +13086,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_sub_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13301,7 +13119,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_nombre_de_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13334,7 +13152,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_grupo_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13367,7 +13185,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_equipo": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13400,7 +13218,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_comentarios_adicionale": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13433,7 +13251,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_detalle_adicional": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13466,7 +13284,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_descripción_general": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13499,7 +13317,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_número_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13532,7 +13350,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_fecha_creacion_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13565,7 +13383,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_total_lineas_solped_cop": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13598,7 +13416,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_tipo_de_cambio_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13631,7 +13449,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_moneda_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13664,7 +13482,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_cantidad_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13697,7 +13515,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_PU_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13730,7 +13548,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_no__solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13763,7 +13581,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_pedido_visual": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13796,7 +13614,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_fecha_de_creación": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13829,7 +13647,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_fecha_de_contabilización": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13862,7 +13680,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_nombre_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13895,7 +13713,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_código_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13928,7 +13746,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_orden_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13961,7 +13779,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_cancelado": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13994,7 +13812,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_has_v_": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14027,7 +13845,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_comentario": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14060,7 +13878,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_creador_EM": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14093,7 +13911,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_docdestino": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14126,7 +13944,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_clase_de_documento_de_destino": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14159,7 +13977,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_solicitud_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14192,7 +14010,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_status_de_documento": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14225,7 +14043,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_referencia": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14258,7 +14076,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_orden_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14291,7 +14109,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_procedencia__entrada_de_mercancia": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14324,7 +14142,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_reembolsable": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14357,7 +14175,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_total_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14390,7 +14208,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_total_antes_de_IVA": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14423,7 +14241,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_código_del_cálculo_del_costo_4": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14456,7 +14274,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_código_del_cálculo_del_costo_2": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14489,7 +14307,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_norma_de_reparto": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14522,7 +14340,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_nombre_de_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14555,7 +14373,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_destino_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14588,7 +14406,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_nombre_de_almacén": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14621,7 +14439,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_código_de_almacén": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14654,7 +14472,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_precio": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14687,7 +14505,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_código_de_cuenta": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14720,7 +14538,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_linea_mat_serv": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14753,7 +14571,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_sub_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14786,7 +14604,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_nombre_de_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14819,7 +14637,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_grupo_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14852,7 +14670,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_unidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14885,7 +14703,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_cantidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14918,7 +14736,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_descripción_artículo_serv_": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14951,7 +14769,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_número_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14984,7 +14802,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_nombre_de_cliente_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15017,7 +14835,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_código_de_cliente_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15050,7 +14868,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_fecha_de_contabilización": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15083,7 +14901,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_serie": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15116,7 +14934,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_entrada_mercancía": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15149,7 +14967,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_número_interno": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15182,7 +15000,7 @@ cultureInfo es-CO
 			    },
 			    "facturas_conformada_has_v_": {
 			      "Binding": {
-			        "ConceptualEntity": "Facturas Conformadas"
+			        "ConceptualEntity": "Fact_facturas_conformadas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15215,7 +15033,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_tiempo_necesidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15248,7 +15066,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_antiguedad": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15281,7 +15099,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_comprador": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15314,7 +15132,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_clase_de_documento_de_destino": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15347,7 +15165,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_cancelado": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15380,7 +15198,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_línea_cerrada_manualmente": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15413,7 +15231,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_status_de_la_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15446,7 +15264,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_unidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15479,7 +15297,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_total_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15539,7 +15357,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_precio_tras_el_descuento": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15572,7 +15390,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_cantidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15605,7 +15423,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_texto": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15638,7 +15456,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_descripción_artículo_serv_": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15671,7 +15489,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_código_del_cálculo_del_costo_2": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15704,7 +15522,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_norma_de_reparto": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15737,7 +15555,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_comentario": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15770,7 +15588,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_reembolsable": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15803,7 +15621,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_adjudicacion_directa": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15836,7 +15654,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_prioridad": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15869,7 +15687,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_fecha_necesaria": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15902,7 +15720,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_fecha_de_creación": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15935,7 +15753,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_fecha_de_documento": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15968,7 +15786,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_nombre_de_usuario": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16001,7 +15819,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_número_de_documento": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16034,7 +15852,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_ID_de_documento_interno": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16067,7 +15885,7 @@ cultureInfo es-CO
 			    },
 			    "solicitud_de_pedido_has_v_": {
 			      "Binding": {
-			        "ConceptualEntity": "Solicitud de Pedido"
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16100,7 +15918,7 @@ cultureInfo es-CO
 			    },
 			    "ordenes_de_compra_is_solped_on_fecha_creacion_solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Ordenes de Compra"
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
 			      "State": "Generated",
 			      "Roles": {

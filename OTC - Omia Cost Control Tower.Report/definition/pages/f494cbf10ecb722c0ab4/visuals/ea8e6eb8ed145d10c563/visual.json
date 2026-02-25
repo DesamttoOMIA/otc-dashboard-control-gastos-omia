@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Ordenes de Compra"
+                          "Entity": "Fact_ordenes_de_compra"
                         }
                       },
                       "Property": "Total Líneas OC $Cop"
@@ -47,7 +47,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Ordenes de Compra"
+                        "Entity": "Fact_ordenes_de_compra"
                       }
                     },
                     "Property": "Total Líneas OC $Cop"

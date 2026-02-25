@@ -187,7 +187,7 @@ table Calendario
 		mode: import
 		source = ```
 				ADDCOLUMNS (
-				CALENDAR ( DATE( YEAR ( MIN ( 'Solicitud de Pedido'[Fecha de creación])), 01, 01), DATE( YEAR( MAX( 'Ordenes de Compra'[Fecha de creación] ) ), 12, 31 ) ),
+				CALENDAR ( DATE( YEAR ( MIN ( 'Fact_solicitud_de_pedido'[Fecha de creación])), 01, 01), DATE( YEAR( MAX( 'Fact_ordenes_de_compra'[Fecha de creación] ) ), 12, 31 ) ),
 				"FechaSK", FORMAT ( [Date], "YYYYMMDD" ),
 				"#Año", YEAR ( [Date] ),
 				"#Trimestre", QUARTER ( [Date] ),

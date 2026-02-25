@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Presupuesto"
+                          "Entity": "Fact_presupuesto"
                         }
                       },
                       "Property": "COP"
@@ -47,7 +47,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Presupuesto"
+                        "Entity": "Fact_presupuesto"
                       }
                     },
                     "Property": "COP"

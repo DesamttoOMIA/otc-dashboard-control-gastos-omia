@@ -5,63 +5,13 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 285.55555555555554
+        "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 284,
-            "y": 0
-          },
-          "nodeIndex": "Facturas Conformadas",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 605,
-            "y": 0
-          },
-          "nodeIndex": "Ordenes de Compra",
-          "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
-          "size": {
-            "height": 292,
-            "width": 445
-          },
-          "zIndex": 6
-        },
-        {
-          "location": {
-            "x": 1067,
-            "y": 1011
-          },
-          "nodeIndex": "Costos Indirectos",
-          "nodeLineageTag": "2765178b-cd74-4b13-8d82-ebef44041013",
-          "size": {
-            "height": 176,
-            "width": 234
-          },
-          "zIndex": 10
-        },
-        {
-          "location": {
             "x": 0,
-            "y": 0
-          },
-          "nodeIndex": "Solicitud de Pedido",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 3
-        },
-        {
-          "location": {
-            "x": 0,
-            "y": 509.5
+            "y": 558.25
           },
           "nodeIndex": "Dim_proyecto",
           "nodeLineageTag": "cb17ece2-4ae8-4ef0-b220-05c63d715efe",
@@ -69,12 +19,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 9
         },
         {
           "location": {
-            "x": 833,
-            "y": 419.75
+            "x": 400.5,
+            "y": 478.5
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "1204d9b0-08e1-4fd3-bd73-92d6810bc558",
@@ -82,38 +32,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 7
         },
         {
           "location": {
-            "x": 440,
-            "y": 557.75
-          },
-          "nodeIndex": "Dim_Subseco",
-          "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 5
-        },
-        {
-          "location": {
-            "x": 860,
-            "y": 655.375
-          },
-          "nodeIndex": "Presupuesto",
-          "nodeLineageTag": "91f64d79-3d31-4577-9109-85f45ce56bc2",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 8
-        },
-        {
-          "location": {
-            "x": 1347,
-            "y": 1009.1875
+            "x": 460.75,
+            "y": 1325.4375
           },
           "nodeIndex": "N 2%20ABA%20Ordenes%20de%20Compra",
           "nodeLineageTag": "ad396fd3-3dc2-41fa-8d46-c9f5b2f3f112",
@@ -121,12 +45,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 10
         },
         {
           "location": {
-            "x": 800,
-            "y": 973.5
+            "x": 1511.25,
+            "y": 9.75
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "4083414b-79ed-4e5c-8305-daebc257801b",
@@ -134,23 +58,102 @@
             "height": 272,
             "width": 234
           },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1186.25,
+            "y": 381.25
+          },
+          "nodeIndex": "Fact_presupuesto",
+          "nodeLineageTag": "91f64d79-3d31-4577-9109-85f45ce56bc2",
+          "size": {
+            "height": 291.25,
+            "width": 234
+          },
           "zIndex": 1
         },
         {
           "location": {
-            "x": 1631,
-            "y": 578.59375
+            "x": 707.5,
+            "y": 1324
+          },
+          "nodeIndex": "Dim_Subseco stanby",
+          "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.86111111111086,
+            "y": 717.51041666666674
+          },
+          "nodeIndex": "Dim_subseco",
+          "nodeLineageTag": "3fb20a8c-48d2-4290-98dc-2e0959ae765e",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1733.4722222222222,
+            "y": 0
           },
           "nodeIndex": "Dim_categoria",
+          "nodeLineageTag": "bf4da922-b70d-4f67-b3c2-a0c43114d8dc",
           "size": {
-            "height": 152,
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 259,
+            "y": 68.75
+          },
+          "nodeIndex": "Fact_facturas_conformadas",
+          "nodeLineageTag": "511c3121-604c-4659-ada4-5a6f34b1dcb4",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 630,
+            "y": 122.5
+          },
+          "nodeIndex": "Fact_ordenes_de_compra",
+          "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
+          "size": {
+            "height": 292,
+            "width": 445
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 45
+          },
+          "nodeIndex": "Fact_solicitud_de_pedido",
+          "nodeLineageTag": "34017f5b-ed79-4eaa-b7e1-64165f44a057",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 90,
+      "zoomValue": 80,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

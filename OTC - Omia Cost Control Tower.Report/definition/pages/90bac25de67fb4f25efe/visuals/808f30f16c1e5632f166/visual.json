@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "#"
@@ -35,7 +35,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Número de documento"
@@ -50,7 +50,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Adjudicacion Directa"
@@ -78,7 +78,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Fecha de creación"
@@ -94,7 +94,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Solicitud de Pedido"
+                          "Entity": "Fact_solicitud_de_pedido"
                         }
                       },
                       "Property": "Cantidad"
@@ -112,7 +112,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Unidad"
@@ -126,7 +126,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Descripción artículo/serv."
@@ -140,7 +140,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Comentarios"
@@ -154,7 +154,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Solicitud de Pedido"
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
                   "Property": "Total líneas"
@@ -168,7 +168,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Subseco"
+                      "Entity": "Dim_Subseco stanby"
                     }
                   },
                   "Property": "Equivalencia"
