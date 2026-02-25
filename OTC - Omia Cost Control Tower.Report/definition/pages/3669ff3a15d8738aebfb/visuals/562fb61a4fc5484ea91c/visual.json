@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "562fb61a4fc5484ea91c",
   "position": {
-    "x": 18,
-    "y": 198,
+    "x": 34.54545454545454,
+    "y": 206.36363636363635,
     "z": 4000,
-    "height": 474,
-    "width": 748,
+    "height": 465.45454545454544,
+    "width": 1215.4545454545453,
     "tabOrder": 4000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_presupuesto"
+                      "Entity": "Dim_categoria"
                     }
                   },
-                  "Property": "Categoria de costos"
+                  "Property": "Descripción"
                 }
               },
-              "queryRef": "Presupuesto.Categoria de costos",
-              "nativeQueryRef": "Categoria de costos",
+              "queryRef": "Dim_categoria.Descripción",
+              "nativeQueryRef": "Descripción",
               "active": true
             }
           ]
@@ -36,45 +36,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_presupuesto"
+                        }
+                      },
+                      "Property": "COP"
                     }
                   },
-                  "Property": "Costo comprometido"
+                  "Function": 0
                 }
               },
-              "queryRef": "_Medidas.Costo comprometido",
-              "nativeQueryRef": "Costo comprometido"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Presupuesto remanente"
-                }
-              },
-              "queryRef": "_Medidas.Remanente",
-              "nativeQueryRef": "Presupuesto remanente"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Costo ejecutado"
-                }
-              },
-              "queryRef": "_Medidas.Costo ejecutado",
-              "nativeQueryRef": "Costo ejecutado"
+              "queryRef": "Sum(Fact_presupuesto.COP)",
+              "nativeQueryRef": "Suma de COP"
             }
           ]
         }
@@ -83,13 +60,18 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Medidas"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_presupuesto"
+                      }
+                    },
+                    "Property": "COP"
                   }
                 },
-                "Property": "Costo comprometido"
+                "Function": 0
               }
             },
             "direction": "Descending"
@@ -178,53 +160,6 @@
             }
           }
         }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.25
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Costo comprometido"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            },
-            "fillTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "90D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Remanente"
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -243,5 +178,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3b375476e65cc880baca",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_categoria"
+              }
+            },
+            "Property": "Descripción"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

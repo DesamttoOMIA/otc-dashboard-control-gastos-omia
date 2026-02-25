@@ -1,13 +1,6 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Presupuesto total' = SUM(Fact_presupuesto[COP])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas principales
-		lineageTag: 9c723d8d-3af9-4f4a-a9c1-a9a45983b868
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
 	measure 'Costo ejecutado' = ```
 			
 			    SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
@@ -33,30 +26,6 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Consumo total' =
-			
-			[Costo ejecutado] + [Costo comprometido] + [Costo entrante]
-		lineageTag: 1c34b461-159d-46f3-84af-58e1452edbca
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Consumo' =
-			
-			DIVIDE([Consumo total], [Presupuesto total])
-		lineageTag: 81f50075-b213-415b-9f1a-b0041466271d
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Color semaforo' =
-			
-			SWITCH(
-			    TRUE(),
-			    [% Consumo] >= 1, "#D32F2F",        -- rojo: se pasó
-			    [% Consumo] >= 0.9, "#FBC02D",      -- amarillo: cerca
-			    "#388E3C"                           -- verde: ok
-			)
-		lineageTag: 9594ec3e-7a78-49e9-b775-153811bcc080
-
 	measure 'Presupuesto remanente' = ```
 			
 			[Presupuesto total] 
@@ -73,13 +42,19 @@ table _Medidas
 			
 			DIVIDE(
 			    [Costo ejecutado] + [Costo comprometido],
-			    [Presupuesto total]
-			)
+			    [Presupuesto total])
 			
 			```
 		lineageTag: b719cd37-7b6e-45d0-ac6f-4c581759b5e4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Presupuesto total' = SUM(Fact_presupuesto[COP])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas principales
+		lineageTag: e2ff7bca-3189-4fe3-a6ae-59b2119d36f0
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	partition _Medidas = m
 		mode: import

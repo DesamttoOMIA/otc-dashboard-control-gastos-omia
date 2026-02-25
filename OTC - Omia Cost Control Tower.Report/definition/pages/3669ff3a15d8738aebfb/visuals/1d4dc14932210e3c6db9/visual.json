@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "1d4dc14932210e3c6db9",
   "position": {
-    "x": 179,
-    "y": 22,
+    "x": 26.36363636363636,
+    "y": 21.818181818181817,
     "z": 0,
-    "height": 143,
-    "width": 257,
+    "height": 143.63636363636363,
+    "width": 418.18181818181813,
     "tabOrder": 0
   },
   "visual": {
@@ -17,23 +17,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_presupuesto"
-                        }
-                      },
-                      "Property": "COP"
+                    "SourceRef": {
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Presupuesto total"
                 }
               },
-              "queryRef": "Sum(Presupuesto.COP)",
-              "nativeQueryRef": "Suma de COP",
-              "format": "\\$ #,0.0;-\\$ #,0.0;\\$ #,0.0"
+              "queryRef": "_Medidas.Presupuesto total",
+              "nativeQueryRef": "Presupuesto total"
             }
           ]
         }
@@ -42,18 +36,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fact_presupuesto"
-                      }
-                    },
-                    "Property": "COP"
+                  "SourceRef": {
+                    "Entity": "_Medidas"
                   }
                 },
-                "Function": 0
+                "Property": "Presupuesto total"
               }
             },
             "direction": "Descending"
@@ -77,60 +66,9 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'aboveValue'"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Presupuesto total'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Presupuesto.COP)"
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "10L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Presupuesto.COP)"
-          }
         }
       ],
       "value": [
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Presupuesto.COP)"
-          }
-        },
         {
           "properties": {
             "show": {

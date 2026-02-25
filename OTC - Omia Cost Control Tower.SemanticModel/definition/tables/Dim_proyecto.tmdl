@@ -21,7 +21,7 @@ table Dim_proyecto
 		dataType: int64
 		formatString: 0
 		lineageTag: f4e755d4-a2c8-403b-ba49-7a7eee32732a
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Id proyecto
 
 		annotation SummarizationSetBy = Automatic

@@ -67,18 +67,35 @@ relationship e82653a2-e3e0-4a07-9247-c4e82bec125c
 	fromColumn: Fact_ordenes_de_compra.'Fecha de creación'
 	toColumn: Calendario.Date
 
-relationship 2f6c7c26-9609-4a13-900b-0f7764e726e7
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de contabilización'
-	toColumn: LocalDateTable_e6413f18-6015-4d64-b2bf-46c608cfb1aa.Date
+relationship AutoDetected_9066a16a-73b5-4a57-9e03-75dd720b444b
+	fromColumn: Fact_facturas_conformadas.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 
-relationship 89feada9-f6c6-42f6-9a65-6c8111228f3f
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de creación'
-	toColumn: LocalDateTable_d41954e2-e151-489f-987a-a4dd42ab2eaa.Date
+relationship AutoDetected_a2663361-3dbc-4b73-9c35-69d280b6b62b
+	fromColumn: Fact_ordenes_de_compra.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 
-relationship 2a38313c-f9bc-4547-810e-2e2c6cd7734c
-	joinOnDateBehavior: datePartOnly
-	fromColumn: 'N 2%20ABA%20Ordenes%20de%20Compra'.'Fecha de entrega de la línea'
-	toColumn: LocalDateTable_be705c30-6d70-428a-ae77-66538bcbcdfb.Date
+relationship cdf870c4-ff0e-a9f5-ec26-a9ba5dbd56ba
+	fromColumn: Fact_presupuesto.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
+
+relationship 9864b762-65aa-0ab4-7130-8ab9bf11b840
+	fromColumn: Fact_solicitud_de_pedido.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
+
+relationship ae9f4378-c3a6-27a1-2a62-b29dc91e5f98
+	fromColumn: Fact_ordenes_de_compra.'Id subseco'
+	toColumn: Dim_subseco.'Id subseco'
+
+relationship 44add28a-2592-2fdb-6a88-783988031c55
+	fromColumn: Fact_facturas_conformadas.'Id subseco'
+	toColumn: Dim_subseco.'Id subseco'
+
+relationship 3c21b3fc-c64e-151e-f9cb-f77533d74bed
+	fromColumn: Fact_solicitud_de_pedido.'Id subseco'
+	toColumn: Dim_subseco.'Id subseco'
+
+relationship 04970376-d865-d63a-ee72-da83984353e8
+	fromColumn: Fact_presupuesto.'Id proyecto'
+	toColumn: Dim_proyecto.'Id proyecto'
 

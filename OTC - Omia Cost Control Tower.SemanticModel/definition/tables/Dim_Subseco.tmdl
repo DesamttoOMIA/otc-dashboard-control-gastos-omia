@@ -5,16 +5,15 @@ table Dim_subseco
 		dataType: int64
 		formatString: 0
 		lineageTag: 1e79c746-f16b-41aa-8a03-7b20994d8b38
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Id subseco
 
 		annotation SummarizationSetBy = Automatic
 
 	column Subseco
-		dataType: int64
-		formatString: 0
+		dataType: string
 		lineageTag: 84af5441-8aab-4480-bd7a-9de3be3cc7b5
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Subseco
 
 		annotation SummarizationSetBy = Automatic
@@ -51,11 +50,11 @@ table Dim_subseco
 				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Dimenciones.xlsx"), null, true),
 				    Dim_subseco_Sheet = Origen{[Item="Dim_subseco",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Dim_subseco_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id subseco", Int64.Type}, {"Subseco", Int64.Type}, {"Descripción", type text}, {"Distribución Costos", type text}, {"Id categoria", Int64.Type}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id subseco", Int64.Type}, {"Subseco", type text}, {"Descripción", type text}, {"Distribución Costos", type text}, {"Id categoria", Int64.Type}})
 				in
 				    #"Tipo cambiado"
 
-	changedProperty = Name
+	annotation PBI_ResultType = Table
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_NavigationStepName = Navegación
 
