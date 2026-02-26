@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "1d4dc14932210e3c6db9",
   "position": {
-    "x": 26.36363636363636,
+    "x": 126.36363636363636,
     "y": 21.818181818181817,
     "z": 0,
-    "height": 143.63636363636363,
-    "width": 418.18181818181813,
+    "height": 142.72727272727272,
+    "width": 257.27272727272725,
     "tabOrder": 0
   },
   "visual": {
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "_Medidas.Presupuesto total",
-              "nativeQueryRef": "Presupuesto total"
+              "nativeQueryRef": "Presupuesto total",
+              "format": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00"
             }
           ]
         }

@@ -1,0 +1,159 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "a91d0ec3dae969e7c3ba",
+  "position": {
+    "x": 45,
+    "y": 834,
+    "z": 5000,
+    "height": 76,
+    "width": 298,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria (2)"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Tipo costo"
+                }
+              },
+              "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Tipo costo",
+              "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria (2)"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Desc_N2"
+                }
+              },
+              "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2",
+              "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria (2)"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Desc_N3"
+                }
+              },
+              "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N3",
+              "nativeQueryRef": "Tipo costo Jerarquía Desc_N3",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Dim_categoria (2).Tipo costo Jerarquía.Tipo costo"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria (2)"
+                    }
+                  },
+                  "Property": "Tipo costo"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria (2)"
+                    }
+                  },
+                  "Property": "Desc_N2"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Dim_categoria (2).Tipo costo Jerarquía.Desc_N3"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

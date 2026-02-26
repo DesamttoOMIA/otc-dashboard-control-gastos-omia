@@ -11,7 +11,7 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_facturas_conformadas","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria","Dim_subseco"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_facturas_conformadas","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria","Dim_subseco","Dim_categoria (2)"]
 
 ref table Fact_solicitud_de_pedido
 ref table DateTableTemplate_ed8c9b5c-6c6d-4dd4-b169-5feb3f6cd842
@@ -33,6 +33,7 @@ ref table 'Dim_Subseco stanby'
 ref table _Medidas
 ref table Dim_categoria
 ref table Dim_subseco
+ref table 'Dim_categoria (2)'
 
 ref cultureInfo es-CO
 

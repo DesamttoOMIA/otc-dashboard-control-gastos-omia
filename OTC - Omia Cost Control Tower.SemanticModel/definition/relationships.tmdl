@@ -99,3 +99,25 @@ relationship 04970376-d865-d63a-ee72-da83984353e8
 	fromColumn: Fact_presupuesto.'Id proyecto'
 	toColumn: Dim_proyecto.'Id proyecto'
 
+relationship AutoDetected_866ad6b0-72eb-4a7c-a345-71dc6130664f
+	fromColumn: Fact_solicitud_de_pedido.'Id categoria'
+	toColumn: 'Dim_categoria (2)'.'Id categoria'
+
+relationship AutoDetected_b58f106d-c2f2-4879-892a-c4d8e444cce3
+	fromColumn: Fact_facturas_conformadas.'Id categoria'
+	toColumn: 'Dim_categoria (2)'.'Id categoria'
+
+relationship AutoDetected_7d4787a3-198e-4c7a-a58c-f7ec337bddfc
+	fromColumn: Fact_ordenes_de_compra.'Id categoria'
+	toColumn: 'Dim_categoria (2)'.'Id categoria'
+
+relationship AutoDetected_7d25edeb-5731-46c7-b764-263ccb2d32c2
+	crossFilteringBehavior: bothDirections
+	fromColumn: Fact_presupuesto.'Id categoria'
+	toColumn: 'Dim_categoria (2)'.'Id categoria'
+
+relationship AutoDetected_00a272c0-df9e-4a7c-a898-283da5a1c26e
+	isActive: false
+	fromColumn: Dim_subseco.'Id categoria'
+	toColumn: 'Dim_categoria (2)'.'Id categoria'
+
