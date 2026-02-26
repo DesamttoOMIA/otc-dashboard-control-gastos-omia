@@ -67,22 +67,6 @@ relationship e82653a2-e3e0-4a07-9247-c4e82bec125c
 	fromColumn: Fact_ordenes_de_compra.'Fecha de creación'
 	toColumn: Calendario.Date
 
-relationship AutoDetected_9066a16a-73b5-4a57-9e03-75dd720b444b
-	fromColumn: Fact_facturas_conformadas.'Id categoria'
-	toColumn: Dim_categoria.'Id categoria'
-
-relationship AutoDetected_a2663361-3dbc-4b73-9c35-69d280b6b62b
-	fromColumn: Fact_ordenes_de_compra.'Id categoria'
-	toColumn: Dim_categoria.'Id categoria'
-
-relationship cdf870c4-ff0e-a9f5-ec26-a9ba5dbd56ba
-	fromColumn: Fact_presupuesto.'Id categoria'
-	toColumn: Dim_categoria.'Id categoria'
-
-relationship 9864b762-65aa-0ab4-7130-8ab9bf11b840
-	fromColumn: Fact_solicitud_de_pedido.'Id categoria'
-	toColumn: Dim_categoria.'Id categoria'
-
 relationship ae9f4378-c3a6-27a1-2a62-b29dc91e5f98
 	fromColumn: Fact_ordenes_de_compra.'Id subseco'
 	toColumn: Dim_subseco.'Id subseco'
@@ -101,23 +85,17 @@ relationship 04970376-d865-d63a-ee72-da83984353e8
 
 relationship AutoDetected_866ad6b0-72eb-4a7c-a345-71dc6130664f
 	fromColumn: Fact_solicitud_de_pedido.'Id categoria'
-	toColumn: 'Dim_categoria (2)'.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 
 relationship AutoDetected_b58f106d-c2f2-4879-892a-c4d8e444cce3
 	fromColumn: Fact_facturas_conformadas.'Id categoria'
-	toColumn: 'Dim_categoria (2)'.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 
 relationship AutoDetected_7d4787a3-198e-4c7a-a58c-f7ec337bddfc
 	fromColumn: Fact_ordenes_de_compra.'Id categoria'
-	toColumn: 'Dim_categoria (2)'.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 
 relationship AutoDetected_7d25edeb-5731-46c7-b764-263ccb2d32c2
-	crossFilteringBehavior: bothDirections
 	fromColumn: Fact_presupuesto.'Id categoria'
-	toColumn: 'Dim_categoria (2)'.'Id categoria'
-
-relationship AutoDetected_00a272c0-df9e-4a7c-a898-283da5a1c26e
-	isActive: false
-	fromColumn: Dim_subseco.'Id categoria'
-	toColumn: 'Dim_categoria (2)'.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
 

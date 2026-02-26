@@ -45,6 +45,7 @@ table _Medidas
 			    [Presupuesto total])
 			
 			```
+		displayFolder: Medidas secundarias
 		lineageTag: b719cd37-7b6e-45d0-ac6f-4c581759b5e4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -53,6 +54,19 @@ table _Medidas
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas principales
 		lineageTag: e2ff7bca-3189-4fe3-a6ae-59b2119d36f0
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Suma COP Visible' =
+			
+			IF(
+			    [Presupuesto total] = 0,
+			    BLANK(),
+			    [Presupuesto total]
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas secundarias
+		lineageTag: 626f53c3-c4b8-4592-aa0d-0badb3c1e9a7
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 

@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Tipo costo"
@@ -35,7 +35,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Nivel"
@@ -50,7 +50,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Descripción"
@@ -103,7 +103,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Tipo costo"
@@ -122,7 +122,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Nivel"

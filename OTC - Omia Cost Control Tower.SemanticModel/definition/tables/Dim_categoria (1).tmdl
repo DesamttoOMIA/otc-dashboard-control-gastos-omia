@@ -1,0 +1,67 @@
+table 'Dim_categoria (1)'
+	lineageTag: bf4da922-b70d-4f67-b3c2-a0c43114d8dc
+
+	column 'Id categoria'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c9dbd92-f4e6-4584-9e7f-0ed2876583bc
+		summarizeBy: sum
+		sourceColumn: Id categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column Codigo
+		dataType: string
+		lineageTag: cf638db5-97e6-48a8-bd06-389b2c3730a8
+		summarizeBy: none
+		sourceColumn: Codigo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripción
+		dataType: string
+		lineageTag: 068ca715-7c5a-4ba5-9d83-01a65381bd50
+		summarizeBy: none
+		sourceColumn: Descripción
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo padre'
+		dataType: string
+		lineageTag: 443c8bf2-c54a-4f16-9c7e-fd592fbaf488
+		summarizeBy: none
+		sourceColumn: Codigo padre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nivel
+		dataType: string
+		lineageTag: 0c832369-1549-496b-9927-32092006527e
+		summarizeBy: none
+		sourceColumn: Nivel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo costo'
+		dataType: string
+		lineageTag: 199635b7-4a0e-4616-be9f-088df0af18f1
+		summarizeBy: none
+		sourceColumn: Tipo costo
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim_categoria (1)' = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Dimenciones.xlsx"), null, true),
+				    Dim_categoria_Sheet = Origen{[Item="Dim_categoria",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Dim_categoria_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id categoria", Int64.Type}, {"Codigo", type text}, {"Codigo padre", type text}, {"Nivel", type text}, {"Tipo costo", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

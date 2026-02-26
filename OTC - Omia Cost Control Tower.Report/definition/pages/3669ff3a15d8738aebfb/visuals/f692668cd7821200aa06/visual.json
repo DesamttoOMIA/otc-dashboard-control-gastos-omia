@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 665,
-    "y": 14,
+    "x": 814,
+    "y": 158,
     "z": 6000,
-    "height": 323,
-    "width": 592,
-    "tabOrder": 6000
+    "height": 312,
+    "width": 441,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -22,7 +22,7 @@
                     "Hierarchy": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Dim_categoria (2)"
+                          "Entity": "Dim_categoria"
                         }
                       },
                       "Hierarchy": "Tipo costo Jerarquía"
@@ -31,7 +31,7 @@
                   "Level": "Tipo costo"
                 }
               },
-              "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Tipo costo",
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
               "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
               "active": true
             },
@@ -42,7 +42,7 @@
                     "Hierarchy": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Dim_categoria (2)"
+                          "Entity": "Dim_categoria"
                         }
                       },
                       "Hierarchy": "Tipo costo Jerarquía"
@@ -62,17 +62,17 @@
                     "Hierarchy": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Dim_categoria (2)"
+                          "Entity": "Dim_categoria"
                         }
                       },
                       "Hierarchy": "Tipo costo Jerarquía"
                     }
                   },
-                  "Level": "Desc_N3"
+                  "Level": "Desc_N3_OK"
                 }
               },
-              "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N3",
-              "nativeQueryRef": "Tipo costo Jerarquía Desc_N3",
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
+              "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
               "active": false
             }
           ]
@@ -100,6 +100,28 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Fact_presupuesto"
+                      }
+                    },
+                    "Property": "COP"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "expansionStates": [
@@ -110,14 +132,15 @@
         "levels": [
           {
             "queryRefs": [
-              "Dim_categoria (2).Tipo costo Jerarquía.Tipo costo"
+              "Dim_categoria.Tipo costo Jerarquía.Tipo costo"
             ],
+            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria (2)"
+                      "Entity": "Dim_categoria"
                     }
                   },
                   "Property": "Tipo costo"
@@ -136,7 +159,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria (2)"
+                      "Entity": "Dim_categoria"
                     }
                   },
                   "Property": "Desc_N2"
@@ -147,7 +170,7 @@
           },
           {
             "queryRefs": [
-              "Dim_categoria (2).Tipo costo Jerarquía.Desc_N3"
+              "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK"
             ],
             "isCollapsed": true,
             "isPinned": true
@@ -155,6 +178,16 @@
         ],
         "root": {
           "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Directo'"
+                  }
+                }
+              ],
+              "isToggled": true
+            },
             {
               "identityValues": [
                 {

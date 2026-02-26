@@ -4,8 +4,8 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 286.5
+        "x": 335,
+        "y": 0
       },
       "nodes": [
         {
@@ -58,7 +58,7 @@
             "height": 291.25,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 11
         },
         {
           "location": {
@@ -71,30 +71,17 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 301.36111111111086,
+            "x": 318.86111111111086,
             "y": 0
           },
           "nodeIndex": "Dim_subseco",
           "nodeLineageTag": "3fb20a8c-48d2-4290-98dc-2e0959ae765e",
           "size": {
             "height": 200,
-            "width": 234
-          },
-          "zIndex": 2
-        },
-        {
-          "location": {
-            "x": 918.47222222222217,
-            "y": 0
-          },
-          "nodeIndex": "Dim_categoria",
-          "nodeLineageTag": "bf4da922-b70d-4f67-b3c2-a0c43114d8dc",
-          "size": {
-            "height": 224,
             "width": 234
           },
           "zIndex": 3
@@ -140,16 +127,27 @@
         },
         {
           "location": {
-            "x": 1285.25,
-            "y": 1073.75
+            "x": 1884.7222222222222,
+            "y": 353.75
           },
-          "nodeIndex": "Dim_categoria (2)",
-          "nodeLineageTag": "5af8b966-aad8-41b3-a9ea-209aaa30fdc1",
+          "nodeIndex": "Dim_categoria (1)",
           "size": {
             "height": 224,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1076.5,
+            "y": 0
+          },
+          "nodeIndex": "Dim_categoria",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 1
         }
       ],
       "name": "Todas las tablas",

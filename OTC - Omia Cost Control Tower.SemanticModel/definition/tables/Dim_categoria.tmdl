@@ -1,10 +1,10 @@
 table Dim_categoria
-	lineageTag: bf4da922-b70d-4f67-b3c2-a0c43114d8dc
+	lineageTag: 5af8b966-aad8-41b3-a9ea-209aaa30fdc1
 
 	column 'Id categoria'
 		dataType: int64
 		formatString: 0
-		lineageTag: 4c9dbd92-f4e6-4584-9e7f-0ed2876583bc
+		lineageTag: 9d0905f1-e56c-41dd-be6b-7d5af3576e5e
 		summarizeBy: none
 		sourceColumn: Id categoria
 
@@ -12,7 +12,7 @@ table Dim_categoria
 
 	column Codigo
 		dataType: string
-		lineageTag: cf638db5-97e6-48a8-bd06-389b2c3730a8
+		lineageTag: 8911f454-a77b-4f50-8b05-539d37471de2
 		summarizeBy: none
 		sourceColumn: Codigo
 
@@ -20,7 +20,7 @@ table Dim_categoria
 
 	column Descripción
 		dataType: string
-		lineageTag: 068ca715-7c5a-4ba5-9d83-01a65381bd50
+		lineageTag: 06d7a38d-931c-4c8f-a178-f67e146a9731
 		summarizeBy: none
 		sourceColumn: Descripción
 
@@ -28,27 +28,83 @@ table Dim_categoria
 
 	column 'Codigo padre'
 		dataType: string
-		lineageTag: 443c8bf2-c54a-4f16-9c7e-fd592fbaf488
+		lineageTag: f98943ba-28f7-440f-93bc-c1dbd141cdee
 		summarizeBy: none
 		sourceColumn: Codigo padre
 
 		annotation SummarizationSetBy = Automatic
 
 	column Nivel
-		dataType: string
-		lineageTag: 0c832369-1549-496b-9927-32092006527e
-		summarizeBy: none
+		dataType: int64
+		formatString: 0
+		lineageTag: edc7336d-2bed-41cb-b16c-fbffc46c1edd
+		summarizeBy: sum
 		sourceColumn: Nivel
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Tipo costo'
 		dataType: string
-		lineageTag: 199635b7-4a0e-4616-be9f-088df0af18f1
+		lineageTag: 463e9f61-f12b-4df5-b5f4-dbc7cf6b0698
 		summarizeBy: none
 		sourceColumn: Tipo costo
 
 		annotation SummarizationSetBy = Automatic
+
+	column Cod_N2
+		dataType: string
+		lineageTag: a9d8f075-7cf4-44bf-9df7-e2ca6b60a9e7
+		summarizeBy: none
+		sourceColumn: Cod_N2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_N2
+		dataType: string
+		lineageTag: 5ea47bc9-ad0b-4f72-9b0b-aff2a9dfb8fc
+		summarizeBy: none
+		sourceColumn: Desc_N2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_N3
+		dataType: string
+		lineageTag: 5a8a76db-a06b-49b3-b6f2-da6eae086011
+		summarizeBy: none
+		sourceColumn: Desc_N3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Desc_N3_OK
+		dataType: string
+		lineageTag: 118cf8ec-30d3-4fbe-bdc3-ee9dc899b5cd
+		summarizeBy: none
+		sourceColumn: Desc_N3_OK
+
+		annotation SummarizationSetBy = Automatic
+
+	column TieneHijos
+		dataType: string
+		lineageTag: 6d77148e-4d12-4455-8bc8-9bcaf5a2482f
+		summarizeBy: none
+		sourceColumn: TieneHijos
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Tipo costo Jerarquía'
+		lineageTag: 95001cb4-a17a-4c16-8db9-39dc926febe8
+
+		level 'Tipo costo'
+			lineageTag: ef5299e2-a456-4ea1-8907-9388e0b0817c
+			column: 'Tipo costo'
+
+		level Desc_N2
+			lineageTag: 5c668307-aac5-42e3-8465-56895b0fbb6f
+			column: Desc_N2
+
+		level Desc_N3_OK
+			lineageTag: 63fc5922-6dd3-4142-80f9-c7a7aae8a2c6
+			column: Desc_N3_OK
 
 	partition Dim_categoria = m
 		mode: import
@@ -57,11 +113,24 @@ table Dim_categoria
 				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Dimenciones.xlsx"), null, true),
 				    Dim_categoria_Sheet = Origen{[Item="Dim_categoria",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Dim_categoria_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id categoria", Int64.Type}, {"Codigo", type text}, {"Codigo padre", type text}, {"Nivel", type text}, {"Tipo costo", type text}})
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id categoria", Int64.Type}, {"Codigo", type text}, {"Codigo padre", type text}, {"Nivel", Int64.Type}, {"Tipo costo", type text}}),
+				    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado", "Cod_N2", each if [Nivel] = 2 then [Codigo] else [Codigo padre]),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Personalizada agregada", {"Cod_N2"}, #"Personalizada agregada", {"Codigo"}, "Personalizada agregada", JoinKind.LeftOuter),
+				    #"Se expandió Personalizada agregada" = Table.ExpandTableColumn(#"Consultas combinadas", "Personalizada agregada", {"Descripción"}, {"Personalizada agregada.Descripción"}),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Se expandió Personalizada agregada",{{"Personalizada agregada.Descripción", "Desc_N2"}}),
+				    #"Personalizada agregada1" = Table.AddColumn(#"Columnas con nombre cambiado", "Desc_N3", each if [Nivel] = 3 then [Descripción] else null),
+				    #"Consultas combinadas1" = Table.NestedJoin(#"Personalizada agregada1", {"Codigo"}, #"Personalizada agregada1", {"Codigo padre"}, "Personalizada agregada1", JoinKind.LeftOuter),
+				    #"Personalizada agregada2" = Table.AddColumn(#"Consultas combinadas1", "TieneHijos", each Table.RowCount([Personalizada agregada1]) > 0),
+				    #"Errores quitados" = Table.RemoveRowsWithErrors(#"Personalizada agregada2", {"TieneHijos"}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Errores quitados",{"Personalizada agregada1"}),
+				    #"Personalizada agregada3" = Table.AddColumn(#"Columnas quitadas", "Desc_N3_OK", each if [Nivel] = 3 then [Descripción]
+				  else if [Nivel] = 2 and [TieneHijos] = false then [Descripción]
+				  else null),
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada3",{"Id categoria", "Codigo", "Descripción", "Codigo padre", "Nivel", "Tipo costo", "Cod_N2", "Desc_N2", "Desc_N3", "Desc_N3_OK", "TieneHijos"})
 				in
-				    #"Tipo cambiado"
-
-	annotation PBI_ResultType = Table
+				    #"Columnas reordenadas"
 
 	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
 

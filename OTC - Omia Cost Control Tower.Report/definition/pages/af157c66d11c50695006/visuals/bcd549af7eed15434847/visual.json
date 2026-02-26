@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_categoria (1)"
                     }
                   },
                   "Property": "Nivel"

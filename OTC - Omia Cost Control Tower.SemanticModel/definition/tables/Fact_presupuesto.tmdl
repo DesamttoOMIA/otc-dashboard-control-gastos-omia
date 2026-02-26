@@ -81,7 +81,7 @@ table Fact_presupuesto
 				    #"Tipo cambiado8" = Table.TransformColumnTypes(#"Columnas quitadas2",{{"Categoria", type text}, {"Incidencia", Percentage.Type}, {"COP", Currency.Type}, {"Proyecto", type text}}),
 				    #"Dividir columna por delimitador" = Table.SplitColumn(#"Tipo cambiado8", "Categoria", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Categoria.1", "Categoria.2"}),
 				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Dividir columna por delimitador",{{"Categoria.1", "Codigo"}, {"Categoria.2", "Descripcion"}}),
-				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas con nombre cambiado1", {"Codigo"}, Dim_categoria, {"Codigo"}, "Dim_categoria (2)", JoinKind.LeftOuter),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas con nombre cambiado1", {"Codigo"}, #"Dim_categoria (1)", {"Codigo"}, "Dim_categoria (2)", JoinKind.LeftOuter),
 				    #"Se expandió Dim_categoria (2)" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_categoria (2)", {"Id categoria"}, {"Dim_categoria (2).Id categoria"}),
 				    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Se expandió Dim_categoria (2)",{{"Dim_categoria (2).Id categoria", "Id categoria"}}),
 				    #"Valor reemplazado4" = Table.ReplaceValue(#"Columnas con nombre cambiado2","MANTENIMIENTO ELECTRICO CONTINENTAL GOLD","COMIMANCCCG5058",Replacer.ReplaceText,{"Proyecto"}),
