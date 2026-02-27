@@ -57,7 +57,7 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Suma COP Visible' =
+	measure 'Presupuesto total Visible' =
 			
 			IF(
 			    [Presupuesto total] = 0,
@@ -67,6 +67,38 @@ table _Medidas
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: 626f53c3-c4b8-4592-aa0d-0badb3c1e9a7
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Costo comprometido visible' = ```
+			SUM(Fact_solicitud_de_pedido[Total líneas]	) 
+			```
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas secundarias
+		lineageTag: 9eb17a5d-0cf3-4b36-89a6-c9b965df2c3a
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Costo ejecutado visible' = ```
+			
+			IF(
+			    SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
+			    SUM('Fact_facturas_conformadas'[Total líneas])
+			    = 0,
+			    BLANK(),
+			     SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
+			    SUM('Fact_facturas_conformadas'[Total líneas])
+			
+			)
+			
+			
+			
+			
+			
+			```
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas secundarias
+		lineageTag: 42e48397-ba71-4b5b-af09-475f031c02c2
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 

@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "83c9fdeff836c7e761e8",
   "position": {
-    "x": 52,
-    "y": 927,
+    "x": 860,
+    "y": 24,
     "z": 2000,
     "height": 144,
     "width": 258,
@@ -17,23 +17,18 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_solicitud_de_pedido"
-                        }
-                      },
-                      "Property": "Total líneas"
+                    "SourceRef": {
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Costo comprometido"
                 }
               },
-              "queryRef": "Sum(Solicitud de Pedido.Total líneas)",
-              "nativeQueryRef": "Suma de Total líneas",
-              "format": "\\$ #,0.0;-\\$ #,0.0;\\$ #,0.0"
+              "queryRef": "_Medidas.Costo comprometido",
+              "nativeQueryRef": "Costo comprometido",
+              "format": "\\$ #,0.00;-\\$ #,0.00;\\$ #,0.00"
             }
           ]
         }
@@ -42,18 +37,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Measure": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Fact_solicitud_de_pedido"
-                      }
-                    },
-                    "Property": "Total líneas"
+                  "SourceRef": {
+                    "Entity": "_Medidas"
                   }
                 },
-                "Function": 0
+                "Property": "Costo comprometido"
               }
             },
             "direction": "Descending"
@@ -72,20 +62,6 @@
                   "Value": "true"
                 }
               }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Costo comprometido'"
-                }
-              }
             },
             "position": {
               "expr": {
@@ -96,7 +72,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+            "id": "default"
           }
         }
       ],
@@ -112,22 +88,6 @@
             }
           }
         }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "10L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -138,6 +98,62 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

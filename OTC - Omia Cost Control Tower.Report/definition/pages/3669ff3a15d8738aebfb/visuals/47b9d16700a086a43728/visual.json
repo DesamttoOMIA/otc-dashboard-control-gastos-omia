@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 20,
-    "y": 151,
+    "x": 31,
+    "y": 181,
     "z": 5500,
-    "height": 607,
-    "width": 783,
+    "height": 421,
+    "width": 810,
     "tabOrder": 6000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -87,11 +87,43 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Suma COP Visible"
+                  "Property": "Costo comprometido visible"
                 }
               },
-              "queryRef": "_Medidas.Suma COP Visible",
-              "nativeQueryRef": "Suma COP Visible"
+              "queryRef": "_Medidas.Costo comprometido visible",
+              "nativeQueryRef": "Costo comprometido visible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Costo ejecutado visible"
+                }
+              },
+              "queryRef": "_Medidas.Costo ejecutado visible",
+              "nativeQueryRef": "Costo ejecutado visible"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto total Visible"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto total Visible",
+              "nativeQueryRef": "Presupuesto total Visible"
             }
           ]
         }
@@ -152,7 +184,8 @@
             },
             "direction": "Ascending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -180,6 +213,27 @@
                 }
               }
             },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "30L"
+                }
+              }
+            },
             "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
@@ -197,6 +251,13 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "gridlineThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

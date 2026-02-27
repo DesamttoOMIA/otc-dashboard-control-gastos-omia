@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 814,
-    "y": 158,
+    "x": 776,
+    "y": 678,
     "z": 6000,
     "height": 312,
     "width": 441,
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -105,21 +105,39 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "HierarchyLevel": {
                 "Expression": {
-                  "Column": {
+                  "Hierarchy": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fact_presupuesto"
+                        "Entity": "Dim_categoria"
                       }
                     },
-                    "Property": "COP"
+                    "Hierarchy": "Tipo costo Jerarquía"
                   }
                 },
-                "Function": 0
+                "Level": "Tipo costo"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Desc_N2"
+              }
+            },
+            "direction": "Ascending"
           }
         ]
       }
@@ -176,30 +194,7 @@
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Directo'"
-                  }
-                }
-              ],
-              "isToggled": true
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Indirecto'"
-                  }
-                }
-              ],
-              "isToggled": true
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "visualContainerObjects": {
