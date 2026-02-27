@@ -102,6 +102,67 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
+	measure 'Presupuesto remanente visible (>0)' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR cons = [Consumo total visible]
+			VAR rem  = pres - cons
+			RETURN
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(rem > 0, rem, BLANK())
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: eac8d59c-bedc-4539-b215-eb9418c55226
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Consumo total visible' =
+			
+			VAR ejec = [Costo ejecutado visible]
+			VAR comp = [Costo comprometido visible]
+			VAR total = ejec + comp
+			RETURN
+			IF(
+			    ISBLANK(ejec) && ISBLANK(comp),
+			    BLANK(),
+			    total
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 6e547628-15b6-4f9b-a25a-b8b9107c3b7e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sobrepresupuesto visible (>0)' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR cons = [Consumo total visible]
+			VAR over = cons - pres
+			RETURN
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(over > 0, over, BLANK())
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 55b299d8-d4d1-4031-aa66-95c2cb5cccb0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Presupuesto remanente visible' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = [Costo ejecutado visible]
+			VAR comp = [Costo comprometido visible]
+			VAR rem  = pres - ejec - comp
+			RETURN
+			IF( ISBLANK(pres), BLANK(), rem )
+		displayFolder: Medidas secundarias
+		lineageTag: 565a15b8-7e54-4af9-a0d3-738d16a8d4ab
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Medidas = m
 		mode: import
 		source =

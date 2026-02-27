@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 31,
-    "y": 181,
+    "x": 31.111111111111111,
+    "y": 181.11111111111111,
     "z": 5500,
-    "height": 421,
-    "width": 810,
+    "height": 421.11111111111109,
+    "width": 1112.2222222222222,
     "tabOrder": 6000
   },
   "visual": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -106,6 +106,34 @@
               },
               "queryRef": "_Medidas.Costo ejecutado visible",
               "nativeQueryRef": "Costo ejecutado visible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto remanente visible (>0)"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto remanente visible",
+              "nativeQueryRef": "Presupuesto remanente visible (>0)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Sobrepresupuesto visible (>0)"
+                }
+              },
+              "queryRef": "_Medidas.Sobrepresupuesto visible (>0)",
+              "nativeQueryRef": "Sobrepresupuesto visible (>0)"
             }
           ]
         },
@@ -279,5 +307,68 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0e4b5030eb37dac69d4c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Tipo costo"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Directo'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
+      }
+    ]
   }
 }

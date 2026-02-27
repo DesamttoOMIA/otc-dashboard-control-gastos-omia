@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 776,
-    "y": 678,
+    "x": 11.111111111111111,
+    "y": 624.44444444444446,
     "z": 6000,
-    "height": 312,
-    "width": 441,
+    "height": 311.11111111111109,
+    "width": 938.88888888888891,
     "tabOrder": 5000
   },
   "visual": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -97,49 +97,65 @@
               },
               "queryRef": "Sum(Fact_presupuesto.COP)",
               "nativeQueryRef": "Suma de COP"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto total Visible"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto total Visible",
+              "nativeQueryRef": "Presupuesto total Visible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto remanente visible"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto remanente visible",
+              "nativeQueryRef": "Presupuesto remanente visible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Costo ejecutado visible"
+                }
+              },
+              "queryRef": "_Medidas.Costo ejecutado visible",
+              "nativeQueryRef": "Costo ejecutado visible"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Costo comprometido visible"
+                }
+              },
+              "queryRef": "_Medidas.Costo comprometido visible",
+              "nativeQueryRef": "Costo comprometido visible"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Tipo costo"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Desc_N2"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -194,7 +210,20 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Directo'"
+                  }
+                }
+              ],
+              "isToggled": true
+            }
+          ]
+        }
       }
     ],
     "visualContainerObjects": {
