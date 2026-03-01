@@ -163,6 +163,63 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Ejecutado dentro presupuesto' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			RETURN
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(ejec = 0, BLANK(), MIN(ejec, pres))
+			)
+		lineageTag: 53fd3e7e-46ad-4128-b19a-9f70bad7305c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ejecutado excedente' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			VAR exc  = ejec - pres
+			RETURN
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(exc > 0, exc, BLANK())
+			)
+		lineageTag: 1ce122ed-f800-46c0-bd70-cb22b07e29a4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Comprometido dentro presupuesto' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = [Costo ejecutado visible]
+			VAR comp = [Costo comprometido visible]
+			VAR saldo_pres = pres - ejec
+			RETURN
+			IF(
+			    saldo_pres > 0,
+			    MIN(comp, saldo_pres),
+			    BLANK()
+			)
+		lineageTag: 515d5e0e-8a31-4934-b669-b244b0c73990
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Comprometido excedente' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = [Costo ejecutado visible]
+			VAR comp = [Costo comprometido visible]
+			VAR exceso = comp - (pres - ejec)
+			RETURN
+			IF(exceso > 0, exceso, BLANK())
+		lineageTag: adc04a94-42e1-4705-b2b0-8e76862e8790
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Medidas = m
 		mode: import
 		source =

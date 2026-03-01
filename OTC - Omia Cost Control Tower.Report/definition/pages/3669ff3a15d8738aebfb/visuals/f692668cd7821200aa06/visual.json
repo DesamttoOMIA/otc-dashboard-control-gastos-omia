@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 11.111111111111111,
-    "y": 624.44444444444446,
+    "x": 11,
+    "y": 624,
     "z": 6000,
-    "height": 311.11111111111109,
-    "width": 938.88888888888891,
+    "height": 312,
+    "width": 1132,
     "tabOrder": 5000
   },
   "visual": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -220,7 +220,19 @@
                   }
                 }
               ],
-              "isToggled": true
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Herramientas, Instrumentos y Consumibles'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
             }
           ]
         }
