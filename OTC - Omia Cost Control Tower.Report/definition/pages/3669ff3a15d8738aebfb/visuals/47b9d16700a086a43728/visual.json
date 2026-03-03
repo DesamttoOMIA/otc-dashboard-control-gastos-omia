@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -101,6 +101,34 @@
                       "Entity": "_Medidas"
                     }
                   },
+                  "Property": "Comprometido dentro presupuesto"
+                }
+              },
+              "queryRef": "_Medidas.Comprometido dentro presupuesto",
+              "nativeQueryRef": "Comprometido dentro presupuesto"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto remanente visible > 0"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto remanente visible",
+              "nativeQueryRef": "Presupuesto remanente visible > 0"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
                   "Property": "Ejecutado excedente"
                 }
               },
@@ -115,11 +143,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente visible (>0)"
+                  "Property": "Comprometido excedente"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente visible",
-              "nativeQueryRef": "Presupuesto remanente visible (>0)"
+              "queryRef": "_Medidas.Comprometido excedente",
+              "nativeQueryRef": "Comprometido excedente"
             }
           ]
         },
@@ -380,6 +408,25 @@
           "selector": {
             "metadata": "_Medidas.Ejecutado dentro presupuesto"
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 8,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Comprometido dentro presupuesto"
+          }
         }
       ]
     },
@@ -388,7 +435,92 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "174f9dd7deee1c5263db",
+        "name": "9ce0526a03b248b5e7a7",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "db7491935956705139ab",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cea02de6a1651586a1b3",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N3_OK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f97505110aea9927b7c7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto total Visible"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3daaa65aa99ae5b49d6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Comprometido excedente"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "90ef8fed13346ed66000",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -435,6 +567,65 @@
                       {
                         "Literal": {
                           "Value": "'Directo'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
+      },
+      {
+        "name": "765721dea178d1a45720",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N2"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Desc_N2"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "' Herramientas, Instrumentos y Consumibles'"
                         }
                       }
                     ]

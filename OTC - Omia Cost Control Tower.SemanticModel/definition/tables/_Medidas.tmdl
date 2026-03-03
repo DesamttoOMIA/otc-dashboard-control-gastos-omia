@@ -102,11 +102,17 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Presupuesto remanente visible (>0)' =
+	measure 'Presupuesto remanente visible > 0' =
 			
 			VAR pres = [Presupuesto total Visible]
-			VAR cons = [Consumo total visible]
-			VAR rem  = pres - cons
+			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			VAR comp = COALESCE([Costo comprometido visible], 0)
+			
+			VAR ejec_dentro = MIN(ejec, pres)
+			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
+			VAR comp_dentro = MIN(comp, saldo_pres)
+			
+			VAR rem = pres - ejec_dentro - comp_dentro
 			RETURN
 			IF(
 			    ISBLANK(pres),
@@ -195,14 +201,18 @@ table _Medidas
 	measure 'Comprometido dentro presupuesto' =
 			
 			VAR pres = [Presupuesto total Visible]
-			VAR ejec = [Costo ejecutado visible]
-			VAR comp = [Costo comprometido visible]
-			VAR saldo_pres = pres - ejec
+			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			VAR comp = COALESCE([Costo comprometido visible], 0)
+			
+			VAR ejec_dentro = MIN(ejec, pres)
+			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
+			
+			VAR comp_dentro = MIN(comp, saldo_pres)
 			RETURN
 			IF(
-			    saldo_pres > 0,
-			    MIN(comp, saldo_pres),
-			    BLANK()
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(comp_dentro = 0, BLANK(), comp_dentro)
 			)
 		lineageTag: 515d5e0e-8a31-4934-b669-b244b0c73990
 
@@ -211,11 +221,19 @@ table _Medidas
 	measure 'Comprometido excedente' =
 			
 			VAR pres = [Presupuesto total Visible]
-			VAR ejec = [Costo ejecutado visible]
-			VAR comp = [Costo comprometido visible]
-			VAR exceso = comp - (pres - ejec)
+			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			VAR comp = COALESCE([Costo comprometido visible], 0)
+			
+			VAR ejec_dentro = MIN(ejec, pres)
+			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
+			
+			VAR comp_exceso = MAX(comp - saldo_pres, 0)
 			RETURN
-			IF(exceso > 0, exceso, BLANK())
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    IF(comp_exceso > 0, comp_exceso, BLANK())
+			)
 		lineageTag: adc04a94-42e1-4705-b2b0-8e76862e8790
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
