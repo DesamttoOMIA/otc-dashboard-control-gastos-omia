@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 11,
-    "y": 624,
+    "x": 19,
+    "y": 840,
     "z": 6000,
-    "height": 312,
-    "width": 1132,
+    "height": 544,
+    "width": 1226,
     "tabOrder": 5000
   },
   "visual": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -81,22 +81,17 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_presupuesto"
-                        }
-                      },
-                      "Property": "COP"
+                    "SourceRef": {
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Presupuesto total"
                 }
               },
-              "queryRef": "Sum(Fact_presupuesto.COP)",
-              "nativeQueryRef": "Suma de COP"
+              "queryRef": "_Medidas.Presupuesto total",
+              "nativeQueryRef": "Presupuesto total"
             },
             {
               "field": {
@@ -106,11 +101,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto total Visible"
+                  "Property": "Presupuesto remanente"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto total Visible",
-              "nativeQueryRef": "Presupuesto total Visible"
+              "queryRef": "_Medidas.Presupuesto remanente",
+              "nativeQueryRef": "Presupuesto remanente"
             },
             {
               "field": {
@@ -120,11 +115,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente visible"
+                  "Property": "Costo ejecutado"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente visible",
-              "nativeQueryRef": "Presupuesto remanente visible"
+              "queryRef": "_Medidas.Costo ejecutado",
+              "nativeQueryRef": "Costo ejecutado"
             },
             {
               "field": {
@@ -134,28 +129,36 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo ejecutado visible"
+                  "Property": "Costo comprometido"
                 }
               },
-              "queryRef": "_Medidas.Costo ejecutado visible",
-              "nativeQueryRef": "Costo ejecutado visible"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Costo comprometido visible"
-                }
-              },
-              "queryRef": "_Medidas.Costo comprometido visible",
-              "nativeQueryRef": "Costo comprometido visible"
+              "queryRef": "_Medidas.Costo comprometido",
+              "nativeQueryRef": "Costo comprometido"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Tipo costo"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "expansionStates": [
@@ -220,7 +223,18 @@
                   }
                 }
               ],
-              "isToggled": true
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Empalme con actual contratista'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
             }
           ]
         }

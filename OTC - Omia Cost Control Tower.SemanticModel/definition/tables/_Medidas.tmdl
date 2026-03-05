@@ -119,10 +119,9 @@ table _Medidas
 			    BLANK(),
 			    IF(rem > 0, rem, BLANK())
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: eac8d59c-bedc-4539-b215-eb9418c55226
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Consumo total visible' =
 			
@@ -179,9 +178,8 @@ table _Medidas
 			    BLANK(),
 			    IF(ejec = 0, BLANK(), MIN(ejec, pres))
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 53fd3e7e-46ad-4128-b19a-9f70bad7305c
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Ejecutado excedente' =
 			
@@ -194,9 +192,8 @@ table _Medidas
 			    BLANK(),
 			    IF(exc > 0, exc, BLANK())
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 1ce122ed-f800-46c0-bd70-cb22b07e29a4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Comprometido dentro presupuesto' =
 			
@@ -214,9 +211,8 @@ table _Medidas
 			    BLANK(),
 			    IF(comp_dentro = 0, BLANK(), comp_dentro)
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 515d5e0e-8a31-4934-b669-b244b0c73990
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Comprometido excedente' =
 			
@@ -234,9 +230,37 @@ table _Medidas
 			    BLANK(),
 			    IF(comp_exceso > 0, comp_exceso, BLANK())
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: adc04a94-42e1-4705-b2b0-8e76862e8790
 
+	measure 'Dentro presupuesto visual' =
+			
+			[Ejecutado dentro presupuesto] +
+			[Comprometido dentro presupuesto]
+		lineageTag: b2aef6cf-0969-485b-b772-dd79f020b8a4
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Excedente visual' =
+			
+			[Ejecutado excedente] +
+			[Comprometido excedente]
+		lineageTag: 484eeb62-984a-4d9f-b552-5e476e3254f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Ejecución visible' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR cons = [Consumo total visible]
+			RETURN
+			IF(
+			    ISBLANK(pres),
+			    BLANK(),
+			    DIVIDE(cons, pres)
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: a72059bb-46d7-4921-ac49-b5addbba55c0
 
 	partition _Medidas = m
 		mode: import

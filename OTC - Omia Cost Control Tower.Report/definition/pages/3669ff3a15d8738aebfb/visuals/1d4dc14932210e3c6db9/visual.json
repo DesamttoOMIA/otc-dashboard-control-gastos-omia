@@ -5,7 +5,7 @@
     "x": 31,
     "y": 26,
     "z": 0,
-    "height": 142,
+    "height": 160,
     "width": 258,
     "tabOrder": 0
   },
@@ -137,6 +137,22 @@
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "outline": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Presupuesto total"
           }
         }
       ]
