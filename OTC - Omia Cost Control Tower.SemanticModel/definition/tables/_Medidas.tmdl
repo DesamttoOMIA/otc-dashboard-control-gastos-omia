@@ -261,6 +261,158 @@ table _Medidas
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: a72059bb-46d7-4921-ac49-b5addbba55c0
 
+	measure '% Consumo presupuesto' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR cons = [Consumo total visible]
+			RETURN
+			IF(
+			    ISBLANK(pres) || pres = 0,
+			    BLANK(),
+			    DIVIDE(cons, pres)
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: d6a809fa-801f-4240-a638-fbef33775db1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Consumo % visible' =
+			
+			VAR p = [% Consumo presupuesto]
+			RETURN
+			IF(
+			    ISBLANK(p),
+			    BLANK(),
+			    MIN(p, 1)
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 8449ce62-de63-4639-85e9-db682947a93e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Restante % visible' =
+			
+			VAR p = [% Consumo presupuesto]
+			RETURN
+			IF(
+			    ISBLANK(p),
+			    BLANK(),
+			    MAX(1 - p, 0)
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 71aa4191-a648-4c06-9ece-4177f0d71467
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Exceso % visible' =
+			
+			VAR p = [% Consumo presupuesto]
+			RETURN
+			IF(
+			    ISBLANK(p),
+			    BLANK(),
+			    MAX(p - 1, 0)
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 5b82b356-1cae-4a4f-a72e-6a5c292cdf60
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Consumo presupuesto texto' =
+			
+			VAR p = [% Consumo presupuesto]
+			RETURN
+			IF(
+			    ISBLANK(p),
+			    BLANK(),
+			    FORMAT(p, "0.0%")
+			)
+		displayFolder: Medidas secundarias
+		lineageTag: 8f282c86-7671-4441-a90d-0026d4da91e4
+
+	measure 'Card HTML - Presupuesto Total' =
+			
+			VAR Titulo = "Presupuesto total"
+			VAR ValorPrincipal = FORMAT([Presupuesto total Visible] / 1000000, "$ #,0.00") & " mill."
+			VAR ValorSecundario = "Consumo total: " & FORMAT([Consumo total visible] / 1000000, "$ #,0.00") & " mill."
+			VAR Porcentaje = [% Consumo presupuesto]
+			VAR PorcentajeTexto = [% Consumo presupuesto texto]
+			
+			VAR WidthConsumo = FORMAT(MIN(Porcentaje,1) * 100, "0.0")
+			VAR WidthRestante = FORMAT(MAX(1 - Porcentaje,0) * 100, "0.0")
+			VAR WidthExceso = FORMAT(MAX(Porcentaje - 1,0) * 100, "0.0")
+			
+			VAR ColorPrincipal = "#111827"
+			VAR ColorTextoSec = "#6B7280"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			VAR FondoBarra = "#EEF2F7"
+			VAR ColorConsumo = "#2563EB"
+			VAR ColorRestante = "#D1D5DB"
+			VAR ColorExceso = "#DC2626"
+			VAR FondoFooter = "#F3F4F6"
+			
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-radius:18px;
+			    padding:18px 18px 14px 18px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			'>
+			    <div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			        " & Titulo & "
+			    </div>
+			
+			    <div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:10px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			
+			    <div style='font-size:14px; color:" & ColorTextoSec & "; margin-bottom:16px;'>
+			        " & ValorSecundario & "
+			    </div>
+			
+			    <div style='
+			        background:" & FondoFooter & ";
+			        border-radius:12px;
+			        padding:12px 14px;
+			    '>
+			        <div style='
+			            display:flex;
+			            justify-content:space-between;
+			            align-items:center;
+			            margin-bottom:8px;
+			            font-size:13px;
+			            color:" & ColorTextoSec & ";
+			            font-weight:600;
+			        '>
+			            <span>Avance del presupuesto</span>
+			            <span>" & PorcentajeTexto & "</span>
+			        </div>
+			
+			        <div style='
+			            width:100%;
+			            height:14px;
+			            background:" & FondoBarra & ";
+			            border-radius:999px;
+			            overflow:hidden;
+			            display:flex;
+			        '>
+			            <div style='width:" & WidthConsumo & "%; background:" & ColorConsumo & ";'></div>
+			            <div style='width:" & WidthRestante & "%; background:" & ColorRestante & ";'></div>
+			            <div style='width:" & WidthExceso & "%; background:" & ColorExceso & ";'></div>
+			        </div>
+			    </div>
+			</div>
+			"
+		displayFolder: Medidas secundarias
+		lineageTag: c3d164ed-9722-4d23-9205-f62c3530d51a
+
 	partition _Medidas = m
 		mode: import
 		source =

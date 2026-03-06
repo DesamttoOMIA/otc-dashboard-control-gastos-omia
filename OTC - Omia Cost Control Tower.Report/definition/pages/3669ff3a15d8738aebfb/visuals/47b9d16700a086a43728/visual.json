@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 18,
-    "y": 407,
+    "x": 410,
+    "y": 568,
     "z": 5000,
-    "height": 386,
-    "width": 785,
+    "height": 225,
+    "width": 401,
     "tabOrder": 6000
   },
   "visual": {
-    "visualType": "lineStackedColumnComboChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
@@ -118,7 +118,7 @@
                   "Property": "Presupuesto remanente visible > 0"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente visible",
+              "queryRef": "_Medidas.Presupuesto remanente visible > 0",
               "nativeQueryRef": "Presupuesto remanente visible > 0"
             },
             {
@@ -148,11 +148,7 @@
               },
               "queryRef": "_Medidas.Comprometido excedente",
               "nativeQueryRef": "Comprometido excedente"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
+            },
             {
               "field": {
                 "Measure": {
@@ -174,57 +170,16 @@
         "sort": [
           {
             "field": {
-              "HierarchyLevel": {
+              "Measure": {
                 "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
+                  "SourceRef": {
+                    "Entity": "_Medidas"
                   }
                 },
-                "Level": "Tipo costo"
+                "Property": "Ejecutado dentro presupuesto"
               }
             },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Desc_N2"
-              }
-            },
-            "direction": "Ascending"
-          },
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Desc_N3_OK"
-              }
-            },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ],
         "isDefaultSort": true
@@ -557,81 +512,6 @@
           }
         }
       ],
-      "lineStyles": [
-        {
-          "properties": {
-            "areaShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "lineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'dotted'"
-                }
-              }
-            },
-            "lineChartType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'smooth'"
-                }
-              }
-            },
-            "interpolationSmooth": {
-              "expr": {
-                "Literal": {
-                  "Value": "'cardinal'"
-                }
-              }
-            },
-            "strokeWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "interpolationSmoothParam": {
-              "expr": {
-                "Literal": {
-                  "Value": "50D"
-                }
-              }
-            },
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "strokeAutoScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "seriesLabels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "totals": [
         {
           "properties": {
@@ -666,13 +546,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'TopCenter'"
-                }
-              }
-            },
-            "legendMarkerRendering": {
-              "expr": {
-                "Literal": {
-                  "Value": "'markerOnly'"
                 }
               }
             }
