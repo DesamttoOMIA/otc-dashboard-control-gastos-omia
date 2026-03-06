@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 19,
-    "y": 840,
+    "x": 18.181818181818183,
+    "y": 818.18181818181824,
     "z": 6000,
-    "height": 544,
-    "width": 1226,
+    "height": 543.43434343434342,
+    "width": 783.83838383838383,
     "tabOrder": 5000
   },
   "visual": {
@@ -213,31 +213,7 @@
             "isPinned": true
           }
         ],
-        "root": {
-          "children": [
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Directo'"
-                  }
-                }
-              ],
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Empalme con actual contratista'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            }
-          ]
-        }
+        "root": {}
       }
     ],
     "visualContainerObjects": {

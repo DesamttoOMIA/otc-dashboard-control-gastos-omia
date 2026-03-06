@@ -134,10 +134,9 @@ table _Medidas
 			    BLANK(),
 			    total
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: 6e547628-15b6-4f9b-a25a-b8b9107c3b7e
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Sobrepresupuesto visible (>0)' =
 			

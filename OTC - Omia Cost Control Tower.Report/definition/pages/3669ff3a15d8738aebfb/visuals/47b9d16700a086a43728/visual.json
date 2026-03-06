@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 19,
-    "y": 201,
+    "x": 18,
+    "y": 407,
     "z": 5000,
-    "height": 576,
-    "width": 1243,
+    "height": 386,
+    "width": 785,
     "tabOrder": 6000
   },
   "visual": {
@@ -897,13 +897,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Canvas'"
-                }
-              }
-            },
-            "showActionsInTooltips": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             },
