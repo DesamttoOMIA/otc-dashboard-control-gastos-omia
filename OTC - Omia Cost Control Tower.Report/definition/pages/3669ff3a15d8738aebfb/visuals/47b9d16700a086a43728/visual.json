@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 410,
+    "x": 18,
     "y": 265,
-    "z": 5000,
+    "z": 2000,
     "height": 528,
-    "width": 401,
-    "tabOrder": 6000
+    "width": 793,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -148,7 +148,11 @@
               },
               "queryRef": "_Medidas.Comprometido excedente",
               "nativeQueryRef": "Comprometido excedente"
-            },
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -170,16 +174,57 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "HierarchyLevel": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Medidas"
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
                   }
                 },
-                "Property": "Ejecutado dentro presupuesto"
+                "Level": "Tipo costo"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Desc_N2"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Desc_N3_OK"
+              }
+            },
+            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
@@ -699,6 +744,32 @@
           },
           "selector": {
             "metadata": "_Medidas.Comprometido excedente"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
+                    }
+                  }
+                }
+              }
+            },
+            "fillTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "90D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Presupuesto remanente visible > 0"
           }
         }
       ],

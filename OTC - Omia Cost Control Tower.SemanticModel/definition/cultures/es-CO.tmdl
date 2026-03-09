@@ -6591,16 +6591,6 @@ cultureInfo es-CO
 			            },
 			            "Weight": 0.739
 			          }
-			        },
-			        {
-			          "Consumo total": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },

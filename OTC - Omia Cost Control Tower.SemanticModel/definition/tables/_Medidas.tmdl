@@ -271,10 +271,9 @@ table _Medidas
 			    BLANK(),
 			    DIVIDE(cons, pres)
 			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		displayFolder: Medidas secundarias
 		lineageTag: d6a809fa-801f-4240-a638-fbef33775db1
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Consumo % visible' =
 			
@@ -548,6 +547,91 @@ table _Medidas
 			"
 		displayFolder: Medidas tarjeta presupuesto remanente
 		lineageTag: 9436ad94-2aaa-4091-aa85-adb105f8546a
+
+	measure 'Cantidad ODC cerradas' = DISTINCTCOUNT(Fact_ordenes_de_compra[Orden de Compra])
+		formatString: 0
+		displayFolder: Medidas tarjeta consumo total
+		lineageTag: fdc76a9b-8a93-4fca-9e9e-a260a31b8231
+
+	measure 'Cantidad NFC' = DISTINCTCOUNT(Fact_facturas_conformadas[Número interno])
+		formatString: 0
+		displayFolder: Medidas tarjeta consumo total
+		lineageTag: 3166b530-c97a-4920-9ddc-b4a06e59078a
+
+	measure 'Cantidad SOLPED abiertas' = DISTINCTCOUNT(Fact_solicitud_de_pedido[ID de documento interno])
+		formatString: 0
+		displayFolder: Medidas tarjeta consumo total
+		lineageTag: 7fa18ca8-3eab-42e5-8717-1137940d358f
+
+	measure 'Card HTML - Consumo Total' =
+			
+			VAR Titulo = "Consumo total"
+			
+			VAR Ejecutado = [Costo ejecutado visible]
+			VAR Comprometido = [Costo comprometido visible]
+			VAR ConsumoTotal = Ejecutado + Comprometido
+			
+			VAR ValorPrincipal =
+			    FORMAT(ConsumoTotal / 1000000, "$ #,0.00") & " mill."
+			
+			VAR ValorEjecutado =
+			    FORMAT(Ejecutado / 1000000, "$ #,0.00") & " mill."
+			
+			VAR ValorComprometido =
+			    FORMAT(Comprometido / 1000000, "$ #,0.00") & " mill."
+			
+			VAR CantODC = [Cantidad ODC cerradas]
+			VAR CantNFC = [Cantidad NFC]
+			VAR CantSOLPED = [Cantidad SOLPED abiertas]
+			
+			VAR ColorPrincipal = "#111827"
+			VAR ColorTextoSec = "#6B7280"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-radius:18px;
+			    padding:18px 18px 14px 18px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			'>
+			    <div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			        " & Titulo & "
+			    </div>
+			
+			    <div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:16px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			
+			    <div style='margin-bottom:12px;'>
+			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
+			            Ejecutado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " & ValorEjecutado & "
+			        </div>
+			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			            ODC cerradas: " & FORMAT(CantODC, "#,0") & " | Facturas NC: " & FORMAT(CantNFC, "#,0") & "
+			        </div>
+			    </div>
+			
+			    <div>
+			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
+			            Comprometido&nbsp; " & ValorComprometido & "
+			        </div>
+			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			            SOLPED abiertas: " & FORMAT(CantSOLPED, "#,0") & "
+			        </div>
+			    </div>
+			
+			</div>
+			"
+		displayFolder: Medidas tarjeta consumo total
+		lineageTag: 889cf79e-cfa7-4f5d-b30f-b59e4c85998f
 
 	partition _Medidas = m
 		mode: import
