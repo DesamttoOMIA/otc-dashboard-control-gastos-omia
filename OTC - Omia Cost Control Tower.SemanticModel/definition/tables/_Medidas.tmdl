@@ -338,16 +338,26 @@ table _Medidas
 			VAR Porcentaje = [% Consumo presupuesto]
 			VAR PorcentajeTexto = [% Consumo presupuesto texto]
 			
-			VAR WidthConsumo = FORMAT(MIN(Porcentaje,1) * 100, "0.0")
-			VAR WidthRestante = FORMAT(MAX(1 - Porcentaje,0) * 100, "0.0")
-			VAR WidthExceso = FORMAT(MAX(Porcentaje - 1,0) * 100, "0.0")
+			VAR ConsumoWidth = MIN(Porcentaje,1) * 100
+			VAR RestanteWidth = MAX(1 - Porcentaje,0) * 100
+			VAR ExcesoWidth = MAX(Porcentaje - 1,0) * 100
+			
+			VAR WidthConsumo = SUBSTITUTE(FORMAT(ConsumoWidth,"0.0"), ",", ".")
+			VAR WidthRestante = SUBSTITUTE(FORMAT(RestanteWidth,"0.0"), ",", ".")
+			VAR WidthExceso = SUBSTITUTE(FORMAT(MIN(ExcesoWidth,100),"0.0"), ",", ".")
 			
 			VAR ColorPrincipal = "#111827"
 			VAR ColorTextoSec = "#6B7280"
 			VAR FondoTarjeta = "#FFFFFF"
 			VAR Borde = "#E5E7EB"
 			VAR FondoBarra = "#EEF2F7"
-			VAR ColorConsumo = "#2563EB"
+			VAR ColorConsumo =
+			SWITCH(
+			    TRUE(),
+			    Porcentaje <= 0.8, "#16A34A",
+			    Porcentaje <= 1, "#F59E0B",
+			    "#DC2626"
+			)
 			VAR ColorRestante = "#D1D5DB"
 			VAR ColorExceso = "#DC2626"
 			VAR FondoFooter = "#F3F4F6"
@@ -391,7 +401,7 @@ table _Medidas
 			            color:" & ColorTextoSec & ";
 			            font-weight:600;
 			        '>
-			            <span>Avance del presupuesto</span>
+			            <span>Consumo del presupuesto</span>
 			            <span>" & PorcentajeTexto & "</span>
 			        </div>
 			
@@ -403,15 +413,141 @@ table _Medidas
 			            overflow:hidden;
 			            display:flex;
 			        '>
-			            <div style='width:" & WidthConsumo & "%; background:" & ColorConsumo & ";'></div>
+			            <div style='width:" & WidthConsumo & "%; background:" & ColorConsumo & "; height:100%; border-radius:999px;'></div>
 			            <div style='width:" & WidthRestante & "%; background:" & ColorRestante & ";'></div>
 			            <div style='width:" & WidthExceso & "%; background:" & ColorExceso & ";'></div>
 			        </div>
 			    </div>
 			</div>
 			"
-		displayFolder: Medidas secundarias
+		displayFolder: Medidas tarjeta presupuesto total
 		lineageTag: c3d164ed-9722-4d23-9205-f62c3530d51a
+
+	measure 'Sobrecosto visible' =
+			
+			VAR v = [Consumo total visible] - [Presupuesto total Visible]
+			RETURN
+			IF(v > 0, v, 0)
+		displayFolder: Medidas tarjeta presupuesto remanente
+		lineageTag: d1e21020-978a-4bed-b344-4d87c0dd869d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Sobrecosto' =
+			
+			VAR pres = [Presupuesto total Visible]
+			VAR over = [Sobrecosto visible]
+			RETURN
+			DIVIDE(over, pres)
+		displayFolder: Medidas tarjeta presupuesto remanente
+		lineageTag: 2a3d5546-7a6c-43fe-8080-5ed40dd05ff5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Sobrecosto texto' =
+			
+			FORMAT([% Sobrecosto], "0.0%")
+		displayFolder: Medidas tarjeta presupuesto remanente
+		lineageTag: 56ddc1b5-1442-41a7-b3dd-72039dcc4a9e
+
+	measure 'Presupuesto remanente visible tarjeta' =
+			
+			VAR v = [Presupuesto total Visible] - [Consumo total visible]
+			RETURN
+			IF(v > 0, v, 0)
+		displayFolder: Medidas tarjeta presupuesto remanente
+		lineageTag: 48f5938e-a1df-4a90-bc07-0f7bd324f555
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Card HTML - Remanente y Sobrecosto' =
+			
+			
+			VAR ValorPrincipal =
+			FORMAT([Presupuesto remanente visible tarjeta] / 1000000, "$ #,0.00") & " mill."
+			
+			VAR ValorSobrecosto =
+			FORMAT([Sobrecosto visible] / 1000000, "$ #,0.00") & " mill."
+			
+			VAR Porcentaje = [% Sobrecosto]
+			VAR PorcentajeTexto = FORMAT(Porcentaje, "0.0%")
+			
+			VAR BarraWidth = SUBSTITUTE(FORMAT(Porcentaje * 100,"0.0"),",",".")
+			
+			VAR ColorPrincipal = "#111827"
+			VAR ColorTextoSec = "#6B7280"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			VAR FondoBarra = "#EEF2F7"
+			VAR ColorSobrecosto = "#DC2626"
+			VAR FondoFooter = "#F3F4F6"
+			
+			RETURN
+			"
+			<div style='
+			font-family: Segoe UI, Arial, sans-serif;
+			background:" & FondoTarjeta & ";
+			border:1px solid " & Borde & ";
+			border-radius:18px;
+			padding:18px 18px 14px 18px;
+			width:100%;
+			height:100%;
+			box-sizing:border-box;
+			box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			'>
+			
+			<div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			Presupuesto remanente
+			</div>
+			
+			<div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:10px;'>
+			" & ValorPrincipal & "
+			</div>
+			
+			<div style='font-size:14px; color:" & ColorTextoSec & "; margin-bottom:16px;'>
+			Sobrecosto: " & ValorSobrecosto & "
+			</div>
+			
+			<div style='
+			background:" & FondoFooter & ";
+			border-radius:12px;
+			padding:12px 14px;
+			'>
+			
+			<div style='
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			margin-bottom:8px;
+			font-size:13px;
+			color:" & ColorTextoSec & ";
+			font-weight:600;
+			'>
+			<span>Avance del sobrecosto</span>
+			<span>" & PorcentajeTexto & "</span>
+			</div>
+			
+			<div style='
+			width:100%;
+			height:14px;
+			background:" & FondoBarra & ";
+			border-radius:999px;
+			overflow:hidden;
+			'>
+			
+			<div style='
+			width:" & BarraWidth & "%;
+			background:" & ColorSobrecosto & ";
+			height:100%;
+			border-radius:999px;
+			'></div>
+			
+			</div>
+			</div>
+			</div>
+			"
+		displayFolder: Medidas tarjeta presupuesto remanente
+		lineageTag: 9436ad94-2aaa-4091-aa85-adb105f8546a
 
 	partition _Medidas = m
 		mode: import
