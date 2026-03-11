@@ -496,7 +496,7 @@ table _Medidas
 			'>
 			
 			<div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
-			Presupuesto remanente
+			Presupuesto disponible
 			</div>
 			
 			<div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:10px;'>
@@ -504,7 +504,7 @@ table _Medidas
 			</div>
 			
 			<div style='font-size:14px; color:" & ColorTextoSec & "; margin-bottom:16px;'>
-			Sobrecosto: " & ValorSobrecosto & "
+			Sobrepresupuesto: " & ValorSobrecosto & "
 			</div>
 			
 			<div style='
@@ -522,7 +522,7 @@ table _Medidas
 			color:" & ColorTextoSec & ";
 			font-weight:600;
 			'>
-			<span>Avance del sobrecosto</span>
+			<span>Nivel sobrepresupuesto</span>
 			<span>" & PorcentajeTexto & "</span>
 			</div>
 			

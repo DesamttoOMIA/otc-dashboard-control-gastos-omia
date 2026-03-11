@@ -342,37 +342,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "54fac7bc080ed9786725",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_subseco"
-              }
-            },
-            "Property": "Descripción"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "2e867620b506a93ab352",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Consumo total visible"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

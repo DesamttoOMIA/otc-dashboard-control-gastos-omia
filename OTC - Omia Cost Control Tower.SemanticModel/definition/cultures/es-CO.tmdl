@@ -6507,6 +6507,16 @@ cultureInfo es-CO
 			            },
 			            "Weight": 0.739
 			          }
+			        },
+			        {
+			          "Presupuesto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -6554,6 +6564,16 @@ cultureInfo es-CO
 			        {
 			          "presupuesto remanente visible > 0": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Presupuesto disponible": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -6709,6 +6729,16 @@ cultureInfo es-CO
 			          "dentro presupuesto visual": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Consumo dentro de presupuesto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -6724,6 +6754,16 @@ cultureInfo es-CO
 			        {
 			          "excedente visual": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Sobrepresupuesto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7503,6 +7543,484 @@ cultureInfo es-CO
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.609
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo_presupuesto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Consumo presupuesto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% consumo presupuesto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage consumo presupuesto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct consumo presupuesto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo__visible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Consumo % visible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "consumo % visible": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "consumo percentage visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "consumo pct visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.restante__visible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Restante % visible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "restante % visible": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "restante percentage visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "restante pct visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.exceso__visible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Exceso % visible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "exceso % visible": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "exceso percentage visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "exceso pct visible": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo_presupuesto_texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Consumo presupuesto texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% consumo presupuesto texto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage consumo presupuesto texto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.617
+			          }
+			        },
+			        {
+			          "pct consumo presupuesto texto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.card_HTML__presupuesto_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Card HTML - Presupuesto Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "card HTML - presupuesto total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "card HTML presupuesto total": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "card html - presupuesto aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "card html - presupuesto overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "card html presupuesto aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "card html presupuesto overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.sobrecosto_visible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Sobrecosto visible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sobrecosto visible": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.sobrecosto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Sobrecosto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% sobrecosto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage sobrecosto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "pct sobrecosto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.sobrecosto_texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Sobrecosto texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% sobrecosto texto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage sobrecosto texto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct sobrecosto texto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.presupuesto_remanente_visible_tarjeta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Presupuesto remanente visible tarjeta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "presupuesto remanente visible tarjeta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.card_HTML__remanente_y_sobrecosto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Card HTML - Remanente y Sobrecosto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "card HTML - remanente y sobrecosto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "card HTML remanente y sobrecosto": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.cantidad_ODC_cerradas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Cantidad ODC cerradas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cantidad ODC cerradas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.cantidad_NFC": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Cantidad NFC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cantidad NFC": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.cantidad_SOLPED_abiertas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Cantidad SOLPED abiertas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cantidad SOLPED abiertas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.card_HTML__consumo_total": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Card HTML - Consumo Total"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "card HTML - consumo total": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "card HTML consumo total": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "card html - consumo aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "card html - consumo overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.757
+			          }
+			        },
+			        {
+			          "card html consumo aggregate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
+			          }
+			        },
+			        {
+			          "card html consumo overall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.748
 			          }
 			        }
 			      ]
@@ -11450,6 +11968,1656 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_card_HTML__consumo_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.card_HTML__consumo_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__consumo_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__consumo_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_card_HTML__consumo_total"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_card_HTML__consumo_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.card_HTML__consumo_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__consumo_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__consumo_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_card_HTML__consumo_total"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_card_HTML__consumo_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.card_HTML__consumo_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__consumo_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__consumo_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_card_HTML__consumo_total"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_cantidad_SOLPED_abiertas": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.cantidad_SOLPED_abiertas": {
+			          "Target": {
+			            "Entity": "entity__medida.cantidad_SOLPED_abiertas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cantidad_SOLPED_abiertas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_cantidad_SOLPED_abiertas"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_cantidad_NFC": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.cantidad_NFC": {
+			          "Target": {
+			            "Entity": "entity__medida.cantidad_NFC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cantidad_NFC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_cantidad_NFC"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_cantidad_ODC_cerradas": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.cantidad_ODC_cerradas": {
+			          "Target": {
+			            "Entity": "entity__medida.cantidad_ODC_cerradas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.cantidad_ODC_cerradas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_cantidad_ODC_cerradas"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.card_HTML__remanente_y_sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_card_HTML__remanente_y_sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.card_HTML__remanente_y_sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_card_HTML__remanente_y_sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.card_HTML__remanente_y_sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_card_HTML__remanente_y_sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.card_HTML__remanente_y_sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__remanente_y_sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_card_HTML__remanente_y_sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.presupuesto_remanente_visible_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_presupuesto_remanente_visible_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.presupuesto_remanente_visible_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_presupuesto_remanente_visible_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.presupuesto_remanente_visible_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_presupuesto_remanente_visible_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.presupuesto_remanente_visible_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_remanente_visible_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_presupuesto_remanente_visible_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_sobrecosto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.sobrecosto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have__sobrecosto_texto"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_sobrecosto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.sobrecosto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have__sobrecosto_texto"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.sobrecosto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have__sobrecosto_texto"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_sobrecosto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.sobrecosto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have__sobrecosto_texto"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have__sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have__sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have__sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_sobrecosto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.sobrecosto": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have__sobrecosto"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_sobrecosto_visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.sobrecosto_visible": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_sobrecosto_visible"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_sobrecosto_visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.sobrecosto_visible": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_sobrecosto_visible"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto_visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.sobrecosto_visible": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_sobrecosto_visible"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_sobrecosto_visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.sobrecosto_visible": {
+			          "Target": {
+			            "Entity": "entity__medida.sobrecosto_visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.sobrecosto_visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_sobrecosto_visible"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_card_HTML__presupuesto_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.card_HTML__presupuesto_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__presupuesto_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__presupuesto_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_card_HTML__presupuesto_total"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_card_HTML__presupuesto_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.card_HTML__presupuesto_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__presupuesto_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__presupuesto_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_card_HTML__presupuesto_total"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_card_HTML__presupuesto_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.card_HTML__presupuesto_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__presupuesto_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__presupuesto_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_card_HTML__presupuesto_total"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_card_HTML__presupuesto_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.card_HTML__presupuesto_total": {
+			          "Target": {
+			            "Entity": "entity__medida.card_HTML__presupuesto_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.card_HTML__presupuesto_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_card_HTML__presupuesto_total"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_consumo_presupuesto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have__consumo_presupuesto_texto"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_consumo_presupuesto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have__consumo_presupuesto_texto"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_consumo_presupuesto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have__consumo_presupuesto_texto"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_consumo_presupuesto_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have__consumo_presupuesto_texto"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_exceso__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.exceso__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.exceso__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.exceso__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_exceso__visible"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_exceso__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.exceso__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.exceso__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.exceso__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_exceso__visible"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_exceso__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.exceso__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.exceso__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.exceso__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_exceso__visible"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_exceso__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.exceso__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.exceso__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.exceso__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_exceso__visible"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_restante__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.restante__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.restante__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.restante__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_restante__visible"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_restante__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.restante__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.restante__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.restante__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_restante__visible"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_restante__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.restante__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.restante__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.restante__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_restante__visible"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_restante__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.restante__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.restante__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.restante__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_restante__visible"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_consumo__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.consumo__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_consumo__visible"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_consumo__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.consumo__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have_consumo__visible"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_consumo__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.consumo__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_consumo__visible"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_consumo__visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.consumo__visible": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo__visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo__visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have_consumo__visible"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_consumo_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have__consumo_presupuesto"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_has_entity__medida_consumo_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto": {
+			          "Target": {
+			            "Entity": "fact_presupuesto"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuestos_have__consumo_presupuesto"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_consumo_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have__consumo_presupuesto"
+			        }
+			      ]
+			    },
+			    "fact_facturas_conformada_has_entity__medida_consumo_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_facturas_conformadas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_facturas_conformada": {
+			          "Target": {
+			            "Entity": "fact_facturas_conformada"
+			          }
+			        },
+			        "entity__medida.consumo_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_facturas_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_facturas_conformadas_have__consumo_presupuesto"
 			        }
 			      ]
 			    },

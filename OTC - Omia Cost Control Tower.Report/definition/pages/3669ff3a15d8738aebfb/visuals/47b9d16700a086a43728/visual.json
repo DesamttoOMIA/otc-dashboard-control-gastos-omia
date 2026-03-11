@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -87,25 +87,12 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Ejecutado dentro presupuesto"
+                  "Property": "Dentro presupuesto visual"
                 }
               },
-              "queryRef": "_Medidas.Ejecutado dentro presupuesto",
-              "nativeQueryRef": "Ejecutado dentro presupuesto"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido dentro presupuesto"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido dentro presupuesto",
-              "nativeQueryRef": "Comprometido dentro presupuesto"
+              "queryRef": "_Medidas.Dentro presupuesto visual",
+              "nativeQueryRef": "Consumo dentro de presupuesto",
+              "displayName": "Consumo dentro de presupuesto"
             },
             {
               "field": {
@@ -119,7 +106,8 @@
                 }
               },
               "queryRef": "_Medidas.Presupuesto remanente visible > 0",
-              "nativeQueryRef": "Presupuesto remanente visible > 0"
+              "nativeQueryRef": "Presupuesto disponible",
+              "displayName": "Presupuesto disponible"
             },
             {
               "field": {
@@ -129,25 +117,12 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Ejecutado excedente"
+                  "Property": "Excedente visual"
                 }
               },
-              "queryRef": "_Medidas.Ejecutado excedente",
-              "nativeQueryRef": "Ejecutado excedente"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido excedente"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido excedente",
-              "nativeQueryRef": "Comprometido excedente"
+              "queryRef": "_Medidas.Excedente visual",
+              "nativeQueryRef": "Sobrepresupuesto",
+              "displayName": "Sobrepresupuesto"
             }
           ]
         },
@@ -165,7 +140,8 @@
                 }
               },
               "queryRef": "_Medidas.Presupuesto total Visible",
-              "nativeQueryRef": "Presupuesto total Visible"
+              "nativeQueryRef": "Presupuesto",
+              "displayName": "Presupuesto"
             }
           ]
         }
@@ -438,96 +414,6 @@
         },
         {
           "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "fillTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado excedente"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "fillTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "20D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido excedente"
-          }
-        },
-        {
-          "properties": {
             "transparency": {
               "expr": {
                 "Literal": {
@@ -554,7 +440,7 @@
             "fillTransparency": {
               "expr": {
                 "Literal": {
-                  "Value": "95D"
+                  "Value": "90D"
                 }
               }
             },
@@ -568,6 +454,43 @@
           },
           "selector": {
             "metadata": "_Medidas.Presupuesto remanente visible > 0"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Dentro presupuesto visual"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D54444'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Excedente visual"
           }
         }
       ],
@@ -757,77 +680,35 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Ejecutado dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado excedente"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "enableDetailDataLabel": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "labelContentLayout": {
-              "expr": {
-                "Literal": {
-                  "Value": "'MultiLine'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido excedente"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "_Medidas.Presupuesto remanente visible > 0"
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Dentro presupuesto visual"
+          }
+        },
+        {
+          "properties": {
+            "showSeries": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Excedente visual"
           }
         }
       ]
@@ -901,5 +782,68 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5fc13a560c070c4cebc0",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Tipo costo"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Directo'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
+      }
+    ]
   }
 }
