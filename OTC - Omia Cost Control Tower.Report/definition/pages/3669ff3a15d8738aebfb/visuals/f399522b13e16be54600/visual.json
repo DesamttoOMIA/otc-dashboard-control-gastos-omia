@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f399522b13e16be54600",
@@ -35,4 +36,43 @@
     },
     "drillFilterOtherVisuals": true
   }
+=======
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "f399522b13e16be54600",
+  "position": {
+    "x": 75,
+    "y": 66,
+    "z": 3000,
+    "height": 181,
+    "width": 316,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Card HTML - Presupuesto Total"
+                }
+              },
+              "queryRef": "_Medidas.Card HTML - Presupuesto Total",
+              "nativeQueryRef": "Card HTML - Presupuesto Total"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+>>>>>>> bf9d218 ( UI/UX al 35%)
 }

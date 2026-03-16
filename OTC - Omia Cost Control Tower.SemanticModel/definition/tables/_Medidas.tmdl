@@ -367,36 +367,36 @@ table _Medidas
 			    font-family: Segoe UI, Arial, sans-serif;
 			    background:" & FondoTarjeta & ";
 			    border:1px solid " & Borde & ";
-			    border-radius:18px;
-			    padding:18px 18px 14px 18px;
+			    border-radius:16px;
+			    padding:12px 12px 10px 12px;
 			    width:100%;
 			    height:100%;
 			    box-sizing:border-box;
-			    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
 			'>
-			    <div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			    <div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:6px;'>
 			        " & Titulo & "
 			    </div>
 			
-			    <div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:10px;'>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:6px;'>
 			        " & ValorPrincipal & "
 			    </div>
 			
-			    <div style='font-size:14px; color:" & ColorTextoSec & "; margin-bottom:16px;'>
+			    <div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:10px;'>
 			        " & ValorSecundario & "
 			    </div>
 			
 			    <div style='
 			        background:" & FondoFooter & ";
-			        border-radius:12px;
-			        padding:12px 14px;
+			        border-radius:10px;
+			        padding:8px 10px;
 			    '>
 			        <div style='
 			            display:flex;
 			            justify-content:space-between;
 			            align-items:center;
-			            margin-bottom:8px;
-			            font-size:13px;
+			            margin-bottom:6px;
+			            font-size:11px;
 			            color:" & ColorTextoSec & ";
 			            font-weight:600;
 			        '>
@@ -406,7 +406,7 @@ table _Medidas
 			
 			        <div style='
 			            width:100%;
-			            height:14px;
+			            height:10px;
 			            background:" & FondoBarra & ";
 			            border-radius:999px;
 			            overflow:hidden;
@@ -487,38 +487,38 @@ table _Medidas
 			font-family: Segoe UI, Arial, sans-serif;
 			background:" & FondoTarjeta & ";
 			border:1px solid " & Borde & ";
-			border-radius:18px;
-			padding:18px 18px 14px 18px;
+			border-radius:16px;
+			padding:12px 12px 10px 12px;
 			width:100%;
 			height:100%;
 			box-sizing:border-box;
-			box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			box-shadow:0 2px 6px rgba(0,0,0,0.05);
 			'>
 			
-			<div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			<div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:6px;'>
 			Presupuesto disponible
 			</div>
 			
-			<div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:10px;'>
+			<div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:6px;'>
 			" & ValorPrincipal & "
 			</div>
 			
-			<div style='font-size:14px; color:" & ColorTextoSec & "; margin-bottom:16px;'>
+			<div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:10px;'>
 			Sobrepresupuesto: " & ValorSobrecosto & "
 			</div>
 			
 			<div style='
 			background:" & FondoFooter & ";
-			border-radius:12px;
-			padding:12px 14px;
+			border-radius:10px;
+			padding:8px 10px;
 			'>
 			
 			<div style='
 			display:flex;
 			justify-content:space-between;
 			align-items:center;
-			margin-bottom:8px;
-			font-size:13px;
+			margin-bottom:6px;
+			font-size:11px;
 			color:" & ColorTextoSec & ";
 			font-weight:600;
 			'>
@@ -528,7 +528,7 @@ table _Medidas
 			
 			<div style='
 			width:100%;
-			height:14px;
+			height:10px;
 			background:" & FondoBarra & ";
 			border-radius:999px;
 			overflow:hidden;
@@ -595,35 +595,35 @@ table _Medidas
 			    font-family: Segoe UI, Arial, sans-serif;
 			    background:" & FondoTarjeta & ";
 			    border:1px solid " & Borde & ";
-			    border-radius:18px;
-			    padding:18px 18px 14px 18px;
+			    border-radius:16px;
+			    padding:12px 12px 10px 12px;
 			    width:100%;
 			    height:100%;
 			    box-sizing:border-box;
-			    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
 			'>
-			    <div style='font-size:15px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:10px;'>
+			    <div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:6px;'>
 			        " & Titulo & "
 			    </div>
 			
-			    <div style='font-size:34px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.1; margin-bottom:16px;'>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:10px;'>
 			        " & ValorPrincipal & "
 			    </div>
 			
-			    <div style='margin-bottom:12px;'>
-			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
-			            Costo ejecutado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " & ValorEjecutado & "
+			    <div style='margin-bottom:8px;'>
+			        <div style='font-size:12px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:2px;'>
+			            Costo ejecutado&nbsp;&nbsp;&nbsp;&nbsp;" & ValorEjecutado & "
 			        </div>
-			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        <div style='font-size:11px; color:" & ColorTextoSec & ";'>
 			            ODC cerradas: " & FORMAT(CantODC, "#,0") & " | Facturas NC: " & FORMAT(CantNFC, "#,0") & "
 			        </div>
 			    </div>
 			
 			    <div>
-			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
-			            Costo comprometido&nbsp; " & ValorComprometido & "
+			        <div style='font-size:12px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:2px;'>
+			            Costo comprometido&nbsp;" & ValorComprometido & "
 			        </div>
-			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        <div style='font-size:11px; color:" & ColorTextoSec & ";'>
 			            SOLPED abiertas: " & FORMAT(CantSOLPED, "#,0") & "
 			        </div>
 			    </div>
