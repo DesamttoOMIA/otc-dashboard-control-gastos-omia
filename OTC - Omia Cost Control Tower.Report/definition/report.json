@@ -53,6 +53,27 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
+          "path": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
+          "type": "Image"
+        },
+        {
+          "name": "menu_(2)09678771576549405.png",
+          "path": "menu_(2)09678771576549405.png",
+          "type": "Image"
+        },
+        {
+          "name": "calendario4540233154034201.png",
+          "path": "calendario4540233154034201.png",
+          "type": "Image"
+        }
+      ]
     }
   ],
   "settings": {

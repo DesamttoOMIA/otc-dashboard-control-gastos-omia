@@ -612,7 +612,7 @@ table _Medidas
 			
 			    <div style='margin-bottom:12px;'>
 			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
-			            Ejecutado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " & ValorEjecutado & "
+			            Costo ejecutado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; " & ValorEjecutado & "
 			        </div>
 			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
 			            ODC cerradas: " & FORMAT(CantODC, "#,0") & " | Facturas NC: " & FORMAT(CantNFC, "#,0") & "
@@ -621,7 +621,7 @@ table _Medidas
 			
 			    <div>
 			        <div style='font-size:14px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:4px;'>
-			            Comprometido&nbsp; " & ValorComprometido & "
+			            Costo comprometido&nbsp; " & ValorComprometido & "
 			        </div>
 			        <div style='font-size:12px; color:" & ColorTextoSec & ";'>
 			            SOLPED abiertas: " & FORMAT(CantSOLPED, "#,0") & "
