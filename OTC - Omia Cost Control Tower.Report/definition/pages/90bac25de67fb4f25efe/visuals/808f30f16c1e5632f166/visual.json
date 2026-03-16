@@ -108,6 +108,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Dim_subseco"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_subseco.Descripción",
+              "nativeQueryRef": "Descripción Subceco",
+              "displayName": "Descripción Subceco"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Fact_solicitud_de_pedido"
                     }
                   },

@@ -93,6 +93,21 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Dim_subseco"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_subseco.Descripción",
+              "nativeQueryRef": "Descripción subseco",
+              "displayName": "Descripción subseco"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Fact_facturas_conformadas"
                     }
                   },

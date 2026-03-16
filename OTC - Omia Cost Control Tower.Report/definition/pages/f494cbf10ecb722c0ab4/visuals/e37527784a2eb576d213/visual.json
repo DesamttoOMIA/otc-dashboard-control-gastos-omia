@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e210f009bb0832e74649",
+  "name": "e37527784a2eb576d213",
   "position": {
-    "x": 702.77078085642313,
-    "y": 196.77581863979847,
-    "z": 7000,
+    "x": 727.25440806045333,
+    "y": 209.47103274559191,
+    "z": 7006,
     "height": 64.382871536523922,
-    "width": 173.19899244332493,
-    "tabOrder": 7000
+    "width": 240.30226700251887,
+    "tabOrder": 7006
   },
   "visual": {
     "visualType": "slicer",
@@ -20,49 +20,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_categoria"
+                      "Entity": "Dim_subseco"
                     }
                   },
-                  "Property": "Codigo"
+                  "Property": "Descripción"
                 }
               },
-              "queryRef": "Dim_categoria.Codigo",
-              "nativeQueryRef": "Codigo",
+              "queryRef": "Dim_subseco.Descripción",
+              "nativeQueryRef": "Descripción",
               "active": true
             }
           ]
         }
       }
     },
-    "expansionStates": [
-      {
-        "roles": [
-          "Values"
-        ],
-        "levels": [
-          {
-            "queryRefs": [
-              "Dim_categoria.Codigo"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_categoria"
-                    }
-                  },
-                  "Property": "Codigo"
-                }
-              }
-            ],
-            "isPinned": true
-          }
-        ],
-        "root": {}
-      }
-    ],
     "objects": {
       "data": [
         {
@@ -113,7 +84,7 @@
                 "From": [
                   {
                     "Name": "d",
-                    "Entity": "Dim_categoria",
+                    "Entity": "Dim_subseco",
                     "Type": 0
                   }
                 ],
@@ -128,12 +99,12 @@
                                 "Source": "d"
                               }
                             },
-                            "Property": "Codigo"
+                            "Property": "Descripción"
                           }
                         },
                         "Right": {
                           "Literal": {
-                            "Value": "'1.5.1'"
+                            "Value": "'Ropa'"
                           }
                         }
                       }
@@ -176,7 +147,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Código - Base Cero'"
+                  "Value": "'Descripción - Subseco'"
                 }
               }
             },
