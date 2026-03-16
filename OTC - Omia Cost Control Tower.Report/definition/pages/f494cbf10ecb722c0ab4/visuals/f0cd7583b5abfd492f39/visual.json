@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "f0cd7583b5abfd492f39",
   "position": {
-    "x": 74.589928057553962,
-    "y": 35.9136690647482,
-    "z": 5000,
-    "height": 118.79136690647482,
-    "width": 232.05755395683454,
+    "x": 111.09433962264151,
+    "y": 100.46792452830191,
+    "z": 6000,
+    "height": 88.8754716981132,
+    "width": 158.43018867924528,
     "tabOrder": 5000
   },
   "visual": {
@@ -28,11 +28,11 @@
                       "Property": "#"
                     }
                   },
-                  "Function": 5
+                  "Function": 2
                 }
               },
               "queryRef": "Sum(Ordenes de Compra.#)",
-              "nativeQueryRef": "Recuento de #"
+              "nativeQueryRef": "Recuento de #1"
             }
           ]
         }
@@ -52,7 +52,7 @@
                     "Property": "#"
                   }
                 },
-                "Function": 5
+                "Function": 2
               }
             },
             "direction": "Descending"

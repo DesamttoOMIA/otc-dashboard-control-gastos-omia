@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "36788d3dc53eeaa18914",
   "position": {
-    "x": 552.54019292604494,
-    "y": 198.58520900321543,
+    "x": 413.46415094339625,
+    "y": 178.71698113207546,
     "z": 3000,
-    "height": 93.633440514469456,
-    "width": 173.89067524115754,
+    "height": 92.739622641509428,
+    "width": 199.96981132075473,
     "tabOrder": 3000
   },
   "visual": {
@@ -109,7 +109,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Numero de Solped'"
+                  "Value": "'Numero de solicitud de pedido'"
                 }
               }
             },

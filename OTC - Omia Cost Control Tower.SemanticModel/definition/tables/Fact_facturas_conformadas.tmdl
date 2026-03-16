@@ -235,13 +235,12 @@ table Fact_facturas_conformadas
 
 	column 'Total líneas'
 		dataType: double
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 1562fd27-1c13-45cb-a105-a76f85d4f02b
 		summarizeBy: sum
 		sourceColumn: Total líneas
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Reembolsable
 		dataType: int64

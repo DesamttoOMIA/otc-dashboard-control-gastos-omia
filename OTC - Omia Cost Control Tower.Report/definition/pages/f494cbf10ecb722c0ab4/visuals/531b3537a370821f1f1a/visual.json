@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "531b3537a370821f1f1a",
   "position": {
-    "x": 36.0128617363344,
-    "y": 333.37620578778132,
+    "x": 0,
+    "y": 328.45283018867923,
     "z": 0,
-    "height": 343.66559485530547,
-    "width": 1206.9453376205788,
+    "height": 334.24905660377357,
+    "width": 1280,
     "tabOrder": 0
   },
   "visual": {
@@ -27,7 +27,66 @@
                 }
               },
               "queryRef": "Sum(Ordenes de Compra.#)",
-              "nativeQueryRef": "#"
+              "nativeQueryRef": "Número interno",
+              "displayName": "Número interno"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ordenes_de_compra"
+                    }
+                  },
+                  "Property": "Orden de Compra"
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.Orden de Compra)",
+              "nativeQueryRef": "Orden de compra",
+              "displayName": "Orden de compra"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_ordenes_de_compra"
+                    }
+                  },
+                  "Property": "Fecha de creación"
+                }
+              },
+              "queryRef": "Ordenes de Compra.Fecha de creación",
+              "nativeQueryRef": "Fecha de creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria"
+                    }
+                  },
+                  "Property": "Codigo"
+                }
+              },
+              "queryRef": "Dim_categoria.Codigo",
+              "nativeQueryRef": "Código - Base Cero",
+              "displayName": "Código - Base Cero"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_categoria.Descripción",
+              "nativeQueryRef": "Descripción"
             },
             {
               "field": {
@@ -51,25 +110,12 @@
                       "Entity": "Fact_ordenes_de_compra"
                     }
                   },
-                  "Property": "Fecha de creación"
+                  "Property": "Unidad Medida OC"
                 }
               },
-              "queryRef": "Ordenes de Compra.Fecha de creación",
-              "nativeQueryRef": "Fecha de creación"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_proyecto"
-                    }
-                  },
-                  "Property": "Nombre de proyecto"
-                }
-              },
-              "queryRef": "Dim_proyecto.Nombre de proyecto",
-              "nativeQueryRef": "Nombre de proyecto"
+              "queryRef": "Ordenes de Compra.Unidad Medida OC",
+              "nativeQueryRef": "Unidad",
+              "displayName": "Unidad"
             },
             {
               "field": {
@@ -79,11 +125,32 @@
                       "Entity": "Fact_ordenes_de_compra"
                     }
                   },
-                  "Property": "Orden de Compra"
+                  "Property": "Cantidad OC"
                 }
               },
-              "queryRef": "Sum(Ordenes de Compra.Orden de Compra)",
-              "nativeQueryRef": "Orden de Compra"
+              "queryRef": "Sum(Ordenes de Compra.Cantidad OC)",
+              "nativeQueryRef": "Cantidad",
+              "displayName": "Cantidad"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_ordenes_de_compra"
+                        }
+                      },
+                      "Property": "Total Líneas OC $Cop"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Ordenes de Compra.Total Líneas OC $Cop)",
+              "nativeQueryRef": "Total de línea",
+              "displayName": "Total de línea"
             },
             {
               "field": {
@@ -126,53 +193,6 @@
               },
               "queryRef": "Ordenes de Compra.Detalle adicional",
               "nativeQueryRef": "Detalle adicional"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_ordenes_de_compra"
-                    }
-                  },
-                  "Property": "Cantidad OC"
-                }
-              },
-              "queryRef": "Sum(Ordenes de Compra.Cantidad OC)",
-              "nativeQueryRef": "Cantidad OC"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_ordenes_de_compra"
-                    }
-                  },
-                  "Property": "Unidad Medida OC"
-                }
-              },
-              "queryRef": "Ordenes de Compra.Unidad Medida OC",
-              "nativeQueryRef": "Unidad Medida OC"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_ordenes_de_compra"
-                        }
-                      },
-                      "Property": "Total Líneas OC $Cop"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Ordenes de Compra.Total Líneas OC $Cop)",
-              "nativeQueryRef": "Suma de Total Líneas OC $Cop"
             }
           ]
         }
@@ -187,10 +207,10 @@
                     "Entity": "Fact_ordenes_de_compra"
                   }
                 },
-                "Property": "Fecha de creación"
+                "Property": "Descripción general"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -343,20 +363,6 @@
             }
           },
           "selector": {
-            "metadata": "Dim_proyecto.Nombre de proyecto"
-          }
-        },
-        {
-          "properties": {
-            "alignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Center'"
-                }
-              }
-            }
-          },
-          "selector": {
             "metadata": "Sum(Solicitud de Pedido.Cantidad)"
           }
         },
@@ -379,6 +385,104 @@
           },
           "selector": {
             "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Cancelado"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Fecha de creación"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.Orden de Compra)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_categoria.Codigo"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_categoria.Descripción"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Unidad Medida OC"
           }
         }
       ],

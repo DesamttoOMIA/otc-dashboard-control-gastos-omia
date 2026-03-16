@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "808f30f16c1e5632f166",
   "position": {
-    "x": 36.0128617363344,
-    "y": 333.37620578778132,
+    "x": 72.452830188679243,
+    "y": 360.33207547169809,
     "z": 0,
-    "height": 343.66559485530547,
-    "width": 1206.9453376205788,
+    "height": 343.90943396226413,
+    "width": 1207.5471698113208,
     "tabOrder": 0
   },
   "visual": {
@@ -26,9 +26,9 @@
                   "Property": "#"
                 }
               },
-              "queryRef": "Sum(Solicitud de Pedido.#)",
-              "nativeQueryRef": "ID interno",
-              "displayName": "ID interno"
+              "queryRef": "Sum(Fact_solicitud_de_pedido.#)",
+              "nativeQueryRef": "Número interno",
+              "displayName": "Número interno"
             },
             {
               "field": {
@@ -41,37 +41,9 @@
                   "Property": "Número de documento"
                 }
               },
-              "queryRef": "Sum(Solicitud de Pedido.Número de documento)",
-              "nativeQueryRef": "Número de documento SOLPED",
-              "displayName": "Número de documento SOLPED"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_solicitud_de_pedido"
-                    }
-                  },
-                  "Property": "Adjudicacion Directa"
-                }
-              },
-              "queryRef": "Solicitud de Pedido.Adjudicacion Directa",
-              "nativeQueryRef": "Adjudicacion Directa"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_proyecto"
-                    }
-                  },
-                  "Property": "Nombre de proyecto"
-                }
-              },
-              "queryRef": "Dim_proyecto.Nombre de proyecto",
-              "nativeQueryRef": "Nombre de proyecto"
+              "queryRef": "Fact_solicitud_de_pedido.Número de documento",
+              "nativeQueryRef": "Número de solicitud de pedido",
+              "displayName": "Número de solicitud de pedido"
             },
             {
               "field": {
@@ -84,28 +56,66 @@
                   "Property": "Fecha de creación"
                 }
               },
-              "queryRef": "Solicitud de Pedido.Fecha de creación",
+              "queryRef": "Fact_solicitud_de_pedido.Fecha de creación",
               "nativeQueryRef": "Fecha de creación"
             },
             {
               "field": {
-                "Aggregation": {
+                "Column": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_solicitud_de_pedido"
-                        }
-                      },
-                      "Property": "Cantidad"
+                    "SourceRef": {
+                      "Entity": "Fact_solicitud_de_pedido"
                     }
                   },
-                  "Function": 0
+                  "Property": "Adjudicacion Directa"
                 }
               },
-              "queryRef": "Sum(Solicitud de Pedido.Cantidad)",
-              "nativeQueryRef": "Cantidad solicitada",
-              "displayName": "Cantidad solicitada"
+              "queryRef": "Fact_solicitud_de_pedido.Adjudicacion Directa",
+              "nativeQueryRef": "Adjudicación directa",
+              "displayName": "Adjudicación directa"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria"
+                    }
+                  },
+                  "Property": "Codigo"
+                }
+              },
+              "queryRef": "Dim_categoria.Codigo",
+              "nativeQueryRef": "Código - Base Cero",
+              "displayName": "Código - Base Cero"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_categoria.Descripción",
+              "nativeQueryRef": "Descripción"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_solicitud_de_pedido"
+                    }
+                  },
+                  "Property": "Cancelado"
+                }
+              },
+              "queryRef": "Fact_solicitud_de_pedido.Cancelado",
+              "nativeQueryRef": "Cancelado"
             },
             {
               "field": {
@@ -118,22 +128,28 @@
                   "Property": "Unidad"
                 }
               },
-              "queryRef": "Solicitud de Pedido.Unidad",
+              "queryRef": "Fact_solicitud_de_pedido.Unidad",
               "nativeQueryRef": "Unidad"
             },
             {
               "field": {
-                "Column": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_solicitud_de_pedido"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_solicitud_de_pedido"
+                        }
+                      },
+                      "Property": "Total líneas"
                     }
                   },
-                  "Property": "Descripción artículo/serv."
+                  "Function": 0
                 }
               },
-              "queryRef": "Solicitud de Pedido.Descripción artículo/serv.",
-              "nativeQueryRef": "Descripción artículo/serv."
+              "queryRef": "Sum(Fact_solicitud_de_pedido.Total líneas)",
+              "nativeQueryRef": "Total línea",
+              "displayName": "Total línea"
             },
             {
               "field": {
@@ -146,39 +162,28 @@
                   "Property": "Comentarios"
                 }
               },
-              "queryRef": "Solicitud de Pedido.Comentarios",
+              "queryRef": "Fact_solicitud_de_pedido.Comentarios",
               "nativeQueryRef": "Comentarios"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_solicitud_de_pedido"
-                    }
-                  },
-                  "Property": "Total líneas"
-                }
-              },
-              "queryRef": "Sum(Solicitud de Pedido.Total líneas)",
-              "nativeQueryRef": "Total líneas"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_Subseco stanby"
-                    }
-                  },
-                  "Property": "Equivalencia"
-                }
-              },
-              "queryRef": "Dim_Subseco.Equivalencia",
-              "nativeQueryRef": "Equivalencia"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_solicitud_de_pedido"
+                  }
+                },
+                "Property": "Fecha de creación"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {
@@ -287,7 +292,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.#)"
+            "metadata": "Sum(Fact_solicitud_de_pedido.#)"
           }
         },
         {
@@ -301,7 +306,21 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Número de documento)"
+            "metadata": "Fact_solicitud_de_pedido.Número de documento"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_solicitud_de_pedido.Fecha de creación"
           }
         },
         {
@@ -315,7 +334,7 @@
             }
           },
           "selector": {
-            "metadata": "Solicitud de Pedido.Adjudicacion Directa"
+            "metadata": "Fact_solicitud_de_pedido.Adjudicacion Directa"
           }
         },
         {
@@ -329,7 +348,7 @@
             }
           },
           "selector": {
-            "metadata": "Dim_proyecto.Nombre de proyecto"
+            "metadata": "Dim_categoria.Codigo"
           }
         },
         {
@@ -343,7 +362,7 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Cantidad)"
+            "metadata": "Dim_categoria.Descripción"
           }
         },
         {
@@ -354,47 +373,10 @@
                   "Value": "'Center'"
                 }
               }
-            },
-            "styleTotal": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
-          }
-        }
-      ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "99.17985611510791D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "379.3765613363919D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Dim_proyecto.Nombre de proyecto"
+            "metadata": "Fact_solicitud_de_pedido.Cancelado"
           }
         }
       ]

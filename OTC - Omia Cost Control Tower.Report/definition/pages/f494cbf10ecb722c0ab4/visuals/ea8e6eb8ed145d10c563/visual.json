@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ea8e6eb8ed145d10c563",
   "position": {
     "x": 900.83499005964222,
@@ -172,7 +172,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total ODC'"
+                  "Value": "'Total Ordenes de Compra'"
                 }
               }
             },

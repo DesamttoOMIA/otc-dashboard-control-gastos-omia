@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "18609ebc0fabb2a5833e",
   "position": {
-    "x": 36.0128617363344,
-    "y": 333.37620578778132,
+    "x": 72.452830188679243,
+    "y": 333.28301886792451,
     "z": 0,
-    "height": 343.66559485530547,
-    "width": 1206.9453376205788,
+    "height": 343.90943396226413,
+    "width": 1207.5471698113208,
     "tabOrder": 0
   },
   "visual": {
@@ -26,8 +26,9 @@
                   "Property": "#"
                 }
               },
-              "queryRef": "Sum(Facturas Conformadas.#)",
-              "nativeQueryRef": "#"
+              "queryRef": "Sum(Fact_facturas_conformadas.#)",
+              "nativeQueryRef": "Número interno1",
+              "displayName": "Número interno"
             },
             {
               "field": {
@@ -40,22 +41,9 @@
                   "Property": "Número interno"
                 }
               },
-              "queryRef": "Facturas Conformadas.Número interno",
-              "nativeQueryRef": "Número interno"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Dim_proyecto"
-                    }
-                  },
-                  "Property": "Nombre de proyecto"
-                }
-              },
-              "queryRef": "Dim_proyecto.Nombre de proyecto",
-              "nativeQueryRef": "Nombre de proyecto"
+              "queryRef": "Fact_facturas_conformadas.Número interno",
+              "nativeQueryRef": "Factura conformada",
+              "displayName": "Factura conformada"
             },
             {
               "field": {
@@ -68,7 +56,7 @@
                   "Property": "Fecha de contabilización"
                 }
               },
-              "queryRef": "Facturas Conformadas.Fecha de contabilización",
+              "queryRef": "Fact_facturas_conformadas.Fecha de contabilización",
               "nativeQueryRef": "Fecha de contabilización"
             },
             {
@@ -76,14 +64,29 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Dim_categoria"
                     }
                   },
-                  "Property": "Comentarios"
+                  "Property": "Codigo"
                 }
               },
-              "queryRef": "Facturas Conformadas.Comentarios",
-              "nativeQueryRef": "Comentarios"
+              "queryRef": "Dim_categoria.Codigo",
+              "nativeQueryRef": "Código - Base Cero",
+              "displayName": "Código - Base Cero"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_categoria"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_categoria.Descripción",
+              "nativeQueryRef": "Descripción"
             },
             {
               "field": {
@@ -93,11 +96,12 @@
                       "Entity": "Fact_facturas_conformadas"
                     }
                   },
-                  "Property": "Cantidad"
+                  "Property": "Status de documento"
                 }
               },
-              "queryRef": "Sum(Facturas Conformadas.Cantidad)",
-              "nativeQueryRef": "Cantidad"
+              "queryRef": "Fact_facturas_conformadas.Status de documento",
+              "nativeQueryRef": "Estado de documento",
+              "displayName": "Estado de documento"
             },
             {
               "field": {
@@ -110,7 +114,7 @@
                   "Property": "Unidad"
                 }
               },
-              "queryRef": "Facturas Conformadas.Unidad",
+              "queryRef": "Fact_facturas_conformadas.Unidad",
               "nativeQueryRef": "Unidad"
             },
             {
@@ -121,25 +125,59 @@
                       "Entity": "Fact_facturas_conformadas"
                     }
                   },
-                  "Property": "Total líneas"
+                  "Property": "Cantidad"
                 }
               },
-              "queryRef": "Sum(Facturas Conformadas.Total líneas)",
-              "nativeQueryRef": "Total líneas"
+              "queryRef": "Sum(Fact_facturas_conformadas.Cantidad)",
+              "nativeQueryRef": "Cantidad"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_facturas_conformadas"
+                        }
+                      },
+                      "Property": "Total líneas"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_facturas_conformadas.Total líneas)",
+              "nativeQueryRef": "Total líneas",
+              "displayName": "Total líneas"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim_Subseco stanby"
+                      "Entity": "Fact_facturas_conformadas"
                     }
                   },
-                  "Property": "Equivalencia"
+                  "Property": "Descripción artículo/serv."
                 }
               },
-              "queryRef": "Dim_Subseco.Equivalencia",
-              "nativeQueryRef": "Equivalencia"
+              "queryRef": "Fact_facturas_conformadas.Descripción artículo/serv.",
+              "nativeQueryRef": "Descripción artículo/serv."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_facturas_conformadas"
+                    }
+                  },
+                  "Property": "Comentarios"
+                }
+              },
+              "queryRef": "Fact_facturas_conformadas.Comentarios",
+              "nativeQueryRef": "Comentarios"
             }
           ]
         }
@@ -175,20 +213,6 @@
       "grid": [
         {
           "properties": {
-            "gridVertical": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "gridVerticalWeight": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            },
             "outlineStyle": {
               "expr": {
                 "Literal": {
@@ -215,6 +239,27 @@
                 }
               }
             },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "rowPadding": {
               "expr": {
                 "Literal": {
@@ -228,11 +273,329 @@
                   "Value": "10D"
                 }
               }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Número de documento)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Solicitud de Pedido.Adjudicacion Directa"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Cantidad)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
             },
-            "gridHorizontal": {
+            "styleTotal": {
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Cancelado"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Fecha de creación"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.Orden de Compra)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_categoria.Codigo"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_categoria.Descripción"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Ordenes de Compra.Unidad Medida OC"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_facturas_conformadas.#)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_facturas_conformadas.Número interno"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_facturas_conformadas.Status de documento"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_facturas_conformadas.Unidad"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_facturas_conformadas.Cantidad)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Fact_facturas_conformadas.Total líneas)"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "99.17985611510791D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

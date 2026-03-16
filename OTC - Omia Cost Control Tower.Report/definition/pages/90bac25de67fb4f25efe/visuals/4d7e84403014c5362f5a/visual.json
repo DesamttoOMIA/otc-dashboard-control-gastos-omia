@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "4d7e84403014c5362f5a",
   "position": {
-    "x": 68.707753479125259,
-    "y": 36.8986083499006,
+    "x": 130.41509433962264,
+    "y": 9.6603773584905657,
     "z": 5000,
-    "height": 114.51292246520876,
-    "width": 212.48508946322067,
+    "height": 103.36603773584906,
+    "width": 162.2943396226415,
     "tabOrder": 5000
   },
   "visual": {
@@ -25,15 +25,14 @@
                           "Entity": "Fact_solicitud_de_pedido"
                         }
                       },
-                      "Property": "Total líneas"
+                      "Property": "Número de documento"
                     }
                   },
-                  "Function": 5
+                  "Function": 2
                 }
               },
-              "queryRef": "Sum(Solicitud de Pedido.Total líneas)",
-              "nativeQueryRef": "Recuento de Total líneas",
-              "displayName": "Total Solped Abierta"
+              "queryRef": "Min(Fact_solicitud_de_pedido.Número de documento)",
+              "nativeQueryRef": "Recuento de Número de documento"
             }
           ]
         }
@@ -50,10 +49,10 @@
                         "Entity": "Fact_solicitud_de_pedido"
                       }
                     },
-                    "Property": "Total líneas"
+                    "Property": "Número de documento"
                   }
                 },
-                "Function": 5
+                "Function": 2
               }
             },
             "direction": "Descending"
@@ -66,36 +65,20 @@
       "layout": [
         {
           "properties": {
-            "autoGrid": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "orientation": {
               "expr": {
                 "Literal": {
                   "Value": "2D"
                 }
               }
-            }
-          }
-        }
-      ],
-      "label": [
-        {
-          "properties": {
-            "show": {
+            },
+            "autoGrid": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
           }
         }
       ],
@@ -137,27 +120,9 @@
             }
           },
           "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+            "id": "default"
           }
-        }
-      ],
-      "shapeCustomRectangle": [
-        {
-          "properties": {
-            "tileShape": {
-              "expr": {
-                "Literal": {
-                  "Value": "'tabCutTopCornersByPixel'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
-          }
-        }
-      ],
-      "accentBar": [
+        },
         {
           "properties": {
             "show": {
@@ -170,6 +135,64 @@
           },
           "selector": {
             "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        }
+      ],
+      "label": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Solicitud de Pedido.Total líneas)"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.#)"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.Orden de Compra)"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
@@ -187,6 +210,64 @@
           "selector": {
             "metadata": "Sum(Solicitud de Pedido.Total líneas)"
           }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.#)"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Ordenes de Compra.Orden de Compra)"
+          }
+        },
+        {
+          "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "divider": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
         }
       ]
     },
@@ -194,6 +275,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Solicitudes de pedido'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -201,10 +289,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total de lineas abiertas'"
+                  "Value": "true"
                 }
               }
             },
@@ -238,6 +326,55 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "spacing": [
+        {
+          "properties": {
+            "verticalSpacing": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
