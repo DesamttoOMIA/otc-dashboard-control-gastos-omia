@@ -104,7 +104,7 @@ table _Medidas
 
 	measure 'Presupuesto remanente visible > 0' =
 			
-			VAR pres = [Presupuesto total Visible]
+			VAR pres = COALESCE([Presupuesto total], 0)
 			VAR ejec = COALESCE([Costo ejecutado visible], 0)
 			VAR comp = COALESCE([Costo comprometido visible], 0)
 			
@@ -114,11 +114,7 @@ table _Medidas
 			
 			VAR rem = pres - ejec_dentro - comp_dentro
 			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(rem > 0, rem, BLANK())
-			)
+			IF(rem > 0, rem, BLANK())
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: eac8d59c-bedc-4539-b215-eb9418c55226
@@ -169,66 +165,51 @@ table _Medidas
 
 	measure 'Ejecutado dentro presupuesto' =
 			
-			VAR pres = [Presupuesto total Visible]
+			VAR pres = COALESCE([Presupuesto total], 0)
 			VAR ejec = COALESCE([Costo ejecutado visible], 0)
+			VAR valor = MIN(ejec, pres)
 			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(ejec = 0, BLANK(), MIN(ejec, pres))
-			)
+			IF(valor = 0, BLANK(), valor)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 53fd3e7e-46ad-4128-b19a-9f70bad7305c
 
 	measure 'Ejecutado excedente' =
 			
-			VAR pres = [Presupuesto total Visible]
+			VAR pres = COALESCE([Presupuesto total], 0)
 			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR exc  = ejec - pres
+			VAR exc  = MAX(ejec - pres, 0)
 			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(exc > 0, exc, BLANK())
-			)
+			IF(exc = 0, BLANK(), exc)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 1ce122ed-f800-46c0-bd70-cb22b07e29a4
 
 	measure 'Comprometido dentro presupuesto' =
 			
-			VAR pres = [Presupuesto total Visible]
+			VAR pres = COALESCE([Presupuesto total], 0)
 			VAR ejec = COALESCE([Costo ejecutado visible], 0)
 			VAR comp = COALESCE([Costo comprometido visible], 0)
 			
 			VAR ejec_dentro = MIN(ejec, pres)
 			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
-			
 			VAR comp_dentro = MIN(comp, saldo_pres)
+			
 			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(comp_dentro = 0, BLANK(), comp_dentro)
-			)
+			IF(comp_dentro = 0, BLANK(), comp_dentro)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 515d5e0e-8a31-4934-b669-b244b0c73990
 
 	measure 'Comprometido excedente' =
 			
-			VAR pres = [Presupuesto total Visible]
+			VAR pres = COALESCE([Presupuesto total], 0)
 			VAR ejec = COALESCE([Costo ejecutado visible], 0)
 			VAR comp = COALESCE([Costo comprometido visible], 0)
 			
 			VAR ejec_dentro = MIN(ejec, pres)
 			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
-			
 			VAR comp_exceso = MAX(comp - saldo_pres, 0)
+			
 			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(comp_exceso > 0, comp_exceso, BLANK())
-			)
+			IF(comp_exceso = 0, BLANK(), comp_exceso)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: adc04a94-42e1-4705-b2b0-8e76862e8790
 
