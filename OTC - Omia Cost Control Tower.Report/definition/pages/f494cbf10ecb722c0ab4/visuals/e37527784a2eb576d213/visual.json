@@ -78,7 +78,7 @@
                 }
               }
             },
-            "selfFilter": {
+            "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
@@ -91,26 +91,29 @@
                 "Where": [
                   {
                     "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Descripción"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Instrumentos de la compañía'"
                               }
-                            },
-                            "Property": "Descripción"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'Ropa'"
-                          }
-                        }
+                            }
+                          ]
+                        ]
                       }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]
