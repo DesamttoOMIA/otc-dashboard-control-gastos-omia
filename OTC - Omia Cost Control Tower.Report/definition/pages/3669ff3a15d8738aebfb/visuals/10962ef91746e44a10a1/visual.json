@@ -1,0 +1,129 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "10962ef91746e44a10a1",
+  "position": {
+    "x": 741,
+    "y": 818,
+    "z": 11000,
+    "height": 467,
+    "width": 684,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Tipo costo"
+                }
+              },
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
+              "nativeQueryRef": "Tipo costo Jerarquía Tipo costo"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Desc_N2"
+                }
+              },
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
+              "nativeQueryRef": "Tipo costo Jerarquía Desc_N2"
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Desc_N3_OK"
+                }
+              },
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
+              "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_subseco"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Dim_subseco.Descripción",
+              "nativeQueryRef": "Descripción"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Consumo total visible"
+                }
+              },
+              "queryRef": "_Medidas.Consumo total visible",
+              "nativeQueryRef": "Consumo total visible"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_presupuesto"
+                        }
+                      },
+                      "Property": "COP"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_presupuesto.COP)",
+              "nativeQueryRef": "Presupuesto",
+              "displayName": "Presupuesto"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
