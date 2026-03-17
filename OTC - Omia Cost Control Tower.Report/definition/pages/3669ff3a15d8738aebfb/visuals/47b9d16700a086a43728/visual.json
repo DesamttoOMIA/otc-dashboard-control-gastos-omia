@@ -74,7 +74,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -787,7 +787,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5fc13a560c070c4cebc0",
+        "name": "36e268b67b1a82d773d3",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -833,7 +833,66 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Directo'"
+                          "Value": "'Indirecto'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
+      },
+      {
+        "name": "38e46e090ba30ad3c006",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N2"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Desc_N2"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "' Gastos varios Indirectos'"
                         }
                       }
                     ]

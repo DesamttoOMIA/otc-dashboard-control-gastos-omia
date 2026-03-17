@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e210f009bb0832e74649",
+  "name": "45ea3020cda57b1e0b6c",
   "position": {
-    "x": 702.77078085642313,
-    "y": 196.77581863979847,
-    "z": 7000,
+    "x": 563.12342569269515,
+    "y": 205.84382871536522,
+    "z": 6005,
     "height": 64.382871536523922,
-    "width": 173.19899244332493,
-    "tabOrder": 7000
+    "width": 174.10579345088161,
+    "tabOrder": 6005
   },
   "visual": {
     "visualType": "slicer",
@@ -105,44 +105,6 @@
                 "Literal": {
                   "Value": "true"
                 }
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "d",
-                    "Entity": "Dim_categoria",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "Codigo"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'1.5.1'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
               }
             }
           }
