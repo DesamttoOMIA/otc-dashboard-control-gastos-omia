@@ -614,6 +614,13 @@ table _Medidas
 		displayFolder: Medidas tarjeta consumo total
 		lineageTag: 889cf79e-cfa7-4f5d-b30f-b59e4c85998f
 
+	measure 'Total documentos documentales' =
+			
+			DISTINCTCOUNT(Fact_detalle_documental[Número de documento])
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 726af31d-508b-42b5-8fc8-fd0a52602d54
+
 	partition _Medidas = m
 		mode: import
 		source =

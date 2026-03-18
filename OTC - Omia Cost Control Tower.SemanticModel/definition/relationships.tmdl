@@ -99,3 +99,15 @@ relationship AutoDetected_7d25edeb-5731-46c7-b764-263ccb2d32c2
 	fromColumn: Fact_presupuesto.'Id categoria'
 	toColumn: Dim_categoria.'Id categoria'
 
+relationship AutoDetected_54bd97ad-2424-472c-a76d-4e38533a6246
+	fromColumn: Fact_detalle_documental.'Código de proyecto'
+	toColumn: Dim_proyecto.'Código de proyecto'
+
+relationship AutoDetected_e6a56ded-9aa2-4688-b01b-7b4e2a6fabb7
+	fromColumn: Fact_detalle_documental.'Id subseco'
+	toColumn: Dim_subseco.'Id subseco'
+
+relationship AutoDetected_c6ab80c1-6a5b-42e3-9b25-2b14f6ca8d14
+	fromColumn: Fact_detalle_documental.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
+

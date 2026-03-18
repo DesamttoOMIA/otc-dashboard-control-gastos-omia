@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "0d354179a7abe70680cf",
+  "position": {
+    "x": 150,
+    "y": 286,
+    "z": 0,
+    "height": 356,
+    "width": 993,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Tipo de documento"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Tipo de documento",
+              "nativeQueryRef": "Tipo de documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Número de documento"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Número de documento",
+              "nativeQueryRef": "Número de documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Fecha de creación"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Fecha de creación",
+              "nativeQueryRef": "Fecha de creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Fecha de Contabilización"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Fecha de Contabilización",
+              "nativeQueryRef": "Fecha de Contabilización"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Descripción artículo/serv."
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Descripción artículo/serv.",
+              "nativeQueryRef": "Descripción artículo/serv."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Comentarios"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Comentarios",
+              "nativeQueryRef": "Comentarios"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_detalle_documental"
+                        }
+                      },
+                      "Property": "Total línea"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_detalle_documental.Total línea)",
+              "nativeQueryRef": "Suma de Total línea"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_detalle_documental"
+                  }
+                },
+                "Property": "Tipo de documento"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_detalle_documental.Tipo de documento"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

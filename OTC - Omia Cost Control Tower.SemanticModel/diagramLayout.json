@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 411.42857142857144,
+        "x": 0,
         "y": 41.428571428571431
       },
       "nodes": [
         {
           "location": {
             "x": 400,
-            "y": 767
+            "y": 779.5
           },
           "nodeIndex": "Dim_proyecto",
           "nodeLineageTag": "cb17ece2-4ae8-4ef0-b220-05c63d715efe",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 962.82142857142867,
-            "y": 749.92857142857144
+            "y": 762.42857142857144
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "1204d9b0-08e1-4fd3-bd73-92d6810bc558",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1887.5,
-            "y": 613.5
+            "y": 626
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "4083414b-79ed-4e5c-8305-daebc257801b",
@@ -49,8 +49,8 @@
         },
         {
           "location": {
-            "x": 1377.5,
-            "y": 267.5
+            "x": 1136.0714285714287,
+            "y": 340
           },
           "nodeIndex": "Fact_presupuesto",
           "nodeLineageTag": "91f64d79-3d31-4577-9109-85f45ce56bc2",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 1756.25,
-            "y": 1316.5
+            "y": 1329
           },
           "nodeIndex": "Dim_Subseco stanby",
           "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 318.86111111111086,
-            "y": 0
+            "y": 12.5
           },
           "nodeIndex": "Dim_subseco",
           "nodeLineageTag": "3fb20a8c-48d2-4290-98dc-2e0959ae765e",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 331.5,
-            "y": 317.5
+            "y": 330
           },
           "nodeIndex": "Fact_facturas_conformadas",
           "nodeLineageTag": "511c3121-604c-4659-ada4-5a6f34b1dcb4",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 643.75,
-            "y": 317.5
+            "y": 330
           },
           "nodeIndex": "Fact_ordenes_de_compra",
           "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
@@ -115,7 +115,7 @@
         {
           "location": {
             "x": 47.5,
-            "y": 321.25
+            "y": 333.75
           },
           "nodeIndex": "Fact_solicitud_de_pedido",
           "nodeLineageTag": "34017f5b-ed79-4eaa-b7e1-64165f44a057",
@@ -128,7 +128,7 @@
         {
           "location": {
             "x": 1884.7222222222222,
-            "y": 353.75
+            "y": 366.25
           },
           "nodeIndex": "Dim_categoria (1)",
           "size": {
@@ -140,7 +140,7 @@
         {
           "location": {
             "x": 1076.5,
-            "y": 0
+            "y": 12.5
           },
           "nodeIndex": "Dim_categoria",
           "size": {
@@ -148,6 +148,19 @@
             "width": 234
           },
           "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1427.4285714285713,
+            "y": 335.03571428571433
+          },
+          "nodeIndex": "Fact_detalle_documental",
+          "nodeLineageTag": "24100a21-e2e6-443b-9a5f-b4a5a5acf7ea",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
