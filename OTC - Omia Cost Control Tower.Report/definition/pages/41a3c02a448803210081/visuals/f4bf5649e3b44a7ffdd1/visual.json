@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "f4bf5649e3b44a7ffdd1",
+  "position": {
+    "x": 822,
+    "y": 142,
+    "z": 1000,
+    "height": 540,
+    "width": 362,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Tipo de documento"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Tipo de documento",
+              "nativeQueryRef": "Tipo de documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Fecha de creación/Contabilización NC"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Fecha de creación/Contabilización NC",
+              "nativeQueryRef": "Fecha de creación/Contabilización NC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Número de documento"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Número de documento",
+              "nativeQueryRef": "Número de documento"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_detalle_documental"
+                  }
+                },
+                "Property": "Fecha de creación/Contabilización NC"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

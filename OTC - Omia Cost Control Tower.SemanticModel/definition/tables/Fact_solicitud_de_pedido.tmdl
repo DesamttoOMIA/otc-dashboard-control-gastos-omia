@@ -42,11 +42,6 @@ table Fact_solicitud_de_pedido
 		summarizeBy: none
 		sourceColumn: Fecha de documento
 
-		variation Variación
-			isDefault
-			relationship: 9a5372b2-50ff-4ffe-95fa-90c4bd13edd7
-			defaultHierarchy: LocalDateTable_41e63a8a-44db-4328-a5af-9b267d7d013f.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -68,11 +63,6 @@ table Fact_solicitud_de_pedido
 		lineageTag: 563dbb0a-d64e-4408-ae11-4f938128618c
 		summarizeBy: none
 		sourceColumn: Fecha necesaria
-
-		variation Variación
-			isDefault
-			relationship: b92833ba-05f5-43a1-a3c2-3ef2d719836c
-			defaultHierarchy: LocalDateTable_b76989af-e7ec-499a-849d-0ab8221c83b9.'Jerarquía de fechas'
 
 		annotation SummarizationSetBy = Automatic
 

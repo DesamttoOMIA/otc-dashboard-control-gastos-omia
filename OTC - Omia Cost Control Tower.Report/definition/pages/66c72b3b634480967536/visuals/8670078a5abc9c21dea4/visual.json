@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "8670078a5abc9c21dea4",
   "position": {
-    "x": 18,
-    "y": 26,
+    "x": 35.910224438902745,
+    "y": 26.034912718204488,
     "z": 1000,
-    "height": 197,
-    "width": 305,
+    "height": 123.89027431421447,
+    "width": 287.28179551122196,
     "tabOrder": 1000
   },
   "visual": {
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "123ee867f1a339faef81",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Total documentos documentales"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

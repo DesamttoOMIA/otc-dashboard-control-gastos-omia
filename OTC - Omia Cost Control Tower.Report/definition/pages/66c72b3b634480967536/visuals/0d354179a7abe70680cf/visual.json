@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0d354179a7abe70680cf",
   "position": {
-    "x": 150,
-    "y": 286,
+    "x": 27.830423940149625,
+    "y": 171.47132169576059,
     "z": 0,
-    "height": 356,
-    "width": 993,
+    "height": 521.59600997506232,
+    "width": 1252.3690773067331,
     "tabOrder": 0
   },
   "visual": {
@@ -15,6 +15,20 @@
       "queryState": {
         "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Fecha de creación/Contabilización NC"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Fecha de creación/Contabilización NC.Variación.Jerarquía de fechas.Año",
+              "nativeQueryRef": "Fecha de creación/Contabilización NC Año"
+            },
             {
               "field": {
                 "Column": {
@@ -51,53 +65,11 @@
                       "Entity": "Fact_detalle_documental"
                     }
                   },
-                  "Property": "Fecha de creación"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Fecha de creación",
-              "nativeQueryRef": "Fecha de creación"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Fecha de Contabilización"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Fecha de Contabilización",
-              "nativeQueryRef": "Fecha de Contabilización"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
                   "Property": "Descripción artículo/serv."
                 }
               },
               "queryRef": "Fact_detalle_documental.Descripción artículo/serv.",
               "nativeQueryRef": "Descripción artículo/serv."
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Comentarios"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Comentarios",
-              "nativeQueryRef": "Comentarios"
             },
             {
               "field": {
@@ -117,6 +89,20 @@
               },
               "queryRef": "Sum(Fact_detalle_documental.Total línea)",
               "nativeQueryRef": "Suma de Total línea"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_detalle_documental"
+                    }
+                  },
+                  "Property": "Comentarios"
+                }
+              },
+              "queryRef": "Fact_detalle_documental.Comentarios",
+              "nativeQueryRef": "Comentarios"
             }
           ]
         }
@@ -131,10 +117,10 @@
                     "Entity": "Fact_detalle_documental"
                   }
                 },
-                "Property": "Tipo de documento"
+                "Property": "Fecha de creación/Contabilización NC"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -153,6 +139,20 @@
           },
           "selector": {
             "metadata": "Fact_detalle_documental.Tipo de documento"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "234.79551107181157D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_detalle_documental.Fecha de creación/Contabilización NC.Variación.Jerarquía de fechas.Año"
           }
         }
       ]

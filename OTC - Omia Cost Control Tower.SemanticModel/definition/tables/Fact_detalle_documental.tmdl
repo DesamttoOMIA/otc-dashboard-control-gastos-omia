@@ -26,22 +26,6 @@ table Fact_detalle_documental
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Fecha de creación'
-		dataType: string
-		lineageTag: add8c333-949f-49a4-9eae-d6b8fff7edd9
-		summarizeBy: none
-		sourceColumn: Fecha de creación
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Fecha de Contabilización'
-		dataType: string
-		lineageTag: 99cc606c-37a5-4352-92ca-4ba499f7d384
-		summarizeBy: none
-		sourceColumn: Fecha de Contabilización
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Descripción artículo/serv.'
 		dataType: string
 		lineageTag: 4dd59cfb-5747-4899-9716-1a01c3496a91
@@ -151,6 +135,17 @@ table Fact_detalle_documental
 		sourceColumn: Id categoria
 
 		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de creación/Contabilización NC'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ad50bb23-92a1-496d-8f0e-27de53cfe5e6
+		summarizeBy: none
+		sourceColumn: Fecha de creación/Contabilización NC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	partition Fact_detalle_documental = m
 		mode: import

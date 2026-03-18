@@ -51,11 +51,6 @@ table Fact_ordenes_de_compra
 		summarizeBy: none
 		sourceColumn: Fecha de contabilización
 
-		variation Variación
-			isDefault
-			relationship: c20a0880-7e2c-4365-9bbc-c25fd351a363
-			defaultHierarchy: LocalDateTable_2831852b-e575-4ced-8bfc-0ff6182e1a80.'Jerarquía de fechas'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -141,11 +136,6 @@ table Fact_ordenes_de_compra
 		lineageTag: 7cdf9749-374f-4694-a3d0-d1350244eaf3
 		summarizeBy: none
 		sourceColumn: Fecha creacion Solped
-
-		variation Variación
-			isDefault
-			relationship: 6d2e37c8-b15d-4f3a-bdea-5b8af3179749
-			defaultHierarchy: LocalDateTable_da5a38e1-315f-4e24-b315-fa2ce0bc96c8.'Jerarquía de fechas'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -324,11 +314,6 @@ table Fact_ordenes_de_compra
 		lineageTag: f48f0798-1379-4433-9f00-d67bcabb866b
 		summarizeBy: none
 		sourceColumn: F. Entrega línea
-
-		variation Variación
-			isDefault
-			relationship: e19b716b-f0e5-4f0e-8249-4a24369c4688
-			defaultHierarchy: LocalDateTable_a4ff216e-af5d-49ae-88e3-bc4a5bea1210.'Jerarquía de fechas'
 
 		annotation SummarizationSetBy = Automatic
 

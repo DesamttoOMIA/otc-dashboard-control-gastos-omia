@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "44c64a89d6a2c007890b",
   "position": {
-    "x": 497,
-    "y": 17,
-    "z": 1001,
-    "height": 197,
-    "width": 646,
-    "tabOrder": 1001
+    "x": 497.35660847880297,
+    "y": 17.057356608478802,
+    "z": 2000,
+    "height": 132.86783042394015,
+    "width": 261.24688279301745,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -50,49 +50,7 @@
       ],
       "general": [
         {
-          "properties": {
-            "filter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "f",
-                    "Entity": "Fact_detalle_documental",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "In": {
-                        "Expressions": [
-                          {
-                            "Column": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "f"
-                                }
-                              },
-                              "Property": "Tipo de documento"
-                            }
-                          }
-                        ],
-                        "Values": [
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Factura conformada'"
-                              }
-                            }
-                          ]
-                        ]
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
+          "properties": {}
         }
       ]
     },
