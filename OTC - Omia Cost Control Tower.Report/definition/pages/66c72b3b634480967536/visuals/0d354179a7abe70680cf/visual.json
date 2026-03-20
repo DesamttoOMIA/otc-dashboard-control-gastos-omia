@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0d354179a7abe70680cf",
   "position": {
-    "x": 27.830423940149625,
-    "y": 171.47132169576059,
+    "x": 541,
+    "y": 268,
     "z": 0,
-    "height": 521.59600997506232,
-    "width": 1252.3690773067331,
+    "height": 520,
+    "width": 892,
     "tabOrder": 0
   },
   "visual": {
@@ -70,25 +70,6 @@
               },
               "queryRef": "Fact_detalle_documental.Descripción artículo/serv.",
               "nativeQueryRef": "Descripción artículo/serv."
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_detalle_documental"
-                        }
-                      },
-                      "Property": "Total línea"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_detalle_documental.Total línea)",
-              "nativeQueryRef": "Suma de Total línea"
             },
             {
               "field": {

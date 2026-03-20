@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "481bf3e00679bda9130d",
   "position": {
     "x": 751.73803526448353,
@@ -78,7 +78,7 @@
                 }
               }
             },
-            "selfFilter": {
+            "filter": {
               "filter": {
                 "Version": 2,
                 "From": [
@@ -91,26 +91,29 @@
                 "Where": [
                   {
                     "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "d"
+                                }
+                              },
+                              "Property": "Descripción"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Materiales de Mantenimiento'"
                               }
-                            },
-                            "Property": "Descripción"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'Otros'"
-                          }
-                        }
+                            }
+                          ]
+                        ]
                       }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
                     }
                   }
                 ]

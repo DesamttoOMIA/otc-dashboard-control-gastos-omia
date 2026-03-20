@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
-  "name": "0d629b85f5b28e2fb4ac",
+  "name": "3db7a07f655574176a67",
   "position": {
-    "x": 29,
-    "y": 155,
-    "z": 0,
-    "height": 540,
-    "width": 625,
-    "tabOrder": 0
+    "x": 73,
+    "y": 268,
+    "z": 3000,
+    "height": 520,
+    "width": 468,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -98,21 +98,6 @@
                       "Entity": "Fact_detalle_documental"
                     }
                   },
-                  "Property": "Tipo de documento"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Tipo de documento",
-              "nativeQueryRef": "Tipo de documento",
-              "active": true
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
                   "Property": "Número de documento"
                 }
               },
@@ -145,6 +130,28 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Tipo costo"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "expansionStates": [
@@ -231,25 +238,6 @@
           },
           {
             "queryRefs": [
-              "Fact_detalle_documental.Tipo de documento"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Tipo de documento"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
               "Fact_detalle_documental.Número de documento"
             ],
             "isCollapsed": true,
@@ -266,6 +254,7 @@
                   }
                 }
               ],
+              "isToggled": true,
               "children": [
                 {
                   "identityValues": [
@@ -293,64 +282,7 @@
                   "identityValues": [
                     {
                       "Literal": {
-                        "Value": "' Gastos de Personal'"
-                      }
-                    }
-                  ],
-                  "children": [
-                    {
-                      "identityValues": [
-                        {
-                          "Literal": {
-                            "Value": "' Gastos de Personal'"
-                          }
-                        }
-                      ],
-                      "isToggled": true,
-                      "children": [
-                        {
-                          "identityValues": [
-                            {
-                              "Literal": {
-                                "Value": "'Ticket alimentación'"
-                              }
-                            }
-                          ],
-                          "isToggled": true,
-                          "children": [
-                            {
-                              "identityValues": [
-                                {
-                                  "Literal": {
-                                    "Value": "'Solicitud de pedido abierta'"
-                                  }
-                                }
-                              ],
-                              "isToggled": true
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Indirecto'"
-                  }
-                }
-              ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Gastos varios Indirectos'"
+                        "Value": "' Materiales y/o repuestos'"
                       }
                     }
                   ],
@@ -360,7 +292,7 @@
                       "identityValues": [
                         {
                           "Literal": {
-                            "Value": "' Gastos varios Indirectos'"
+                            "Value": "' Materiales de Mantenimiento'"
                           }
                         }
                       ],
@@ -370,23 +302,11 @@
                           "identityValues": [
                             {
                               "Literal": {
-                                "Value": "'Tecnologias de la información y comunicación'"
+                                "Value": "'Materiales de Mantenimiento'"
                               }
                             }
                           ],
-                          "isToggled": true,
-                          "children": [
-                            {
-                              "identityValues": [
-                                {
-                                  "Literal": {
-                                    "Value": "'Orden de compra cerrada'"
-                                  }
-                                }
-                              ],
-                              "isToggled": true
-                            }
-                          ]
+                          "isToggled": true
                         }
                       ]
                     }
@@ -398,6 +318,24 @@
         }
       }
     ],
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "309D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Dim_categoria.Tipo costo Jerarquía.Tipo costo"
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   }
 }

@@ -621,6 +621,29 @@ table _Medidas
 		displayFolder: Medidas tabla detalle documental
 		lineageTag: 726af31d-508b-42b5-8fc8-fd0a52602d54
 
+	measure 'Total factura conformada' = CALCULATE(SUM(Fact_detalle_documental[Total línea] ), Fact_detalle_documental[Tipo de documento] = "Factura conformada")
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 03519948-5fb9-4a52-a062-7c6a3f9303ca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total orden de compra' = SUM(Fact_ordenes_de_compra[Total Líneas OC $Cop])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: d138c16b-ca15-4e87-9d78-dcbb8220e467
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Cantidad de facturas conformadas' = DISTINCTCOUNT(Fact_facturas_conformadas[Entrada mercancías])
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: e122074d-7ed5-4c22-bba3-febe7cae4018
+
+	measure 'Cantidad lineas facturas conformadas' = CALCULATE(COUNTROWS(Fact_facturas_conformadas))
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 76f05297-9d29-4578-a1a1-4f37945fcb18
+
 	partition _Medidas = m
 		mode: import
 		source =
