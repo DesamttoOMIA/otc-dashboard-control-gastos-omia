@@ -622,27 +622,262 @@ table _Medidas
 		lineageTag: 726af31d-508b-42b5-8fc8-fd0a52602d54
 
 	measure 'Total factura conformada' = CALCULATE(SUM(Fact_detalle_documental[Total línea] ), Fact_detalle_documental[Tipo de documento] = "Factura conformada")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		displayFolder: Medidas tabla detalle documental
 		lineageTag: 03519948-5fb9-4a52-a062-7c6a3f9303ca
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
 
-	measure 'Total orden de compra' = SUM(Fact_ordenes_de_compra[Total Líneas OC $Cop])
+	measure 'Total orden de compra cerrada' = CALCULATE(SUM(Fact_detalle_documental[Total línea] ), Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas tabla detalle documental
 		lineageTag: d138c16b-ca15-4e87-9d78-dcbb8220e467
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Cantidad de facturas conformadas' = DISTINCTCOUNT(Fact_facturas_conformadas[Entrada mercancías])
+	measure 'Cantidad de facturas conformadas' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Factura conformada")
 		formatString: 0
 		displayFolder: Medidas tabla detalle documental
 		lineageTag: e122074d-7ed5-4c22-bba3-febe7cae4018
 
-	measure 'Cantidad lineas facturas conformadas' = CALCULATE(COUNTROWS(Fact_facturas_conformadas))
+	measure 'Cantidad de lineas orden de compra cerrada' = CALCULATE(COUNTROWS(Fact_detalle_documental),Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
 		formatString: 0
 		displayFolder: Medidas tabla detalle documental
 		lineageTag: 76f05297-9d29-4578-a1a1-4f37945fcb18
+
+	measure 'Cantidad de orden de compra cerrada' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 501334fe-63aa-4b08-abab-7b1a71f951ce
+
+	measure 'Total solicitud de pedido abierta' = CALCULATE(SUM(Fact_detalle_documental[Total línea]),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 7e50c20e-8e4f-4b42-822d-aed012e61eb1
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'Cantidad de solicitud de pedido abierta' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 62ac831d-d16a-45e5-bfd3-c2037d4e7974
+
+	measure 'Cantidad de lineas solicitud de pedido abierta' = CALCULATE(COUNTROWS(Fact_detalle_documental),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
+		formatString: 0
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 0c5daba3-cec7-4ce8-9d7b-0a883ee38c0c
+
+	measure 'Card HTML - Factura Conformada' =
+			
+			
+			VAR ValorPrincipal =
+			    FORMAT([Total factura conformada] / 1000000, "$ #,0.00") & " mill."
+			
+			VAR CantidadDocs =
+			    FORMAT([Cantidad de facturas conformadas], "#,0")
+			
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			VAR FondoSec = "#F3F4F6"
+			
+			VAR TextoTitulo = "#6B7280"
+			VAR TextoPrincipal = "#111827"
+			VAR TextoSec = "#374151"
+			
+			RETURN
+			"
+			<div style='
+			    width:100%;
+			    height:100%;
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-radius:16px;
+			    padding:12px 12px 10px 12px;
+			    box-sizing:border-box;
+			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+			'>
+			    <div style='
+			        font-size:13px;
+			        color:" & TextoTitulo & ";
+			        font-weight:600;
+			        margin-bottom:6px;
+			    '>
+			        Factura conformada
+			    </div>
+			
+			    <div style='
+			        font-size:26px;
+			        font-weight:700;
+			        color:" & TextoPrincipal & ";
+			        line-height:1.05;
+			        margin-bottom:10px;
+			    '>
+			        " & ValorPrincipal & "
+			    </div>
+			
+			    <div style='
+			        background:" & FondoSec & ";
+			        border-radius:12px;
+			        padding:10px 12px;
+			        font-size:12px;
+			        color:" & TextoSec & ";
+			        line-height:1.5;
+			        min-height:58px;
+			        display:flex;
+			        flex-direction:column;
+			        justify-content:center;
+			    '>
+			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
+			    </div>
+			</div>
+			"
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: bb2e5ff3-5cc9-427c-84d4-b47b6c318308
+
+	measure 'Card HTML - ODC Cerradas' =
+			
+			
+			VAR ValorPrincipal =
+			    FORMAT([Total orden de compra cerrada] / 1000000, "$ #,0.00") & " mill."
+			
+			VAR CantidadDocs =
+			    FORMAT([Cantidad de orden de compra cerrada], "#,0")
+			
+			VAR CantidadLineas =
+			    FORMAT([Cantidad de lineas orden de compra cerrada], "#,0")
+			
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			VAR FondoSec = "#F3F4F6"
+			
+			VAR TextoTitulo = "#6B7280"
+			VAR TextoPrincipal = "#111827"
+			VAR TextoSec = "#374151"
+			
+			RETURN
+			"
+			<div style='
+			    width:100%;
+			    height:100%;
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-radius:16px;
+			    padding:12px 12px 10px 12px;
+			    box-sizing:border-box;
+			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+			'>
+			    <div style='
+			        font-size:13px;
+			        color:" & TextoTitulo & ";
+			        font-weight:600;
+			        margin-bottom:6px;
+			    '>
+			        Órden de compra
+			    </div>
+			
+			    <div style='
+			        font-size:26px;
+			        font-weight:700;
+			        color:" & TextoPrincipal & ";
+			        line-height:1.05;
+			        margin-bottom:10px;
+			    '>
+			        " & ValorPrincipal & "
+			    </div>
+			
+			    <div style='
+			        background:" & FondoSec & ";
+			        border-radius:12px;
+			        padding:10px 12px;
+			        font-size:12px;
+			        color:" & TextoSec & ";
+			        line-height:1.5;
+			        min-height:58px;
+			        display:flex;
+			        flex-direction:column;
+			        justify-content:center;
+			    '>
+			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
+			        <div>Cantidad de líneas: " & CantidadLineas & "</div>
+			    </div>
+			</div>
+			"
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 8937480d-3d3f-484e-8918-ed65bb4d6c93
+
+	measure 'Card HTML - SOLPED Abiertas' =
+			
+			
+			VAR ValorPrincipal =
+			    FORMAT([Total solicitud de pedido abierta] / 1000000, "$ #,0.00") & " mill."
+			
+			VAR CantidadDocs =
+			    FORMAT([Cantidad de solicitud de pedido abierta], "#,0")
+			
+			VAR CantidadLineas =
+			    FORMAT([Cantidad de lineas solicitud de pedido abierta], "#,0")
+			
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E5E7EB"
+			VAR FondoSec = "#F3F4F6"
+			
+			VAR TextoTitulo = "#6B7280"
+			VAR TextoPrincipal = "#111827"
+			VAR TextoSec = "#374151"
+			
+			RETURN
+			"
+			<div style='
+			    width:100%;
+			    height:100%;
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-radius:16px;
+			    padding:12px 12px 10px 12px;
+			    box-sizing:border-box;
+			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+			'>
+			    <div style='
+			        font-size:13px;
+			        color:" & TextoTitulo & ";
+			        font-weight:600;
+			        margin-bottom:6px;
+			    '>
+			        Solicitud de pedido
+			    </div>
+			
+			    <div style='
+			        font-size:26px;
+			        font-weight:700;
+			        color:" & TextoPrincipal & ";
+			        line-height:1.05;
+			        margin-bottom:10px;
+			    '>
+			        " & ValorPrincipal & "
+			    </div>
+			
+			    <div style='
+			        background:" & FondoSec & ";
+			        border-radius:12px;
+			        padding:10px 12px;
+			        font-size:12px;
+			        color:" & TextoSec & ";
+			        line-height:1.5;
+			        min-height:58px;
+			        display:flex;
+			        flex-direction:column;
+			        justify-content:center;
+			    '>
+			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
+			        <div>Cantidad de líneas: " & CantidadLineas & "</div>
+			    </div>
+			</div>
+			"
+		displayFolder: Medidas tabla detalle documental
+		lineageTag: 712e818d-f742-4e90-8eaa-789dbb9c3fc6
 
 	partition _Medidas = m
 		mode: import

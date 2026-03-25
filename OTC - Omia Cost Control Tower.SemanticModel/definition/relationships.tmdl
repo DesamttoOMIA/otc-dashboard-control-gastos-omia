@@ -66,3 +66,7 @@ relationship AutoDetected_c6ab80c1-6a5b-42e3-9b25-2b14f6ca8d14
 	fromColumn: Fact_detalle_documental.'Id categoria'
 	toColumn: Dim_categoria.'Id categoria'
 
+relationship a88d515d-f28c-8eb6-00e8-657b43d70e59
+	fromColumn: Fact_detalle_documental.'Fecha de creación/Contabilización NC'
+	toColumn: Calendario.Date
+

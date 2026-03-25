@@ -3,9 +3,9 @@
   "name": "0d354179a7abe70680cf",
   "position": {
     "x": 541,
-    "y": 268,
+    "y": 225,
     "z": 0,
-    "height": 520,
+    "height": 563,
     "width": 892,
     "tabOrder": 0
   },
@@ -26,8 +26,8 @@
                   "Property": "Fecha de creación/Contabilización NC"
                 }
               },
-              "queryRef": "Fact_detalle_documental.Fecha de creación/Contabilización NC.Variación.Jerarquía de fechas.Año",
-              "nativeQueryRef": "Fecha de creación/Contabilización NC Año"
+              "queryRef": "Fact_detalle_documental.Fecha de creación/Contabilización NC",
+              "nativeQueryRef": "Fecha de creación/Contabilización NC"
             },
             {
               "field": {
@@ -79,11 +79,11 @@
                       "Entity": "Fact_detalle_documental"
                     }
                   },
-                  "Property": "Comentarios"
+                  "Property": "Número interno"
                 }
               },
-              "queryRef": "Fact_detalle_documental.Comentarios",
-              "nativeQueryRef": "Comentarios"
+              "queryRef": "Sum(Fact_detalle_documental.Número interno)",
+              "nativeQueryRef": "Número interno"
             }
           ]
         }
@@ -98,7 +98,7 @@
                     "Entity": "Fact_detalle_documental"
                   }
                 },
-                "Property": "Fecha de creación/Contabilización NC"
+                "Property": "Tipo de documento"
               }
             },
             "direction": "Descending"
@@ -106,38 +106,52 @@
         ]
       }
     },
-    "objects": {
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "187D"
-                }
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c39fe4a7565a3f9a2642",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_detalle_documental"
               }
-            }
-          },
-          "selector": {
-            "metadata": "Fact_detalle_documental.Tipo de documento"
+            },
+            "Property": "Fecha de creación/Contabilización NC"
           }
         },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "234.79551107181157D"
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "46b68516d0252aa906ba",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_detalle_documental"
               }
-            }
-          },
-          "selector": {
-            "metadata": "Fact_detalle_documental.Fecha de creación/Contabilización NC.Variación.Jerarquía de fechas.Año"
+            },
+            "Property": "Tipo de documento"
           }
-        }
-      ]
-    },
-    "drillFilterOtherVisuals": true
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e9dd6417ab9d3d2e8632",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_detalle_documental"
+              }
+            },
+            "Property": "Descripción artículo/serv."
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
