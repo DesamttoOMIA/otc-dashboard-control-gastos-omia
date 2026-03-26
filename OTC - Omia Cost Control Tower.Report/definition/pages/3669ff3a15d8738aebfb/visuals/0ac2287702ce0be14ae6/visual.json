@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "0ac2287702ce0be14ae6",
   "position": {
-    "x": 741,
+    "x": 725,
     "y": 66,
     "z": 4000,
     "height": 181,
-    "width": 343,
+    "width": 316,
     "tabOrder": 4000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Card HTML - Remanente y Sobrecosto"
+                  "Property": "Card HTML - Presupuesto disponible"
                 }
               },
               "queryRef": "_Medidas.Card HTML - Remanente y Sobrecosto",
-              "nativeQueryRef": "Card HTML - Remanente y Sobrecosto"
+              "nativeQueryRef": "Card HTML - Presupuesto disponible"
             }
           ]
         }

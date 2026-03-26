@@ -107,51 +107,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c39fe4a7565a3f9a2642",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_detalle_documental"
-              }
-            },
-            "Property": "Fecha de creación/Contabilización NC"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "46b68516d0252aa906ba",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_detalle_documental"
-              }
-            },
-            "Property": "Tipo de documento"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e9dd6417ab9d3d2e8632",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_detalle_documental"
-              }
-            },
-            "Property": "Descripción artículo/serv."
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

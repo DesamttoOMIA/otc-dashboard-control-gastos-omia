@@ -4,10 +4,10 @@
   "position": {
     "x": 633.81546134663336,
     "y": 79.9002493765586,
-    "z": 1,
+    "z": 1000,
     "height": 122.99251870324188,
     "width": 248.67830423940148,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -97,23 +97,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b00852072250183c3a8b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_detalle_documental"
-              }
-            },
-            "Property": "Tipo de documento"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

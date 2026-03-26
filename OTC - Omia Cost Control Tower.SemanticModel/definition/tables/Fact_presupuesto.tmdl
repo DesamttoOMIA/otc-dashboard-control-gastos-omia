@@ -3,13 +3,12 @@ table Fact_presupuesto
 
 	column Incidencia
 		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 8891638a-7155-485f-91ae-7b01b21feadb
 		summarizeBy: sum
 		sourceColumn: Incidencia
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column COP
 		dataType: decimal

@@ -7836,7 +7836,7 @@ cultureInfo es-CO
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Card HTML - Remanente y Sobrecosto"
+			          "ConceptualProperty": "Card HTML - Presupuesto disponible"
 			        }
 			      },
 			      "State": "Generated",
