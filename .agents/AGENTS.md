@@ -60,6 +60,22 @@ skills-lock.json                             # skills instalados (lock)
 | `powerbi-report-planning` | Requisitos → implementación |
 | `powerbi-report-management` | Publicación en Fabric |
 
+## Marca e identidad visual (obligatorio)
+
+Toda edición de visuales, temas y formato debe seguir la guía oficial de OMIA
+(`docs/08-guia-marca.md`). Resumen imprescindible:
+
+- **Colores**: Azul OMIA `#164379` (primario), Amarillo OMIA `#F8AA00` (acento).
+  Secundarios: `#2679BA`, `#6156A1`, `#E7344C`, `#EE7600`, `#B9CE00`, `#71B73A`,
+  `#575756`. Fondos claros (`#F4F6F9`/`#FFFFFF`).
+- **Tipografía**: `Gotham` (fallback Segoe UI/Arial/Verdana). Títulos 14–18 pt
+  en `#164379`; KPI 20–28 pt; etiquetas 9–11 pt `#575756`; tablas con encabezado
+  `#164379` + texto blanco.
+- **NO** usar colores fuera de paleta, fondos oscuros, efectos 3D/sombras/gradientes,
+  ni el logo como marca de agua.
+- Desviaciones: favorable/ahorro → verde (`#71B73A`/`#B9CE00`); desfavorable →
+  rojo (`#E7344C`).
+
 ## Convenciones del modelo
 
 - Cultura `es-CO` en todo el modelo y reporte.
