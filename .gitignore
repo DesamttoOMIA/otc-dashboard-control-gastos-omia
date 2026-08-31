@@ -2,6 +2,9 @@
 **/.pbi/cache.abf
 **/.pbi/editorSettings.json
 
+# Intrínsecos del PBIP (generados por Desktop, no versionar)
+**/diagramLayout.json
+
 # SO / IDE
 .DS_Store
 Thumbs.db
