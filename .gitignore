@@ -1,2 +1,8 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+**/.pbi/editorSettings.json
+
+# SO / IDE
+.DS_Store
+Thumbs.db
+*.log
