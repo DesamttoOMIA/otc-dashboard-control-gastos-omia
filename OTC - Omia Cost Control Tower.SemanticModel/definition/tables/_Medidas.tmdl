@@ -969,7 +969,7 @@ table _Medidas
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Total consumido' =
-		[Consumo SOLPED] + [Consumo ODC] + [Consumo Facturas]
+			[Consumo SOLPED] + [Consumo ODC] + [Consumo Facturas]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0004-4a00-8000-000000000004
@@ -977,7 +977,7 @@ table _Medidas
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Presupuesto disponible' =
-		[Presupuesto total] - [Total consumido]
+			[Presupuesto total] - [Total consumido]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0005-4a00-8000-000000000005
@@ -985,7 +985,7 @@ table _Medidas
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure '% consumido' =
-		DIVIDE([Total consumido], [Presupuesto total])
+			DIVIDE([Total consumido], [Presupuesto total])
 		formatString: 0.0%
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0006-4a00-8000-000000000006
@@ -994,224 +994,224 @@ table _Medidas
 
 	measure 'Card HTML - Presupuesto' =
 		
-		VAR Titulo = "Presupuesto"
-		VAR ValorPrincipal = FORMAT([Presupuesto total] / 1000000, "$ #,0.00") & " mill."
-		VAR Incidencia = FORMAT([% Incidencia], "0.0%")
-		VAR Acento = "#164379"
-		VAR ColorPrincipal = "#1E293B"
-		VAR ColorTextoSec = "#575756"
-		VAR FondoTarjeta = "#FFFFFF"
-		VAR Borde = "#E2E8F0"
+			VAR Titulo = "Presupuesto"
+			VAR ValorPrincipal = FORMAT([Presupuesto total] / 1000000, "$ #,0.00") & " mill."
+			VAR Incidencia = FORMAT([% Incidencia], "0.0%")
+			VAR Acento = "#164379"
+			VAR ColorPrincipal = "#1E293B"
+			VAR ColorTextoSec = "#575756"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E2E8F0"
 		
-		RETURN
-		"
-		<div style='
-		    font-family: Segoe UI, Arial, sans-serif;
-		    background:" & FondoTarjeta & ";
-		    border:1px solid " & Borde & ";
-		    border-left:4px solid " & Acento & ";
-		    border-radius:8px;
-		    padding:12px 12px 10px 12px;
-		    width:100%;
-		    height:100%;
-		    box-sizing:border-box;
-		'>
-		    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
-		        " & Titulo & "
-		    </div>
-		    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-		        " & ValorPrincipal & "
-		    </div>
-		    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
-		        Participación: " & Incidencia & "
-		    </div>
-		</div>
-		"
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-left:4px solid " & Acento & ";
+			    border-radius:8px;
+			    padding:12px 12px 10px 12px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			'>
+			    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
+			        " & Titulo & "
+			    </div>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        Participación: " & Incidencia & "
+			    </div>
+			</div>
+			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0007-4a00-8000-000000000007
 
 	measure 'Card HTML - SOLPED' =
 		
-		VAR Titulo = "SOLPED"
-		VAR ValorPrincipal = FORMAT([Consumo SOLPED] / 1000000, "$ #,0.00") & " mill."
-		VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_solicitud_de_pedido'[ID de documento interno]), "0")
-		VAR Acento = "#2679BA"
-		VAR ColorPrincipal = "#1E293B"
-		VAR ColorTextoSec = "#575756"
-		VAR FondoTarjeta = "#FFFFFF"
-		VAR Borde = "#E2E8F0"
+			VAR Titulo = "SOLPED"
+			VAR ValorPrincipal = FORMAT([Consumo SOLPED] / 1000000, "$ #,0.00") & " mill."
+			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_solicitud_de_pedido'[ID de documento interno]), "0")
+			VAR Acento = "#2679BA"
+			VAR ColorPrincipal = "#1E293B"
+			VAR ColorTextoSec = "#575756"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E2E8F0"
 		
-		RETURN
-		"
-		<div style='
-		    font-family: Segoe UI, Arial, sans-serif;
-		    background:" & FondoTarjeta & ";
-		    border:1px solid " & Borde & ";
-		    border-left:4px solid " & Acento & ";
-		    border-radius:8px;
-		    padding:12px 12px 10px 12px;
-		    width:100%;
-		    height:100%;
-		    box-sizing:border-box;
-		'>
-		    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
-		        " & Titulo & "
-		    </div>
-		    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-		        " & ValorPrincipal & "
-		    </div>
-		    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
-		        " & Cantidad & " solicitudes abiertas
-		    </div>
-		</div>
-		"
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-left:4px solid " & Acento & ";
+			    border-radius:8px;
+			    padding:12px 12px 10px 12px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			'>
+			    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
+			        " & Titulo & "
+			    </div>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        " & Cantidad & " solicitudes abiertas
+			    </div>
+			</div>
+			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0008-4a00-8000-000000000008
 
 	measure 'Card HTML - ODC' =
 		
-		VAR Titulo = "ODC"
-		VAR ValorPrincipal = FORMAT([Consumo ODC] / 1000000, "$ #,0.00") & " mill."
-		VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_ordenes_de_compra'[Orden de Compra]), "0")
-		VAR Acento = "#F8AA00"
-		VAR ColorPrincipal = "#1E293B"
-		VAR ColorTextoSec = "#575756"
-		VAR FondoTarjeta = "#FFFFFF"
-		VAR Borde = "#E2E8F0"
+			VAR Titulo = "ODC"
+			VAR ValorPrincipal = FORMAT([Consumo ODC] / 1000000, "$ #,0.00") & " mill."
+			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_ordenes_de_compra'[Orden de Compra]), "0")
+			VAR Acento = "#F8AA00"
+			VAR ColorPrincipal = "#1E293B"
+			VAR ColorTextoSec = "#575756"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E2E8F0"
 		
-		RETURN
-		"
-		<div style='
-		    font-family: Segoe UI, Arial, sans-serif;
-		    background:" & FondoTarjeta & ";
-		    border:1px solid " & Borde & ";
-		    border-left:4px solid " & Acento & ";
-		    border-radius:8px;
-		    padding:12px 12px 10px 12px;
-		    width:100%;
-		    height:100%;
-		    box-sizing:border-box;
-		'>
-		    <div style='font-size:12px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
-		        " & Titulo & "
-		    </div>
-		    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-		        " & ValorPrincipal & "
-		    </div>
-		    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
-		        " & Cantidad & " órdenes cerradas
-		    </div>
-		</div>
-		"
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-left:4px solid " & Acento & ";
+			    border-radius:8px;
+			    padding:12px 12px 10px 12px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			'>
+			    <div style='font-size:12px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
+			        " & Titulo & "
+			    </div>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        " & Cantidad & " órdenes cerradas
+			    </div>
+			</div>
+			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0009-4a00-8000-000000000009
 
 	measure 'Card HTML - Facturas' =
 		
-		VAR Titulo = "Facturas conformadas"
-		VAR ValorPrincipal = FORMAT([Consumo Facturas] / 1000000, "$ #,0.00") & " mill."
-		VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_facturas_conformadas'[Número interno]), "0")
-		VAR Acento = "#6156A1"
-		VAR ColorPrincipal = "#1E293B"
-		VAR ColorTextoSec = "#575756"
-		VAR FondoTarjeta = "#FFFFFF"
-		VAR Borde = "#E2E8F0"
+			VAR Titulo = "Facturas conformadas"
+			VAR ValorPrincipal = FORMAT([Consumo Facturas] / 1000000, "$ #,0.00") & " mill."
+			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_facturas_conformadas'[Número interno]), "0")
+			VAR Acento = "#6156A1"
+			VAR ColorPrincipal = "#1E293B"
+			VAR ColorTextoSec = "#575756"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E2E8F0"
 		
-		RETURN
-		"
-		<div style='
-		    font-family: Segoe UI, Arial, sans-serif;
-		    background:" & FondoTarjeta & ";
-		    border:1px solid " & Borde & ";
-		    border-left:4px solid " & Acento & ";
-		    border-radius:8px;
-		    padding:12px 12px 10px 12px;
-		    width:100%;
-		    height:100%;
-		    box-sizing:border-box;
-		'>
-		    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
-		        " & Titulo & "
-		    </div>
-		    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-		        " & ValorPrincipal & "
-		    </div>
-		    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
-		        " & Cantidad & " facturas
-		    </div>
-		</div>
-		"
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-left:4px solid " & Acento & ";
+			    border-radius:8px;
+			    padding:12px 12px 10px 12px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			'>
+			    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
+			        " & Titulo & "
+			    </div>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			    <div style='font-size:12px; color:" & ColorTextoSec & ";'>
+			        " & Cantidad & " facturas
+			    </div>
+			</div>
+			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-000a-4a00-8000-00000000000a
 
 	measure 'Card HTML - Disponible' =
 		
-		VAR Disponible = [Presupuesto disponible]
-		VAR ValorPrincipal = FORMAT(Disponible / 1000000, "$ #,0.00") & " mill."
-		VAR PorcentajeReal = [% consumido]
-		VAR PorcentajeTexto = FORMAT(PorcentajeReal, "0.0%")
-		VAR ConsumoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeReal, 1) * 100, "0.0"), ",", ".")
-		VAR ColorEstado =
-		    SWITCH(
-		        TRUE(),
-		        PorcentajeReal < 0.8, "#71B73A",
-		        PorcentajeReal < 1, "#EE7600",
-		        "#E7344C"
-		    )
-		VAR Acento = "#164379"
-		VAR ColorPrincipal = "#1E293B"
-		VAR ColorTextoSec = "#575756"
-		VAR FondoTarjeta = "#FFFFFF"
-		VAR Borde = "#E2E8F0"
-		VAR FondoBarra = "#EEF2F7"
+			VAR Disponible = [Presupuesto disponible]
+			VAR ValorPrincipal = FORMAT(Disponible / 1000000, "$ #,0.00") & " mill."
+			VAR PorcentajeReal = [% consumido]
+			VAR PorcentajeTexto = FORMAT(PorcentajeReal, "0.0%")
+			VAR ConsumoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeReal, 1) * 100, "0.0"), ",", ".")
+			VAR ColorEstado =
+			    SWITCH(
+			        TRUE(),
+			        PorcentajeReal < 0.8, "#71B73A",
+			        PorcentajeReal < 1, "#EE7600",
+			        "#E7344C"
+			    )
+			VAR Acento = "#164379"
+			VAR ColorPrincipal = "#1E293B"
+			VAR ColorTextoSec = "#575756"
+			VAR FondoTarjeta = "#FFFFFF"
+			VAR Borde = "#E2E8F0"
+			VAR FondoBarra = "#EEF2F7"
 		
-		RETURN
-		"
-		<div style='
-		    font-family: Segoe UI, Arial, sans-serif;
-		    background:" & FondoTarjeta & ";
-		    border:1px solid " & Borde & ";
-		    border-left:4px solid " & Acento & ";
-		    border-radius:8px;
-		    padding:12px 12px 10px 12px;
-		    width:100%;
-		    height:100%;
-		    box-sizing:border-box;
-		'>
-		    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
-		        Disponible
-		    </div>
-		    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:10px;'>
-		        " & ValorPrincipal & "
-		    </div>
-		    <div style='
-		        display:flex;
-		        justify-content:space-between;
-		        align-items:center;
-		        margin-bottom:4px;
-		        font-size:11px;
-		        color:" & ColorTextoSec & ";
-		        font-weight:600;
-		    '>
-		        <span>Consumido</span>
-		        <span>" & PorcentajeTexto & "</span>
-		    </div>
-		    <div style='
-		        width:100%;
-		        height:8px;
-		        background:" & FondoBarra & ";
-		        border-radius:999px;
-		        overflow:hidden;
-		    '>
-		        <div style='
-		            width:" & ConsumoWidth & "%;
-		            background:" & ColorEstado & ";
-		            height:100%;
-		            border-radius:999px;
-		        '></div>
-		    </div>
-		</div>
-		"
+			RETURN
+			"
+			<div style='
+			    font-family: Segoe UI, Arial, sans-serif;
+			    background:" & FondoTarjeta & ";
+			    border:1px solid " & Borde & ";
+			    border-left:4px solid " & Acento & ";
+			    border-radius:8px;
+			    padding:12px 12px 10px 12px;
+			    width:100%;
+			    height:100%;
+			    box-sizing:border-box;
+			'>
+			    <div style='font-size:12px; color:" & Acento & "; font-weight:600; margin-bottom:6px; text-transform:uppercase;'>
+			        Disponible
+			    </div>
+			    <div style='font-size:26px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:10px;'>
+			        " & ValorPrincipal & "
+			    </div>
+			    <div style='
+			        display:flex;
+			        justify-content:space-between;
+			        align-items:center;
+			        margin-bottom:4px;
+			        font-size:11px;
+			        color:" & ColorTextoSec & ";
+			        font-weight:600;
+			    '>
+			        <span>Consumido</span>
+			        <span>" & PorcentajeTexto & "</span>
+			    </div>
+			    <div style='
+			        width:100%;
+			        height:8px;
+			        background:" & FondoBarra & ";
+			        border-radius:999px;
+			        overflow:hidden;
+			    '>
+			        <div style='
+			            width:" & ConsumoWidth & "%;
+			            background:" & ColorEstado & ";
+			            height:100%;
+			            border-radius:999px;
+			        '></div>
+			    </div>
+			</div>
+			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-000b-4a00-8000-00000000000b
 
