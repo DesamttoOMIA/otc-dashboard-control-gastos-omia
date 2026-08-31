@@ -10,7 +10,7 @@ Datos obtenidos del MCP `powerbi-modeling` (conexión `ConnectFolder` al directo
 | Nombre | `Model` |
 | Cultura | `es-CO` |
 | Modo | `Import` (defaultMode Import) |
-| Compatibilidad | 1600 |
+| Compatibilidad | 1606 |
 | Time Intelligence | deshabilitada (`__PBI_TimeIntelligenceEnabled=0`) |
 | Tablas | 11 |
 | Medidas | 48 (todas en `_Medidas`) |
