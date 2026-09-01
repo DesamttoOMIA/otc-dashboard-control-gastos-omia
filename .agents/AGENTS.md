@@ -9,6 +9,19 @@ ejecución presupuestal (contrato de mantenimiento eléctrico, proyecto
 `2170 CONTINENTAL-MTO ELECTRICO MINA BURITICÁ`). Contraste de presupuesto vs.
 costo comprometido (SOLPED) y ejecutado (OC + facturas).
 
+## Uso de MCP y skills (obligatorio)
+
+Antes de diagnosticar o editar cualquier parte del proyecto, usa siempre los
+recursos disponibles en lugar de resolver manualmente:
+
+- Conecta primero con el MCP de modelado (`ConnectFolder` a
+  `OTC - Omia Cost Control Tower.SemanticModel/definition`).
+- Carga el skill relevante con la herramienta `skill("<nombre>")` antes de
+  trabajar en esa área (modelado, reporte, diseño, planning, gestión).
+- Usa el MCP de navegador o de búsqueda web para verificación y contexto
+  externo cuando aplique.
+- La lista completa está en la sección `## Skills y MCP disponibles`.
+
 ## Contexto de negocio (importante)
 
 - Es un tablero **financiero gerencial** que debe "hablar por sí mismo".
@@ -51,14 +64,22 @@ skills-lock.json                             # skills instalados (lock)
 
 ## Skills y MCP disponibles
 
-| Recurso | Cuándo usarlo |
-|---|---|
-| MCP `powerbi-modeling` | Inspeccionar/editar el modelo semántico |
-| `powerbi-modeling` | Mejores prácticas de modelado |
-| `powerbi-report-authoring` | Editar/validar PBIR |
-| `powerbi-report-design` | Diseño visual |
-| `powerbi-report-planning` | Requisitos → implementación |
-| `powerbi-report-management` | Publicación en Fabric |
+Carga los skills con la herramienta `skill("<nombre>")`. Conecta al modelo
+siempre con el MCP `powerbi-modeling`.
+
+| Recurso | Tipo | Cuándo usarlo |
+|---|---|---|
+| `powerbi-modeling` | MCP | Conectar (`ConnectFolder`), inspeccionar y editar el modelo semántico |
+| `brave-search-remoto` | MCP | Búsqueda web, noticias e imágenes para contexto externo |
+| `playwright-remoto` | MCP | Navegador automatizado: verificar render, capturas, interacción |
+| `powerbi-modeling` | Skill | Buenas prácticas de modelado (DAX, star schema, RLS, rendimiento) |
+| `powerbi-report-authoring` | Skill | Editar y validar PBIR/PBIP: páginas, visuales, temas, formato |
+| `powerbi-report-design` | Skill | Diseño visual y guías de estilo antes de escribir PBIR |
+| `powerbi-report-planning` | Skill | Requisitos → implementación de reportes nuevos |
+| `powerbi-report-management` | Skill | Publicar/gestionar reportes en Fabric |
+
+Nota: `customize-opencode` y `find-skills` (built-in) aplican solo a la
+configuración de opencode o a descubrir más skills, no al proyecto.
 
 ## Marca e identidad visual (obligatorio)
 
@@ -97,6 +118,9 @@ Toda edición de visuales, temas y formato debe seguir la guía oficial de OMIA
 7. **No versiones** archivos locales de `.pbi/` (ya en `.gitignore`).
 8. Al editar TMDL, mantén un objeto por archivo en `definition/tables/` y
    declara `ref table` en `model.tmdl`.
+9. **Usa MCP y skills disponibles**: si existe un MCP o skill que cubra la
+   tarea, úsalo primero (herramienta `skill` / MCP `powerbi-modeling`); no lo
+   reimplementes manualmente.
 
 ## Pendientes conocidos
 

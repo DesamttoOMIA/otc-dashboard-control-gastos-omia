@@ -989,21 +989,54 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Consumo directo' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000c-4a00-8000-00000000000c
+
+	measure 'Consumo indirecto' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000d-4a00-8000-00000000000d
+
+	measure 'Presupuesto directo' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000e-4a00-8000-00000000000e
+
+	measure 'Presupuesto indirecto' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000f-4a00-8000-00000000000f
+
+	measure 'Subsecos sobre presupuesto' =
+			
+			COUNTROWS(
+			    FILTER(
+			        ADDCOLUMNS(
+			            SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Id categoria]),
+			            "__Consumo", [Total consumido],
+			            "__PresuCat", VAR CatActual = 'Dim_subseco'[Id categoria]
+			                         RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
+			        ),
+			        [__PresuCat] > 0 && [__Consumo] > [__PresuCat]
+			    )
+			)
+		formatString: 0
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0010-4a00-8000-000000000010
+
 	measure 'Card HTML - Presupuesto' =
 			
 			VAR ValorNum = [Presupuesto total] / 1000000
 			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
 			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
-			VAR IncidenciaReal = [% Incidencia]
-			VAR Incidencia = FORMAT(IncidenciaReal, "0.0%")
-			VAR BarraWidth = SUBSTITUTE(FORMAT(MIN(IncidenciaReal, 1) * 100, "0.0"), ",", ".")
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#164379;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>PRESUPUESTO</span></div>
-			  <div style='font-size:" & FontValor & ";color:#164379;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><div style='flex:1;height:4px;background:#F4F6F9;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & BarraWidth & "%;background:#164379;border-radius:999px;'></div></div><span style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;'>" & Incidencia & "</span></div>
-			  <div style='font-size:11px;color:#575756;font-weight:400;'>Base de comparación del periodo</div>
+			  <div style='font-size:" & FontValor & ";color:#164379;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
+			  <div style='font-size:11px;color:#575756;font-weight:400;'>Base de comparación del presupuesto general</div>
 			</div>
 			"
 		displayFolder: Resumen Gerencial
@@ -1016,14 +1049,13 @@ table _Medidas
 			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
 			VAR Participacion = DIVIDE([Consumo SOLPED], [Presupuesto total])
 			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			VAR BarraWidth = SUBSTITUTE(FORMAT(MIN(Participacion, 1) * 100, "0.0"), ",", ".")
 			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_solicitud_de_pedido'[ID de documento interno]), "0")
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#2679BA;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>SOLPED</span></div>
-			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><div style='flex:1;height:4px;background:#F4F6F9;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & BarraWidth & "%;background:#2679BA;border-radius:999px;'></div></div><span style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;'>" & ParticipacionTexto & " del presupuesto</span></div>
+			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
+			  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto general</div>
 			  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#2679BA;'>" & Cantidad & "</span> solicitudes de pedido</div>
 			</div>
 			"
@@ -1037,14 +1069,13 @@ table _Medidas
 			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
 			VAR Participacion = DIVIDE([Consumo ODC], [Presupuesto total])
 			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			VAR BarraWidth = SUBSTITUTE(FORMAT(MIN(Participacion, 1) * 100, "0.0"), ",", ".")
 			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_ordenes_de_compra'[Orden de Compra]), "0")
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#F8AA00;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ODC</span></div>
-			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><div style='flex:1;height:4px;background:#F4F6F9;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & BarraWidth & "%;background:#F8AA00;border-radius:999px;'></div></div><span style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;'>" & ParticipacionTexto & " del presupuesto</span></div>
+			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
+			  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto general</div>
 			  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#EE7600;'>" & Cantidad & "</span> órdenes de compra</div>
 			</div>
 			"
@@ -1058,14 +1089,13 @@ table _Medidas
 			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
 			VAR Participacion = DIVIDE([Consumo Facturas], [Presupuesto total])
 			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			VAR BarraWidth = SUBSTITUTE(FORMAT(MIN(Participacion, 1) * 100, "0.0"), ",", ".")
 			VAR Cantidad = FORMAT(DISTINCTCOUNT('Fact_facturas_conformadas'[Número interno]), "0")
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#6156A1;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>FACTURAS</span></div>
-			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><div style='flex:1;height:4px;background:#F4F6F9;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & BarraWidth & "%;background:#6156A1;border-radius:999px;'></div></div><span style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;'>" & ParticipacionTexto & " del presupuesto</span></div>
+			  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
+			  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto general</div>
 			  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#6156A1;'>" & Cantidad & "</span> facturas conformadas</div>
 			</div>
 			"
@@ -1079,8 +1109,6 @@ table _Medidas
 			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
 			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
 			VAR PorcentajeReal = [% consumido]
-			VAR PorcentajeTexto = FORMAT(PorcentajeReal, "0.0%")
-			VAR ConsumoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeReal, 1) * 100, "0.0"), ",", ".")
 			VAR ColorEstado =
 			    SWITCH(
 			        TRUE(),
@@ -1095,13 +1123,28 @@ table _Medidas
 			        PorcentajeReal < 1, "EN ALERTA",
 			        "SOBREGASTO"
 			    )
+			VAR PorcentajeDirectoReal = DIVIDE([Consumo directo], [Presupuesto directo])
+			VAR PorcentajeDirecto = FORMAT(PorcentajeDirectoReal, "0.0%")
+			VAR DirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeDirectoReal, 1) * 100, "0.0"), ",", ".")
+			VAR PorcentajeIndirectoReal = DIVIDE([Consumo indirecto], [Presupuesto indirecto])
+			VAR PorcentajeIndirecto = FORMAT(PorcentajeIndirectoReal, "0.0%")
+			VAR IndirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeIndirectoReal, 1) * 100, "0.0"), ",", ".")
+			VAR Subsecos = [Subsecos sobre presupuesto]
+			VAR SubsecosTexto = FORMAT(Subsecos, "0")
+			VAR TextoPill =
+			    IF(
+			        Subsecos > 0,
+			        SubsecosTexto & IF(Subsecos = 1, " subseco sobre presupuesto", " subsecos sobre presupuesto"),
+			        Estado
+			    )
+			VAR ColorPill = IF(Subsecos > 0, "#E7344C", ColorEstado)
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#164379;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
-			  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;'><span style='font-size:10px;color:#FFFFFF;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>DISPONIBLE</span><span style='font-size:10px;color:#FFFFFF;background:" & ColorEstado & ";border-radius:999px;padding:4px 7px;font-weight:500;'>" & Estado & "</span></div>
+			  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;'><span style='font-size:10px;color:#FFFFFF;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>DISPONIBLE</span><span style='font-size:10px;color:#FFFFFF;background:" & ColorPill & ";border-radius:999px;padding:4px 7px;font-weight:500;white-space:nowrap;'>" & TextoPill & "</span></div>
 			  <div style='font-size:" & FontValor & ";color:#FFFFFF;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#FFFFFF;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;justify-content:space-between;margin-bottom:5px;font-size:11px;color:#FFFFFF;font-weight:400;'><span>Consumido</span><span>" & PorcentajeTexto & "</span></div>
-			  <div style='height:8px;background:#FFFFFF;border-radius:999px;overflow:hidden;margin-bottom:7px;'><div style='height:100%;width:" & ConsumoWidth & "%;background:" & ColorEstado & ";border-radius:999px;'></div></div>
+			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:6px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Directo</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & DirectoWidth & "%;background:#FFFFFF;border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeDirecto & "</span></div>
+			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Indirecto</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & IndirectoWidth & "%;background:#FFFFFF;border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeIndirecto & "</span></div>
 			  <div style='font-size:11px;color:#FFFFFF;font-weight:400;'>Saldo disponible después del consumo</div>
 			</div>
 			"
