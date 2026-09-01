@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
     "x": 75,
@@ -33,7 +33,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
               "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {

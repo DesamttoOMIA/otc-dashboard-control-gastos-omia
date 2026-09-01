@@ -7963,6 +7963,51 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
+			    },
+			    "table_medidas.consumo_solped": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Consumo SOLPED"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_medidas.consumo_odc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Consumo ODC"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_medidas.consumo_facturas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Consumo Facturas"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_medidas.total_consumido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Total consumido"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_medidas.presupuesto_disponible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Presupuesto disponible"
+			        }
+			      },
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {

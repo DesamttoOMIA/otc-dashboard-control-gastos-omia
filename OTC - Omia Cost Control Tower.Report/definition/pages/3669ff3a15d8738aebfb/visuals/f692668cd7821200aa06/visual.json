@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
     "x": 75,
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria (2).Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -171,7 +171,6 @@
             "queryRefs": [
               "Dim_categoria.Tipo costo Jerarquía.Tipo costo"
             ],
-            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -213,7 +212,51 @@
             "isPinned": true
           }
         ],
-        "root": {}
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Directo'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Herramientas, Instrumentos y Consumibles'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Materiales y/o repuestos'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Gastos Varios Directos'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "visualContainerObjects": {

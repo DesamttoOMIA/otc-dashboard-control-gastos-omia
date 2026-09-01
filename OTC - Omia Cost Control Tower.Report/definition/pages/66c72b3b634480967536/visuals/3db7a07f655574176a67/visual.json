@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "3db7a07f655574176a67",
   "position": {
     "x": 73,
@@ -364,6 +364,11 @@
           "selector": {
             "metadata": "Dim_categoria.Tipo costo Jerarquía.Tipo costo"
           }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
         }
       ]
     },
