@@ -989,43 +989,6 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Consumo directo' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen Gerencial
-		lineageTag: 7a100001-000c-4a00-8000-00000000000c
-
-	measure 'Consumo indirecto' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen Gerencial
-		lineageTag: 7a100001-000d-4a00-8000-00000000000d
-
-	measure 'Presupuesto directo' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen Gerencial
-		lineageTag: 7a100001-000e-4a00-8000-00000000000e
-
-	measure 'Presupuesto indirecto' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen Gerencial
-		lineageTag: 7a100001-000f-4a00-8000-00000000000f
-
-	measure 'Subsecos sobre presupuesto' =
-			
-			COUNTROWS(
-			    FILTER(
-			        ADDCOLUMNS(
-			            SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Id categoria]),
-			            "__Consumo", [Total consumido],
-			            "__PresuCat", VAR CatActual = 'Dim_subseco'[Id categoria]
-			                         RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
-			        ),
-			        [__PresuCat] > 0 && [__Consumo] > [__PresuCat]
-			    )
-			)
-		formatString: 0
-		displayFolder: Resumen Gerencial
-		lineageTag: 7a100001-0010-4a00-8000-000000000010
-
 	measure 'Card HTML - Presupuesto' =
 			
 			VAR ValorNum = [Presupuesto total] / 1000000
@@ -1126,9 +1089,11 @@ table _Medidas
 			VAR PorcentajeDirectoReal = DIVIDE([Consumo directo], [Presupuesto directo])
 			VAR PorcentajeDirecto = FORMAT(PorcentajeDirectoReal, "0.0%")
 			VAR DirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeDirectoReal, 1) * 100, "0.0"), ",", ".")
+			VAR ColorDirecto = SWITCH(TRUE(), ISBLANK(PorcentajeDirectoReal), "#9CA3AF", PorcentajeDirectoReal < 0.8, "#71B73A", PorcentajeDirectoReal < 1, "#EE7600", "#E7344C")
 			VAR PorcentajeIndirectoReal = DIVIDE([Consumo indirecto], [Presupuesto indirecto])
 			VAR PorcentajeIndirecto = FORMAT(PorcentajeIndirectoReal, "0.0%")
 			VAR IndirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeIndirectoReal, 1) * 100, "0.0"), ",", ".")
+			VAR ColorIndirecto = SWITCH(TRUE(), ISBLANK(PorcentajeIndirectoReal), "#9CA3AF", PorcentajeIndirectoReal < 0.8, "#71B73A", PorcentajeIndirectoReal < 1, "#EE7600", "#E7344C")
 			VAR Subsecos = [Subsecos sobre presupuesto]
 			VAR SubsecosTexto = FORMAT(Subsecos, "0")
 			VAR TextoPill =
@@ -1143,13 +1108,148 @@ table _Medidas
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#164379;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;'><span style='font-size:10px;color:#FFFFFF;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>DISPONIBLE</span><span style='font-size:10px;color:#FFFFFF;background:" & ColorPill & ";border-radius:999px;padding:4px 7px;font-weight:500;white-space:nowrap;'>" & TextoPill & "</span></div>
 			  <div style='font-size:" & FontValor & ";color:#FFFFFF;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#FFFFFF;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:6px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Directo</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & DirectoWidth & "%;background:#FFFFFF;border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeDirecto & "</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Indirecto</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & IndirectoWidth & "%;background:#FFFFFF;border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeIndirecto & "</span></div>
+			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:6px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Directo</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & DirectoWidth & "%;background:" & ColorDirecto & ";border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeDirecto & "</span></div>
+			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><span style='font-size:11px;color:#FFFFFF;font-weight:400;width:56px;'>Indirecto</span><div style='flex:1;height:4px;background:rgba(255,255,255,0.25);border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & IndirectoWidth & "%;background:" & ColorIndirecto & ";border-radius:999px;'></div></div><span style='font-size:11px;color:#FFFFFF;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeIndirecto & "</span></div>
 			  <div style='font-size:11px;color:#FFFFFF;font-weight:400;'>Saldo disponible después del consumo</div>
 			</div>
 			"
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-000b-4a00-8000-00000000000b
+
+	measure 'Consumo directo' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000c-4a00-8000-00000000000c
+
+	measure 'Consumo indirecto' = CALCULATE([Total consumido], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000d-4a00-8000-00000000000d
+
+	measure 'Presupuesto directo' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000e-4a00-8000-00000000000e
+
+	measure 'Presupuesto indirecto' = CALCULATE([Presupuesto total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-000f-4a00-8000-00000000000f
+
+	measure 'Subsecos sobre presupuesto' =
+			
+			COUNTROWS(
+			    FILTER(
+			        ADDCOLUMNS(
+			            SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Id categoria]),
+			            "__Consumo", [Total consumido],
+			            "__PresuCat", VAR CatActual = 'Dim_subseco'[Id categoria]
+			                         RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
+			        ),
+			        [__PresuCat] > 0 && [__Consumo] > [__PresuCat]
+			    )
+			)
+		formatString: 0
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0010-4a00-8000-000000000010
+
+	measure 'Fila HTML - Consumo subseco' =
+			
+			VAR Consumo = [Total consumido]
+			VAR Presupuesto = VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
+			                  RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
+			VAR PctReal = DIVIDE(Consumo, Presupuesto)
+			VAR PctTexto = FORMAT(PctReal, "0%")
+			VAR Color = SWITCH(TRUE(), ISBLANK(PctReal), "#9CA3AF", PctReal < 0.8, "#71B73A", PctReal < 1, "#EE7600", "#E7344C")
+			VAR Width = SUBSTITUTE(FORMAT(MIN(COALESCE(PctReal, 0), 1) * 100, "0.0"), ",", ".")
+			VAR Nombre = SELECTEDVALUE('Dim_subseco'[Descripción])
+			VAR ConsumoTexto = FORMAT(Consumo / 1000000, "0.0")
+			VAR Disp = Presupuesto - Consumo
+			VAR DispTexto = FORMAT(ABS(Disp / 1000000), "0.0")
+			VAR DispHTML =
+			    IF(
+			        ISBLANK(Presupuesto) || Presupuesto <= 0,
+			        "<div style='font-size:10px;color:#9CA3AF;white-space:nowrap;'>sin presup.</div>",
+			        IF(
+			            Disp < 0,
+			            "<div style='font-size:10px;color:#E7344C;font-weight:600;white-space:nowrap;'>-$ " & DispTexto & "M</div>",
+			            "<div style='font-size:10px;color:#575756;white-space:nowrap;'>$ " & DispTexto & "M disp.</div>"
+			        )
+			    )
+			RETURN
+			"<div style='display:flex;align-items:center;gap:14px;padding:4px 0;'>
+			  <div style='flex:0 0 240px;overflow:hidden;'>
+			    <div style='font-size:12px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & Nombre & "</div>
+			    <div style='font-size:10px;color:#9CA3AF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>$ " & ConsumoTexto & " mill. consumido</div>
+			  </div>
+			  <div style='flex:1;height:14px;background:#EDF0F4;border-radius:999px;overflow:hidden;'>
+			    <div style='height:100%;width:" & Width & "%;background:" & Color & ";border-radius:999px;'></div>
+			  </div>
+			  <div style='flex:0 0 110px;text-align:right;'>
+			    <div style='font-size:13px;color:" & Color & ";font-weight:700;'>" & PctTexto & "</div>
+			    " & DispHTML & "
+			  </div>
+			</div>"
+		formatString: 0
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0011-4a00-8000-000000000011
+
+	measure 'Card HTML - Consumo vs presupuesto' =
+			
+			VAR Filas =
+			    CONCATENATEX(
+			        TOPN(
+			            10,
+			            SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Descripción], 'Dim_subseco'[Id categoria]),
+			            [Total consumido],
+			            DESC
+			        ),
+			        [Fila HTML - Consumo subseco],
+			        "",
+			        [Total consumido],
+			        DESC
+			    )
+			VAR ConsumoTotal = [Total consumido]
+			VAR PresupuestoTotal = [Presupuesto total]
+			VAR PctTotalReal = DIVIDE(ConsumoTotal, PresupuestoTotal)
+			VAR PctTotal = FORMAT(PctTotalReal, "0%")
+			VAR PctTotalWidth = SUBSTITUTE(FORMAT(MIN(COALESCE(PctTotalReal, 0), 1) * 100, "0.0"), ",", ".")
+			VAR ColorTotal = SWITCH(TRUE(), ISBLANK(PctTotalReal), "#9CA3AF", PctTotalReal < 0.8, "#71B73A", PctTotalReal < 1, "#EE7600", "#E7344C")
+			VAR DispTotal = PresupuestoTotal - ConsumoTotal
+			VAR DispTotalTexto = FORMAT(ABS(DispTotal / 1000000), "0.0")
+			VAR DispTotalHTML =
+			    IF(
+			        DispTotal < 0,
+			        "<div style='font-size:10px;color:#E7344C;font-weight:600;white-space:nowrap;'>-$ " & DispTotalTexto & "M</div>",
+			        "<div style='font-size:10px;color:#575756;white-space:nowrap;'>$ " & DispTotalTexto & "M disp.</div>"
+			    )
+			RETURN
+			"<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 16px 10px;width:100%;height:100%;box-sizing:border-box;display:flex;flex-direction:column;'>
+			  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;'>
+			    <div style='display:flex;align-items:center;gap:8px;'><span style='width:20px;height:2px;background:#164379;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>CONSUMO POR SUBSECO</span></div>
+			    <div style='display:flex;gap:12px;font-size:9px;color:#575756;'><span><span style='color:#71B73A;font-weight:700;'>&#9679;</span> en rango</span><span><span style='color:#EE7600;font-weight:700;'>&#9679;</span> alerta</span><span><span style='color:#E7344C;font-weight:700;'>&#9679;</span> sobregasto</span></div>
+			  </div>
+			  <div style='display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;'><span style='font-size:14px;color:#1E293B;font-weight:600;'>Consumo vs presupuesto</span><span style='font-size:13px;color:#164379;font-weight:600;'>" & PctTotal & " del total</span></div>
+			  <div style='flex:1;overflow-y:auto;min-height:0;'>" & Filas & "</div>
+			  <div style='border-top:1px solid #E2E8F0;padding-top:8px;margin-top:6px;'>
+			    <div style='display:flex;align-items:center;gap:14px;'>
+			      <div style='flex:0 0 240px;overflow:hidden;'>
+			        <div style='font-size:12px;color:#164379;font-weight:700;white-space:nowrap;'>TOTAL</div>
+			        <div style='font-size:10px;color:#9CA3AF;white-space:nowrap;'>$ " & FORMAT(ConsumoTotal / 1000000, "0.0") & " mill. consumido</div>
+			      </div>
+			      <div style='flex:1;height:14px;background:#EDF0F4;border-radius:999px;overflow:hidden;'>
+			        <div style='height:100%;width:" & PctTotalWidth & "%;background:" & ColorTotal & ";border-radius:999px;'></div>
+			      </div>
+			      <div style='flex:0 0 110px;text-align:right;'>
+			        <div style='font-size:13px;color:" & ColorTotal & ";font-weight:700;'>" & PctTotal & "</div>
+			        " & DispTotalHTML & "
+			      </div>
+			    </div>
+			  </div>
+			</div>"
+		formatString: 0
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0012-4a00-8000-000000000012
 
 	partition _Medidas = m
 		mode: import
