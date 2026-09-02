@@ -24,6 +24,7 @@ ref table _Medidas
 ref table Dim_subseco
 ref table Dim_categoria
 ref table Fact_detalle_documental
+ref table 'Dim_tipo documento'
 
 ref cultureInfo es-CO
 

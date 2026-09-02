@@ -33,7 +33,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
               "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },

@@ -1,0 +1,28 @@
+table 'Dim_tipo documento'
+	lineageTag: ab10bba3-92c9-436e-a3e7-8c9bb991a40e
+
+	column 'Tipo documento'
+		lineageTag: de5b88f1-bab2-49f1-8606-c58856071269
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tipo documento]
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		lineageTag: 53150694-fc75-45f9-a0e6-fe6cf691b51f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Orden]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim_tipo documento' = calculated
+		mode: import
+		source =
+				DATATABLE ( "Tipo documento", STRING, "Orden", INTEGER, {
+				{ "SOLPED", 1 }, { "ODC", 2 }, { "Factura", 3 } } )
+
+	annotation PBI_Id = 677376d46b09efa0a075
+

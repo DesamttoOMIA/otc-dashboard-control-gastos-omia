@@ -1086,14 +1086,6 @@ table _Medidas
 			        PorcentajeReal < 1, "EN ALERTA",
 			        "SOBREGASTO"
 			    )
-			VAR PorcentajeDirectoReal = DIVIDE([Consumo directo], [Presupuesto directo])
-			VAR PorcentajeDirecto = FORMAT(PorcentajeDirectoReal, "0.0%")
-			VAR DirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeDirectoReal, 1) * 100, "0.0"), ",", ".")
-			VAR ColorDirecto = SWITCH(TRUE(), ISBLANK(PorcentajeDirectoReal), "#9CA3AF", PorcentajeDirectoReal < 0.8, "#71B73A", PorcentajeDirectoReal < 1, "#EE7600", "#E7344C")
-			VAR PorcentajeIndirectoReal = DIVIDE([Consumo indirecto], [Presupuesto indirecto])
-			VAR PorcentajeIndirecto = FORMAT(PorcentajeIndirectoReal, "0.0%")
-			VAR IndirectoWidth = SUBSTITUTE(FORMAT(MIN(PorcentajeIndirectoReal, 1) * 100, "0.0"), ",", ".")
-			VAR ColorIndirecto = SWITCH(TRUE(), ISBLANK(PorcentajeIndirectoReal), "#9CA3AF", PorcentajeIndirectoReal < 0.8, "#71B73A", PorcentajeIndirectoReal < 1, "#EE7600", "#E7344C")
 			VAR Subsecos = [Subsecos sobre presupuesto]
 			VAR SubsecosTexto = FORMAT(Subsecos, "0")
 			VAR TextoPill =
@@ -1103,13 +1095,29 @@ table _Medidas
 			        Estado
 			    )
 			VAR ColorPill = IF(Subsecos > 0, "#E7344C", ColorEstado)
+			VAR DispDir = [Presupuesto directo] - [Consumo directo]
+			VAR DispDirNum = DispDir / 1000000
+			VAR DispDirTexto = FORMAT(ABS(DispDirNum), SWITCH(TRUE(), ABS(DispDirNum) >= 1000, "#,0", ABS(DispDirNum) >= 100, "#,0.0", "#,0.00"))
+			VAR FilaDir = IF(
+			    ISBLANK(DispDir),
+			    "<div style='display:flex;justify-content:space-between;font-size:11px;color:#9CA3AF;margin-bottom:4px;'><span>Directo</span><span>—</span></div>",
+			    "<div style='display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;'><span style='color:#575756;'>Directo</span><span style='color:" & IF(DispDir < 0, "#E7344C", "#71B73A") & ";font-weight:600;'>" & IF(DispDir < 0, "-$ ", "$ ") & DispDirTexto & " mill.</span></div>"
+			)
+			VAR DispInd = [Presupuesto indirecto] - [Consumo indirecto]
+			VAR DispIndNum = DispInd / 1000000
+			VAR DispIndTexto = FORMAT(ABS(DispIndNum), SWITCH(TRUE(), ABS(DispIndNum) >= 1000, "#,0", ABS(DispIndNum) >= 100, "#,0.0", "#,0.00"))
+			VAR FilaInd = IF(
+			    ISBLANK(DispInd),
+			    "<div style='display:flex;justify-content:space-between;font-size:11px;color:#9CA3AF;margin-bottom:8px;'><span>Indirecto</span><span>—</span></div>",
+			    "<div style='display:flex;justify-content:space-between;font-size:11px;margin-bottom:8px;'><span style='color:#575756;'>Indirecto</span><span style='color:" & IF(DispInd < 0, "#E7344C", "#71B73A") & ";font-weight:600;'>" & IF(DispInd < 0, "-$ ", "$ ") & DispIndTexto & " mill.</span></div>"
+			)
 			RETURN
 			"
 			<div style='font-family:Segoe UI,Arial,sans-serif;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>
 			  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;'><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>DISPONIBLE</span><span style='font-size:10px;color:#FFFFFF;background:" & ColorPill & ";border-radius:999px;padding:4px 7px;font-weight:500;white-space:nowrap;'>" & TextoPill & "</span></div>
 			  <div style='font-size:" & FontValor & ";color:#164379;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:6px;'><span style='font-size:11px;color:#575756;font-weight:400;width:56px;'>Directo</span><div style='flex:1;height:4px;background:#E2E8F0;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & DirectoWidth & "%;background:" & ColorDirecto & ";border-radius:999px;'></div></div><span style='font-size:11px;color:#575756;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeDirecto & "</span></div>
-			  <div style='display:flex;align-items:center;gap:10px;margin-bottom:8px;'><span style='font-size:11px;color:#575756;font-weight:400;width:56px;'>Indirecto</span><div style='flex:1;height:4px;background:#E2E8F0;border-radius:999px;overflow:hidden;'><div style='height:100%;width:" & IndirectoWidth & "%;background:" & ColorIndirecto & ";border-radius:999px;'></div></div><span style='font-size:11px;color:#575756;font-weight:400;white-space:nowrap;width:48px;text-align:right;'>" & PorcentajeIndirecto & "</span></div>
+			  " & FilaDir & "
+			  " & FilaInd & "
 			  <div style='font-size:11px;color:#575756;font-weight:400;'>Saldo disponible después del consumo</div>
 			</div>
 			"
@@ -1155,7 +1163,7 @@ table _Medidas
 
 	measure 'Fila HTML - Consumo subseco' =
 			
-			VAR Consumo = [Total consumido]
+			VAR Consumo = [Consumo por tipo documento]
 			VAR Presupuesto = VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
 			                  RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
 			VAR PctReal = DIVIDE(Consumo, Presupuesto)
@@ -1164,8 +1172,7 @@ table _Medidas
 			VAR Width = SUBSTITUTE(FORMAT(MIN(COALESCE(PctReal, 0), 1) * 100, "0.0"), ",", ".")
 			VAR Nombre = SELECTEDVALUE('Dim_subseco'[Descripción])
 			VAR ConsumoTexto = FORMAT(Consumo / 1000000, "0.0")
-			VAR TipoCosto = CALCULATE(SELECTEDVALUE('Dim_categoria'[Tipo costo]), 'Dim_categoria'[Id categoria] = SELECTEDVALUE('Dim_subseco'[Id categoria]))
-			VAR TipoTexto = SWITCH(TRUE(), ISBLANK(TipoCosto), "—", LEFT(UPPER(TipoCosto), 3) = "DIR", "Directo", LEFT(UPPER(TipoCosto), 3) = "IND", "Indirecto", TipoCosto)
+			VAR TipoTexto = COALESCE(SELECTEDVALUE('Dim_subseco'[Distribución Costos]), "—")
 			VAR Etiqueta =
 			    IF(
 			        PctReal > 0.85,
@@ -1210,7 +1217,7 @@ table _Medidas
 			        SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Descripción], 'Dim_subseco'[Id categoria]),
 			        "__Presu", VAR c = 'Dim_subseco'[Id categoria]
 			                    RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = c),
-			        "__Consumo", [Total consumido],
+			        "__Consumo", [Consumo por tipo documento],
 			        "__Pct", [% consumido subseco]
 			    )
 			VAR ConPresu = FILTER(Base, [__Presu] > 0)
@@ -1242,7 +1249,7 @@ table _Medidas
 			
 			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
 			VAR PresuCat = CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
-			RETURN DIVIDE([Total consumido], PresuCat)
+			RETURN DIVIDE([Consumo por tipo documento], PresuCat)
 		formatString: 0.0%
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0013-4a00-8000-000000000013
@@ -1363,6 +1370,33 @@ table _Medidas
 		formatString: 0
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0015-4a00-8000-000000000015
+
+	measure 'Consumo por tipo documento' =
+			
+			VAR Tipos = VALUES('Dim_tipo documento'[Tipo documento])
+			RETURN
+			    IF("SOLPED" IN Tipos, [Consumo SOLPED])
+			        + IF("ODC" IN Tipos, [Consumo ODC])
+			        + IF("Factura" IN Tipos, [Consumo Facturas])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0016-4a00-8000-000000000016
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure '% consumido directo' =
+			
+			DIVIDE([Consumo directo], [Presupuesto directo])
+		formatString: 0.0%
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0018-4a00-8000-000000000018
+
+	measure '% consumido indirecto' =
+			
+			DIVIDE([Consumo indirecto], [Presupuesto indirecto])
+		formatString: 0.0%
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0019-4a00-8000-000000000019
 
 	partition _Medidas = m
 		mode: import
