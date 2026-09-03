@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "7b295b00ef55abfbf217",
+  "name": "8a4f3d9c2e7b5a1f0d6c8e3b9a4f2c1d",
   "position": {
-    "x": 32,
-    "y": 90,
-    "z": 1000,
-    "height": 170,
-    "width": 264,
-    "tabOrder": 0
+    "x": 1155,
+    "y": 265,
+    "z": 2000,
+    "height": 508,
+    "width": 263,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Card HTML - Presupuesto"
+                  "Property": "Card HTML - Alertas"
                 }
               },
-              "queryRef": "_Medidas.Card HTML - Presupuesto",
-              "nativeQueryRef": "Card HTML - Presupuesto"
+              "queryRef": "_Medidas.Card HTML - Alertas",
+              "nativeQueryRef": "Card HTML - Alertas"
             }
           ]
         }

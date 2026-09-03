@@ -1,40 +1,20 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "47b9d16700a086a43728",
+  "name": "cfe94f4c98653c78292e",
   "position": {
-    "x": 75,
-    "y": 268,
-    "z": 0,
-    "height": 525,
-    "width": 907,
-    "tabOrder": 1000
+    "x": 32,
+    "y": 265,
+    "z": 10001,
+    "height": 776,
+    "width": 539,
+    "tabOrder": 10001
   },
   "visual": {
-    "visualType": "lineStackedColumnComboChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_categoria"
-                        }
-                      },
-                      "Hierarchy": "Tipo costo Jerarquía"
-                    }
-                  },
-                  "Level": "Tipo costo"
-                }
-              },
-              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
-              "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
-              "active": true
-            },
             {
               "field": {
                 "HierarchyLevel": {
@@ -125,47 +105,10 @@
               "displayName": "Sobrepresupuesto"
             }
           ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Presupuesto total Visible"
-                }
-              },
-              "queryRef": "_Medidas.Presupuesto total Visible",
-              "nativeQueryRef": "Presupuesto",
-              "displayName": "Presupuesto"
-            }
-          ]
         }
       },
       "sortDefinition": {
         "sort": [
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Tipo costo"
-              }
-            },
-            "direction": "Ascending"
-          },
           {
             "field": {
               "HierarchyLevel": {
@@ -234,7 +177,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "10D"
                 }
               }
             },
@@ -248,14 +191,21 @@
             "maxMarginFactor": {
               "expr": {
                 "Literal": {
-                  "Value": "30L"
+                  "Value": "75L"
+                }
+              }
+            },
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "15L"
                 }
               }
             },
             "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "25D"
                 }
               }
             }
@@ -276,34 +226,6 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
-                }
-              }
-            },
-            "secShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "alignZeros": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "secLogAxisScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "secShowAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -344,13 +266,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top'"
-                }
-              }
-            },
-            "legendMarkerRendering": {
-              "expr": {
-                "Literal": {
-                  "Value": "'lineAndMarker'"
                 }
               }
             },
@@ -410,17 +325,6 @@
           },
           "selector": {
             "metadata": "_Medidas.Presupuesto remanente visible"
-          }
-        },
-        {
-          "properties": {
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "95D"
-                }
-              }
-            }
           }
         },
         {
@@ -507,128 +411,6 @@
           }
         }
       ],
-      "lineStyles": [
-        {
-          "properties": {
-            "areaShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "lineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'dotted'"
-                }
-              }
-            },
-            "strokeWidth": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "lineChartType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'step'"
-                }
-              }
-            },
-            "interpolationStep": {
-              "expr": {
-                "Literal": {
-                  "Value": "'after'"
-                }
-              }
-            },
-            "strokeLineJoin": {
-              "expr": {
-                "Literal": {
-                  "Value": "'round'"
-                }
-              }
-            },
-            "strokeAutoScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "strokeDashCap": {
-              "expr": {
-                "Literal": {
-                  "Value": "'round'"
-                }
-              }
-            },
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "areaMatchStrokeColor": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "areaColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            },
-            "strokeDashArray": {
-              "expr": {
-                "Literal": {
-                  "Value": "'0 0 0 0'"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "seriesLabels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "enableBackground": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto total Visible"
-          }
-        }
-      ],
       "labels": [
         {
           "properties": {
@@ -639,76 +421,34 @@
                 }
               }
             },
-            "labelOrientation": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "'Above'"
+                  "Value": "'Auto'"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
                 }
               }
             },
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "2L"
+                  "Value": "1L"
                 }
               }
             },
-            "enableDetailDataLabel": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "9D"
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Dentro presupuesto visual"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Excedente visual"
           }
         }
       ]
