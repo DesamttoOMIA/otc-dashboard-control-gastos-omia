@@ -1453,11 +1453,11 @@ table _Medidas
 		lineageTag: 7a100001-0020-4a00-8000-000000000020
 
 	measure 'Etiqueta de actualización' =
-		VAR ref = NOW()
-		VAR s = MAX('Fact_solicitud_de_pedido'[Fecha de creación])
-		VAR o = MAX('Fact_ordenes_de_compra'[Fecha de contabilización])
-		VAR f = MAX('Fact_facturas_conformadas'[Fecha de contabilización])
-		RETURN "<div style='font-size:9px;color:#575756;white-space:nowrap;'>Actualizado: " & FORMAT(ref, "dd/mm/yyyy hh:mm") & " &nbsp;&#183;&nbsp; SAP al: SOLPED " & FORMAT(s, "dd/mm") & " &#183; OC " & FORMAT(o, "dd/mm") & " &#183; Fact " & FORMAT(f, "dd/mm") & "</div>"
+			VAR ref = NOW()
+			VAR s = MAX('Fact_solicitud_de_pedido'[Fecha de creación])
+			VAR o = MAX('Fact_ordenes_de_compra'[Fecha de contabilización])
+			VAR f = MAX('Fact_facturas_conformadas'[Fecha de contabilización])
+			RETURN "<div style='font-size:9px;color:#575756;white-space:nowrap;'>Actualizado: " & FORMAT(ref, "dd/mm/yyyy hh:mm") & " &nbsp;&#183;&nbsp; SAP al: SOLPED " & FORMAT(s, "dd/mm") & " &#183; OC " & FORMAT(o, "dd/mm") & " &#183; Fact " & FORMAT(f, "dd/mm") & "</div>"
 		formatString: General
 		displayFolder: Resumen Gerencial
 		lineageTag: 7a100001-0021-4a00-8000-000000000021
