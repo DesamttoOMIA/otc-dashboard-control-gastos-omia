@@ -1146,7 +1146,9 @@ table _Medidas
 			    )
 			VAR Nombre = SELECTEDVALUE('Dim_subseco'[Descripción])
 			VAR ConsumoTexto = FORMAT(Consumo / 1000000, "0.0")
-			VAR CatNombre = COALESCE(LOOKUPVALUE('Dim_categoria'[Descripción], 'Dim_categoria'[Id categoria], CatActual), "—")
+			VAR CatN2 = LOOKUPVALUE('Dim_categoria'[Desc_N2], 'Dim_categoria'[Id categoria], CatActual)
+			VAR CatN3 = LOOKUPVALUE('Dim_categoria'[Desc_N3_OK], 'Dim_categoria'[Id categoria], CatActual)
+			VAR CatRuta = IF(ISBLANK(CatN2), "—", CatN2 & IF(NOT ISBLANK(CatN3) && CatN3 <> CatN2, " - " & CatN3, ""))
 			VAR Etiqueta =
 			    IF(
 			        PctReal > 0.85,
@@ -1173,7 +1175,7 @@ table _Medidas
 			"<div style='display:flex;align-items:center;gap:14px;padding:5px 0;'>
 			  <div style='flex:0 0 240px;overflow:hidden;'>
 			    <div style='font-size:12px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & Nombre & "</div>
-			    <div style='font-size:10px;color:#575756;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & CatNombre & "</div>
+			    <div style='font-size:10px;color:#575756;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & CatRuta & "</div>
 			  </div>
 			  <div style='flex:1;position:relative;height:14px;background:#EDF0F4;border-radius:999px;overflow:hidden;'>
 			    <div style='height:100%;width:" & Width & "%;background:" & Color & ";border-radius:999px;'></div>
