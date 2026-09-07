@@ -59,15 +59,11 @@ table _Medidas
 
 	measure 'Presupuesto total Visible' =
 			
-			VAR cats = VALUES(Dim_subseco[Id categoria])
-			VAR presPadre =
-				CALCULATE(
-					[Presupuesto total],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			RETURN
-			IF(presPadre = 0, BLANK(), presPadre)
+			IF(
+			    [Presupuesto total] = 0,
+			    BLANK(),
+			    [Presupuesto total]
+			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: 626f53c3-c4b8-4592-aa0d-0badb3c1e9a7
@@ -156,27 +152,10 @@ table _Medidas
 
 	measure 'Presupuesto remanente visible' =
 			
-			VAR cats = VALUES(Dim_subseco[Id categoria])
-			VAR presBase =
-				CALCULATE(
-					[Presupuesto total],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			VAR pres = IF(presBase = 0, BLANK(), presBase)
-			VAR ejec =
-				CALCULATE(
-					[Costo ejecutado visible],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			VAR comp =
-				CALCULATE(
-					[Costo comprometido visible],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			VAR rem = pres - ejec - comp
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = [Costo ejecutado visible]
+			VAR comp = [Costo comprometido visible]
+			VAR rem  = pres - ejec - comp
 			RETURN
 			IF( ISBLANK(pres), BLANK(), rem )
 		displayFolder: Medidas secundarias
@@ -236,33 +215,16 @@ table _Medidas
 
 	measure 'Dentro presupuesto visual' =
 			
-			VAR cats = VALUES(Dim_subseco[Id categoria])
-			VAR excPadre =
-				CALCULATE(
-					[Ejecutado excedente] + [Comprometido excedente],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			VAR propio = [Ejecutado dentro presupuesto] + [Comprometido dentro presupuesto]
-			RETURN
-			IF(excPadre > 0, BLANK(), propio)
+			[Ejecutado dentro presupuesto] +
+			[Comprometido dentro presupuesto]
 		lineageTag: b2aef6cf-0969-485b-b772-dd79f020b8a4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Excedente visual' =
 			
-			VAR cats = VALUES(Dim_subseco[Id categoria])
-			VAR excPadre =
-				CALCULATE(
-					[Ejecutado excedente] + [Comprometido excedente],
-					REMOVEFILTERS(Dim_subseco),
-					Dim_categoria[Id categoria] IN cats
-				)
-			VAR propio = [Ejecutado excedente] + [Comprometido excedente]
-			VAR consumo = [Consumo total visible]
-			RETURN
-			IF(excPadre > 0, IF(ISBLANK(consumo), BLANK(), consumo), propio)
+			[Ejecutado excedente] +
+			[Comprometido excedente]
 		lineageTag: 484eeb62-984a-4d9f-b552-5e476e3254f7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -1169,28 +1131,29 @@ table _Medidas
 
 	measure 'Fila HTML - Consumo subseco' =
 			
+			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
 			VAR Consumo = [Consumo por tipo documento]
-			VAR Presupuesto = VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			                  RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
-			VAR PctReal = DIVIDE(Consumo, Presupuesto)
+			VAR Presupuesto = CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = CatActual)
+			VAR ConsumoCat = CALCULATE([Consumo por tipo documento], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
+			VAR PctReal = DIVIDE(ConsumoCat, Presupuesto)
 			VAR PctTexto = IF(ISBLANK(PctReal), "—", FORMAT(PctReal, "0%"))
-			VAR Color = SWITCH(TRUE(), ISBLANK(PctReal), IF(COALESCE(Consumo, 0) > 0, "#E7344C", "#9CA3AF"), PctReal < 0.8, "#71B73A", PctReal < 1, "#EE7600", "#E7344C")
+			VAR Color = SWITCH(TRUE(), ISBLANK(PctReal), IF(COALESCE(ConsumoCat, 0) > 0, "#E7344C", "#9CA3AF"), PctReal < 0.8, "#71B73A", PctReal < 1, "#EE7600", "#E7344C")
 			VAR Width =
 			    IF(
 			        ISBLANK(PctReal),
-			        IF(COALESCE(Consumo, 0) > 0, "100.0", "0.0"),
+			        IF(COALESCE(ConsumoCat, 0) > 0, "100.0", "0.0"),
 			        SUBSTITUTE(FORMAT(MIN(PctReal, 1) * 100, "0.0"), ",", ".")
 			    )
 			VAR Nombre = SELECTEDVALUE('Dim_subseco'[Descripción])
 			VAR ConsumoTexto = FORMAT(Consumo / 1000000, "0.0")
-			VAR TipoTexto = COALESCE(SELECTEDVALUE('Dim_subseco'[Distribución Costos]), "—")
+			VAR CatNombre = COALESCE(LOOKUPVALUE('Dim_categoria'[Descripción], 'Dim_categoria'[Id categoria], CatActual), "—")
 			VAR Etiqueta =
 			    IF(
 			        PctReal > 0.85,
 			        "<div style='position:absolute;top:50%;left:" & Width & "%;transform:translate(-100%,-50%);padding-right:6px;font-size:10px;font-weight:600;color:#FFFFFF;white-space:nowrap;'>$ " & ConsumoTexto & "M</div>",
 			        "<div style='position:absolute;top:50%;left:" & Width & "%;transform:translateY(-50%);padding-left:6px;font-size:10px;font-weight:600;color:#164379;white-space:nowrap;'>$ " & ConsumoTexto & "M</div>"
 			    )
-			VAR Disp = Presupuesto - Consumo
+			VAR Disp = Presupuesto - ConsumoCat
 			VAR DispTexto = FORMAT(ABS(Disp / 1000000), "0.0")
 			VAR DispHTML =
 			    IF(
@@ -1210,7 +1173,7 @@ table _Medidas
 			"<div style='display:flex;align-items:center;gap:14px;padding:5px 0;'>
 			  <div style='flex:0 0 240px;overflow:hidden;'>
 			    <div style='font-size:12px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & Nombre & "</div>
-			    <div style='font-size:10px;color:#575756;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & TipoTexto & "</div>
+			    <div style='font-size:10px;color:#575756;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & CatNombre & "</div>
 			  </div>
 			  <div style='flex:1;position:relative;height:14px;background:#EDF0F4;border-radius:999px;overflow:hidden;'>
 			    <div style='height:100%;width:" & Width & "%;background:" & Color & ";border-radius:999px;'></div>
@@ -1241,11 +1204,11 @@ table _Medidas
 			VAR CatSel = CALCULATETABLE(VALUES('Dim_categoria'[Id categoria]), ALL('Dim_subseco'))
 			VAR EnSel = FILTER(Base, [Id categoria] IN CatSel)
 			VAR FilasSin = CONCATENATEX(SinPresu, [Fila HTML - Consumo subseco], "", [__Consumo], DESC)
-			VAR FilasTop = CONCATENATEX(TOPN(10, ConPresu, [__Pct], DESC), [Fila HTML - Consumo subseco], "", [__Pct], DESC)
+			VAR FilasTop = CONCATENATEX(TOPN(10, ConPresu, [__Consumo], DESC), [Fila HTML - Consumo subseco], "", [__Consumo], DESC)
 			VAR Filas =
 			    IF(
 			        HaySel,
-			        CONCATENATEX(EnSel, [Fila HTML - Consumo subseco], "", [__Pct], DESC),
+			        CONCATENATEX(EnSel, [Fila HTML - Consumo subseco], "", [__Consumo], DESC),
 			        FilasSin & FilasTop
 			    )
 			VAR ConsumoTotal = [Total consumido]

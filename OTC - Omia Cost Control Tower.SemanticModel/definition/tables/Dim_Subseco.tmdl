@@ -43,18 +43,6 @@ table Dim_subseco
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Nivel 3' =
-		dataType: string
-		expression: LOOKUPVALUE(Dim_categoria[Desc_N3_OK], Dim_categoria[Id categoria], Dim_subseco[Id categoria])
-		lineageTag: d1677352-16c6-45d0-8ef8-0fa7d55e29bb
-		summarizeBy: none
-
-	column Etiqueta =
-		dataType: string
-		expression: Dim_subseco[Nivel 3] & " · " & Dim_subseco[Descripción]
-		lineageTag: a95c51a3-4d3d-4505-98e3-5bd92855cf88
-		summarizeBy: none
-
 	partition Dim_subseco = m
 		mode: import
 		source =

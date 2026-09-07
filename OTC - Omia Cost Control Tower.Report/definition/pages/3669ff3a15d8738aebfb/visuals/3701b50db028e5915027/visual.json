@@ -23,11 +23,11 @@
                       "Entity": "Dim_subseco"
                     }
                   },
-                  "Property": "Etiqueta"
+                  "Property": "Descripción"
                 }
               },
-              "queryRef": "Dim_subseco.Etiqueta",
-              "nativeQueryRef": "Etiqueta",
+              "queryRef": "Dim_subseco.Descripción",
+              "nativeQueryRef": "Descripción",
               "active": true
             }
           ]
@@ -42,25 +42,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Dentro presupuesto visual"
+                  "Property": "Consumo total visible"
                 }
               },
-              "queryRef": "_Medidas.Dentro presupuesto visual",
-              "nativeQueryRef": "Dentro presupuesto visual"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Excedente visual"
-                }
-              },
-              "queryRef": "_Medidas.Excedente visual",
-              "nativeQueryRef": "Excedente visual"
+              "queryRef": "_Medidas.Consumo total visible",
+              "nativeQueryRef": "Consumo total visible"
             }
           ]
         }
@@ -310,27 +296,6 @@
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "_Medidas.Dentro presupuesto visual"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#D54444'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Excedente visual"
           }
         }
       ]
