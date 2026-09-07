@@ -9,3 +9,33 @@
 .DS_Store
 Thumbs.db
 *.log
+.vs/
+.vscode/
+__pycache__/
+*.pyc
+
+# Estado local del agente (node_modules, planes) — no versionar
+.opencode/
+node_modules/
+
+# Fuentes de datos locales: nunca deben entrar al repo
+# (precios, proveedores, contratos: N.4.x, REE, Dimensiones)
+*.txt
+*.csv
+*.xlsx
+*.xls
+*.xlsm
+*.xlsb
+*.zip
+
+# Secretos / entornos
+.env
+.env.*
+
+# Windows / Office / Desktop
+desktop.ini
+~$*
+*.tmp
+*.bak
+*.backup
+*.abf
