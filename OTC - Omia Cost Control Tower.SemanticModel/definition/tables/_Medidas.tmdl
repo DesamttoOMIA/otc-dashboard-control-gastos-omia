@@ -215,16 +215,43 @@ table _Medidas
 
 	measure 'Dentro presupuesto visual' =
 			
-			[Ejecutado dentro presupuesto] +
-			[Comprometido dentro presupuesto]
+			VAR sub = SELECTEDVALUE(Dim_subseco[Id subseco])
+			VAR cat = SELECTEDVALUE(Dim_subseco[Id categoria])
+			VAR excPadre =
+				IF(
+					NOT ISBLANK(sub) && NOT ISBLANK(cat),
+					CALCULATE(
+						[Ejecutado excedente] + [Comprometido excedente],
+						REMOVEFILTERS(Dim_subseco),
+						Dim_categoria[Id categoria] = cat
+					),
+					0
+				)
+			VAR propio = [Ejecutado dentro presupuesto] + [Comprometido dentro presupuesto]
+			RETURN
+			IF(excPadre > 0, BLANK(), propio)
 		lineageTag: b2aef6cf-0969-485b-b772-dd79f020b8a4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Excedente visual' =
 			
-			[Ejecutado excedente] +
-			[Comprometido excedente]
+			VAR sub = SELECTEDVALUE(Dim_subseco[Id subseco])
+			VAR cat = SELECTEDVALUE(Dim_subseco[Id categoria])
+			VAR excPadre =
+				IF(
+					NOT ISBLANK(sub) && NOT ISBLANK(cat),
+					CALCULATE(
+						[Ejecutado excedente] + [Comprometido excedente],
+						REMOVEFILTERS(Dim_subseco),
+						Dim_categoria[Id categoria] = cat
+					),
+					0
+				)
+			VAR propio = [Ejecutado excedente] + [Comprometido excedente]
+			VAR consumo = [Consumo total visible]
+			RETURN
+			IF(excPadre > 0, IF(ISBLANK(consumo), BLANK(), consumo), propio)
 		lineageTag: 484eeb62-984a-4d9f-b552-5e476e3254f7
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
