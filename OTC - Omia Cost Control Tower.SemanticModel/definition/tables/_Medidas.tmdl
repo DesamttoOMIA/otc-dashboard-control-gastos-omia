@@ -1398,15 +1398,14 @@ table _Medidas
 			
 			VAR Base =
 			    ADDCOLUMNS(
-			        SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Descripción], 'Dim_subseco'[Id categoria], 'Dim_subseco'[Distribución Costos]),
-			        "__Presu", VAR c = 'Dim_subseco'[Id categoria]
-			                    RETURN CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = c),
-			        "__Consumo", [Total consumido],
-			        "__Pct", VAR c = 'Dim_subseco'[Id categoria]
-			                 RETURN DIVIDE([Total consumido], CALCULATE([Presupuesto total], 'Dim_categoria'[Id categoria] = c))
+			        SUMMARIZE('Dim_categoria', 'Dim_categoria'[Id categoria], 'Dim_categoria'[Descripción], 'Dim_categoria'[Tipo costo]),
+			        "__Presu", CALCULATE([Presupuesto total]),
+			        "__Consumo", CALCULATE([Total consumido]),
+			        "__Pct", DIVIDE(CALCULATE([Total consumido]), CALCULATE([Presupuesto total]))
 			    )
-			VAR ConPresu = FILTER(Base, [__Presu] > 0)
-			VAR SinPresu = FILTER(Base, ([__Presu] <= 0 || ISBLANK([__Presu])) && [__Consumo] > 0)
+			VAR Activos = FILTER(Base, [__Presu] > 0 || [__Consumo] > 0)
+			VAR ConPresu = FILTER(Activos, [__Presu] > 0)
+			VAR SinPresu = FILTER(Activos, [__Presu] <= 0)
 			VAR Sobre = COUNTROWS(FILTER(ConPresu, [__Pct] >= 1))
 			VAR Alerta = COUNTROWS(FILTER(ConPresu, [__Pct] >= 0.75 && [__Pct] < 1))
 			VAR NopSin = COUNTROWS(SinPresu)
@@ -1428,8 +1427,8 @@ table _Medidas
 			        TopFinal,
 			        IF(
 			            ISBLANK([__Pct]),
-			            "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & 'Dim_subseco'[Descripción] & "</div><div style='font-size:9px;color:#E7344C;font-weight:600;'>⚠ gasto " & FORMAT([__Consumo] / 1000000, SWITCH(TRUE(), [__Consumo] / 1000000 >= 1000, "#,0", [__Consumo] / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · SIN PRESUPUESTO · " & 'Dim_subseco'[Distribución Costos] & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:#E7344C;font-weight:700;'>—</div></div></div>",
-			            "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & 'Dim_subseco'[Descripción] & "</div><div style='font-size:9px;color:" & IF([__Pct] >= 1, "#E7344C", "#575756") & ";font-weight:400;'>" & IF([__Pct] >= 1, "sobregasto +$", "faltan $") & FORMAT(ABS([__Consumo] - [__Presu]) / 1000000, SWITCH(TRUE(), ABS([__Consumo] - [__Presu]) / 1000000 >= 1000, "#,0", ABS([__Consumo] - [__Presu]) / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · " & 'Dim_subseco'[Distribución Costos] & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:700;'>" & FORMAT([__Pct], "0%") & "</div></div></div>"
+			            "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & TRIM('Dim_categoria'[Descripción]) & "</div><div style='font-size:9px;color:#E7344C;font-weight:600;'>⚠ gasto " & FORMAT([__Consumo] / 1000000, SWITCH(TRUE(), [__Consumo] / 1000000 >= 1000, "#,0", [__Consumo] / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · SIN PRESUPUESTO · " & UPPER(TRIM('Dim_categoria'[Tipo costo])) & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:#E7344C;font-weight:700;'>—</div></div></div>",
+			            "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & TRIM('Dim_categoria'[Descripción]) & "</div><div style='font-size:9px;color:" & IF([__Pct] >= 1, "#E7344C", "#575756") & ";font-weight:400;'>" & IF([__Pct] >= 1, "sobregasto +$", "faltan $") & FORMAT(ABS([__Consumo] - [__Presu]) / 1000000, SWITCH(TRUE(), ABS([__Consumo] - [__Presu]) / 1000000 >= 1000, "#,0", ABS([__Consumo] - [__Presu]) / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · " & UPPER(TRIM('Dim_categoria'[Tipo costo])) & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:700;'>" & FORMAT([__Pct], "0%") & "</div></div></div>"
 			        ),
 			        ""
 			    )
