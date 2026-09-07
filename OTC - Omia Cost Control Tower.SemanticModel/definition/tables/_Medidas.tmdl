@@ -59,11 +59,15 @@ table _Medidas
 
 	measure 'Presupuesto total Visible' =
 			
-			IF(
-			    [Presupuesto total] = 0,
-			    BLANK(),
-			    [Presupuesto total]
-			)
+			VAR cats = VALUES(Dim_subseco[Id categoria])
+			VAR presPadre =
+				CALCULATE(
+					[Presupuesto total],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
+				)
+			RETURN
+			IF(presPadre = 0, BLANK(), presPadre)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas secundarias
 		lineageTag: 626f53c3-c4b8-4592-aa0d-0badb3c1e9a7
@@ -152,10 +156,27 @@ table _Medidas
 
 	measure 'Presupuesto remanente visible' =
 			
-			VAR pres = [Presupuesto total Visible]
-			VAR ejec = [Costo ejecutado visible]
-			VAR comp = [Costo comprometido visible]
-			VAR rem  = pres - ejec - comp
+			VAR cats = VALUES(Dim_subseco[Id categoria])
+			VAR presBase =
+				CALCULATE(
+					[Presupuesto total],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
+				)
+			VAR pres = IF(presBase = 0, BLANK(), presBase)
+			VAR ejec =
+				CALCULATE(
+					[Costo ejecutado visible],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
+				)
+			VAR comp =
+				CALCULATE(
+					[Costo comprometido visible],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
+				)
+			VAR rem = pres - ejec - comp
 			RETURN
 			IF( ISBLANK(pres), BLANK(), rem )
 		displayFolder: Medidas secundarias

@@ -102,23 +102,18 @@
             },
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_presupuesto"
-                        }
-                      },
-                      "Property": "COP"
+                    "SourceRef": {
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Function": 0
+                  "Property": "Presupuesto total Visible"
                 }
               },
-              "queryRef": "Sum(Fact_presupuesto.COP)",
-              "nativeQueryRef": "Presupuesto",
-              "displayName": "Presupuesto"
+              "queryRef": "_Medidas.Presupuesto total Visible",
+              "nativeQueryRef": "Presupuesto (categoría)",
+              "displayName": "Presupuesto (categoría)"
             }
           ]
         }
