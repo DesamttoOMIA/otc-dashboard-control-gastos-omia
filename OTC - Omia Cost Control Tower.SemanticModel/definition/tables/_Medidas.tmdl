@@ -236,17 +236,12 @@ table _Medidas
 
 	measure 'Dentro presupuesto visual' =
 			
-			VAR sub = SELECTEDVALUE(Dim_subseco[Id subseco])
-			VAR cat = SELECTEDVALUE(Dim_subseco[Id categoria])
+			VAR cats = VALUES(Dim_subseco[Id categoria])
 			VAR excPadre =
-				IF(
-					NOT ISBLANK(sub) && NOT ISBLANK(cat),
-					CALCULATE(
-						[Ejecutado excedente] + [Comprometido excedente],
-						REMOVEFILTERS(Dim_subseco),
-						Dim_categoria[Id categoria] = cat
-					),
-					0
+				CALCULATE(
+					[Ejecutado excedente] + [Comprometido excedente],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
 				)
 			VAR propio = [Ejecutado dentro presupuesto] + [Comprometido dentro presupuesto]
 			RETURN
@@ -257,17 +252,12 @@ table _Medidas
 
 	measure 'Excedente visual' =
 			
-			VAR sub = SELECTEDVALUE(Dim_subseco[Id subseco])
-			VAR cat = SELECTEDVALUE(Dim_subseco[Id categoria])
+			VAR cats = VALUES(Dim_subseco[Id categoria])
 			VAR excPadre =
-				IF(
-					NOT ISBLANK(sub) && NOT ISBLANK(cat),
-					CALCULATE(
-						[Ejecutado excedente] + [Comprometido excedente],
-						REMOVEFILTERS(Dim_subseco),
-						Dim_categoria[Id categoria] = cat
-					),
-					0
+				CALCULATE(
+					[Ejecutado excedente] + [Comprometido excedente],
+					REMOVEFILTERS(Dim_subseco),
+					Dim_categoria[Id categoria] IN cats
 				)
 			VAR propio = [Ejecutado excedente] + [Comprometido excedente]
 			VAR consumo = [Consumo total visible]

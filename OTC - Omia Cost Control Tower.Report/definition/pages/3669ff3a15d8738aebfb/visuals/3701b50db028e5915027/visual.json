@@ -23,11 +23,11 @@
                       "Entity": "Dim_subseco"
                     }
                   },
-                  "Property": "Descripción"
+                  "Property": "Etiqueta"
                 }
               },
-              "queryRef": "Dim_subseco.Descripción",
-              "nativeQueryRef": "Descripción",
+              "queryRef": "Dim_subseco.Etiqueta",
+              "nativeQueryRef": "Etiqueta",
               "active": true
             }
           ]
