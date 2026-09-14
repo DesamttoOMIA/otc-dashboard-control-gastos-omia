@@ -4,10 +4,10 @@
   "position": {
     "x": 75,
     "y": 66,
-    "z": 9000,
+    "z": 8000,
     "height": 119,
     "width": 247,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,12 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto YTD"
+                  "Property": "Presupuesto Anual"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto YTD",
-              "nativeQueryRef": "Presupuesto YTD",
-              "format": "\\$ #,0.###############;-\\$ #,0.###############;\\$ #,0.###############"
+              "queryRef": "_Medidas.Presupuesto Anual",
+              "nativeQueryRef": "Presupuesto Anual"
             }
           ]
         }
@@ -43,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto YTD"
+                "Property": "Presupuesto Anual"
               }
             },
             "direction": "Descending"
@@ -82,13 +81,13 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
+                  "Value": "0L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Presupuesto YTD"
+            "metadata": "_Medidas.Presupuesto Anual"
           }
         }
       ]

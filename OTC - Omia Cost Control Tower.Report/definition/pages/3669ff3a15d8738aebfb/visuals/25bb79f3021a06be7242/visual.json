@@ -4,10 +4,10 @@
   "position": {
     "x": 75,
     "y": 185,
-    "z": 10000,
+    "z": 9000,
     "height": 111,
     "width": 247,
-    "tabOrder": 10000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Disponible"
+                  "Property": "Disponible Anual"
                 }
               },
-              "queryRef": "_Medidas.Disponible",
-              "nativeQueryRef": "Disponible"
+              "queryRef": "_Medidas.Disponible Anual",
+              "nativeQueryRef": "Disponible Anual"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Disponible"
+                "Property": "Disponible Anual"
               }
             },
             "direction": "Descending"
@@ -102,13 +102,13 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
+                  "Value": "0L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Disponible"
+            "metadata": "_Medidas.Disponible Anual"
           }
         }
       ]

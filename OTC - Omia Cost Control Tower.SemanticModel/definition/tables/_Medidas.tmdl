@@ -208,30 +208,30 @@ table _Medidas
 
 	measure 'Consumo dentro presupuesto' =
 			
-			VAR PresupuestoCategoria = [Presupuesto YTD]
-			VAR ConsumoCategoria = [Consumo Total]
-			RETURN
-			    MIN ( ConsumoCategoria, PresupuestoCategoria )
+			MIN (
+			    [Consumo Total],
+			    [Presupuesto Anual]
+			)
 		lineageTag: 1c3f2ff4-de6d-4225-b8e6-65568f734d8e
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Disponible dentro presupuesto' =
 			
-			VAR PresupuestoCategoria = [Presupuesto YTD]
-			VAR ConsumoCategoria = [Consumo Total]
-			RETURN
-			    MAX ( PresupuestoCategoria - ConsumoCategoria, 0 )
+			MAX (
+			    [Presupuesto Anual] - [Consumo Total],
+			    0
+			)
 		lineageTag: 938ed00c-7383-4052-8cbc-3ab05f4fd7a4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Exceso presupuesto' =
 			
-			VAR PresupuestoCategoria = [Presupuesto YTD]
-			VAR ConsumoCategoria = [Consumo Total]
-			RETURN
-			    MAX ( ConsumoCategoria - PresupuestoCategoria, 0 )
+			MAX (
+			    [Consumo Total] - [Presupuesto Anual],
+			    0
+			)
 		lineageTag: a03d6d17-045d-4b7b-9e95-7de5ddf080b0
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -240,10 +240,30 @@ table _Medidas
 			
 			DIVIDE (
 			    [Consumo Total],
-			    [Presupuesto YTD],
+			    [Presupuesto Anual],
 			    0
 			)
 		lineageTag: 5efc2b93-1c38-48b2-95cf-1fef1bcb6da4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Presupuesto Anual' =
+			
+			SUMX (
+			    VALUES ( Dim_proyecto[Id proyecto] ),
+			    CALCULATE (
+			        SUM ( Fact_presupuesto_final[COP] )
+			    ) * 12
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 8c198d23-94a6-4059-8cd7-69a30ee28493
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Disponible Anual' =
+			
+			[Presupuesto Anual] - [Consumo Total]
+		lineageTag: 3f6e0ef4-cb6e-4941-bb12-f3e69c945a5f
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
