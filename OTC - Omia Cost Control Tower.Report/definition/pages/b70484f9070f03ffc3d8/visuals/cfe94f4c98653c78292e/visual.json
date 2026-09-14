@@ -67,10 +67,10 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Dentro presupuesto visual"
+                  "Property": "Dentro presupuesto (vista)"
                 }
               },
-              "queryRef": "_Medidas.Dentro presupuesto visual",
+              "queryRef": "_Medidas.Dentro presupuesto (vista)",
               "nativeQueryRef": "Consumo dentro de presupuesto",
               "displayName": "Consumo dentro de presupuesto"
             },
@@ -82,10 +82,10 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente visible > 0"
+                  "Property": "Presupuesto remanente (vista)"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente visible > 0",
+              "queryRef": "_Medidas.Presupuesto remanente (vista)",
               "nativeQueryRef": "Presupuesto disponible",
               "displayName": "Presupuesto disponible"
             },
@@ -97,10 +97,10 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Excedente visual"
+                  "Property": "Excedente (vista)"
                 }
               },
-              "queryRef": "_Medidas.Excedente visual",
+              "queryRef": "_Medidas.Excedente (vista)",
               "nativeQueryRef": "Sobrepresupuesto",
               "displayName": "Sobrepresupuesto"
             }

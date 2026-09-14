@@ -1368,6 +1368,54 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
+	measure 'Ejecutado (vista)' =
+			VAR Tipos = VALUES('Dim_tipo documento'[Tipo documento])
+			RETURN IF("ODC" IN Tipos, [Consumo ODC]) + IF("Factura" IN Tipos, [Consumo Facturas])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0050-4a00-8000-000000000050
+
+	measure 'Comprometido (vista)' =
+			IF("SOLPED" IN VALUES('Dim_tipo documento'[Tipo documento]), [Consumo SOLPED])
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0051-4a00-8000-000000000051
+
+	measure 'Dentro presupuesto (vista)' =
+			VAR pres = COALESCE([Presupuesto total], 0)
+			VAR ejec = COALESCE([Ejecutado (vista)], 0)
+			VAR comp = COALESCE([Comprometido (vista)], 0)
+			VAR ejec_dentro = MIN(ejec, pres)
+			VAR saldo = MAX(pres - ejec_dentro, 0)
+			VAR comp_dentro = MIN(comp, saldo)
+			RETURN IF(ejec_dentro + comp_dentro = 0, BLANK(), ejec_dentro + comp_dentro)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0052-4a00-8000-000000000052
+
+	measure 'Presupuesto remanente (vista)' =
+			VAR pres = [Presupuesto total Visible]
+			VAR ejec = COALESCE([Ejecutado (vista)], 0)
+			VAR comp = COALESCE([Comprometido (vista)], 0)
+			VAR rem = pres - ejec - comp
+			RETURN IF(ISBLANK(pres), BLANK(), rem)
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0053-4a00-8000-000000000053
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Excedente (vista)' =
+			VAR pres = COALESCE([Presupuesto total], 0)
+			VAR ejec = COALESCE([Ejecutado (vista)], 0)
+			VAR comp = COALESCE([Comprometido (vista)], 0)
+			VAR ejec_dentro = MIN(ejec, pres)
+			VAR saldo = MAX(pres - ejec_dentro, 0)
+			VAR comp_exceso = MAX(comp - saldo, 0)
+			RETURN IF(MAX(ejec - pres, 0) + comp_exceso = 0, BLANK(), MAX(ejec - pres, 0) + comp_exceso)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Resumen Gerencial
+		lineageTag: 7a100001-0054-4a00-8000-000000000054
+
 	measure '% consumido directo' =
 			
 			VAR Consumo = COALESCE(CALCULATE([Consumo por tipo documento], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR"), 0)
