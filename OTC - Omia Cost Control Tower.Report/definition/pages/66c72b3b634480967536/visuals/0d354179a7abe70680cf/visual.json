@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "0d354179a7abe70680cf",
   "position": {
     "x": 541,
@@ -11,101 +11,6 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {
-      "queryState": {
-        "Values": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Fecha de creación/Contabilización NC"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Fecha de creación/Contabilización NC",
-              "nativeQueryRef": "Fecha de creación/Contabilización NC"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Tipo de documento"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Tipo de documento",
-              "nativeQueryRef": "Tipo de documento"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Número de documento"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Número de documento",
-              "nativeQueryRef": "Número de documento"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Descripción artículo/serv."
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Descripción artículo/serv.",
-              "nativeQueryRef": "Descripción artículo/serv."
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Número interno"
-                }
-              },
-              "queryRef": "Sum(Fact_detalle_documental.Número interno)",
-              "nativeQueryRef": "Número interno"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_detalle_documental"
-                  }
-                },
-                "Property": "Tipo de documento"
-              }
-            },
-            "direction": "Descending"
-          }
-        ]
-      }
-    },
     "drillFilterOtherVisuals": true
   }
 }

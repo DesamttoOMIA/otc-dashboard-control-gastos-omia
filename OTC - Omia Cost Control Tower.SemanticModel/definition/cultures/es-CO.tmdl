@@ -4992,6 +4992,16 @@ cultureInfo es-CO
 			          "ejecutado conformada": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Factura Conformada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5007,6 +5017,16 @@ cultureInfo es-CO
 			        {
 			          "comprometido": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Orden de Compra": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7616,474 +7636,6 @@ cultureInfo es-CO
 			    }
 			  },
 			  "Relationships": {
-			    "fact_factura_proveedor_pago_efectuado_has_dim_proyecto1": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_factura_proveedor_pago_efectuado": {
-			          "Target": {
-			            "Entity": "fact_factura_proveedor_pago_efectuado"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          },
-			          "Nouns": [
-			            {
-			              "código proyecto SC": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_factura_proveedor_pago_efectuado"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_factura_proveedor_pago_efectuados_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_factura_proveedor_pago_efectuado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_factura_proveedor_pago_efectuados"
-			        }
-			      ]
-			    },
-			    "dim_categoria_tipo_costo_jerarquía_desc_N3_OK_in_dim_categoria_tipo_costo_jerarquía_desc_N2": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria.tipo_costo_jerarquía.desc_N3_OK": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			          }
-			        },
-			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "desc_N3_OK_are_in_desc_N2"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "desc_N2_have_desc_N3_OK"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "desc_N3_OK_have_desc_N2"
-			        }
-			      ]
-			    },
-			    "dim_categoria_tipo_costo_jerarquía_desc_N2_in_dim_categoria_tipo_costo_jerarquía_tipo_costo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			          }
-			        },
-			        "dim_categoria.tipo_costo_jerarquía.tipo_costo": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "desc_N2_are_in_tipo_costos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "tipo_costos_have_desc_N2"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "desc_N2_have_tipo_costos"
-			        }
-			      ]
-			    },
-			    "dim_categoria_tipo_costo_jerarquía_has_desc_N3_OK": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria.tipo_costo_jerarquía": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía"
-			          }
-			        },
-			        "dim_categoria.tipo_costo_jerarquía.desc_N3_OK": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "tipo_costo_jerarquías_have_desc_N3_OK"
-			        }
-			      ]
-			    },
-			    "dim_categoria_tipo_costo_jerarquía_has_desc_N2": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria.tipo_costo_jerarquía": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía"
-			          }
-			        },
-			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "tipo_costo_jerarquías_have_desc_N2"
-			        }
-			      ]
-			    },
-			    "dim_categoria_tipo_costo_jerarquía_has_tipo_costo": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria.tipo_costo_jerarquía": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía"
-			          }
-			        },
-			        "dim_categoria.tipo_costo_jerarquía.tipo_costo": {
-			          "Target": {
-			            "Entity": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "tipo_costo_jerarquías_have_tipo_costos"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_final_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto_final"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto_final": {
-			          "Target": {
-			            "Entity": "fact_presupuesto_final"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto_final"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuesto_finals_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto_final"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_presupuesto_finals"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_final_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto_final"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto_final": {
-			          "Target": {
-			            "Entity": "fact_presupuesto_final"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto_final"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuesto_finals_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto_final"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_presupuesto_finals"
-			        }
-			      ]
-			    },
-			    "fact_factura_proveedor_pago_efectuado_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_factura_proveedor_pago_efectuado": {
-			          "Target": {
-			            "Entity": "fact_factura_proveedor_pago_efectuado"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_factura_proveedor_pago_efectuado"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_factura_proveedor_pago_efectuados_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_factura_proveedor_pago_efectuado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_factura_proveedor_pago_efectuados"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_dim_categoria": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -17399,6 +16951,474 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "fact_ordenes_de_compras_are_solped_on_fecha_creacion_solpeds"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_factura_proveedor_pago_efectuado_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_factura_proveedor_pago_efectuado": {
+			          "Target": {
+			            "Entity": "fact_factura_proveedor_pago_efectuado"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          },
+			          "Nouns": [
+			            {
+			              "código proyecto SC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_factura_proveedor_pago_efectuado"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_factura_proveedor_pago_efectuados_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_factura_proveedor_pago_efectuado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_factura_proveedor_pago_efectuados"
+			        }
+			      ]
+			    },
+			    "fact_factura_proveedor_pago_efectuado_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_factura_proveedor_pago_efectuado": {
+			          "Target": {
+			            "Entity": "fact_factura_proveedor_pago_efectuado"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_factura_proveedor_pago_efectuado"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_factura_proveedor_pago_efectuados_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_factura_proveedor_pago_efectuado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_factura_proveedor_pago_efectuados"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_presupuesto_final"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_presupuesto_finals"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_presupuesto_final"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_presupuesto_finals"
+			        }
+			      ]
+			    },
+			    "dim_categoria_tipo_costo_jerarquía_has_tipo_costo": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria.tipo_costo_jerarquía": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía"
+			          }
+			        },
+			        "dim_categoria.tipo_costo_jerarquía.tipo_costo": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_costo_jerarquías_have_tipo_costos"
+			        }
+			      ]
+			    },
+			    "dim_categoria_tipo_costo_jerarquía_has_desc_N2": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria.tipo_costo_jerarquía": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía"
+			          }
+			        },
+			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_costo_jerarquías_have_desc_N2"
+			        }
+			      ]
+			    },
+			    "dim_categoria_tipo_costo_jerarquía_has_desc_N3_OK": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria.tipo_costo_jerarquía": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía"
+			          }
+			        },
+			        "dim_categoria.tipo_costo_jerarquía.desc_N3_OK": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_costo_jerarquías_have_desc_N3_OK"
+			        }
+			      ]
+			    },
+			    "dim_categoria_tipo_costo_jerarquía_tipo_costo_has_dim_categoria_tipo_costo_jerarquía_desc_N2": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria.tipo_costo_jerarquía.tipo_costo": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			          }
+			        },
+			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "tipo_costos_have_desc_N2"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "desc_N2_have_tipo_costos"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.tipo_costo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "desc_N2_are_in_tipo_costos"
+			        }
+			      ]
+			    },
+			    "dim_categoria_tipo_costo_jerarquía_desc_N2_has_dim_categoria_tipo_costo_jerarquía_desc_N3_OK": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_categoria.tipo_costo_jerarquía.desc_N2": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			          }
+			        },
+			        "dim_categoria.tipo_costo_jerarquía.desc_N3_OK": {
+			          "Target": {
+			            "Entity": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "desc_N2_have_desc_N3_OK"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "desc_N3_OK_have_desc_N2"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N3_OK"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "dim_categoria.tipo_costo_jerarquía.desc_N2"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "desc_N3_OK_are_in_desc_N2"
 			        }
 			      ]
 			    }

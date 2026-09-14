@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -87,39 +87,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto YTD"
+                  "Property": "Presupuesto Anual"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto YTD",
-              "nativeQueryRef": "Presupuesto YTD"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido",
-              "nativeQueryRef": "Comprometido"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Ejecutado Conformada"
-                }
-              },
-              "queryRef": "_Medidas.Ejecutado Conformada",
-              "nativeQueryRef": "Ejecutado Conformada"
+              "queryRef": "_Medidas.Presupuesto Anual",
+              "nativeQueryRef": "Presupuesto Anual"
             },
             {
               "field": {
@@ -143,36 +115,44 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Disponible"
+                  "Property": "Disponible Anual"
                 }
               },
-              "queryRef": "_Medidas.Disponible",
-              "nativeQueryRef": "Disponible"
+              "queryRef": "_Medidas.Disponible Anual",
+              "nativeQueryRef": "Disponible Anual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Comprometido"
+                }
+              },
+              "queryRef": "_Medidas.Comprometido",
+              "nativeQueryRef": "Orden de Compra",
+              "displayName": "Orden de Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Ejecutado Conformada"
+                }
+              },
+              "queryRef": "_Medidas.Ejecutado Conformada",
+              "nativeQueryRef": "Factura Conformada",
+              "displayName": "Factura Conformada"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Tipo costo"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -237,41 +217,7 @@
                   }
                 }
               ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Empalme con actual contratista'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
-            },
-            {
-              "identityValues": [
-                {
-                  "Literal": {
-                    "Value": "'Indirecto'"
-                  }
-                }
-              ],
-              "isToggled": true,
-              "children": [
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Equipos Indirectos'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                }
-              ]
+              "isToggled": true
             }
           ]
         }

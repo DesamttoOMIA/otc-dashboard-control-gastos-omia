@@ -267,6 +267,60 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure '% Consumo Anual' =
+			
+			DIVIDE (
+			    [Consumo Total],
+			    [Presupuesto Anual],
+			    0
+			)
+		lineageTag: 577141a2-3edb-41f4-8e16-e37898642c09
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Estado Alerta Presupuesto' =
+			
+			VAR Presupuesto = [Presupuesto Anual]
+			VAR Consumo = [Consumo Total]
+			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        Consumo <= 0, BLANK (),
+			        Presupuesto <= 0 && Consumo > 0, "🔴 Sin presupuesto",
+			        Porcentaje > 1, "🔴 Sobrepresupuesto",
+			        Porcentaje >= 0.8, "🟠 Próximo al límite",
+			        BLANK ()
+			    )
+		lineageTag: 599dd7b9-cd58-4a69-a66c-dedfc1af29b8
+
+	measure 'Alerta Activa' =
+			
+			VAR Presupuesto = [Presupuesto Anual]
+			VAR Consumo = [Consumo Total]
+			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
+			RETURN
+			    IF (
+			        Consumo > 0
+			            && (
+			                Presupuesto <= 0
+			                || Porcentaje >= 0.8
+			            ),
+			        1,
+			        0
+			    )
+		formatString: 0
+		lineageTag: 40dab425-bcf1-48c1-9a90-0217a06ebca2
+
+	measure 'Cantidad Alertas Presupuesto' =
+			
+			SUMX (
+			    VALUES ( Dim_categoria[Id categoria] ),
+			    CALCULATE ( [Alerta Activa] )
+			)
+		formatString: 0
+		lineageTag: 8d3334a7-92ad-4a52-a5fa-98d14e4f373b
+
 	partition _Medidas = m
 		mode: import
 		source =
