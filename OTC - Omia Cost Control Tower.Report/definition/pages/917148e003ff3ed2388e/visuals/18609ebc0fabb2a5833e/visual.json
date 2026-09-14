@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "18609ebc0fabb2a5833e",
   "position": {
     "x": 80.705289672544069,
@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "#"
@@ -35,7 +35,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Número interno"
@@ -50,7 +50,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Fecha de contabilización"
@@ -108,7 +108,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Status de documento"
@@ -123,7 +123,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Unidad"
@@ -137,7 +137,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Cantidad"
@@ -153,7 +153,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_facturas_conformadas"
+                          "Entity": "Fact_entrada_de_mercancia"
                         }
                       },
                       "Property": "Total líneas"
@@ -171,7 +171,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Descripción artículo/serv."
@@ -185,7 +185,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Comentarios"

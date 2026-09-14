@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "41642469307a55cf2b2b",
   "position": {
     "x": 992.0403022670024,
@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Status de documento"

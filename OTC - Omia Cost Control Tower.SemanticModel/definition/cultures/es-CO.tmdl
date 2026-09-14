@@ -945,7 +945,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas"
+			          "ConceptualEntity": "Fact_entrada_de_mercancia"
 			        }
 			      },
 			      "State": "Generated",
@@ -974,7 +974,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.v_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "#"
 			        }
 			      },
@@ -1000,7 +1000,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.número_interno": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Número interno"
 			        }
 			      },
@@ -1026,7 +1026,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.entrada_mercancía": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Entrada mercancías"
 			        }
 			      },
@@ -1042,7 +1042,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.serie": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Serie"
 			        }
 			      },
@@ -1058,7 +1058,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.fecha_de_contabilización": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Fecha de contabilización"
 			        }
 			      },
@@ -1081,7 +1081,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_de_cliente_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código de cliente/proveedor"
 			        }
 			      },
@@ -1115,7 +1115,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.nombre_de_cliente_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Nombre de cliente/proveedor"
 			        }
 			      },
@@ -1149,7 +1149,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.número_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Número de artículo"
 			        }
 			      },
@@ -1165,7 +1165,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.descripción_artículo_serv_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Descripción artículo/serv."
 			        }
 			      },
@@ -1199,7 +1199,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.cantidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Cantidad"
 			        }
 			      },
@@ -1215,7 +1215,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.unidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Unidad"
 			        }
 			      },
@@ -1231,7 +1231,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.grupo_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Grupo de artículos"
 			        }
 			      },
@@ -1247,7 +1247,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.nombre_de_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Nombre de grupo"
 			        }
 			      },
@@ -1263,7 +1263,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.sub_grupo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Sub Grupo"
 			        }
 			      },
@@ -1279,7 +1279,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.linea_mat_serv": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Linea Mat/Serv"
 			        }
 			      },
@@ -1419,7 +1419,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_de_cuenta": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código de cuenta"
 			        }
 			      },
@@ -1435,7 +1435,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.precio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Precio"
 			        }
 			      },
@@ -1451,7 +1451,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_de_almacén": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código de almacén"
 			        }
 			      },
@@ -1467,7 +1467,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.nombre_de_almacén": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Nombre de almacén"
 			        }
 			      },
@@ -1483,7 +1483,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.destino_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Destino Compra"
 			        }
 			      },
@@ -1499,7 +1499,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Proyecto"
 			        }
 			      },
@@ -1518,7 +1518,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.nombre_de_proyecto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Nombre de proyecto"
 			        }
 			      },
@@ -1534,7 +1534,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.norma_de_reparto": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Norma de reparto"
 			        }
 			      },
@@ -1550,7 +1550,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código del cálculo del costo 2"
 			        }
 			      },
@@ -1566,7 +1566,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_del_cálculo_del_costo_3": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código del cálculo del costo 3"
 			        }
 			      },
@@ -1582,7 +1582,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.código_del_cálculo_del_costo_4": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Código del cálculo del costo 4"
 			        }
 			      },
@@ -1598,7 +1598,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.total_antes_de_IVA": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Total antes de IVA"
 			        }
 			      },
@@ -1641,7 +1641,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.total_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Total líneas"
 			        }
 			      },
@@ -1677,7 +1677,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.reembolsable": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Reembolsable"
 			        }
 			      },
@@ -1693,7 +1693,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.procedencia__entrada_de_mercancia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Procedencia  Entrada de Mercancia"
 			        }
 			      },
@@ -1715,7 +1715,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.orden_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Orden de Compra"
 			        }
 			      },
@@ -1731,7 +1731,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.referencia": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Referencia"
 			        }
 			      },
@@ -1747,7 +1747,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.status_de_documento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Status de documento"
 			        }
 			      },
@@ -1873,7 +1873,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.solicitud_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Solicitud de compra"
 			        }
 			      },
@@ -1889,7 +1889,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.clase_de_documento_de_destino": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Clase de documento de destino"
 			        }
 			      },
@@ -1902,26 +1902,10 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_facturas_conformada.docdestino": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
-			          "ConceptualProperty": "DOCDESTINO"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "docdestino": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_facturas_conformada.creador_EM": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Creador EM"
 			        }
 			      },
@@ -1937,7 +1921,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.comentario": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Comentarios"
 			        }
 			      },
@@ -2016,54 +2000,6 @@ cultureInfo es-CO
 			      "Terms": [
 			        {
 			          "cancelado": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.orden_de_compra": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Orden de Compra"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "orden de compra": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.código_proveedor": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Código Proveedor"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "código proveedor": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.nombre_proveedor": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Nombre Proveedor"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "nombre proveedor": {
 			            "State": "Generated"
 			          }
 			        }
@@ -2271,22 +2207,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.PU_solped": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "PU Solped"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "PU solped": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.cantidad_solped": {
 			      "Definition": {
 			        "Binding": {
@@ -2331,59 +2251,6 @@ cultureInfo es-CO
 			        {
 			          "tipo de cambio solped": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.total_lineas_solped_cop": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Total Lineas Solped $Cop"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "total lineas solped $cop": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "total linea solped $cop": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "total linea solped dollar cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "aggregate linea solped $cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "overall linea solped $cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
 			          }
 			        }
 			      ]
@@ -2536,77 +2403,6 @@ cultureInfo es-CO
 			      "Terms": [
 			        {
 			          "número de artículo": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.descripción_general": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Descripción general"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "descripción general": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.detalle_adicional": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Detalle adicional"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "detalle adicional": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.comentarios_adicionale": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Comentarios adicionales"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "comentarios adicionale": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "comentario adicionale": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.equipo": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Equipo"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "equipo": {
 			            "State": "Generated"
 			          }
 			        }
@@ -2834,74 +2630,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.cantidad_OC": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Cantidad OC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "cantidad OC": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Cantidad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.unidad_medida_OC": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Unidad Medida OC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "unidad medida OC": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Unidad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.pu_oc": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "PU OC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "pu oc": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.moneda_del_precio": {
 			      "Definition": {
 			        "Binding": {
@@ -2929,191 +2657,6 @@ cultureInfo es-CO
 			      "Terms": [
 			        {
 			          "tipo de cambio": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.total_líneas_OC_cop": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Total Líneas OC $Cop"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "total líneas OC $cop": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "total línea OC $cop": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "total línea oc dollar cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.624
-			          }
-			        },
-			        {
-			          "aggregate línea oc $cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        },
-			        {
-			          "overall línea oc $cop": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.605
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.status_línea_OC": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Status línea OC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "status línea OC": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "category línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "importance línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "prestige línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "prominence línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "condition línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "class línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "grade línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "level línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "position línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "rank línea oc": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.prioridad_OC": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Prioridad OC"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "prioridad OC": {
 			            "State": "Generated"
 			          }
 			        }
@@ -3150,29 +2693,6 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
-			    },
-			    "fact_ordenes_de_compra.f__entrega_línea": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "F. Entrega línea"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "f. entrega línea": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "date": {
-			            "State": "Generated",
-			            "Weight": 0.7
-			          }
-			        }
-			      ],
-			      "SemanticType": "Time"
 			    },
 			    "fact_ordenes_de_compra.f__entrega_línea.jerarquía_de_fecha": {
 			      "Definition": {
@@ -3288,89 +2808,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.código_proyecto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Código Proyecto"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "código proyecto": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.nombre_proyecto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Nombre Proyecto"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "nombre proyecto": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.código_almacen": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Código Almacen"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "código almacen": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.nombre_almacen": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Nombre Almacen"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "nombre almacen": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.norma_reparto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Norma Reparto"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "norma reparto": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
@@ -3403,76 +2840,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.código_Resp_de_CC_línea": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Código Resp.de C&C Línea"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "código Resp.de C&C línea": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.nombre_Resp_de_CC_línea": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Nombre Resp.de C&C Línea"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "nombre Resp.de C&C línea": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.comprador": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Comprador"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "comprador": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.tipo_de_OC_1Normal_2OC_de_CM_3OCLV": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Tipo de OC 1Normal 2OC de CM 3OC-LV"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "tipo de OC 1Normal 2OC de CM 3OC-LV": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "tipo de OC 1Normal 2OC de CM 3OC LV": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.número_cto_marco": {
 			      "Definition": {
 			        "Binding": {
@@ -3485,68 +2852,6 @@ cultureInfo es-CO
 			        {
 			          "número cto marco": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.tipo_OP_uso_exclusivo_de_ALOC": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Tipo OP (Uso Exclusivo de A&L-OC)"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "tipo OP (uso exclusivo de A&L-OC)": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "tipo OP": {
-			            "State": "Generated",
-			            "Weight": 0.75
-			          }
-			        },
-			        {
-			          "tipo OP (uso exclusivo de A&L OC)": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.CM_lic____adj__dir": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "CM Lic. / Adj. Dir"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "CM lic. / adj. dir": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "CM lic.": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "CM lic . adj . dir": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "adj. dir": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -3573,22 +2878,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.desviación_cop_PU_": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Desviación $Cop (PU) %"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "desviación $cop (PU) %": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.ko": {
 			      "Definition": {
 			        "Binding": {
@@ -3601,29 +2890,6 @@ cultureInfo es-CO
 			        {
 			          "ko": {
 			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.ind__días_de_tratamiento": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Ind.: Días de tratamiento"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "ind.: días de tratamiento": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ind.: día de tratamiento": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
 			          }
 			        }
 			      ]
@@ -3777,238 +3043,6 @@ cultureInfo es-CO
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.condiciones_de_pago": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Condiciones de Pago"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "condiciones de pago": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "condicione de pago": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra.ind_días_para_creación_OC_SAP": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Ind.:Días para Creación OC/SAP"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "ind.:días para creación OC/SAP": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "ind.:día para creación OC/SAP": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        },
-			        {
-			          "ind.:días para creación OC": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "ind.:día para creación OC": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "ind . : días para creación OC SAP": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "ind . : día para creación OC SAP": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.7566
-			          }
-			        },
-			        {
-			          "SAP": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "juice": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "fluid": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "liquid": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "latex": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "energy": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "vitality": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "strength": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "vigor": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.466
-			          }
-			        },
-			        {
-			          "health": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        },
-			        {
-			          "life": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.452
-			          }
-			        }
-			      ]
-			    },
-			    "fact_presupuesto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_presupuesto"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "fact presupuesto": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Fact_presupuesto": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "fact_presupuesto.incidencia": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_presupuesto",
-			          "ConceptualProperty": "Incidencia"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "incidencia": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
-			    "fact_presupuesto.cop": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_presupuesto",
-			          "ConceptualProperty": "COP"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "cop": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -5960,7 +4994,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.id_subseco": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Id subseco"
 			        }
 			      },
@@ -6019,7 +5053,7 @@ cultureInfo es-CO
 			    "fact_facturas_conformada.id_categoria": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_facturas_conformadas",
+			          "ConceptualEntity": "Fact_entrada_de_mercancia",
 			          "ConceptualProperty": "Id categoria"
 			        }
 			      },
@@ -6199,124 +5233,6 @@ cultureInfo es-CO
 			        },
 			        {
 			          "credential categoria": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ]
-			    },
-			    "fact_presupuesto.id_categoria": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_presupuesto",
-			          "ConceptualProperty": "Id categoria"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "id categoria": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "identification categoria": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "identity categoria": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "identifier categoria": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "credential categoria": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        }
-			      ]
-			    },
-			    "fact_presupuesto.id_proyecto": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_presupuesto",
-			          "ConceptualProperty": "Id proyecto"
-			        }
-			      },
-			      "State": "Generated",
-			      "Visibility": {
-			        "Value": "Hidden"
-			      },
-			      "Terms": [
-			        {
-			          "id proyecto": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "identification proyecto": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "identity proyecto": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "identifier proyecto": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        },
-			        {
-			          "credential proyecto": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -6567,16 +5483,6 @@ cultureInfo es-CO
 			            },
 			            "Weight": 0.739
 			          }
-			        },
-			        {
-			          "Presupuesto": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -6624,16 +5530,6 @@ cultureInfo es-CO
 			        {
 			          "presupuesto remanente visible > 0": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Presupuesto disponible": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -6789,16 +5685,6 @@ cultureInfo es-CO
 			          "dentro presupuesto visual": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Consumo dentro de presupuesto": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -6814,16 +5700,6 @@ cultureInfo es-CO
 			        {
 			          "excedente visual": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Sobrepresupuesto": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -11233,98 +10109,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_presupuestos"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_presupuestos"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_dim_categoria": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -11511,7 +10295,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_dim_categoria": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11557,7 +10341,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_dim_subseco": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11603,7 +10387,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_calendario": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11649,7 +10433,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_dim_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11945,7 +10729,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_card_HTML__consumo_total": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12011,7 +10795,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_cantidad_NFC": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12108,39 +10892,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.card_HTML__remanente_y_sobrecosto": {
-			          "Target": {
-			            "Entity": "entity__medida.card_HTML__remanente_y_sobrecosto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.card_HTML__remanente_y_sobrecosto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_card_HTML__remanente_y_sobrecosto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12176,7 +10927,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_card_HTML__remanente_y_sobrecosto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12240,39 +10991,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_remanente_visible_tarjeta": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_remanente_visible_tarjeta"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_remanente_visible_tarjeta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_remanente_visible_tarjeta"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12308,7 +11026,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_presupuesto_remanente_visible_tarjeta": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12372,39 +11090,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_sobrecosto_texto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.sobrecosto_texto": {
-			          "Target": {
-			            "Entity": "entity__medida.sobrecosto_texto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.sobrecosto_texto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__sobrecosto_texto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto_texto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12440,7 +11125,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_sobrecosto_texto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12504,39 +11189,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_sobrecosto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.sobrecosto": {
-			          "Target": {
-			            "Entity": "entity__medida.sobrecosto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.sobrecosto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__sobrecosto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12572,7 +11224,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_sobrecosto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12636,39 +11288,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_sobrecosto_visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.sobrecosto_visible": {
-			          "Target": {
-			            "Entity": "entity__medida.sobrecosto_visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.sobrecosto_visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_sobrecosto_visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_sobrecosto_visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12704,7 +11323,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_sobrecosto_visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12768,39 +11387,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_card_HTML__presupuesto_total": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.card_HTML__presupuesto_total": {
-			          "Target": {
-			            "Entity": "entity__medida.card_HTML__presupuesto_total"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.card_HTML__presupuesto_total"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_card_HTML__presupuesto_total"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_card_HTML__presupuesto_total": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12836,7 +11422,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_card_HTML__presupuesto_total": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -12900,39 +11486,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_consumo_presupuesto_texto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.consumo_presupuesto_texto": {
-			          "Target": {
-			            "Entity": "entity__medida.consumo_presupuesto_texto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.consumo_presupuesto_texto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__consumo_presupuesto_texto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_consumo_presupuesto_texto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -12968,7 +11521,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_consumo_presupuesto_texto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13032,39 +11585,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_exceso__visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.exceso__visible": {
-			          "Target": {
-			            "Entity": "entity__medida.exceso__visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.exceso__visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_exceso__visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_exceso__visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -13100,7 +11620,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_exceso__visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13164,39 +11684,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_restante__visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.restante__visible": {
-			          "Target": {
-			            "Entity": "entity__medida.restante__visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.restante__visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_restante__visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_restante__visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -13232,7 +11719,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_restante__visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13296,39 +11783,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_consumo__visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.consumo__visible": {
-			          "Target": {
-			            "Entity": "entity__medida.consumo__visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.consumo__visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_consumo__visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_consumo__visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -13364,7 +11818,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_consumo__visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13428,39 +11882,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_consumo_presupuesto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.consumo_presupuesto": {
-			          "Target": {
-			            "Entity": "entity__medida.consumo_presupuesto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.consumo_presupuesto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__consumo_presupuesto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_consumo_presupuesto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -13496,7 +11917,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_consumo_presupuesto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14134,39 +12555,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_ejecución_visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.ejecución_visible": {
-			          "Target": {
-			            "Entity": "entity__medida.ejecución_visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.ejecución_visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__ejecución_visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_ejecución_visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -14202,7 +12590,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_ejecución_visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14266,39 +12654,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_excedente_visual": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.excedente_visual": {
-			          "Target": {
-			            "Entity": "entity__medida.excedente_visual"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.excedente_visual"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_excedente_visual"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_excedente_visual": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -14334,7 +12689,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_excedente_visual": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14398,39 +12753,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_dentro_presupuesto_visual": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.dentro_presupuesto_visual": {
-			          "Target": {
-			            "Entity": "entity__medida.dentro_presupuesto_visual"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.dentro_presupuesto_visual"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_dentro_presupuesto_visual"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_dentro_presupuesto_visual": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -14466,7 +12788,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_dentro_presupuesto_visual": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14530,39 +12852,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_comprometido_excedente": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.comprometido_excedente": {
-			          "Target": {
-			            "Entity": "entity__medida.comprometido_excedente"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.comprometido_excedente"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_comprometido_excedente"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_comprometido_excedente": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -14598,7 +12887,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_comprometido_excedente": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14662,39 +12951,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_comprometido_dentro_presupuesto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.comprometido_dentro_presupuesto": {
-			          "Target": {
-			            "Entity": "entity__medida.comprometido_dentro_presupuesto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.comprometido_dentro_presupuesto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_comprometido_dentro_presupuesto"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_comprometido_dentro_presupuesto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -14730,7 +12986,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_comprometido_dentro_presupuesto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14758,39 +13014,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_facturas_conformadas_have_comprometido_dentro_presupuesto"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_entity__medida_ejecutado_excedente": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.ejecutado_excedente": {
-			          "Target": {
-			            "Entity": "entity__medida.ejecutado_excedente"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.ejecutado_excedente"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_ejecutado_excedente"
 			        }
 			      ]
 			    },
@@ -14829,7 +13052,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_ejecutado_excedente": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14857,39 +13080,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_facturas_conformadas_have_ejecutado_excedente"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_entity__medida_ejecutado_dentro_presupuesto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.ejecutado_dentro_presupuesto": {
-			          "Target": {
-			            "Entity": "entity__medida.ejecutado_dentro_presupuesto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.ejecutado_dentro_presupuesto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_ejecutado_dentro_presupuesto"
 			        }
 			      ]
 			    },
@@ -14928,7 +13118,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_ejecutado_dentro_presupuesto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14992,39 +13182,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_remanente_visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_remanente_visible": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_remanente_visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_remanente_visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_remanente_visible"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_presupuesto_remanente_visible": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -15060,7 +13217,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_presupuesto_remanente_visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15124,39 +13281,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_sobrepresupuesto_visible_0": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.sobrepresupuesto_visible_0": {
-			          "Target": {
-			            "Entity": "entity__medida.sobrepresupuesto_visible_0"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.sobrepresupuesto_visible_0"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_sobrepresupuesto_visible_0"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_sobrepresupuesto_visible_0": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -15192,7 +13316,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_sobrepresupuesto_visible_0": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15291,7 +13415,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_consumo_total_visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15355,39 +13479,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_remanente_visible__0": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_remanente_visible__0": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_remanente_visible__0"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_remanente_visible__0"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_remanente_visible__0"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_presupuesto_remanente_visible__0": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -15423,7 +13514,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_presupuesto_remanente_visible__0": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15489,7 +13580,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_costo_ejecutado_visible": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15553,72 +13644,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_total_visible": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_total_visible": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_total_visible"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_total_visible"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_total_visible"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_total": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_total": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_total"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_total"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_total"
-			        }
-			      ]
-			    },
 			    "fact_solicitud_de_pedido_has_entity__medida_ejecución": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_solicitud_de_pedido"
@@ -15649,39 +13674,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_solicitud_de_pedidos_have__ejecución"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_entity__medida_ejecución": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.ejecución": {
-			          "Target": {
-			            "Entity": "entity__medida.ejecución"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.ejecución"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have__ejecución"
 			        }
 			      ]
 			    },
@@ -15720,7 +13712,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_ejecución": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15784,39 +13776,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_presupuesto_has_entity__medida_presupuesto_remanente": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "entity__medida.presupuesto_remanente": {
-			          "Target": {
-			            "Entity": "entity__medida.presupuesto_remanente"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "entity__medida.presupuesto_remanente"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_presupuesto_remanente"
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra_has_entity__medida_presupuesto_remanente": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -15852,7 +13811,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_presupuesto_remanente": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -15984,7 +13943,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entity__medida_costo_ejecutado": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16771,99 +14730,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_código_de_proyectos"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_cop": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "fact_presupuesto.cop": {
-			          "Target": {
-			            "Entity": "fact_presupuesto.cop"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto.cop"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_cops"
-			        },
-			        {
-			          "Adjective": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Adjectives": [
-			              {
-			                "expensive": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Antonyms": [
-			              {
-			                "cheap": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Measurement": {
-			              "Role": "fact_presupuesto.cop"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "cop_indicates_how_expensive_fact_presupuestos_are"
-			        }
-			      ]
-			    },
-			    "fact_presupuesto_has_incidencia": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_presupuesto"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_presupuesto": {
-			          "Target": {
-			            "Entity": "fact_presupuesto"
-			          }
-			        },
-			        "fact_presupuesto.incidencia": {
-			          "Target": {
-			            "Entity": "fact_presupuesto.incidencia"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_presupuesto"
-			            },
-			            "Object": {
-			              "Role": "fact_presupuesto.incidencia"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_presupuestos_have_incidencias"
 			        }
 			      ]
 			    },
@@ -18876,7 +16742,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_comentario": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -18909,7 +16775,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_creador_EM": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -18942,7 +16808,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_docdestino": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -18975,7 +16841,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_clase_de_documento_de_destino": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19008,7 +16874,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_solicitud_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19041,7 +16907,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_status_de_documento": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19074,7 +16940,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_referencia": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19107,7 +16973,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_orden_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19140,7 +17006,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_procedencia__entrada_de_mercancia": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19173,7 +17039,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_reembolsable": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19206,7 +17072,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_total_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19266,7 +17132,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_total_antes_de_IVA": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19299,7 +17165,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_del_cálculo_del_costo_4": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19332,7 +17198,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_del_cálculo_del_costo_3": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19365,7 +17231,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_del_cálculo_del_costo_2": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19398,7 +17264,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_norma_de_reparto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19431,7 +17297,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_nombre_de_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19464,7 +17330,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_destino_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19497,7 +17363,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_nombre_de_almacén": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19530,7 +17396,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_de_almacén": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19563,7 +17429,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_precio": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19596,7 +17462,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_de_cuenta": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19629,7 +17495,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_linea_mat_serv": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19662,7 +17528,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_sub_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19695,7 +17561,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_nombre_de_grupo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19728,7 +17594,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_grupo_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19761,7 +17627,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_unidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19794,7 +17660,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_cantidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19827,7 +17693,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_descripción_artículo_serv_": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19860,7 +17726,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_número_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19893,7 +17759,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_nombre_de_cliente_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19926,7 +17792,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_código_de_cliente_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19959,7 +17825,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_fecha_de_contabilización": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -19992,7 +17858,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_serie": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -20025,7 +17891,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_entrada_mercancía": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -20058,7 +17924,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_número_interno": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -20091,7 +17957,7 @@ cultureInfo es-CO
 			    },
 			    "fact_facturas_conformada_has_v_": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_facturas_conformadas"
+			        "ConceptualEntity": "Fact_entrada_de_mercancia"
 			      },
 			      "State": "Generated",
 			      "Roles": {

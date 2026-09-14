@@ -1,0 +1,17 @@
+table 'Monto Simulado'
+	lineageTag: 56fc359d-dde6-4e00-add0-5d2a7b8d05e0
+
+	measure 'Monto Simulado Value' = SELECTEDVALUE('Monto Simulado'[Value], 0)
+		lineageTag: 804ab9fd-bde6-47f9-939a-0d99828d85a4
+
+	column Value
+		lineageTag: 02e7f93f-5a67-4415-8df5-dae2d4958a4e
+		isNameInferred
+		sourceColumn: [Value]
+
+	partition 'Monto Simulado' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100000000, 500000)
+
+	annotation PBI_Id = 55b2f0fb9b4f46e89a68009ff83f9e94
+

@@ -7,23 +7,39 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
+/// Errores en las consultas cargadas en 14/09/2026 11:07:21 a. m..
+queryGroup 'Errores en las consultas: 14/09/2026 11:07:21 a  m'
+
+	annotation PBI_QueryGroupOrder = 0
+
+/// Errores en las consultas cargadas en 14/09/2026 11:11:30 a. m..
+queryGroup 'Errores en las consultas: 14/09/2026 11:11:30 a  m'
+
+	annotation PBI_QueryGroupOrder = 1
+
+/// Errores en las consultas cargadas en 14/09/2026 11:17:39 a. m..
+queryGroup 'Errores en las consultas: 14/09/2026 11:17:39 a  m'
+
+	annotation PBI_QueryGroupOrder = 2
+
 annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_facturas_conformadas","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","ETL_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","ETL_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_factura_proveedor_pago_efectuado","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)"]
 
 ref table Fact_solicitud_de_pedido
-ref table Fact_facturas_conformadas
+ref table Fact_entrada_de_mercancia
 ref table Fact_ordenes_de_compra
-ref table Fact_presupuesto
 ref table Dim_proyecto
 ref table Calendario
 ref table 'Dim_Subseco stanby'
 ref table _Medidas
 ref table Dim_subseco
 ref table Dim_categoria
-ref table Fact_detalle_documental
+ref table Fact_factura_proveedor_pago_efectuado
+ref table Fact_presupuesto_final
+ref table 'Monto Simulado'
 
 ref cultureInfo es-CO
 

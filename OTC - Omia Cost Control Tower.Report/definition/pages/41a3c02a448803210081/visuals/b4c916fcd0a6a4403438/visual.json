@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "10962ef91746e44a10a1",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "b4c916fcd0a6a4403438",
   "position": {
-    "x": 741,
-    "y": 818,
-    "z": 11000,
+    "x": 211.87032418952617,
+    "y": 253.16708229426433,
+    "z": 2001,
     "height": 467,
     "width": 684,
-    "tabOrder": 11000
+    "tabOrder": 2001
   },
   "visual": {
     "visualType": "tableEx",
@@ -85,40 +85,6 @@
               },
               "queryRef": "Dim_subseco.Descripción",
               "nativeQueryRef": "Descripción"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Consumo total visible"
-                }
-              },
-              "queryRef": "_Medidas.Consumo total visible",
-              "nativeQueryRef": "Consumo total visible"
-            },
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_presupuesto"
-                        }
-                      },
-                      "Property": "COP"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_presupuesto.COP)",
-              "nativeQueryRef": "Presupuesto",
-              "displayName": "Presupuesto"
             }
           ]
         }

@@ -24,7 +24,7 @@ expression ETL_solicitud_de_pedido =
 
 expression ETL_facturas_conformadas =
 		let
-		    Origen = Fact_facturas_conformadas,
+		    Origen = Fact_entrada_de_mercancia,
 		    #"Columnas con nombre cambiado" = Table.RenameColumns(Origen,{{"Número interno", "Número de documento"}, {"#", "Número interno"}}),
 		    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Entrada mercancías", "Serie"}),
 		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas",{{"Fecha de contabilización", "Fecha de creación/Contabilización"}}),
@@ -56,7 +56,7 @@ expression ETL_facturas_conformadas =
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 expression ETL_ordenes_de_compra =
 		let
@@ -97,6 +97,179 @@ expression 'Dim_categoria (1)' =
 		in
 		    #"Tipo cambiado"
 	lineageTag: 38c55b1b-acf4-4f4d-b898-1a4e354cc0f5
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression Fact_presupuesto_Turpial =
+		let
+		    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/REE%20Operador%20Turpial%20REV6%202026%20Ajustes%20actualizaci%C3%B3n%20tarifas.xlsx"), null, true),
+		    Sheet = Origen{[Item="Resumen COMPL",Kind="Sheet"]}[Data],
+		    #"Filas saltadas" = Table.Skip(Sheet, 7),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(#"Filas saltadas", [PromoteAllScalars=true]),
+		    #"Columnas elegidas" = Table.SelectColumns(#"Encabezados promovidos", {"Column2", "Incidencia", "COP", "TIPO COSTO"}),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columnas elegidas", {{"Column2", type text}, {"Incidencia", type number}, {"COP", type number}, {"TIPO COSTO", type text}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado", {{"Column2", "Categoria"}}),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Columnas con nombre cambiado", 42),
+		    #"Filas filtradas" = Table.SelectRows(#"Filas inferiores quitadas", each ([Categoria] <> null and [Categoria] <> "COSTOS DIRECTOS" and [Categoria] <> "COSTOS INDIRECTOS")),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas", null, 0, Replacer.ReplaceValue, {"Incidencia"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado", null, 0, Replacer.ReplaceValue, {"COP"}),
+		    #"Rellenar hacia abajo" = Table.FillDown(#"Valor reemplazado1", {"TIPO COSTO"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Rellenar hacia abajo", null, "DIRECTO", Replacer.ReplaceValue, {"TIPO COSTO"}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Valor reemplazado2", {"TIPO COSTO"}),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas quitadas", {{"Categoria", type text}, {"Incidencia", Percentage.Type}, {"COP", Currency.Type}}),
+		    #"Columna agregada Proyecto" = Table.AddColumn(#"Tipo cambiado1", "Proyecto", each "COOGO&MNDTPL5361"),
+		    #"Dividir columna por delimitador" = Table.SplitColumn(#"Columna agregada Proyecto", "Categoria", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Categoria.1", "Categoria.2"}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Dividir columna por delimitador", {{"Categoria.1", "Codigo"}, {"Categoria.2", "Descripcion"}}),
+		    #"Consultas combinadas" = Table.NestedJoin(#"Columnas con nombre cambiado1", {"Codigo"}, #"Dim_categoria (1)", {"Codigo"}, "Dim_categoria (2)", JoinKind.LeftOuter),
+		    #"Se expandió Dim_categoria (2)" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_categoria (2)", {"Id categoria"}, {"Dim_categoria (2).Id categoria"}),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Se expandió Dim_categoria (2)", {{"Dim_categoria (2).Id categoria", "Id categoria"}}),
+		    #"Consultas combinadas1" = Table.NestedJoin(#"Columnas con nombre cambiado2", {"Proyecto"}, Dim_proyecto, {"Código de proyecto"}, "Dim_proyecto", JoinKind.LeftOuter),
+		    #"Se expandió Dim_proyecto" = Table.ExpandTableColumn(#"Consultas combinadas1", "Dim_proyecto", {"Id proyecto"}, {"Dim_proyecto.Id proyecto"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Se expandió Dim_proyecto", {{"Dim_proyecto.Id proyecto", "Id proyecto"}}),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Columnas con nombre cambiado3", {"Proyecto", "Codigo", "Descripcion"}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas1", {"Id categoria", "Id proyecto", "Incidencia", "COP"})
+		in
+		    #"Columnas reordenadas"
+	lineageTag: 5067fd0b-d7e6-44df-96ff-c61496447e84
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression Fact_presupuesto =
+		let
+		    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Copia%20de%20REE%20Continental%20Mtto%20Electrico%202025%20REV0_0511_12%20Meses.xlsx"), null, true),
+		    #"Resumen COMPL_Sheet" = Origen{[Item="Resumen COMPL",Kind="Sheet"]}[Data],
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Resumen COMPL_Sheet",{{"Column1", type any}, {"Column2", type any}, {"Column3", type text}, {"Column4", type any}, {"Column5", type any}, {"Column6", type any}, {"Column7", type text}, {"Column8", type any}, {"Column9", type any}, {"Column10", type any}, {"Column11", Int64.Type}, {"Column12", type any}, {"Column13", type any}, {"Column14", type any}, {"Column15", type any}, {"Column16", type any}, {"Column17", type any}, {"Column18", type any}}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Column8", "Column9", "Column10", "Column11", "Column12", "Column13", "Column14", "Column15", "Column16", "Column17", "Column18"}),
+		    #"Encabezados promovidos" = Table.PromoteHeaders(#"Columnas quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+		    #"Encabezados promovidos1" = Table.PromoteHeaders(#"Tipo cambiado1", [PromoteAllScalars=true]),
+		    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Encabezados promovidos1",{{"OMIA COLOMBIA SAS", type any}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+		    #"Encabezados promovidos2" = Table.PromoteHeaders(#"Tipo cambiado2", [PromoteAllScalars=true]),
+		    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Encabezados promovidos2",{{"MANTENIMIENTO ELECTRICO CONTINENTAL", type any}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+		    #"Encabezados promovidos3" = Table.PromoteHeaders(#"Tipo cambiado3", [PromoteAllScalars=true]),
+		    #"Tipo cambiado4" = Table.TransformColumnTypes(#"Encabezados promovidos3",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+		    #"Encabezados promovidos4" = Table.PromoteHeaders(#"Tipo cambiado4", [PromoteAllScalars=true]),
+		    #"Tipo cambiado5" = Table.TransformColumnTypes(#"Encabezados promovidos4",{{"RESUMEN DE COSTO Y VENTA ", type any}, {"Column3", type any}, {"Column4", type any}, {"Column5", type any}}),
+		    #"Encabezados promovidos5" = Table.PromoteHeaders(#"Tipo cambiado5", [PromoteAllScalars=true]),
+		    #"Tipo cambiado6" = Table.TransformColumnTypes(#"Encabezados promovidos5",{{"Column1", type any}, {"Column2", type text}, {"Column3", type any}, {"Column4", type any}, {"REV 0", type any}}),
+		    #"Personalizada agregada" = Table.AddColumn(#"Tipo cambiado6", "Proyecto", each List.First(
+		    List.RemoveNulls(
+		        Table.Column(#"Tipo cambiado6","Column2")
+		    )
+		)),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Personalizada agregada",{"Column1", "Column2"}),
+		    #"Filas superiores quitadas" = Table.Skip(#"Columnas quitadas1",1),
+		    #"Encabezados promovidos6" = Table.PromoteHeaders(#"Filas superiores quitadas", [PromoteAllScalars=true]),
+		    #"Tipo cambiado7" = Table.TransformColumnTypes(#"Encabezados promovidos6",{{"Column1", type text}, {"Incidencia", type any}, {"COP", type any}, {"US$", type any}, {"TIPO COSTO", type text}, {"MANTENIMIENTO ELECTRICO CONTINENTAL GOLD", type text}}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Tipo cambiado7",{{"Column1", "Categoria"}, {"US$", "USD"}, {"MANTENIMIENTO ELECTRICO CONTINENTAL GOLD", "Proyecto"}}),
+		    #"Filas inferiores quitadas" = Table.RemoveLastN(#"Columnas con nombre cambiado",42),
+		    #"Filas filtradas" = Table.SelectRows(#"Filas inferiores quitadas", each ([Categoria] <> null and [Categoria] <> "COSTOS DIRECTOS" and [Categoria] <> "COSTOS INDIRECTOS")),
+		    #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas",null,0,Replacer.ReplaceValue,{"Incidencia"}),
+		    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado",null,0,Replacer.ReplaceValue,{"COP"}),
+		    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1",null,0,Replacer.ReplaceValue,{"USD"}),
+		    #"Rellenar hacia abajo" = Table.FillDown(#"Valor reemplazado2",{"TIPO COSTO"}),
+		    #"Valor reemplazado3" = Table.ReplaceValue(#"Rellenar hacia abajo",null,"DIRECTO",Replacer.ReplaceValue,{"TIPO COSTO"}),
+		    #"Columnas quitadas2" = Table.RemoveColumns(#"Valor reemplazado3",{"USD", "TIPO COSTO"}),
+		    #"Tipo cambiado8" = Table.TransformColumnTypes(#"Columnas quitadas2",{{"Categoria", type text}, {"Incidencia", Percentage.Type}, {"COP", Currency.Type}, {"Proyecto", type text}}),
+		    #"Dividir columna por delimitador" = Table.SplitColumn(#"Tipo cambiado8", "Categoria", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"Categoria.1", "Categoria.2"}),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Dividir columna por delimitador",{{"Categoria.1", "Codigo"}, {"Categoria.2", "Descripcion"}}),
+		    #"Consultas combinadas" = Table.NestedJoin(#"Columnas con nombre cambiado1", {"Codigo"}, #"Dim_categoria (1)", {"Codigo"}, "Dim_categoria (2)", JoinKind.LeftOuter),
+		    #"Se expandió Dim_categoria (2)" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_categoria (2)", {"Id categoria"}, {"Dim_categoria (2).Id categoria"}),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Se expandió Dim_categoria (2)",{{"Dim_categoria (2).Id categoria", "Id categoria"}}),
+		    #"Valor reemplazado4" = Table.ReplaceValue(#"Columnas con nombre cambiado2","MANTENIMIENTO ELECTRICO CONTINENTAL GOLD","COMIMANCCCG5058",Replacer.ReplaceText,{"Proyecto"}),
+		    #"Consultas combinadas1" = Table.NestedJoin(#"Valor reemplazado4", {"Proyecto"}, Dim_proyecto, {"Código de proyecto"}, "Dim_proyecto", JoinKind.LeftOuter),
+		    #"Se expandió Dim_proyecto" = Table.ExpandTableColumn(#"Consultas combinadas1", "Dim_proyecto", {"Id proyecto"}, {"Dim_proyecto.Id proyecto"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Se expandió Dim_proyecto",{{"Dim_proyecto.Id proyecto", "Id proyecto"}}),
+		    #"Columnas quitadas3" = Table.RemoveColumns(#"Columnas con nombre cambiado3",{"Proyecto", "Codigo", "Descripcion"}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas3",{"Id categoria", "Id proyecto", "Incidencia", "COP"})
+		in
+		    #"Columnas reordenadas"
+	lineageTag: cd3086fc-baae-4617-a505-f7e05c155dd4
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression Fact_detalle_documental =
+		let
+		    Origen = Table.Combine({ETL_solicitud_de_pedido, ETL_ordenes_de_compra, ETL_facturas_conformadas}),
+		    #"Filas filtradas" = Table.SelectRows(Origen, each true)
+		in
+		    #"Filas filtradas"
+	lineageTag: 7b1e0001-7d8e-4638-b4d1-63ed36051731
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Exception
+
+expression 'Errores en Fact_ordenes_de_compra' =
+		let
+		Origen = Fact_ordenes_de_compra,
+		  #"Errores de coincidencia detectados" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origen, Table.ColumnsOfType(Origen, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "El tipo del valor no coincide con el tipo de la columna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origen, pairs),
+		  #"Índice agregado" = Table.AddIndexColumn(#"Errores de coincidencia detectados", "Número de fila" ,1),
+		  #"Conservar errores" = Table.SelectRowsWithErrors(#"Índice agregado", {"#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"}),
+		  #"Columnas reordenadas" = Table.ReorderColumns(#"Conservar errores", {"Número de fila", "#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"})
+		in
+		  #"Columnas reordenadas"
+	lineageTag: 119c8ae7-3109-4d0c-aff9-a742526c67a2
+	queryGroup: 'Errores en las consultas: 14/09/2026 11:07:21 a  m'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Errores en Fact_ordenes_de_compra (2)' =
+		let
+		Origen = Fact_ordenes_de_compra,
+		  #"Errores de coincidencia detectados" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origen, Table.ColumnsOfType(Origen, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "El tipo del valor no coincide con el tipo de la columna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origen, pairs),
+		  #"Índice agregado" = Table.AddIndexColumn(#"Errores de coincidencia detectados", "Número de fila" ,1),
+		  #"Conservar errores" = Table.SelectRowsWithErrors(#"Índice agregado", {"#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"}),
+		  #"Columnas reordenadas" = Table.ReorderColumns(#"Conservar errores", {"Número de fila", "#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"})
+		in
+		  #"Columnas reordenadas"
+	lineageTag: 7568175a-5806-4056-8436-c542422c3a25
+	queryGroup: 'Errores en las consultas: 14/09/2026 11:11:30 a  m'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression 'Errores en Fact_ordenes_de_compra (3)' =
+		let
+		Origen = Fact_ordenes_de_compra,
+		  #"Errores de coincidencia detectados" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origen, Table.ColumnsOfType(Origen, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "El tipo del valor no coincide con el tipo de la columna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origen, pairs),
+		  #"Índice agregado" = Table.AddIndexColumn(#"Errores de coincidencia detectados", "Número de fila" ,1),
+		  #"Conservar errores" = Table.SelectRowsWithErrors(#"Índice agregado", {"#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"}),
+		  #"Columnas reordenadas" = Table.ReorderColumns(#"Conservar errores", {"Número de fila", "#", "Cancelado", "Número de documento", "Código de cliente/proveedor", "Nombre de cliente/proveedor", "Fecha de contabilización", "Fecha de creación", "Código de condiciones de pago", "Pedido visual", "No. Solped", "Precio Uni. solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped", "Fecha creacion Solped", "Número de artículo", "Descripción artículo/serv.", "Detalle", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad", "Unidad", "Precio", "Moneda del precio", "Tipo de cambio", "Total Líneas OC", "Status de la línea", "Prioridad", "Adjudicacion Directa", "Reembolsable", "Fecha de entrega de la línea", "Código de proyecto", "Nombre de proyecto", "Código de almacén", "Nombre de almacén", "Norma de reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código del empleado del departamento de ventas", "Nombre de empleado del departamento de ventas", "Tipo de OC (Uso Exclusivo de A&L-OC)", "Número Cto Marco", "Desviación $Cop (PU)", "Desviación p/encima del Ppto", "Ind.: codigo Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Ko", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Ind.: Observaciones Ko", "Código de condiciones de pago_1", "Comentarios", "Id subseco", "Id categoria"})
+		in
+		  #"Columnas reordenadas"
+	lineageTag: 05e29b24-dc14-4b27-8b70-cd7e47bc7e19
+	queryGroup: 'Errores en las consultas: 14/09/2026 11:17:39 a  m'
 
 	annotation PBI_NavigationStepName = Navegación
 

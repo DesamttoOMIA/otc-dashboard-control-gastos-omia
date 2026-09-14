@@ -91,6 +91,38 @@ table Dim_categoria
 
 		annotation SummarizationSetBy = Automatic
 
+	column Column7
+		dataType: string
+		lineageTag: 58b5db32-45e2-45a4-a8a9-2143161856f0
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 37145f7f-9864-4698-8c9d-3dd0a4fa0385
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: ae0ccdc4-d0e2-4770-92f8-6bdf650f8bc0
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: b7c10395-238c-4767-bc73-c58a5375d962
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Tipo costo Jerarquía'
 		lineageTag: 95001cb4-a17a-4c16-8db9-39dc926febe8
 

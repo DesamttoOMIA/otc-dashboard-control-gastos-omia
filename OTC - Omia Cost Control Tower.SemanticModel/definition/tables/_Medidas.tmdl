@@ -1,949 +1,249 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Costo ejecutado' = ```
-			
-			    SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
-			    SUM('Fact_facturas_conformadas'[Total líneas])
-			```
-		displayFolder: Medidas principales
+	measure 'Consumo Total' = [Comprometido] + [Ejecutado Conformada]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas núcleo
 		lineageTag: 670411b9-5073-45c2-ac7b-7b9f70fe0fbc
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Costo comprometido' = SUM('Fact_solicitud_de_pedido'[Total líneas])
+	measure 'SOLPED en gestión' = SUM('Fact_solicitud_de_pedido'[Total líneas])
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas principales
+		displayFolder: SOLPED (informativo, no usar en presupuesto)
 		lineageTag: 115d40b4-d7a4-4b72-9a80-e2b510b714ac
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Costo entrante' =
-			
-			// SUM('Facturas Conformadas'[Total líneas])
-		displayFolder: Medidas principales
-		lineageTag: 5c8612ec-d952-440c-b356-5c9eba9fd166
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Presupuesto remanente' = ```
-			
-			[Presupuesto total] 
-			- [Costo ejecutado] 
-			- [Costo comprometido] 
-			// - [Costo entrante]
-			```
-		displayFolder: Medidas principales
-		lineageTag: bc2eb378-484f-4c0b-9712-be1bceee3dfe
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Ejecución' = ```
-			
-			DIVIDE(
-			    [Costo ejecutado] + [Costo comprometido],
-			    [Presupuesto total])
-			
-			```
-		displayFolder: Medidas secundarias
-		lineageTag: b719cd37-7b6e-45d0-ac6f-4c581759b5e4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Presupuesto total' = SUM(Fact_presupuesto[COP])
+	measure Comprometido =
+			CALCULATE(
+			    SUM(Fact_ordenes_de_compra[Total Líneas OC]),
+			    Fact_ordenes_de_compra[Cancelado] = "N"
+			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas principales
-		lineageTag: e2ff7bca-3189-4fe3-a6ae-59b2119d36f0
+		displayFolder: Medidas núcleo
+		lineageTag: 8f0a5b2e-6c3d-4a1f-9e7b-2d5c4a1f6e30
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Presupuesto total Visible' =
-			
-			IF(
-			    [Presupuesto total] = 0,
-			    BLANK(),
-			    [Presupuesto total]
+	measure 'Ejecutado Conformada' =
+			CALCULATE(
+			    SUM(Fact_entrada_de_mercancia[Total líneas]),
+			    Fact_entrada_de_mercancia[TieneOC] = FALSE
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas secundarias
-		lineageTag: 626f53c3-c4b8-4592-aa0d-0badb3c1e9a7
+		displayFolder: Medidas núcleo
+		lineageTag: 3c7e1a9d-4f2b-4e8a-b1c6-7a9d2e4f5b81
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Costo comprometido visible' = ```
-			SUM(Fact_solicitud_de_pedido[Total líneas]	) 
-			```
+	measure 'Meses Transcurridos' = MONTH(TODAY())
+		formatString: 0
+		displayFolder: Medidas núcleo
+		lineageTag: 2b6d8e4a-1f3c-4d9e-a5b7-8c1d3e6f2a94
+
+	measure 'Presupuesto Mensual' = SUM(Fact_presupuesto_final[COP])
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas secundarias
-		lineageTag: 9eb17a5d-0cf3-4b36-89a6-c9b965df2c3a
+		displayFolder: Medidas núcleo
+		lineageTag: 9d2a7c5e-3b1f-4a8d-b6e4-5c9a2d7f1b63
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Costo ejecutado visible' = ```
-			
-			IF(
-			    SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
-			    SUM('Fact_facturas_conformadas'[Total líneas])
-			    = 0,
-			    BLANK(),
-			     SUM('Fact_ordenes_de_compra'[Total Líneas OC $Cop]) +
-			    SUM('Fact_facturas_conformadas'[Total líneas])
-			
+	measure 'Presupuesto YTD' =
+			SUMX(
+			    VALUES(Dim_proyecto[Id proyecto]),
+			    VAR FechaInicio = CALCULATE(MIN(Dim_proyecto[FechaInicioContrato]))
+			    VAR MesesTranscurridos = DATEDIFF(FechaInicio, TODAY(), MONTH) + 1
+			    VAR PresupuestoMensualProyecto = CALCULATE(SUM(Fact_presupuesto_final[COP]))
+			    RETURN PresupuestoMensualProyecto * MesesTranscurridos
 			)
-			
-			
-			
-			
-			
-			```
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas secundarias
-		lineageTag: 42e48397-ba71-4b5b-af09-475f031c02c2
+		displayFolder: Medidas núcleo
+		lineageTag: 4e8b1d6a-9c3f-4b7e-a2d5-1f6c8a3e9b52
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Presupuesto remanente visible > 0' =
-			
-			VAR pres = COALESCE([Presupuesto total], 0)
-			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR comp = COALESCE([Costo comprometido visible], 0)
-			
-			VAR ejec_dentro = MIN(ejec, pres)
-			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
-			VAR comp_dentro = MIN(comp, saldo_pres)
-			
-			VAR rem = pres - ejec_dentro - comp_dentro
-			RETURN
-			IF(rem > 0, rem, BLANK())
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		displayFolder: Medidas secundarias
-		lineageTag: eac8d59c-bedc-4539-b215-eb9418c55226
+	measure Disponible = [Presupuesto YTD] - [Consumo Total]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Medidas núcleo
+		lineageTag: 7a3d9c2e-5b8f-4e1a-9d6c-3a7e2b5d8f14
 
-	measure 'Consumo total visible' =
-			
-			VAR ejec = [Costo ejecutado visible]
-			VAR comp = [Costo comprometido visible]
-			VAR total = ejec + comp
-			RETURN
-			IF(
-			    ISBLANK(ejec) && ISBLANK(comp),
-			    BLANK(),
-			    total
-			)
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		displayFolder: Medidas secundarias
-		lineageTag: 6e547628-15b6-4f9b-a25a-b8b9107c3b7e
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Sobrepresupuesto visible (>0)' =
-			
-			VAR pres = [Presupuesto total Visible]
-			VAR cons = [Consumo total visible]
-			VAR over = cons - pres
-			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    IF(over > 0, over, BLANK())
-			)
-		displayFolder: Medidas secundarias
-		lineageTag: 55b299d8-d4d1-4031-aa66-95c2cb5cccb0
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Presupuesto remanente visible' =
-			
-			VAR pres = [Presupuesto total Visible]
-			VAR ejec = [Costo ejecutado visible]
-			VAR comp = [Costo comprometido visible]
-			VAR rem  = pres - ejec - comp
-			RETURN
-			IF( ISBLANK(pres), BLANK(), rem )
-		displayFolder: Medidas secundarias
-		lineageTag: 565a15b8-7e54-4af9-a0d3-738d16a8d4ab
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Ejecutado dentro presupuesto' =
-			
-			VAR pres = COALESCE([Presupuesto total], 0)
-			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR valor = MIN(ejec, pres)
-			RETURN
-			IF(valor = 0, BLANK(), valor)
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 53fd3e7e-46ad-4128-b19a-9f70bad7305c
-
-	measure 'Ejecutado excedente' =
-			
-			VAR pres = COALESCE([Presupuesto total], 0)
-			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR exc  = MAX(ejec - pres, 0)
-			RETURN
-			IF(exc = 0, BLANK(), exc)
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 1ce122ed-f800-46c0-bd70-cb22b07e29a4
-
-	measure 'Comprometido dentro presupuesto' =
-			
-			VAR pres = COALESCE([Presupuesto total], 0)
-			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR comp = COALESCE([Costo comprometido visible], 0)
-			
-			VAR ejec_dentro = MIN(ejec, pres)
-			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
-			VAR comp_dentro = MIN(comp, saldo_pres)
-			
-			RETURN
-			IF(comp_dentro = 0, BLANK(), comp_dentro)
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 515d5e0e-8a31-4934-b669-b244b0c73990
-
-	measure 'Comprometido excedente' =
-			
-			VAR pres = COALESCE([Presupuesto total], 0)
-			VAR ejec = COALESCE([Costo ejecutado visible], 0)
-			VAR comp = COALESCE([Costo comprometido visible], 0)
-			
-			VAR ejec_dentro = MIN(ejec, pres)
-			VAR saldo_pres  = MAX(pres - ejec_dentro, 0)
-			VAR comp_exceso = MAX(comp - saldo_pres, 0)
-			
-			RETURN
-			IF(comp_exceso = 0, BLANK(), comp_exceso)
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: adc04a94-42e1-4705-b2b0-8e76862e8790
-
-	measure 'Dentro presupuesto visual' =
-			
-			[Ejecutado dentro presupuesto] +
-			[Comprometido dentro presupuesto]
-		lineageTag: b2aef6cf-0969-485b-b772-dd79f020b8a4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Excedente visual' =
-			
-			[Ejecutado excedente] +
-			[Comprometido excedente]
-		lineageTag: 484eeb62-984a-4d9f-b552-5e476e3254f7
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Ejecución visible' =
-			
-			VAR pres = [Presupuesto total Visible]
-			VAR cons = [Consumo total visible]
-			RETURN
-			IF(
-			    ISBLANK(pres),
-			    BLANK(),
-			    DIVIDE(cons, pres)
-			)
+	measure '% Consumo' = DIVIDE([Consumo Total], [Presupuesto YTD])
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		lineageTag: a72059bb-46d7-4921-ac49-b5addbba55c0
+		displayFolder: Medidas núcleo
+		lineageTag: 1c5e8a3d-7f2b-4c9e-8a1d-6b3f9e5c2a87
 
-	measure '% Consumo presupuesto' =
-			
-			VAR pres = [Presupuesto total Visible]
-			VAR cons = [Consumo total visible]
-			RETURN
-			IF(
-			    ISBLANK(pres) || pres = 0,
-			    BLANK(),
-			    DIVIDE(cons, pres)
+	measure 'Estado Semaforo' =
+			SWITCH(
+			    TRUE(),
+			    [% Consumo] > 1, "Rojo",
+			    [% Consumo] >= 0.8, "Ambar",
+			    "Verde"
 			)
+		displayFolder: Medidas núcleo
+		lineageTag: 6f9b2d5a-4e7c-4a3f-9b8e-2d6a4c9f7e15
+
+	measure 'Comprometido Neto (pendiente de facturar)' = [Comprometido] - [Ejecutado Conformada]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Coordinador
+		lineageTag: 3a8e5c1d-9f4b-4d7a-8c2e-5b9d3f1a6e70
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Consumo Simulado' = [Consumo Total] + [Monto Simulado Value]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Coordinador
+		lineageTag: 8d4b7e2a-6c9f-4a1d-b5e8-3c7a9d2f4b61
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure '% Consumo Simulado' = DIVIDE([Consumo Simulado], [Presupuesto YTD])
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Medidas secundarias
-		lineageTag: d6a809fa-801f-4240-a638-fbef33775db1
+		displayFolder: Coordinador
+		lineageTag: 5e9a3c7d-1b8f-4e6a-9d2c-7f4b1a8e3c92
 
-	measure 'Consumo % visible' =
-			
-			VAR p = [% Consumo presupuesto]
-			RETURN
-			IF(
-			    ISBLANK(p),
-			    BLANK(),
-			    MIN(p, 1)
+	measure 'Estado Semaforo Simulado' =
+			SWITCH(
+			    TRUE(),
+			    [% Consumo Simulado] > 1, "Rojo",
+			    [% Consumo Simulado] >= 0.8, "Ambar",
+			    "Verde"
 			)
-		displayFolder: Medidas secundarias
-		lineageTag: 8449ce62-de63-4639-85e9-db682947a93e
+		displayFolder: Coordinador
+		lineageTag: 2f7c4a9e-8d1b-4c5f-a3e6-9b2d7c4f1a58
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Restante % visible' =
-			
-			VAR p = [% Consumo presupuesto]
-			RETURN
-			IF(
-			    ISBLANK(p),
-			    BLANK(),
-			    MAX(1 - p, 0)
+	measure 'Recibido (Entrada Mercancia)' =
+			CALCULATE(
+			    SUM(Fact_entrada_de_mercancia[Total líneas]),
+			    Fact_entrada_de_mercancia[TieneOC] = TRUE
 			)
-		displayFolder: Medidas secundarias
-		lineageTag: 71aa4191-a648-4c06-9ece-4177f0d71467
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 9c2e5a8d-4f1b-4d7e-8a3c-6b9f2d5a7e14
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Exceso % visible' =
-			
-			VAR p = [% Consumo presupuesto]
-			RETURN
-			IF(
-			    ISBLANK(p),
-			    BLANK(),
-			    MAX(p - 1, 0)
+	measure 'Facturado Total' =
+			CALCULATE(
+			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
+			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])
+			) + [Ejecutado Conformada]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a9d3c7e-2b5f-4a8d-9e1c-4f7a2d9c5b63
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Pagado Total' =
+			CALCULATE(
+			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
+			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])
 			)
-		displayFolder: Medidas secundarias
-		lineageTag: 5b82b356-1cae-4a4f-a72e-6a5c292cdf60
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 4d8a2c6e-9f3b-4e7d-a1c5-8b3f6a9d2e57
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure '% Consumo presupuesto texto' =
-			
-			VAR p = [% Consumo presupuesto]
-			RETURN
-			IF(
-			    ISBLANK(p),
-			    BLANK(),
-			    FORMAT(p, "0.0%")
-			)
-		displayFolder: Medidas secundarias
-		lineageTag: 8f282c86-7671-4441-a90d-0026d4da91e4
+	measure 'Comprometido por Subsecco' = [Comprometido]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 7e1c4a9d-3f8b-4c5e-9a2d-6c4f8b1e3a95
 
-	measure 'Card HTML - Presupuesto Total' =
-			
-			
-			VAR Titulo = "Presupuesto total"
-			
-			VAR ValorPrincipal =
-			    FORMAT([Presupuesto total Visible] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR ValorIncidencia =
-			    FORMAT([% Incidencia], "0.0%")
-			
-			VAR TextoSalud = "No disponible"
-			
-			VAR ColorPrincipal = "#111827"
-			VAR ColorTextoSec = "#6B7280"
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoBarra = "#D1D5DB"
-			VAR FondoFooter = "#F3F4F6"
-			VAR ColorSalud = "#9CA3AF"
-			
-			RETURN
-			"
-			<div style='
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:10px 10px 8px 10px;
-			    width:100%;
-			    height:100%;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:5px;'>
-			        " & Titulo & "
-			    </div>
-			
-			    <div style='font-size:24px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='margin-bottom:4px;'>
-			        <div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:1px;'>
-			            Participación del presupuesto: " & ValorIncidencia & "
-			        </div>
-			    </div>
-			
-			    <div style='margin-bottom:8px;'>
-			        <div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:1px;'>
-			            &nbsp;
-			        </div>
-			    </div>
-			
-			    <div style='
-			        background:" & FondoFooter & ";
-			        border-radius:10px;
-			        padding:6px 8px;
-			    '>
-			        <div style='
-			            display:flex;
-			            justify-content:space-between;
-			            align-items:center;
-			            margin-bottom:4px;
-			            font-size:10px;
-			            color:" & ColorTextoSec & ";
-			            font-weight:600;
-			        '>
-			            <span>Salud del presupuesto</span>
-			            <span>" & TextoSalud & "</span>
-			        </div>
-			
-			        <div style='
-			            width:100%;
-			            height:8px;
-			            background:" & FondoBarra & ";
-			            border-radius:999px;
-			            overflow:hidden;
-			            display:flex;
-			        '>
-			            <div style='
-			                width:0%;
-			                background:" & ColorSalud & ";
-			                height:100%;
-			                border-radius:999px;
-			            '></div>
-			        </div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tarjeta presupuesto total
-		lineageTag: c3d164ed-9722-4d23-9205-f62c3530d51a
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Sobrecosto visible' =
-			
-			VAR v = [Consumo total visible] - [Presupuesto total Visible]
-			RETURN
-			IF(v > 0, v, 0)
-		displayFolder: Medidas tarjeta presupuesto remanente
-		lineageTag: d1e21020-978a-4bed-b344-4d87c0dd869d
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Sobrecosto' =
-			
-			VAR pres = [Presupuesto total Visible]
-			VAR over = [Sobrecosto visible]
-			RETURN
-			DIVIDE(over, pres)
-		displayFolder: Medidas tarjeta presupuesto remanente
-		lineageTag: 2a3d5546-7a6c-43fe-8080-5ed40dd05ff5
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Sobrecosto texto' =
-			
-			FORMAT([% Sobrecosto], "0.0%")
-		displayFolder: Medidas tarjeta presupuesto remanente
-		lineageTag: 56ddc1b5-1442-41a7-b3dd-72039dcc4a9e
-
-	measure 'Presupuesto remanente visible tarjeta' =
-			
-			VAR v = [Presupuesto total Visible] - [Consumo total visible]
-			RETURN
-			IF(v > 0, v, 0)
-		displayFolder: Medidas tarjeta presupuesto remanente
-		lineageTag: 48f5938e-a1df-4a90-bc07-0f7bd324f555
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Card HTML - Presupuesto disponible' =
-			
-			
-			VAR Titulo = "Presupuesto disponible"
-			
-			VAR ValorPrincipal =
-			    FORMAT([Presupuesto remanente visible tarjeta] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR ValorSobrecosto =
-			    FORMAT([Sobrecosto visible] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR Porcentaje = [% Sobrecosto]
-			VAR PorcentajeTexto = FORMAT(Porcentaje, "0.0%")
-			
-			VAR BarraWidth =
-			    SUBSTITUTE(FORMAT(MIN(Porcentaje * 100, 100), "0.0"), ",", ".")
-			
-			VAR ColorPrincipal = "#111827"
-			VAR ColorTextoSec = "#6B7280"
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoBarra = "#D1D5DB"
-			VAR FondoFooter = "#F3F4F6"
-			VAR ColorSobrecosto = "#DC2626"
-			
-			RETURN
-			"
-			<div style='
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:10px 10px 8px 10px;
-			    width:100%;
-			    height:100%;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:5px;'>
-			        " & Titulo & "
-			    </div>
-			
-			    <div style='font-size:24px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='margin-bottom:4px;'>
-			        <div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:1px;'>
-			            Sobrepresupuesto: " & ValorSobrecosto & "
-			        </div>
-			    </div>
-			
-			    <div style='margin-bottom:7px;'>
-			        <div style='font-size:12px; color:" & ColorTextoSec & "; margin-bottom:1px;'>
-			            &nbsp;
-			        </div>
-			    </div>
-			
-			    <div style='
-			        background:" & FondoFooter & ";
-			        border-radius:10px;
-			        padding:6px 8px;
-			    '>
-			        <div style='
-			            display:flex;
-			            justify-content:space-between;
-			            align-items:center;
-			            margin-bottom:4px;
-			            font-size:10px;
-			            color:" & ColorTextoSec & ";
-			            font-weight:600;
-			        '>
-			            <span>Nivel sobrepresupuesto</span>
-			            <span>" & PorcentajeTexto & "</span>
-			        </div>
-			
-			        <div style='
-			            width:100%;
-			            height:8px;
-			            background:" & FondoBarra & ";
-			            border-radius:999px;
-			            overflow:hidden;
-			            display:flex;
-			        '>
-			            <div style='
-			                width:" & BarraWidth & "%;
-			                background:" & ColorSobrecosto & ";
-			                height:100%;
-			                border-radius:999px;
-			            '></div>
-			        </div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tarjeta presupuesto remanente
-		lineageTag: 9436ad94-2aaa-4091-aa85-adb105f8546a
-
-	measure 'Cantidad ODC cerradas' = DISTINCTCOUNT(Fact_ordenes_de_compra[Orden de Compra])
-		formatString: 0
-		displayFolder: Medidas tarjeta consumo total
-		lineageTag: fdc76a9b-8a93-4fca-9e9e-a260a31b8231
-
-	measure 'Cantidad NFC' = DISTINCTCOUNT(Fact_facturas_conformadas[Número interno])
-		formatString: 0
-		displayFolder: Medidas tarjeta consumo total
-		lineageTag: 3166b530-c97a-4920-9ddc-b4a06e59078a
-
-	measure 'Cantidad SOLPED abiertas' = DISTINCTCOUNT(Fact_solicitud_de_pedido[ID de documento interno])
-		formatString: 0
-		displayFolder: Medidas tarjeta consumo total
-		lineageTag: 7fa18ca8-3eab-42e5-8717-1137940d358f
-
-	measure 'Card HTML - Consumo Total' =
-			
-			VAR Titulo = "Consumo total"
-			
-			VAR Ejecutado = [Costo ejecutado visible]
-			VAR Comprometido = [Costo comprometido visible]
-			VAR ConsumoTotal = Ejecutado + Comprometido
-			
-			VAR ValorPrincipal =
-			    FORMAT(ConsumoTotal / 1000000, "$ #,0.00") & " mill."
-			
-			VAR ValorEjecutado =
-			    FORMAT(Ejecutado / 1000000, "$ #,0.00") & " mill."
-			
-			VAR ValorComprometido =
-			    FORMAT(Comprometido / 1000000, "$ #,0.00") & " mill."
-			
-			VAR PorcentajeReal = [% Consumo presupuesto]
-			VAR Porcentaje = MIN(PorcentajeReal, 1)
-			VAR PorcentajeTexto = FORMAT(Porcentaje, "0.0%")
-			
-			VAR ConsumoWidth = MIN(Porcentaje,1) * 100
-			VAR RestanteWidth = MAX(1 - Porcentaje,0) * 100
-			VAR ExcesoWidth = MAX(Porcentaje - 1,0) * 100
-			
-			VAR WidthConsumo = SUBSTITUTE(FORMAT(ConsumoWidth,"0.0"), ",", ".")
-			VAR WidthRestante = SUBSTITUTE(FORMAT(RestanteWidth,"0.0"), ",", ".")
-			VAR WidthExceso = SUBSTITUTE(FORMAT(MIN(ExcesoWidth,100),"0.0"), ",", ".")
-			
-			VAR ColorPrincipal = "#111827"
-			VAR ColorTextoSec = "#6B7280"
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoBarra = "#EEF2F7"
-			VAR FondoFooter = "#F3F4F6"
-			
-			VAR ColorConsumo =
-			    SWITCH(
-			        TRUE(),
-			        Porcentaje < 0.8, "#16A34A",   -- verde
-			        Porcentaje < 1, "#F59E0B",     -- amarillo
-			        "#DC2626"                      -- rojo SOLO en 100%
+	measure 'Dias SC a OC' =
+			AVERAGEX(
+			    Fact_factura_proveedor_pago_efectuado,
+			    DATEDIFF(
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación],
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
+			        DAY
 			    )
+			)
+		formatString: #,0.0
+		displayFolder: Trazabilidad
+		lineageTag: 1a5e9c3d-7b2f-4a8e-9c6d-3f1a7e5b9c28
+
+	measure 'Dias OC a EM' =
+			AVERAGEX(
+			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Entrada de Mercancía])),
+			    DATEDIFF(
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
+			        DAY
+			    )
+			)
+		formatString: #,0.0
+		displayFolder: Trazabilidad
+		lineageTag: 8c3f7a1d-5e9b-4c2f-8a6d-2b7e5c9f3a41
+
+	measure 'Dias EM a Factura' =
+			AVERAGEX(
+			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])),
+			    DATEDIFF(
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
+			        DAY
+			    )
+			)
+		formatString: #,0.0
+		displayFolder: Trazabilidad
+		lineageTag: 5b9d2c6e-8f4a-4d1c-9b3e-7a5c1f9d4b62
+
+	measure 'Dias Factura a Pago' =
+			AVERAGEX(
+			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])),
+			    DATEDIFF(
+			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
+			        Fact_factura_proveedor_pago_efectuado[Fecha de contabilización],
+			        DAY
+			    )
+			)
+		formatString: #,0.0
+		displayFolder: Trazabilidad
+		lineageTag: 3f7a1c9e-6d2b-4a5f-8c9e-1d3f7a6c9e58
+
+	measure 'Consumo dentro presupuesto' =
 			
-			VAR ColorRestante = "#D1D5DB"
-			VAR ColorExceso = "#DC2626"
-			
+			VAR PresupuestoCategoria = [Presupuesto YTD]
+			VAR ConsumoCategoria = [Consumo Total]
 			RETURN
-			"
-			<div style='
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:10px 10px 8px 10px;
-			    width:100%;
-			    height:100%;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='font-size:13px; color:" & ColorTextoSec & "; font-weight:600; margin-bottom:5px;'>
-			        " & Titulo & "
-			    </div>
+			    MIN ( ConsumoCategoria, PresupuestoCategoria )
+		lineageTag: 1c3f2ff4-de6d-4225-b8e6-65568f734d8e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Disponible dentro presupuesto' =
 			
-			    <div style='font-size:24px; color:" & ColorPrincipal & "; font-weight:700; line-height:1.05; margin-bottom:8px;'>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='margin-bottom:4px;'>
-			        <div style='font-size:12px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:1px;'>
-			            Costo ejecutado&nbsp;&nbsp;&nbsp;&nbsp;" & ValorEjecutado & "
-			        </div>
-			    </div>
-			
-			    <div style='margin-bottom:8px;'>
-			        <div style='font-size:12px; color:" & ColorPrincipal & "; font-weight:600; margin-bottom:1px;'>
-			            Costo comprometido&nbsp;" & ValorComprometido & "
-			        </div>
-			    </div>
-			
-			    <div style='
-			        background:" & FondoFooter & ";
-			        border-radius:10px;
-			        padding:6px 8px;
-			    '>
-			        <div style='
-			            display:flex;
-			            justify-content:space-between;
-			            align-items:center;
-			            margin-bottom:4px;
-			            font-size:10px;
-			            color:" & ColorTextoSec & ";
-			            font-weight:600;
-			        '>
-			            <span>Consumo del presupuesto</span>
-			            <span>" & PorcentajeTexto & "</span>
-			        </div>
-			
-			        <div style='
-			            width:100%;
-			            height:8px;
-			            background:" & FondoBarra & ";
-			            border-radius:999px;
-			            overflow:hidden;
-			            display:flex;
-			        '>
-			            <div style='width:" & WidthConsumo & "%; background:" & ColorConsumo & "; height:100%; border-radius:999px;'></div>
-			            <div style='width:" & WidthRestante & "%; background:" & ColorRestante & ";'></div>
-			        </div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tarjeta consumo total
-		lineageTag: 889cf79e-cfa7-4f5d-b30f-b59e4c85998f
-
-	measure 'Total documentos documentales' =
-			
-			DISTINCTCOUNT(Fact_detalle_documental[Número de documento])
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 726af31d-508b-42b5-8fc8-fd0a52602d54
-
-	measure 'Total factura conformada' = CALCULATE(SUM(Fact_detalle_documental[Total línea] ), Fact_detalle_documental[Tipo de documento] = "Factura conformada")
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 03519948-5fb9-4a52-a062-7c6a3f9303ca
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
-
-	measure 'Total orden de compra cerrada' = CALCULATE(SUM(Fact_detalle_documental[Total línea] ), Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: d138c16b-ca15-4e87-9d78-dcbb8220e467
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Cantidad de facturas conformadas' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Factura conformada")
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: e122074d-7ed5-4c22-bba3-febe7cae4018
-
-	measure 'Cantidad de lineas orden de compra cerrada' = CALCULATE(COUNTROWS(Fact_detalle_documental),Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 76f05297-9d29-4578-a1a1-4f37945fcb18
-
-	measure 'Cantidad de orden de compra cerrada' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Orden de compra cerrada")
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 501334fe-63aa-4b08-abab-7b1a71f951ce
-
-	measure 'Total solicitud de pedido abierta' = CALCULATE(SUM(Fact_detalle_documental[Total línea]),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 7e50c20e-8e4f-4b42-822d-aed012e61eb1
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
-
-	measure 'Cantidad de solicitud de pedido abierta' = CALCULATE(DISTINCTCOUNT(Fact_detalle_documental[Número de documento]),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 62ac831d-d16a-45e5-bfd3-c2037d4e7974
-
-	measure 'Cantidad de lineas solicitud de pedido abierta' = CALCULATE(COUNTROWS(Fact_detalle_documental),Fact_detalle_documental[Tipo de documento] = "Solicitud de pedido abierta")
-		formatString: 0
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 0c5daba3-cec7-4ce8-9d7b-0a883ee38c0c
-
-	measure 'Card HTML - Factura Conformada' =
-			
-			
-			VAR ValorPrincipal =
-			    FORMAT([Total factura conformada] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR CantidadDocs =
-			    FORMAT([Cantidad de facturas conformadas], "#,0")
-			
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoSec = "#F3F4F6"
-			
-			VAR TextoTitulo = "#6B7280"
-			VAR TextoPrincipal = "#111827"
-			VAR TextoSec = "#374151"
-			
+			VAR PresupuestoCategoria = [Presupuesto YTD]
+			VAR ConsumoCategoria = [Consumo Total]
 			RETURN
-			"
-			<div style='
-			    width:100%;
-			    height:100%;
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:12px 12px 10px 12px;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='
-			        font-size:13px;
-			        color:" & TextoTitulo & ";
-			        font-weight:600;
-			        margin-bottom:6px;
-			    '>
-			        Factura conformada
-			    </div>
-			
-			    <div style='
-			        font-size:26px;
-			        font-weight:700;
-			        color:" & TextoPrincipal & ";
-			        line-height:1.05;
-			        margin-bottom:10px;
-			    '>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='
-			        background:" & FondoSec & ";
-			        border-radius:12px;
-			        padding:10px 12px;
-			        font-size:12px;
-			        color:" & TextoSec & ";
-			        line-height:1.5;
-			        min-height:58px;
-			        display:flex;
-			        flex-direction:column;
-			        justify-content:center;
-			    '>
-			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: bb2e5ff3-5cc9-427c-84d4-b47b6c318308
+			    MAX ( PresupuestoCategoria - ConsumoCategoria, 0 )
+		lineageTag: 938ed00c-7383-4052-8cbc-3ab05f4fd7a4
 
-	measure 'Card HTML - ODC Cerradas' =
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Exceso presupuesto' =
 			
-			
-			VAR ValorPrincipal =
-			    FORMAT([Total orden de compra cerrada] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR CantidadDocs =
-			    FORMAT([Cantidad de orden de compra cerrada], "#,0")
-			
-			VAR CantidadLineas =
-			    FORMAT([Cantidad de lineas orden de compra cerrada], "#,0")
-			
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoSec = "#F3F4F6"
-			
-			VAR TextoTitulo = "#6B7280"
-			VAR TextoPrincipal = "#111827"
-			VAR TextoSec = "#374151"
-			
+			VAR PresupuestoCategoria = [Presupuesto YTD]
+			VAR ConsumoCategoria = [Consumo Total]
 			RETURN
-			"
-			<div style='
-			    width:100%;
-			    height:100%;
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:12px 12px 10px 12px;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='
-			        font-size:13px;
-			        color:" & TextoTitulo & ";
-			        font-weight:600;
-			        margin-bottom:6px;
-			    '>
-			        Órden de compra
-			    </div>
-			
-			    <div style='
-			        font-size:26px;
-			        font-weight:700;
-			        color:" & TextoPrincipal & ";
-			        line-height:1.05;
-			        margin-bottom:10px;
-			    '>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='
-			        background:" & FondoSec & ";
-			        border-radius:12px;
-			        padding:10px 12px;
-			        font-size:12px;
-			        color:" & TextoSec & ";
-			        line-height:1.5;
-			        min-height:58px;
-			        display:flex;
-			        flex-direction:column;
-			        justify-content:center;
-			    '>
-			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
-			        <div>Cantidad de líneas: " & CantidadLineas & "</div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 8937480d-3d3f-484e-8918-ed65bb4d6c93
+			    MAX ( ConsumoCategoria - PresupuestoCategoria, 0 )
+		lineageTag: a03d6d17-045d-4b7b-9e95-7de5ddf080b0
 
-	measure 'Card HTML - SOLPED Abiertas' =
-			
-			
-			VAR ValorPrincipal =
-			    FORMAT([Total solicitud de pedido abierta] / 1000000, "$ #,0.00") & " mill."
-			
-			VAR CantidadDocs =
-			    FORMAT([Cantidad de solicitud de pedido abierta], "#,0")
-			
-			VAR CantidadLineas =
-			    FORMAT([Cantidad de lineas solicitud de pedido abierta], "#,0")
-			
-			VAR FondoTarjeta = "#FFFFFF"
-			VAR Borde = "#E5E7EB"
-			VAR FondoSec = "#F3F4F6"
-			
-			VAR TextoTitulo = "#6B7280"
-			VAR TextoPrincipal = "#111827"
-			VAR TextoSec = "#374151"
-			
-			RETURN
-			"
-			<div style='
-			    width:100%;
-			    height:100%;
-			    font-family: Segoe UI, Arial, sans-serif;
-			    background:" & FondoTarjeta & ";
-			    border:1px solid " & Borde & ";
-			    border-radius:16px;
-			    padding:12px 12px 10px 12px;
-			    box-sizing:border-box;
-			    box-shadow:0 2px 6px rgba(0,0,0,0.05);
-			'>
-			    <div style='
-			        font-size:13px;
-			        color:" & TextoTitulo & ";
-			        font-weight:600;
-			        margin-bottom:6px;
-			    '>
-			        Solicitud de pedido
-			    </div>
-			
-			    <div style='
-			        font-size:26px;
-			        font-weight:700;
-			        color:" & TextoPrincipal & ";
-			        line-height:1.05;
-			        margin-bottom:10px;
-			    '>
-			        " & ValorPrincipal & "
-			    </div>
-			
-			    <div style='
-			        background:" & FondoSec & ";
-			        border-radius:12px;
-			        padding:10px 12px;
-			        font-size:12px;
-			        color:" & TextoSec & ";
-			        line-height:1.5;
-			        min-height:58px;
-			        display:flex;
-			        flex-direction:column;
-			        justify-content:center;
-			    '>
-			        <div>Cantidad de documentos: " & CantidadDocs & "</div>
-			        <div>Cantidad de líneas: " & CantidadLineas & "</div>
-			    </div>
-			</div>
-			"
-		displayFolder: Medidas tabla detalle documental
-		lineageTag: 712e818d-f742-4e90-8eaa-789dbb9c3fc6
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure '% Incidencia' =
+	measure '% Consumo categoría' =
 			
-			DIVIDE(
-			    [Presupuesto total Visible],
-			    CALCULATE(
-			        [Presupuesto total Visible],
-			        REMOVEFILTERS('Dim_categoria')
-			    ),
+			DIVIDE (
+			    [Consumo Total],
+			    [Presupuesto YTD],
 			    0
 			)
-		displayFolder: Medidas tarjeta presupuesto total
-		lineageTag: 3854fc2f-9265-438c-9874-fa6b060c03e0
+		lineageTag: 5efc2b93-1c38-48b2-95cf-1fef1bcb6da4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

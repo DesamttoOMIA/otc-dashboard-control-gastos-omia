@@ -18,32 +18,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Orden de Compra'
-		dataType: int64
-		lineageTag: de2adc4b-fa5f-424f-b598-a01ef2f9274f
-		summarizeBy: sum
-		sourceColumn: Orden de Compra
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Código Proveedor'
-		dataType: string
-		lineageTag: 28bec72a-2269-4f67-b1c8-f5b55002c502
-		summarizeBy: none
-		sourceColumn: Código Proveedor
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nombre Proveedor'
-		dataType: string
-		lineageTag: a649642c-16f6-40e1-b9c3-da90a17c9adf
-		summarizeBy: none
-		sourceColumn: Nombre Proveedor
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Fecha de contabilización'
 		dataType: dateTime
 		formatString: Long Date
@@ -84,16 +58,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'PU Solped'
-		dataType: double
-		lineageTag: 20a0393c-ac63-438e-8452-108037941dda
-		summarizeBy: sum
-		sourceColumn: PU Solped
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Cantidad Solped'
 		dataType: int64
 		formatString: 0
@@ -120,16 +84,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Total Lineas Solped $Cop'
-		dataType: double
-		lineageTag: 6124af0e-893a-4dd1-a4ef-c23bc4a91638
-		summarizeBy: sum
-		sourceColumn: Total Lineas Solped $Cop
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fecha creacion Solped'
 		dataType: dateTime
 		formatString: Long Date
@@ -146,38 +100,6 @@ table Fact_ordenes_de_compra
 		lineageTag: 82ca51fa-acee-4f8f-8857-79d0cd39856c
 		summarizeBy: none
 		sourceColumn: Número de artículo
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Descripción general'
-		dataType: string
-		lineageTag: 6e17a3bb-9f45-41cd-a1df-7b58d625c0fc
-		summarizeBy: none
-		sourceColumn: Descripción general
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Detalle adicional'
-		dataType: string
-		lineageTag: f02e15f9-e96d-48e9-920f-caf58011163e
-		summarizeBy: none
-		sourceColumn: Detalle adicional
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Comentarios adicionales'
-		dataType: string
-		lineageTag: 58621012-39ba-4081-9daf-9f6671b32909
-		summarizeBy: none
-		sourceColumn: Comentarios adicionales
-
-		annotation SummarizationSetBy = Automatic
-
-	column Equipo
-		dataType: string
-		lineageTag: d327b6a0-5dc5-40c7-9e3d-d077498e41d6
-		summarizeBy: none
-		sourceColumn: Equipo
 
 		annotation SummarizationSetBy = Automatic
 
@@ -222,32 +144,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Cantidad OC'
-		dataType: int64
-		formatString: 0
-		lineageTag: 6618f9c7-bbd2-4dc4-afd9-803d8b51abee
-		summarizeBy: sum
-		sourceColumn: Cantidad OC
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Unidad Medida OC'
-		dataType: string
-		lineageTag: 2f566280-84d2-40c5-89b3-00e58c1891f6
-		summarizeBy: none
-		sourceColumn: Unidad Medida OC
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'PU OC'
-		dataType: decimal
-		formatString: 0
-		lineageTag: 9cbbf722-f7f5-4919-8a0a-2f72dca9360c
-		summarizeBy: sum
-		sourceColumn: PU OC
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Moneda del precio'
 		dataType: string
 		lineageTag: caaebe38-f735-4660-914e-a1df85c4e4ab
@@ -265,32 +161,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Total Líneas OC $Cop'
-		dataType: decimal
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
-		lineageTag: 96efafd6-fa9a-448f-acd4-5e9eba925ea9
-		summarizeBy: sum
-		sourceColumn: Total Líneas OC $Cop
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Status línea OC'
-		dataType: string
-		lineageTag: 082c4a21-711b-4979-ba48-4f1791359006
-		summarizeBy: none
-		sourceColumn: Status línea OC
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Prioridad OC'
-		dataType: int64
-		formatString: 0
-		lineageTag: e2a41405-f6b9-498e-ba5d-d72ca7b85543
-		summarizeBy: sum
-		sourceColumn: Prioridad OC
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Adjudicacion Directa'
 		dataType: string
 		lineageTag: bf2295df-9a2e-42a4-9590-3344789826c9
@@ -305,58 +175,6 @@ table Fact_ordenes_de_compra
 		lineageTag: c88ec966-e683-424f-b8ae-142aed25a505
 		summarizeBy: sum
 		sourceColumn: Reembolsable
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'F. Entrega línea'
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: f48f0798-1379-4433-9f00-d67bcabb866b
-		summarizeBy: none
-		sourceColumn: F. Entrega línea
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column 'Código Proyecto'
-		dataType: string
-		lineageTag: e2e7b654-0227-41cd-896a-66ebbac15fba
-		summarizeBy: none
-		sourceColumn: Código Proyecto
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nombre Proyecto'
-		dataType: string
-		lineageTag: e8877dc7-aea7-497f-be9f-737337450381
-		summarizeBy: none
-		sourceColumn: Nombre Proyecto
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Código Almacen'
-		dataType: int64
-		formatString: 0
-		lineageTag: e2397bf2-7b28-4c20-a627-fd644d4fd014
-		summarizeBy: sum
-		sourceColumn: Código Almacen
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nombre Almacen'
-		dataType: string
-		lineageTag: 16b7077b-1f65-4281-a1f8-b8d5f497a6a2
-		summarizeBy: none
-		sourceColumn: Nombre Almacen
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Norma Reparto'
-		dataType: string
-		lineageTag: 16b960ce-6af3-4083-8c6a-6952b8e08660
-		summarizeBy: none
-		sourceColumn: Norma Reparto
 
 		annotation SummarizationSetBy = Automatic
 
@@ -378,40 +196,6 @@ table Fact_ordenes_de_compra
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Código Resp.de C&C Línea'
-		dataType: int64
-		formatString: 0
-		lineageTag: 872fdda2-f005-4cb8-81b2-ea5e7899fd91
-		summarizeBy: sum
-		sourceColumn: Código Resp.de C&C Línea
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Nombre Resp.de C&C Línea'
-		dataType: string
-		lineageTag: bfd5125f-c65a-4e55-82bc-83d3250212f8
-		summarizeBy: none
-		sourceColumn: Nombre Resp.de C&C Línea
-
-		annotation SummarizationSetBy = Automatic
-
-	column Comprador
-		dataType: string
-		lineageTag: 4d3dd93c-06f4-450d-9192-bd97ec173ea0
-		summarizeBy: none
-		sourceColumn: Comprador
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Tipo de OC 1Normal 2OC de CM 3OC-LV'
-		dataType: int64
-		formatString: 0
-		lineageTag: f2af415b-a7ae-4753-90e6-607dc7fc5509
-		summarizeBy: sum
-		sourceColumn: Tipo de OC 1Normal 2OC de CM 3OC-LV
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Número Cto Marco'
 		dataType: int64
 		formatString: 0
@@ -421,39 +205,11 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Tipo OP (Uso Exclusivo de A&L-OC)'
-		dataType: int64
-		formatString: 0
-		lineageTag: d61f0b7a-9805-4a6b-93e3-8c9d3c1675ce
-		summarizeBy: sum
-		sourceColumn: Tipo OP (Uso Exclusivo de A&L-OC)
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'CM Lic. / Adj. Dir'
-		dataType: int64
-		formatString: 0
-		lineageTag: 787da6bb-d806-4562-af52-2e31b3a024e9
-		summarizeBy: sum
-		sourceColumn: CM Lic. / Adj. Dir
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Desviación $Cop (PU)'
 		dataType: double
 		lineageTag: 2d3df634-2334-4f8c-935e-9ff3b7529708
 		summarizeBy: sum
 		sourceColumn: Desviación $Cop (PU)
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Desviación $Cop (PU) %'
-		dataType: double
-		lineageTag: aa6b3a16-a5c3-4825-9186-6db185664c7e
-		summarizeBy: sum
-		sourceColumn: Desviación $Cop (PU) %
 
 		annotation SummarizationSetBy = Automatic
 
@@ -468,15 +224,6 @@ table Fact_ordenes_de_compra
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Ind.: Días de tratamiento'
-		dataType: int64
-		formatString: 0
-		lineageTag: a4e574da-3aaa-44c6-9a32-f434359a50d0
-		summarizeBy: sum
-		sourceColumn: Ind.: Días de tratamiento
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'Ind.: Rango Días de tratamiento'
 		dataType: string
@@ -524,23 +271,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Condiciones de Pago'
-		dataType: string
-		lineageTag: 4c9f2572-036b-4215-a701-1bb9e2dde69a
-		summarizeBy: none
-		sourceColumn: Condiciones de Pago
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Ind.:Días para Creación OC/SAP'
-		dataType: int64
-		formatString: 0
-		lineageTag: cbde08b9-c110-40d8-b4ac-8423c3dd1022
-		summarizeBy: sum
-		sourceColumn: Ind.:Días para Creación OC/SAP
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Código del cálculo del costo 3'
 		dataType: string
 		lineageTag: d345e67f-368a-4a5a-9127-bfee64b7e8ca
@@ -567,14 +297,252 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Número de documento'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c2e40c6-bd89-4d11-9596-bb3017915450
+		summarizeBy: sum
+		sourceColumn: Número de documento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de cliente/proveedor'
+		dataType: string
+		lineageTag: f786705c-400b-4feb-859a-61c268f3fabc
+		summarizeBy: none
+		sourceColumn: Código de cliente/proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de cliente/proveedor'
+		dataType: string
+		lineageTag: 72b258cb-9b13-4ea7-92ff-cbc03cb7d4b2
+		summarizeBy: none
+		sourceColumn: Nombre de cliente/proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Precio Uni. solped'
+		dataType: double
+		lineageTag: 7030f3fe-12f7-4b43-a934-6ab8e7adecfb
+		summarizeBy: sum
+		sourceColumn: Precio Uni. solped
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Lineas Solped'
+		dataType: double
+		lineageTag: 8d3ddc63-0313-45b5-816c-3ff4fdc6eb95
+		summarizeBy: sum
+		sourceColumn: Total Lineas Solped
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Descripción artículo/serv.'
+		dataType: string
+		lineageTag: ea7fac94-52a3-4fef-a1b1-e776bb80b2cf
+		summarizeBy: none
+		sourceColumn: Descripción artículo/serv.
+
+		annotation SummarizationSetBy = Automatic
+
+	column Detalle
+		dataType: string
+		lineageTag: 964267fd-eca6-4272-b639-f2f7ccacd33d
+		summarizeBy: none
+		sourceColumn: Detalle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: int64
+		formatString: 0
+		lineageTag: 63b395aa-f17a-4d3f-9061-d32f75717fbf
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unidad
+		dataType: string
+		lineageTag: 634ae27d-5658-4c4a-a2d8-a2cdd8475fda
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Precio
+		dataType: decimal
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 01c3e34c-db20-4b77-8d9d-6e3fdb666059
+		summarizeBy: sum
+		sourceColumn: Precio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	column 'Total Líneas OC'
+		dataType: decimal
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 42efbf7f-a79e-451c-90b3-68f4a50d24a0
+		summarizeBy: sum
+		sourceColumn: Total Líneas OC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	column 'Status de la línea'
+		dataType: string
+		lineageTag: c5f5ac3f-c2f8-47b7-bc6a-50208729f50a
+		summarizeBy: none
+		sourceColumn: Status de la línea
+
+		annotation SummarizationSetBy = Automatic
+
+	column Prioridad
+		dataType: int64
+		formatString: 0
+		lineageTag: e81eb449-f76c-490f-b918-26df9918db5f
+		summarizeBy: sum
+		sourceColumn: Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha de entrega de la línea'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: bbff71ed-4490-41af-8cfc-460fd6cf00fc
+		summarizeBy: none
+		sourceColumn: Fecha de entrega de la línea
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Código de proyecto'
+		dataType: string
+		lineageTag: ebfed205-676f-4cbd-939e-a11ed0ee1bbb
+		summarizeBy: none
+		sourceColumn: Código de proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de proyecto'
+		dataType: string
+		lineageTag: 757779c4-ee86-48d3-9bec-24a3c76ff108
+		summarizeBy: none
+		sourceColumn: Nombre de proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de almacén'
+		dataType: int64
+		formatString: 0
+		lineageTag: bd087d91-80cd-4944-bf3b-80ea2ae61277
+		summarizeBy: sum
+		sourceColumn: Código de almacén
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de almacén'
+		dataType: string
+		lineageTag: 4725f5af-347a-40e6-9d52-f3fde53be353
+		summarizeBy: none
+		sourceColumn: Nombre de almacén
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Norma de reparto'
+		dataType: string
+		lineageTag: 2777c60c-3d18-414d-a28b-f0fb30750681
+		summarizeBy: none
+		sourceColumn: Norma de reparto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código del empleado del departamento de ventas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 14c9c918-2908-48a3-b206-3cc92c9f2ae8
+		summarizeBy: sum
+		sourceColumn: Código del empleado del departamento de ventas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre de empleado del departamento de ventas'
+		dataType: string
+		lineageTag: d8d2b728-33aa-414a-a88d-bfdea91d7296
+		summarizeBy: none
+		sourceColumn: Nombre de empleado del departamento de ventas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de OC (Uso Exclusivo de A&L-OC)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4eb3c410-7eea-4de4-9c0f-1861175ded02
+		summarizeBy: sum
+		sourceColumn: Tipo de OC (Uso Exclusivo de A&L-OC)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Desviación p/encima del Ppto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e9b5e52-c98b-4498-89a9-109e937695ed
+		summarizeBy: sum
+		sourceColumn: Desviación p/encima del Ppto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ind.: codigo Días de tratamiento'
+		dataType: int64
+		formatString: 0
+		lineageTag: de9a4150-ff7e-4ccb-8e21-32354255d373
+		summarizeBy: sum
+		sourceColumn: Ind.: codigo Días de tratamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ind.: Observaciones Ko'
+		dataType: string
+		lineageTag: d2da30e5-aeba-49bc-aca5-5eb6c66232c9
+		summarizeBy: none
+		sourceColumn: Ind.: Observaciones Ko
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Código de condiciones de pago_1'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0941d551-04ba-4604-b40e-c0b35c6dfe8a
+		summarizeBy: sum
+		sourceColumn: Código de condiciones de pago_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comentarios
+		dataType: string
+		lineageTag: ef6f0e3f-f388-4336-8b98-8ebefc55f5c2
+		summarizeBy: none
+		sourceColumn: Comentarios
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_ordenes_de_compra = m
 		mode: import
 		source =
 				let
-				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.4.4%20ABA%20OC_Solped_DirProv_ClasArt%201.txt"),[Delimiter="	", Columns=62, Encoding=1200, QuoteStyle=QuoteStyle.None]),
+				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.4.1%20ABA%20OC_Solped_DirProv_ClasArt.txt"),[Delimiter="	", Columns=58, Encoding=1200, QuoteStyle=QuoteStyle.Csv]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Cancelado", type text}, {"Orden de Compra", Int64.Type}, {"Código Proveedor", type text}, {"Nombre Proveedor", type text}, {"Fecha de contabilización", type date}, {"Fecha de creación", type date}, {"Pedido visual", Int64.Type}, {"No. Solped", Int64.Type}, {"PU Solped", type number}, {"Cantidad Solped", Int64.Type}, {"Moneda Solped", type text}, {"Tipo de cambio Solped", Int64.Type}, {"Total Lineas Solped $Cop", type number}, {"Fecha creacion Solped", type date}, {"Número de artículo", type text}, {"Descripción general", type text}, {"Detalle adicional", type text}, {"Comentarios adicionales", type text}, {"Equipo", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Referencia Uso/Raiz", Int64.Type}, {"Cantidad OC", Int64.Type}, {"Unidad Medida OC", type text}, {"PU OC", Int64.Type}, {"Moneda del precio", type text}, {"Tipo de cambio", Int64.Type}, {"Total Líneas OC $Cop", Int64.Type}, {"Status línea OC", type text}, {"Prioridad OC", Int64.Type}, {"Adjudicacion Directa", type text}, {"Reembolsable", Int64.Type}, {"F. Entrega línea", type date}, {"Código Proyecto", type text}, {"Nombre Proyecto", type text}, {"Código Almacen", Int64.Type}, {"Nombre Almacen", type text}, {"Norma Reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Cantidad abierta restante", type number}, {"Código Resp.de C&C Línea", Int64.Type}, {"Nombre Resp.de C&C Línea", type text}, {"Comprador", type text}, {"Tipo de OC 1Normal 2OC de CM 3OC-LV", Int64.Type}, {"Número Cto Marco", Int64.Type}, {"Tipo OP (Uso Exclusivo de A&L-OC)", Int64.Type}, {"CM Lic. / Adj. Dir", Int64.Type}, {"Desviación $Cop (PU)", type number}, {"Desviación $Cop (PU) %", type number}, {"Ko", type number}, {"Ind.: Días de tratamiento", Int64.Type}, {"Ind.: Rango Días de tratamiento", type text}, {"Ind.: Días p/ entrega Prov.", Int64.Type}, {"Indic.:Entregado $Cop", type number}, {"Indic.:% Entrega", type number}, {"Código de condiciones de pago", Int64.Type}, {"Condiciones de Pago", type text}, {"Ind.:Días para Creación OC/SAP", Int64.Type}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Total Líneas OC $Cop", Currency.Type}, {"PU OC", Currency.Type}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Cancelado", type text}, {"Número de documento", Int64.Type}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Fecha de contabilización", type date}, {"Fecha de creación", type date}, {"Código de condiciones de pago", Int64.Type}, {"Pedido visual", Int64.Type}, {"No. Solped", Int64.Type}, {"Precio Uni. solped", type number}, {"Cantidad Solped", Int64.Type}, {"Moneda Solped", type text}, {"Tipo de cambio Solped", Int64.Type}, {"Total Lineas Solped", type number}, {"Fecha creacion Solped", type date}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Detalle", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Referencia Uso/Raiz", Int64.Type}, {"Cantidad", Int64.Type}, {"Unidad", type text}, {"Precio", Int64.Type}, {"Moneda del precio", type text}, {"Tipo de cambio", Int64.Type}, {"Total Líneas OC", Int64.Type}, {"Status de la línea", type text}, {"Prioridad", Int64.Type}, {"Adjudicacion Directa", type text}, {"Reembolsable", Int64.Type}, {"Fecha de entrega de la línea", type date}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", type text}, {"Cantidad abierta restante", type number}, {"Código del empleado del departamento de ventas", Int64.Type}, {"Nombre de empleado del departamento de ventas", type text}, {"Tipo de OC (Uso Exclusivo de A&L-OC)", Int64.Type}, {"Número Cto Marco", Int64.Type}, {"Desviación $Cop (PU)", type number}, {"Desviación p/encima del Ppto", Int64.Type}, {"Ind.: codigo Días de tratamiento", Int64.Type}, {"Ind.: Rango Días de tratamiento", type text}, {"Ind.: Días p/ entrega Prov.", Int64.Type}, {"Ko", type number}, {"Indic.:Entregado $Cop", type number}, {"Indic.:% Entrega", type number}, {"Ind.: Observaciones Ko", type text}, {"Código de condiciones de pago_1", Int64.Type}, {"Comentarios", type text}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Total Líneas OC", Currency.Type}, {"Precio", Currency.Type}}),
 				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each ([Cancelado] = "N")),
 				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Filas filtradas",{{"Grupo de artículos", type text}}),
 				    #"Consultas combinadas" = Table.NestedJoin(#"Tipo cambiado2", {"Código del cálculo del costo 3"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),

@@ -1,11 +1,11 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
     "x": 75,
-    "y": 268,
+    "y": 296,
     "z": 0,
-    "height": 525,
+    "height": 497,
     "width": 907,
     "tabOrder": 1000
   },
@@ -87,12 +87,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Dentro presupuesto visual"
+                  "Property": "Consumo dentro presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Dentro presupuesto visual",
-              "nativeQueryRef": "Consumo dentro de presupuesto",
-              "displayName": "Consumo dentro de presupuesto"
+              "queryRef": "_Medidas.Consumo dentro presupuesto",
+              "nativeQueryRef": "Consumo dentro presupuesto"
             },
             {
               "field": {
@@ -102,12 +101,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente visible > 0"
+                  "Property": "Disponible dentro presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente visible > 0",
-              "nativeQueryRef": "Presupuesto disponible",
-              "displayName": "Presupuesto disponible"
+              "queryRef": "_Medidas.Disponible dentro presupuesto",
+              "nativeQueryRef": "Disponible dentro presupuesto"
             },
             {
               "field": {
@@ -117,31 +115,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Excedente visual"
+                  "Property": "Exceso presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Excedente visual",
-              "nativeQueryRef": "Sobrepresupuesto",
-              "displayName": "Sobrepresupuesto"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Presupuesto total Visible"
-                }
-              },
-              "queryRef": "_Medidas.Presupuesto total Visible",
-              "nativeQueryRef": "Presupuesto",
-              "displayName": "Presupuesto"
+              "queryRef": "_Medidas.Exceso presupuesto",
+              "nativeQueryRef": "Exceso presupuesto"
             }
           ]
         }
@@ -422,76 +400,6 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "fillTransparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "90D"
-                }
-              }
-            },
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Dentro presupuesto visual"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#D54444'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Excedente visual"
-          }
         }
       ],
       "zoom": [
@@ -613,20 +521,6 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "enableBackground": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto total Visible"
-          }
         }
       ],
       "labels": [
@@ -667,48 +561,6 @@
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Dentro presupuesto visual"
-          }
-        },
-        {
-          "properties": {
-            "showSeries": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Excedente visual"
           }
         }
       ]
