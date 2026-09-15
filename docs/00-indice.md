@@ -13,6 +13,7 @@ estructurado y el diagnóstico técnico al momento de su redacción
 | [03-modelo-semantico.md](03-modelo-semantico.md) | Tablas, relaciones y medidas DAX |
 | [04-reporte.md](04-reporte.md) | Páginas y visuales del reporte |
 | [05-diagnostico-estado.md](05-diagnostico-estado.md) | Hallazgos del diagnóstico y puntos de atención |
+| [09-mapa-pagina-1.md](09-mapa-pagina-1.md) | Mapa funcional de la pestaña Página 1 (visuales, medidas y pendientes) |
 
 ## Cómo se generó esta documentación
 
