@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "8a3317a89bb3dd2b3d70",
   "position": {
     "x": 252.99748110831231,
@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_facturas_conformadas"
+                          "Entity": "Fact_entrada_de_mercancia"
                         }
                       },
                       "Property": "Entrada mercancías"
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fact_facturas_conformadas"
+                        "Entity": "Fact_entrada_de_mercancia"
                       }
                     },
                     "Property": "Entrada mercancías"

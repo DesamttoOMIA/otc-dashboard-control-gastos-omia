@@ -1,0 +1,54 @@
+table Fact_presupuesto_final
+	lineageTag: 2fc1d294-88ab-4dd6-8068-10fbbb198822
+
+	column 'Id categoria'
+		dataType: int64
+		formatString: 0
+		lineageTag: 59f64349-0477-4bf9-9115-2c9e50c974ef
+		summarizeBy: none
+		sourceColumn: Id categoria
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id proyecto'
+		dataType: int64
+		formatString: 0
+		lineageTag: 233c38a0-fb08-4b39-88c2-3ab722c5a571
+		summarizeBy: none
+		sourceColumn: Id proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Incidencia
+		dataType: double
+		lineageTag: dab15750-a9af-4482-93d7-bddb36192e24
+		summarizeBy: sum
+		sourceColumn: Incidencia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COP
+		dataType: decimal
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		lineageTag: 35426d13-ffb6-487f-bf0d-dcab67582e6a
+		summarizeBy: sum
+		sourceColumn: COP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	partition Fact_presupuesto_final = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({Fact_presupuesto_Turpial, Fact_presupuesto})
+				in
+				    Origen
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

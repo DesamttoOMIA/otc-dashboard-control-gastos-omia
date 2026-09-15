@@ -1,4 +1,4 @@
-table Fact_facturas_conformadas
+table Fact_entrada_de_mercancia
 	lineageTag: 511c3121-604c-4659-ada4-5a6f34b1dcb4
 
 	column #
@@ -301,14 +301,6 @@ table Fact_facturas_conformadas
 
 		annotation SummarizationSetBy = Automatic
 
-	column DOCDESTINO
-		dataType: string
-		lineageTag: b040e930-2a7d-4cd3-b33f-357acea01fef
-		summarizeBy: none
-		sourceColumn: DOCDESTINO
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Creador EM'
 		dataType: string
 		lineageTag: f9926bc1-76a5-424d-8017-bb6642eab8c7
@@ -343,22 +335,31 @@ table Fact_facturas_conformadas
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Fact_facturas_conformadas = m
+	column TieneOC
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a9cba46a-93f6-42b5-acf0-1beefde0d090
+		summarizeBy: none
+		sourceColumn: TieneOC
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_entrada_de_mercancia = m
 		mode: import
 		source =
 				let
-				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.10.2%20Facturas%20Conformadas.txt"),[Delimiter="	", Columns=39, Encoding=1200, QuoteStyle=QuoteStyle.None]),
+				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.10.1%20Total%20Entradas%20de%20Mercanc%C3%ADa%20%20(CCF_%20A_%20CM_%20CCD).txt"),[Delimiter="	", Columns=38, Encoding=1200, QuoteStyle=QuoteStyle.None]),
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"DOCDESTINO", type text}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Número interno", Int64.Type}, {"Entrada mercancías", Int64.Type}, {"Serie", Int64.Type}, {"Fecha de contabilización", type date}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Cantidad", type number}, {"Unidad", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Código de cuenta", Int64.Type}, {"Precio", type number}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Destino Compra", Int64.Type}, {"Proyecto", type text}, {"Nombre de proyecto", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", Int64.Type}, {"Código del cálculo del costo 4", type text}, {"Total antes de IVA", type number}, {"Total líneas", type number}, {"Reembolsable", Int64.Type}, {"Procedencia  Entrada de Mercancia", Int64.Type}, {"Orden de Compra", type text}, {"Referencia", type text}, {"Status de documento", type text}, {"Solicitud de compra", type text}, {"Clase de documento de destino", Int64.Type}, {"Creador EM", type text}, {"Comentarios", type text}, {"", type text}}),
 				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{""}),
 				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columnas quitadas",{{"Número interno", type text}, {"Código del cálculo del costo 3", type text}}),
 				    #"Consultas combinadas" = Table.NestedJoin(#"Tipo cambiado1", {"Código del cálculo del costo 3"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),
 				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id subseco", "Id categoria"}, {"Dim_subseco.Id subseco", "Dim_subseco.Id categoria"}),
 				    #"Filas filtradas" = Table.SelectRows(#"Se expandió Dim_subseco", each ([Dim_subseco.Id subseco] <> null)),
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas filtradas",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}}),
-				    #"Filas filtradas1" = Table.SelectRows(#"Columnas con nombre cambiado", each true)
+				    #"Columna agregada TieneOC" = Table.AddColumn(#"Columnas con nombre cambiado", "TieneOC", each [Orden de Compra] <> null and [Orden de Compra] <> "", type logical)
 				in
-				    #"Filas filtradas1"
+				    #"Columna agregada TieneOC"
 
 	annotation PBI_ResultType = Table
 

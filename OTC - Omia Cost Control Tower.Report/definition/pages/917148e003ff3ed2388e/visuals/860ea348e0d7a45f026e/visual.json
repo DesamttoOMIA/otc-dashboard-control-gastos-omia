@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "860ea348e0d7a45f026e",
   "position": {
     "x": 323.72795969773296,
@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_facturas_conformadas"
+                      "Entity": "Fact_entrada_de_mercancia"
                     }
                   },
                   "Property": "Número interno"

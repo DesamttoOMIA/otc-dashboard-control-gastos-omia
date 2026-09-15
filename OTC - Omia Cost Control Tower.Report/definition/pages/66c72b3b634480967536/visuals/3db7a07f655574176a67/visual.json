@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -88,62 +88,12 @@
               },
               "queryRef": "Dim_subseco.Descripción",
               "nativeQueryRef": "Descripción",
-              "active": false
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Tipo de documento"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Tipo de documento",
-              "nativeQueryRef": "Tipo de documento",
-              "active": false
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Número de documento"
-                }
-              },
-              "queryRef": "Fact_detalle_documental.Número de documento",
-              "nativeQueryRef": "Primera fecha: Número de documento",
-              "active": false
+              "active": true
             }
           ]
         },
         "Values": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Fact_detalle_documental"
-                        }
-                      },
-                      "Property": "Total línea"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(Fact_detalle_documental.Total línea)",
-              "nativeQueryRef": "Suma de Total línea"
-            }
-          ]
+          "projections": []
         }
       },
       "sortDefinition": {
@@ -250,32 +200,6 @@
               }
             ],
             "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Fact_detalle_documental.Tipo de documento"
-            ],
-            "isCollapsed": true,
-            "identityKeys": [
-              {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Fact_detalle_documental"
-                    }
-                  },
-                  "Property": "Tipo de documento"
-                }
-              }
-            ],
-            "isPinned": true
-          },
-          {
-            "queryRefs": [
-              "Fact_detalle_documental.Número de documento"
-            ],
-            "isCollapsed": true,
-            "isPinned": true
           }
         ],
         "root": {
@@ -288,6 +212,7 @@
                   }
                 }
               ],
+              "isToggled": true,
               "children": [
                 {
                   "identityValues": [
@@ -344,6 +269,16 @@
                   ]
                 }
               ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Indirecto'"
+                  }
+                }
+              ],
+              "isToggled": true
             }
           ]
         }

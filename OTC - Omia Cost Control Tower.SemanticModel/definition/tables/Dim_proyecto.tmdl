@@ -26,6 +26,17 @@ table Dim_proyecto
 
 		annotation SummarizationSetBy = Automatic
 
+	column FechaInicioContrato
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6b9e2d4a-8c1f-4e7a-9d3b-5f8a2c6e9d17
+		summarizeBy: none
+		sourceColumn: FechaInicioContrato
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
 	partition Dim_proyecto = m
 		mode: import
 		source =
@@ -34,9 +45,13 @@ table Dim_proyecto
 				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Encabezados promovidos" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id proyecto", Int64.Type}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text}}),
-				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each true)
+				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each true),
+				    #"Columna agregada FechaInicioContrato" = Table.AddColumn(#"Filas filtradas", "FechaInicioContrato", each
+				        if [Código de proyecto] = "COOGO&MNDTPL5361" then #date(2026, 8, 1)
+				        else if [Código de proyecto] = "COMIMANCCCG5058" then #date(2025, 12, 1)
+				        else null, type nullable date)
 				in
-				    #"Filas filtradas"
+				    #"Columna agregada FechaInicioContrato"
 
 	annotation PBI_NavigationStepName = Navegación
 
