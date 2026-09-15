@@ -113,5 +113,12 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "1c73f21551e956dd88b5",
+      "target": "3701b50db028e5915027",
+      "type": "DataFilter"
+    }
+  ]
 }

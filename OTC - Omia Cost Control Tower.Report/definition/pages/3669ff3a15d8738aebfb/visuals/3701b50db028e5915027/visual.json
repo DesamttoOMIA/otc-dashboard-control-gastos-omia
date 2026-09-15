@@ -348,8 +348,13 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#164379'"
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Medidas"
+                        }
+                      },
+                      "Property": "Color barra subseco"
                     }
                   }
                 }
@@ -357,7 +362,14 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Consumo subseco"
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "order": 1
           }
         },
         {
@@ -375,7 +387,8 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Presupuesto remanente subseco"
+            "metadata": "_Medidas.Presupuesto remanente subseco",
+            "order": 2
           }
         }
       ]

@@ -246,6 +246,14 @@ table _Medidas
 		displayFolder: Resumen ejecutivo
 		lineageTag: 6a000001-0002-4a00-8000-000000000002
 
+	measure 'Color barra subseco' =
+			VAR Pct = [% consumido subseco (total)]
+			VAR SinPresu = ISBLANK([Presupuesto subseco]) && [Consumo subseco] > 0
+			RETURN IF(SinPresu, "#E7344C", IF(Pct < 0.8, "#71B73A", IF(Pct < 1, "#EE7600", "#E7344C")))
+		formatString: 0
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0025-4a00-8000-000000000025
+
 	measure 'Consumo subseco' =
 			[Consumo Total]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
