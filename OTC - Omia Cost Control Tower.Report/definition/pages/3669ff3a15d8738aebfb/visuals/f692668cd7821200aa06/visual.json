@@ -218,6 +218,16 @@
                 }
               ],
               "isToggled": true
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Indirecto'"
+                  }
+                }
+              ],
+              "isToggled": true
             }
           ]
         }
