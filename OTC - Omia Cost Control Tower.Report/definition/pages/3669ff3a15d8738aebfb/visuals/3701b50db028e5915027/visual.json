@@ -33,24 +33,6 @@
           ],
           "showAll": true
         },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Consumo subseco"
-                }
-              },
-              "queryRef": "_Medidas.Consumo subseco",
-              "nativeQueryRef": "Consumo subseco"
-            }
-          ]
-        },
         "Tooltips": {
           "projections": [
             {
@@ -80,6 +62,24 @@
               },
               "queryRef": "_Medidas.Presupuesto subseco",
               "nativeQueryRef": "Presupuesto subseco"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Consumo subseco"
+                }
+              },
+              "queryRef": "_Medidas.Consumo subseco",
+              "nativeQueryRef": "Consumo subseco"
             }
           ]
         }
@@ -404,14 +404,14 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Consumo subseco",
             "data": [
               {
                 "dataViewWildcard": {
                   "matchingOption": 1
                 }
               }
-            ]
+            ],
+            "metadata": "_Medidas.Consumo subseco"
           }
         }
       ]
