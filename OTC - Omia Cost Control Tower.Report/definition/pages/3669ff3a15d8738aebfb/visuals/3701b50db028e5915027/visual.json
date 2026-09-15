@@ -42,11 +42,57 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Consumo Total"
+                  "Property": "Consumo por tipo documento"
                 }
               },
-              "queryRef": "_Medidas.Consumo Total",
-              "nativeQueryRef": "Consumo Total"
+              "queryRef": "_Medidas.Consumo por tipo documento",
+              "nativeQueryRef": "Consumo por tipo documento"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto remanente subseco"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto remanente subseco",
+              "nativeQueryRef": "Presupuesto remanente subseco"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "% consumido subseco"
+                }
+              },
+              "queryRef": "_Medidas.% consumido subseco",
+              "nativeQueryRef": "% consumido subseco"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto subseco"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto subseco",
+              "nativeQueryRef": "Presupuesto subseco"
             }
           ]
         }
@@ -61,7 +107,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Consumo Total"
+                "Property": "Consumo por tipo documento"
               }
             },
             "direction": "Descending"
@@ -302,14 +348,34 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
+                    "Literal": {
+                      "Value": "'#164379'"
                     }
                   }
                 }
               }
             }
+          },
+          "selector": {
+            "metadata": "_Medidas.Consumo por tipo documento"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D6DCE4'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Presupuesto remanente subseco"
           }
         }
       ]
@@ -347,7 +413,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Consumo por subceco'"
+                  "Value": "'Consumo vs presupuesto por subseco'"
                 }
               }
             }

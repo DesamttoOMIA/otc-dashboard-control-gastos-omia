@@ -246,6 +246,23 @@ table _Medidas
 		displayFolder: Resumen ejecutivo
 		lineageTag: 6a000001-0002-4a00-8000-000000000002
 
+	measure 'Presupuesto subseco' =
+			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
+			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
+			RETURN Presupuesto
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0021-4a00-8000-000000000021
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Presupuesto remanente subseco' =
+			VAR Remanente = [Presupuesto subseco] - [Consumo por tipo documento]
+			RETURN MAX(0, Remanente)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0022-4a00-8000-000000000022
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
 	measure 'Consumo por tipo documento' =
 			
 			VAR V = VALUES('Dim_tipo documento'[Tipo documento])
@@ -567,27 +584,6 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Card HTML - Alertas Banner' =
-			VAR Base = ADDCOLUMNS(SUMMARIZE('Dim_categoria', 'Dim_categoria'[Id categoria], 'Dim_categoria'[Descripción], 'Dim_categoria'[Tipo costo]), "__Presu", CALCULATE([Presupuesto Anual]), "__Consumo", CALCULATE([Consumo Total]), "__Pct", DIVIDE(CALCULATE([Consumo Total]), CALCULATE([Presupuesto Anual])))
-			VAR Activos = FILTER(Base, [__Presu] > 0 || [__Consumo] > 0)
-			VAR ConPresu = FILTER(Activos, [__Presu] > 0)
-			VAR SinPresu = FILTER(Activos, [__Presu] <= 0)
-			VAR Sobre = COUNTROWS(FILTER(ConPresu, [__Pct] >= 1))
-			VAR Alerta = COUNTROWS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1))
-			VAR NopSin = COUNTROWS(SinPresu)
-			VAR Total = Sobre + Alerta + NopSin
-			VAR MaxPct = COALESCE(MAXX(ConPresu, [__Pct]), 0)
-			VAR MaxPctTexto = FORMAT(MaxPct, "0%")
-			VAR TopFinal = TOPN(3, UNION(ADDCOLUMNS(SinPresu, "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 1), "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1), "__Sev", 1)), [__Sev], DESC, [__Consumo], DESC)
-			VAR Items = CONCATENATEX(TopFinal, IF(ISBLANK([__Pct]), "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:#E7344C;display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · sin presupuesto</span>", "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · " & FORMAT([__Pct], "0%") & "</span>"), "<span style='color:#D1D5DB;'>|</span>")
-			VAR ColorConteo = IF(Sobre + NopSin > 0, "#E7344C", IF(Alerta > 0, "#EE7600", "#71B73A"))
-			VAR ColorFondo = IF(Sobre + NopSin > 0, "#FEF2F2", IF(Alerta > 0, "#FFF7ED", "#F0FDF4"))
-			VAR Resumen = IF(Total = 0, "<span style='font-size:12px;color:#71B73A;font-weight:700;'>SIN ALERTAS</span><span style='font-size:11px;color:#575756;font-weight:400;'> · máx consumo " & MaxPctTexto & "</span>", "<span style='font-size:20px;color:" & ColorConteo & ";font-weight:700;line-height:1;'>" & FORMAT(Total, "0") & "</span><span style='font-size:11px;color:#575756;font-weight:400;'>" & FORMAT(Sobre + NopSin, "0") & " sobregasto · " & FORMAT(Alerta, "0") & " en alerta" & IF(NopSin > 0, " · " & FORMAT(NopSin, "0") & " sin presupuesto", "") & "</span>")
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:" & ColorFondo & ";border:1px solid " & ColorConteo & ";border-radius:10px;padding:12px 16px;width:100%;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:16px;'>" & "<div style='display:flex;align-items:center;gap:8px;flex:0 0 auto;'><span style='width:20px;height:2px;background:#E7344C;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ALERTAS</span></div>" & "<div style='display:flex;align-items:baseline;gap:6px;flex:0 0 auto;'>" & Resumen & "</div>" & "<div style='flex:1;min-width:0;display:flex;align-items:center;gap:10px;overflow:hidden;'>" & Items & "</div>" & "</div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0020-4a00-8000-000000000020
-
 	measure 'Presupuesto Anual' =
 			
 			SUMX (
@@ -661,6 +657,43 @@ table _Medidas
 			)
 		formatString: 0
 		lineageTag: 8d3334a7-92ad-4a52-a5fa-98d14e4f373b
+
+	measure 'Card HTML - Alertas Banner' =
+			
+			VAR Base = ADDCOLUMNS(SUMMARIZE('Dim_categoria', 'Dim_categoria'[Id categoria], 'Dim_categoria'[Descripción], 'Dim_categoria'[Tipo costo]), "__Presu", CALCULATE([Presupuesto Anual]), "__Consumo", CALCULATE([Consumo Total]), "__Pct", DIVIDE(CALCULATE([Consumo Total]), CALCULATE([Presupuesto Anual])))
+			
+			VAR Activos = FILTER(Base, [__Presu] > 0 || [__Consumo] > 0)
+			
+			VAR ConPresu = FILTER(Activos, [__Presu] > 0)
+			
+			VAR SinPresu = FILTER(Activos, [__Presu] <= 0)
+			
+			VAR Sobre = COUNTROWS(FILTER(ConPresu, [__Pct] >= 1))
+			
+			VAR Alerta = COUNTROWS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1))
+			
+			VAR NopSin = COUNTROWS(SinPresu)
+			
+			VAR Total = Sobre + Alerta + NopSin
+			
+			VAR MaxPct = COALESCE(MAXX(ConPresu, [__Pct]), 0)
+			
+			VAR MaxPctTexto = FORMAT(MaxPct, "0%")
+			
+			VAR TopFinal = TOPN(3, UNION(ADDCOLUMNS(SinPresu, "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 1), "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1), "__Sev", 1)), [__Sev], DESC, [__Consumo], DESC)
+			
+			VAR Items = CONCATENATEX(TopFinal, IF(ISBLANK([__Pct]), "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:#E7344C;display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · sin presupuesto</span>", "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · " & FORMAT([__Pct], "0%") & "</span>"), "<span style='color:#D1D5DB;'>|</span>")
+			
+			VAR ColorConteo = IF(Sobre + NopSin > 0, "#E7344C", IF(Alerta > 0, "#EE7600", "#71B73A"))
+			
+			VAR ColorFondo = IF(Sobre + NopSin > 0, "#FEF2F2", IF(Alerta > 0, "#FFF7ED", "#F0FDF4"))
+			
+			VAR Resumen = IF(Total = 0, "<span style='font-size:12px;color:#71B73A;font-weight:700;'>SIN ALERTAS</span><span style='font-size:11px;color:#575756;font-weight:400;'> · máx consumo " & MaxPctTexto & "</span>", "<span style='font-size:20px;color:" & ColorConteo & ";font-weight:700;line-height:1;'>" & FORMAT(Total, "0") & "</span><span style='font-size:11px;color:#575756;font-weight:400;'>" & FORMAT(Sobre + NopSin, "0") & " sobregasto · " & FORMAT(Alerta, "0") & " en alerta" & IF(NopSin > 0, " · " & FORMAT(NopSin, "0") & " sin presupuesto", "") & "</span>")
+			
+			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:" & ColorFondo & ";border:1px solid " & ColorConteo & ";border-radius:10px;padding:12px 16px;width:100%;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:16px;'>" & "<div style='display:flex;align-items:center;gap:8px;flex:0 0 auto;'><span style='width:20px;height:2px;background:#E7344C;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ALERTAS</span></div>" & "<div style='display:flex;align-items:baseline;gap:6px;flex:0 0 auto;'>" & Resumen & "</div>" & "<div style='flex:1;min-width:0;display:flex;align-items:center;gap:10px;overflow:hidden;'>" & Items & "</div>" & "</div>"
+		formatString: 0
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0020-4a00-8000-000000000020
 
 	partition _Medidas = m
 		mode: import
