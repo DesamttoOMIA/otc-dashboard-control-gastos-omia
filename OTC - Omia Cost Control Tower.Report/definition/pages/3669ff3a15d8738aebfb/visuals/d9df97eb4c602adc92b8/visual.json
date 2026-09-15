@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d9df97eb4c602adc92b8",
+  "position": {
+    "x": 326,
+    "y": 185,
+    "z": 2000,
+    "height": 102,
+    "width": 1101,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Card HTML - Alertas Banner"
+                }
+              },
+              "queryRef": "_Medidas.Card HTML - Alertas Banner",
+              "nativeQueryRef": "Card HTML - Alertas Banner"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
