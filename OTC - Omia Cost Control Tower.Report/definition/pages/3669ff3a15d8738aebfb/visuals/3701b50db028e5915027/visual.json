@@ -30,7 +30,8 @@
               "nativeQueryRef": "Descripción",
               "active": true
             }
-          ]
+          ],
+          "showAll": true
         },
         "Y": {
           "projections": [
