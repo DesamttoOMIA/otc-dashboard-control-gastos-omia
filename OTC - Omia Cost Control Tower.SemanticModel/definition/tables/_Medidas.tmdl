@@ -246,6 +246,21 @@ table _Medidas
 		displayFolder: Resumen ejecutivo
 		lineageTag: 6a000001-0002-4a00-8000-000000000002
 
+	measure 'Consumo subseco' =
+			[Consumo Total]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0023-4a00-8000-000000000023
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure '% consumido subseco (total)' =
+			VAR Pct = DIVIDE([Consumo subseco], [Presupuesto subseco])
+			RETURN Pct
+		formatString: 0.0%
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0024-4a00-8000-000000000024
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
 	measure 'Presupuesto subseco' =
 			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
 			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
@@ -256,7 +271,7 @@ table _Medidas
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Presupuesto remanente subseco' =
-			VAR Remanente = [Presupuesto subseco] - [Consumo por tipo documento]
+			VAR Remanente = [Presupuesto subseco] - [Consumo subseco]
 			RETURN MAX(0, Remanente)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen ejecutivo

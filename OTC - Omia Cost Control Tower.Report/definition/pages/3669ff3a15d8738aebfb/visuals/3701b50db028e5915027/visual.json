@@ -42,11 +42,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Consumo por tipo documento"
+                  "Property": "Consumo subseco"
                 }
               },
-              "queryRef": "_Medidas.Consumo por tipo documento",
-              "nativeQueryRef": "Consumo por tipo documento"
+              "queryRef": "_Medidas.Consumo subseco",
+              "nativeQueryRef": "Consumo subseco"
             },
             {
               "field": {
@@ -74,11 +74,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "% consumido subseco"
+                  "Property": "% consumido subseco (total)"
                 }
               },
-              "queryRef": "_Medidas.% consumido subseco",
-              "nativeQueryRef": "% consumido subseco"
+              "queryRef": "_Medidas.% consumido subseco (total)",
+              "nativeQueryRef": "% consumido subseco (total)"
             },
             {
               "field": {
@@ -107,7 +107,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Consumo por tipo documento"
+                "Property": "Consumo subseco"
               }
             },
             "direction": "Descending"
@@ -357,7 +357,7 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Consumo por tipo documento"
+            "metadata": "_Medidas.Consumo subseco"
           }
         },
         {
