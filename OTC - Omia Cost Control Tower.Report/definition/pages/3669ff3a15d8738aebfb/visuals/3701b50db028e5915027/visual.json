@@ -148,57 +148,6 @@
                   "Value": "35L"
                 }
               }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "_Medidas"
-                                    }
-                                  },
-                                  "Property": "Estado color subseco"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "1D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#E7344C'"
-                            }
-                          }
-                        }
-                      ],
-                      "DefaultValue": {
-                        "Literal": {
-                          "Value": "'#164379'"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
         }
