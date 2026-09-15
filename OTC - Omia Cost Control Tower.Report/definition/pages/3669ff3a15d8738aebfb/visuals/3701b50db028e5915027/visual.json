@@ -417,14 +417,14 @@
             }
           },
           "selector": {
+            "metadata": "_Medidas.Consumo subseco",
             "data": [
               {
                 "dataViewWildcard": {
                   "matchingOption": 1
                 }
               }
-            ],
-            "order": 1
+            ]
           }
         },
         {
@@ -442,8 +442,7 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Presupuesto remanente subseco",
-            "order": 2
+            "metadata": "_Medidas.Presupuesto remanente subseco"
           }
         }
       ]
@@ -481,7 +480,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Consumo vs presupuesto por subseco'"
+                  "Value": "'Consumo vs presupuesto por subceco'"
                 }
               }
             }
@@ -516,5 +515,58 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cf_visible_subseco",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Visible subseco"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "_Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "d"
+                        }
+                      },
+                      "Property": "Visible subseco"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "0.5D"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

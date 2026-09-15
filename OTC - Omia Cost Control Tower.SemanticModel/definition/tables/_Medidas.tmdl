@@ -711,6 +711,13 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
+	measure 'Visible subseco' =
+			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
+			RETURN IF(NOT ISFILTERED('Dim_categoria'), 1, IF(CatActual IN VALUES('Dim_categoria'[Id categoria]), 1, 0))
+		formatString: 0.0%
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0028-4a00-8000-000000000028
+
 	measure 'Valor color subseco' =
 			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
 			VAR ConsumoCat = CALCULATE([Consumo subseco], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
