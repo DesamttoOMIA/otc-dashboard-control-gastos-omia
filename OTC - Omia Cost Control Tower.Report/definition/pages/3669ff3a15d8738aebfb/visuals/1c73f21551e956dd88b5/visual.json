@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "47b9d16700a086a43728",
+  "name": "1c73f21551e956dd88b5",
   "position": {
     "x": 75,
     "y": 296,
-    "z": 0,
+    "z": 15001,
     "height": 497,
     "width": 890,
-    "tabOrder": 1000
+    "tabOrder": 15001
   },
   "visual": {
     "visualType": "lineStackedColumnComboChart",
@@ -776,5 +776,122 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2348103d10ea5693084c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "389b44bc5b61b9bb376d",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cddc353fadae031d2bab",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N3_OK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d23995d996d7e75bec4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo dentro presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7c59695d83b1e6616645",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Disponible dentro presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "73b0a0ae4b0a045b02e9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Exceso presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f83800ab075ed50d1320",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto Anual"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

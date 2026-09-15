@@ -155,22 +155,6 @@
                   "Value": "true"
                 }
               }
-            },
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_Medidas"
-                        }
-                      },
-                      "Property": "Color barra subseco"
-                    }
-                  }
-                }
-              }
             }
           }
         }

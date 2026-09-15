@@ -7,26 +7,16 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-/// Errores en las consultas cargadas en 14/09/2026 11:07:21 a. m..
-queryGroup 'Errores en las consultas: 14/09/2026 11:07:21 a  m'
+/// Errores en las consultas cargadas en 15/09/2026 8:42:44 a. m..
+queryGroup 'Errores en las consultas: 15/09/2026 8:42:44 a  m'
 
 	annotation PBI_QueryGroupOrder = 0
-
-/// Errores en las consultas cargadas en 14/09/2026 11:11:30 a. m..
-queryGroup 'Errores en las consultas: 14/09/2026 11:11:30 a  m'
-
-	annotation PBI_QueryGroupOrder = 1
-
-/// Errores en las consultas cargadas en 14/09/2026 11:17:39 a. m..
-queryGroup 'Errores en las consultas: 14/09/2026 11:17:39 a  m'
-
-	annotation PBI_QueryGroupOrder = 2
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","ETL_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_factura_proveedor_pago_efectuado","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","ETL_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_factura_proveedor_pago_efectuado","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra"]
 
 ref table Fact_solicitud_de_pedido
 ref table Fact_entrada_de_mercancia
@@ -37,6 +27,7 @@ ref table 'Dim_Subseco stanby'
 ref table _Medidas
 ref table Dim_subseco
 ref table Dim_categoria
+ref table 'Dim_tipo documento'
 ref table Fact_factura_proveedor_pago_efectuado
 ref table Fact_presupuesto_final
 ref table 'Monto Simulado'
