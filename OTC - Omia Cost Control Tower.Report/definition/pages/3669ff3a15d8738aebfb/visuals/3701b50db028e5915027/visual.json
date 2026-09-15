@@ -463,7 +463,7 @@
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
-    "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema.json",
+    "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.2.0/schema.json",
     "filters": [
       {
         "name": "cf_filtro_subseco",
@@ -477,12 +477,12 @@
             "Property": "Consumo subseco"
           }
         },
-        "type": "Numeric",
+        "type": "Advanced",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "m",
+              "Name": "d",
               "Entity": "_Medidas",
               "Type": 0
             }
@@ -490,24 +490,23 @@
           "Where": [
             {
               "Condition": {
-                "GreaterThan": {
-                  "Expression": {
-                    "Column": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Source": "m"
+                          "Source": "d"
                         }
                       },
                       "Property": "Consumo subseco"
                     }
                   },
-                  "Value": [
-                    {
-                      "Literal": {
-                        "Value": "0D"
-                      }
+                  "Right": {
+                    "Literal": {
+                      "Value": "0D"
                     }
-                  ]
+                  }
                 }
               }
             }

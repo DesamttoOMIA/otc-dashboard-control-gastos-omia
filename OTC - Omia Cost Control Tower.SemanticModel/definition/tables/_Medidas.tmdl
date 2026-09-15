@@ -255,46 +255,46 @@ table _Medidas
 		displayFolder: Resumen ejecutivo
 		lineageTag: 6a000001-0026-4a00-8000-000000000026
 
-	measure 'Color barra subseco' =
-			VAR Pct = [% consumido categoria subseco]
-			VAR SinPresu = ISBLANK([Presupuesto subseco]) && [Consumo subseco] > 0
-			RETURN IF(SinPresu, "#E7344C", IF(Pct < 0.8, "#164379", IF(Pct < 1, "#EE7600", "#E7344C")))
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0025-4a00-8000-000000000025
-
-	measure 'Consumo subseco' =
-			[Consumo Total]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0023-4a00-8000-000000000023
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% consumido subseco (total)' =
-			VAR Pct = DIVIDE([Consumo subseco], [Presupuesto subseco])
-			RETURN Pct
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0024-4a00-8000-000000000024
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Presupuesto subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
-			RETURN Presupuesto
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0021-4a00-8000-000000000021
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Presupuesto remanente subseco' =
-			VAR Remanente = [Presupuesto subseco] - [Consumo subseco]
-			RETURN MAX(0, Remanente)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0022-4a00-8000-000000000022
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
+	measure 'Color barra subseco' =
+			VAR Pct = [% consumido categoria subseco]
+			VAR SinPresu = ISBLANK([Presupuesto subseco]) && [Consumo subseco] > 0
+			RETURN IF(SinPresu, "#E7344C", IF(Pct < 0.8, "#164379", IF(Pct < 1, "#EE7600", "#E7344C")))
+		formatString: 0
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0025-4a00-8000-000000000025
+
+	measure 'Consumo subseco' =
+			[Consumo Total]
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0023-4a00-8000-000000000023
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure '% consumido subseco (total)' =
+			VAR Pct = DIVIDE([Consumo subseco], [Presupuesto subseco])
+			RETURN Pct
+		formatString: 0.0%
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0024-4a00-8000-000000000024
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Presupuesto subseco' =
+			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
+			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
+			RETURN Presupuesto
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0021-4a00-8000-000000000021
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Presupuesto remanente subseco' =
+			VAR Remanente = [Presupuesto subseco] - [Consumo subseco]
+			RETURN MAX(0, Remanente)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Resumen ejecutivo
+		lineageTag: 6a000001-0022-4a00-8000-000000000022
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
 	measure 'Consumo por tipo documento' =
 			
 			VAR V = VALUES('Dim_tipo documento'[Tipo documento])
