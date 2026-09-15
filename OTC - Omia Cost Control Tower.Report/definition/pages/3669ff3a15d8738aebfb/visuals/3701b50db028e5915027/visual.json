@@ -74,11 +74,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "% consumido subseco (total)"
+                  "Property": "% consumido categoria subseco"
                 }
               },
-              "queryRef": "_Medidas.% consumido subseco (total)",
-              "nativeQueryRef": "% consumido subseco (total)"
+              "queryRef": "_Medidas.% consumido categoria subseco",
+              "nativeQueryRef": "% consumido categoria subseco"
             },
             {
               "field": {
@@ -461,5 +461,60 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.3.0/schema.json",
+    "filters": [
+      {
+        "name": "cf_filtro_subseco",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo subseco"
+          }
+        },
+        "type": "Numeric",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "_Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "GreaterThan": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "m"
+                        }
+                      },
+                      "Property": "Consumo subseco"
+                    }
+                  },
+                  "Value": [
+                    {
+                      "Literal": {
+                        "Value": "0D"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }
