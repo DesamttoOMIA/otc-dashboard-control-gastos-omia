@@ -348,7 +348,7 @@
                                       "Entity": "_Medidas"
                                     }
                                   },
-                                  "Property": "Valor color subseco"
+                                  "Property": "Estado color subseco"
                                 }
                               },
                               "Right": {
@@ -375,7 +375,7 @@
                                       "Entity": "_Medidas"
                                     }
                                   },
-                                  "Property": "Valor color subseco"
+                                  "Property": "Estado color subseco"
                                 }
                               },
                               "Right": {
@@ -410,8 +410,7 @@
                   "matchingOption": 1
                 }
               }
-            ],
-            "metadata": "_Medidas.Consumo subseco"
+            ]
           }
         }
       ]
@@ -535,6 +534,62 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "7df8b8cda5ca1c240ec1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Descripción"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "599290630e417034d646",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "% consumido categoria subseco"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ab180dd7814d363260bd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto subseco"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd31c9cf2054ae1193d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo subseco"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
