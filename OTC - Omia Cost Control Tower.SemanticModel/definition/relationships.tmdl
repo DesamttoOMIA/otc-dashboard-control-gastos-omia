@@ -62,7 +62,3 @@ relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
 	fromColumn: Fact_ordenes_de_compra.'Código de proyecto'
 	toColumn: Dim_proyecto.'Código de proyecto'
 
-relationship AutoDetected_be41bfa2-3401-4558-8a50-ae9d8b8cfa50
-	fromColumn: Dim_categoria.'Id categoria'
-	toColumn: Dim_subseco.'Id categoria'
-
