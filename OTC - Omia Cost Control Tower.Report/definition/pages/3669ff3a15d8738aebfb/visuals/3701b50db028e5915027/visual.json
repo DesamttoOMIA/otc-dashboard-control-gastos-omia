@@ -463,7 +463,6 @@
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
-    "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/filterConfiguration/1.2.0/schema.json",
     "filters": [
       {
         "name": "cf_filtro_subseco",
