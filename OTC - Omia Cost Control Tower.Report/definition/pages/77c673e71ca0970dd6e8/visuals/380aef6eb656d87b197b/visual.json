@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "380aef6eb656d87b197b",
   "position": {
     "x": 10,
@@ -11,102 +11,6 @@
   },
   "visual": {
     "visualType": "cardVisual",
-    "query": {
-      "queryState": {
-        "Data": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido excedente"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido excedente",
-              "nativeQueryRef": "Comprometido excedente"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Ejecutado excedente"
-                }
-              },
-              "queryRef": "_Medidas.Ejecutado excedente",
-              "nativeQueryRef": "Ejecutado excedente"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Presupuesto remanente visible > 0"
-                }
-              },
-              "queryRef": "_Medidas.Presupuesto remanente visible > 0",
-              "nativeQueryRef": "Presupuesto remanente visible > 0"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido dentro presupuesto"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido dentro presupuesto",
-              "nativeQueryRef": "Comprometido dentro presupuesto"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Ejecutado dentro presupuesto"
-                }
-              },
-              "queryRef": "_Medidas.Ejecutado dentro presupuesto",
-              "nativeQueryRef": "Ejecutado dentro presupuesto"
-            }
-          ]
-        }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Medidas"
-                  }
-                },
-                "Property": "Comprometido excedente"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
-      }
-    },
     "objects": {
       "layout": [
         {
@@ -188,76 +92,6 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado excedente"
-          }
-        },
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "2L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido excedente"
-          }
         }
       ],
       "label": [
@@ -320,101 +154,6 @@
           "selector": {
             "id": "default"
           }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.25
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido dentro presupuesto"
-          }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.3
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
-          }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado excedente"
-          }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Comprometido excedente"
-          }
         }
       ],
       "divider": [
@@ -430,20 +169,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Ejecutado dentro presupuesto"
           }
         }
       ],

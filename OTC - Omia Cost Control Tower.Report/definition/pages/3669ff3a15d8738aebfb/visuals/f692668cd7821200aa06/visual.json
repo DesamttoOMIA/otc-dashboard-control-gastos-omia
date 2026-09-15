@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "f692668cd7821200aa06",
   "position": {
-    "x": 0,
+    "x": 75,
     "y": 818,
     "z": 1000,
     "height": 467,
-    "width": 638,
+    "width": 1343,
     "tabOrder": 0
   },
   "visual": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -87,11 +87,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto total"
+                  "Property": "Presupuesto Anual"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto total",
-              "nativeQueryRef": "Presupuesto total"
+              "queryRef": "_Medidas.Presupuesto Anual",
+              "nativeQueryRef": "Presupuesto Anual"
             },
             {
               "field": {
@@ -101,11 +101,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente"
+                  "Property": "Consumo Total"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente",
-              "nativeQueryRef": "Presupuesto remanente"
+              "queryRef": "_Medidas.Consumo Total",
+              "nativeQueryRef": "Consumo Total"
             },
             {
               "field": {
@@ -115,11 +115,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo ejecutado"
+                  "Property": "Disponible Anual"
                 }
               },
-              "queryRef": "_Medidas.Costo ejecutado",
-              "nativeQueryRef": "Costo ejecutado"
+              "queryRef": "_Medidas.Disponible Anual",
+              "nativeQueryRef": "Disponible Anual"
             },
             {
               "field": {
@@ -129,36 +129,30 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Costo comprometido"
+                  "Property": "Comprometido"
                 }
               },
-              "queryRef": "_Medidas.Costo comprometido",
-              "nativeQueryRef": "Costo comprometido"
+              "queryRef": "_Medidas.Comprometido",
+              "nativeQueryRef": "Orden de Compra",
+              "displayName": "Orden de Compra"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Ejecutado Conformada"
+                }
+              },
+              "queryRef": "_Medidas.Ejecutado Conformada",
+              "nativeQueryRef": "Factura Conformada",
+              "displayName": "Factura Conformada"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "HierarchyLevel": {
-                "Expression": {
-                  "Hierarchy": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Dim_categoria"
-                      }
-                    },
-                    "Hierarchy": "Tipo costo Jerarquía"
-                  }
-                },
-                "Level": "Tipo costo"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     },
     "expansionStates": [
@@ -171,6 +165,7 @@
             "queryRefs": [
               "Dim_categoria.Tipo costo Jerarquía.Tipo costo"
             ],
+            "isCollapsed": true,
             "identityKeys": [
               {
                 "Column": {
@@ -222,38 +217,17 @@
                   }
                 }
               ],
-              "children": [
+              "isToggled": true
+            },
+            {
+              "identityValues": [
                 {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Herramientas, Instrumentos y Consumibles'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Materiales y/o repuestos'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
-                },
-                {
-                  "identityValues": [
-                    {
-                      "Literal": {
-                        "Value": "' Gastos Varios Directos'"
-                      }
-                    }
-                  ],
-                  "isToggled": true
+                  "Literal": {
+                    "Value": "'Indirecto'"
+                  }
                 }
-              ]
+              ],
+              "isToggled": true
             }
           ]
         }

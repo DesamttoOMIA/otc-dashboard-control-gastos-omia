@@ -1,20 +1,40 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "cfe94f4c98653c78292e",
+  "name": "47b9d16700a086a43728",
   "position": {
-    "x": 32,
-    "y": 265,
-    "z": 10001,
-    "height": 776,
-    "width": 539,
-    "tabOrder": 10001
+    "x": 75,
+    "y": 296,
+    "z": 0,
+    "height": 497,
+    "width": 890,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
           "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_categoria"
+                        }
+                      },
+                      "Hierarchy": "Tipo costo Jerarquía"
+                    }
+                  },
+                  "Level": "Tipo costo"
+                }
+              },
+              "queryRef": "Dim_categoria.Tipo costo Jerarquía.Tipo costo",
+              "nativeQueryRef": "Tipo costo Jerarquía Tipo costo",
+              "active": true
+            },
             {
               "field": {
                 "HierarchyLevel": {
@@ -33,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -53,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -67,12 +87,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Dentro presupuesto (vista)"
+                  "Property": "Consumo dentro presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Dentro presupuesto (vista)",
-              "nativeQueryRef": "Consumo dentro de presupuesto",
-              "displayName": "Consumo dentro de presupuesto"
+              "queryRef": "_Medidas.Consumo dentro presupuesto",
+              "nativeQueryRef": "Consumo dentro presupuesto"
             },
             {
               "field": {
@@ -82,12 +101,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto remanente (vista)"
+                  "Property": "Disponible dentro presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Presupuesto remanente (vista)",
-              "nativeQueryRef": "Presupuesto disponible",
-              "displayName": "Presupuesto disponible"
+              "queryRef": "_Medidas.Disponible dentro presupuesto",
+              "nativeQueryRef": "Disponible dentro presupuesto"
             },
             {
               "field": {
@@ -97,18 +115,54 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Excedente (vista)"
+                  "Property": "Exceso presupuesto"
                 }
               },
-              "queryRef": "_Medidas.Excedente (vista)",
+              "queryRef": "_Medidas.Exceso presupuesto",
               "nativeQueryRef": "Sobrepresupuesto",
               "displayName": "Sobrepresupuesto"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto Anual"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto Anual",
+              "nativeQueryRef": "Presupuesto Anual"
             }
           ]
         }
       },
       "sortDefinition": {
         "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_categoria"
+                      }
+                    },
+                    "Hierarchy": "Tipo costo Jerarquía"
+                  }
+                },
+                "Level": "Tipo costo"
+              }
+            },
+            "direction": "Ascending"
+          },
           {
             "field": {
               "HierarchyLevel": {
@@ -177,7 +231,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "9D"
                 }
               }
             },
@@ -191,21 +245,14 @@
             "maxMarginFactor": {
               "expr": {
                 "Literal": {
-                  "Value": "75L"
-                }
-              }
-            },
-            "innerPadding": {
-              "expr": {
-                "Literal": {
-                  "Value": "15L"
+                  "Value": "30L"
                 }
               }
             },
             "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
-                  "Value": "25D"
+                  "Value": "20D"
                 }
               }
             }
@@ -226,6 +273,41 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "secShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignZeros": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "secLogAxisScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "secShowAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
                 }
               }
             }
@@ -266,6 +348,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Top'"
+                }
+              }
+            },
+            "legendMarkerRendering": {
+              "expr": {
+                "Literal": {
+                  "Value": "'lineAndMarker'"
                 }
               }
             },
@@ -329,35 +418,13 @@
         },
         {
           "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.6
-                    }
-                  }
-                }
-              }
-            },
-            "fillTransparency": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "90D"
-                }
-              }
-            },
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "95D"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "_Medidas.Presupuesto remanente visible > 0"
           }
         },
         {
@@ -376,7 +443,7 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Dentro presupuesto visual"
+            "metadata": "_Medidas.Consumo dentro presupuesto"
           }
         },
         {
@@ -385,8 +452,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#D54444'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -394,11 +462,138 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Excedente visual"
+            "metadata": "_Medidas.Disponible dentro presupuesto"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Exceso presupuesto"
           }
         }
       ],
       "zoom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "areaShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dotted'"
+                }
+              }
+            },
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'step'"
+                }
+              }
+            },
+            "interpolationStep": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "strokeLineJoin": {
+              "expr": {
+                "Literal": {
+                  "Value": "'round'"
+                }
+              }
+            },
+            "strokeAutoScale": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "strokeDashCap": {
+              "expr": {
+                "Literal": {
+                  "Value": "'round'"
+                }
+              }
+            },
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "areaMatchStrokeColor": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "areaColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "strokeDashArray": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0 0 0 0'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "seriesLabels": [
         {
           "properties": {
             "show": {
@@ -421,17 +616,17 @@
                 }
               }
             },
-            "labelPosition": {
+            "labelOrientation": {
               "expr": {
                 "Literal": {
-                  "Value": "'Auto'"
+                  "Value": "1D"
                 }
               }
             },
-            "labelDisplayUnits": {
+            "labelPosition": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
+                  "Value": "'Above'"
                 }
               }
             },
@@ -442,13 +637,72 @@
                 }
               }
             },
-            "fontSize": {
+            "enableDetailDataLabel": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "false"
+                }
+              }
+            },
+            "enableTitleDataLabel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "enableBackground": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Consumo dentro presupuesto"
+          }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Exceso presupuesto"
           }
         }
       ]
@@ -460,7 +714,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis consumo de presupuesto por categoría desagregada'"
+                  "Value": "'Consumo presupuesto por categoría REE'"
                 }
               }
             },
