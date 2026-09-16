@@ -212,9 +212,8 @@ table _Medidas
 			    [Consumo Total],
 			    [Presupuesto Anual]
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 1c3f2ff4-de6d-4225-b8e6-65568f734d8e
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Disponible dentro presupuesto' =
 			
@@ -222,9 +221,8 @@ table _Medidas
 			    [Presupuesto Anual] - [Consumo Total],
 			    0
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 938ed00c-7383-4052-8cbc-3ab05f4fd7a4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Exceso presupuesto' =
 			
@@ -263,9 +261,8 @@ table _Medidas
 	measure 'Disponible Anual' =
 			
 			[Presupuesto Anual] - [Consumo Total]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 3f6e0ef4-cb6e-4941-bb12-f3e69c945a5f
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure '% Consumo Anual' =
 			
@@ -320,6 +317,35 @@ table _Medidas
 			)
 		formatString: 0
 		lineageTag: 8d3334a7-92ad-4a52-a5fa-98d14e4f373b
+
+	measure '% del grupo (dinámico)' = ```
+			
+			VAR DenominadorTotalDirecto = 
+			    CALCULATE(
+			        [Consumo Total],
+			        REMOVEFILTERS(Dim_Subseco[Distribución Costos]),
+			        REMOVEFILTERS(Dim_Subseco[Descripción])
+			    )
+			VAR DenominadorDentroDistribucion = 
+			    CALCULATE(
+			        [Consumo Total],
+			        REMOVEFILTERS(Dim_Subseco[Descripción])
+			    )
+			RETURN
+			    IF(
+			        ISFILTERED(Dim_Subseco[Descripción]),
+			        DIVIDE([Consumo Total], DenominadorDentroDistribucion),
+			        DIVIDE([Consumo Total], DenominadorTotalDirecto)
+			    )
+			```
+		lineageTag: 832f0e8b-01b5-43da-a53a-121229bcb953
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Etiqueta Consumo %' =
+			
+			FORMAT([Consumo Total]/1000000, "$#,##0.0") & " mill. | " & FORMAT([% del grupo (dinámico)], "0%")
+		lineageTag: 3b9e38b7-0686-4945-b90f-5e9c47b718de
 
 	partition _Medidas = m
 		mode: import

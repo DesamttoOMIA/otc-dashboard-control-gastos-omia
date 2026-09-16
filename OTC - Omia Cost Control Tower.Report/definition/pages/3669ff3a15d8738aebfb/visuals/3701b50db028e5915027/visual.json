@@ -3,9 +3,9 @@
   "name": "3701b50db028e5915027",
   "position": {
     "x": 978,
-    "y": 296,
+    "y": 385,
     "z": 2000,
-    "height": 497,
+    "height": 408,
     "width": 460,
     "tabOrder": 2000
   },
@@ -23,12 +23,27 @@
                       "Entity": "Dim_subseco"
                     }
                   },
+                  "Property": "Distribución Costos"
+                }
+              },
+              "queryRef": "Dim_subseco.Distribución Costos",
+              "nativeQueryRef": "Distribución Costos",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_subseco"
+                    }
+                  },
                   "Property": "Descripción"
                 }
               },
               "queryRef": "Dim_subseco.Descripción",
               "nativeQueryRef": "Descripción",
-              "active": true
+              "active": false
             }
           ]
         },
@@ -254,6 +269,32 @@
               }
             }
           }
+        },
+        {
+          "properties": {
+            "dynamicLabelValue": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Etiqueta Consumo %"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "highlightMatching": 1
+          }
         }
       ],
       "ribbonBands": [
@@ -347,7 +388,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Consumo por subceco'"
+                  "Value": "'Consumo por distribución de costos/Subceco'"
                 }
               }
             }

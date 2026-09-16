@@ -3,7 +3,7 @@
   "name": "25bb79f3021a06be7242",
   "position": {
     "x": 75,
-    "y": 185,
+    "y": 168,
     "z": 9000,
     "height": 111,
     "width": 247,
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Disponible Anual"
+                  "Property": "Consumo Total"
                 }
               },
-              "queryRef": "_Medidas.Disponible Anual",
-              "nativeQueryRef": "Disponible Anual"
+              "queryRef": "_Medidas.Consumo Total",
+              "nativeQueryRef": "Consumo Total"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Disponible Anual"
+                "Property": "Consumo Total"
               }
             },
             "direction": "Descending"
@@ -102,13 +102,13 @@
             "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
+                  "Value": "1L"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Disponible Anual"
+            "metadata": "_Medidas.Consumo Total"
           }
         }
       ]
