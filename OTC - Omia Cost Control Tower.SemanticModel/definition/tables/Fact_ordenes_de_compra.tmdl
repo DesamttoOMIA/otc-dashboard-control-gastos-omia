@@ -518,15 +518,6 @@ table Fact_ordenes_de_compra
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Código de condiciones de pago_1'
-		dataType: int64
-		formatString: 0
-		lineageTag: 0941d551-04ba-4604-b40e-c0b35c6dfe8a
-		summarizeBy: sum
-		sourceColumn: Código de condiciones de pago_1
-
-		annotation SummarizationSetBy = Automatic
-
 	column Comentarios
 		dataType: string
 		lineageTag: ef6f0e3f-f388-4336-8b98-8ebefc55f5c2
@@ -540,16 +531,19 @@ table Fact_ordenes_de_compra
 		source =
 				let
 				    Origen = Csv.Document(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/N.4.1%20ABA%20OC_Solped_DirProv_ClasArt.txt"),[Delimiter="	", Columns=58, Encoding=1200, QuoteStyle=QuoteStyle.Csv]),
-				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado4" = Table.TransformColumnTypes(Origen,{{"Column57", type text}}),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(#"Tipo cambiado4", [PromoteAllScalars=true]),
 				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"#", Int64.Type}, {"Cancelado", type text}, {"Número de documento", Int64.Type}, {"Código de cliente/proveedor", type text}, {"Nombre de cliente/proveedor", type text}, {"Fecha de contabilización", type date}, {"Fecha de creación", type date}, {"Código de condiciones de pago", Int64.Type}, {"Pedido visual", Int64.Type}, {"No. Solped", Int64.Type}, {"Precio Uni. solped", type number}, {"Cantidad Solped", Int64.Type}, {"Moneda Solped", type text}, {"Tipo de cambio Solped", Int64.Type}, {"Total Lineas Solped", type number}, {"Fecha creacion Solped", type date}, {"Número de artículo", type text}, {"Descripción artículo/serv.", type text}, {"Detalle", type text}, {"Grupo de artículos", Int64.Type}, {"Nombre de grupo", type text}, {"Sub Grupo", type text}, {"Linea Mat/Serv", type text}, {"Referencia Uso/Raiz", Int64.Type}, {"Cantidad", Int64.Type}, {"Unidad", type text}, {"Precio", Int64.Type}, {"Moneda del precio", type text}, {"Tipo de cambio", Int64.Type}, {"Total Líneas OC", Int64.Type}, {"Status de la línea", type text}, {"Prioridad", Int64.Type}, {"Adjudicacion Directa", type text}, {"Reembolsable", Int64.Type}, {"Fecha de entrega de la línea", type date}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text}, {"Código de almacén", Int64.Type}, {"Nombre de almacén", type text}, {"Norma de reparto", type text}, {"Código del cálculo del costo 2", type text}, {"Código del cálculo del costo 3", type text}, {"Cantidad abierta restante", type number}, {"Código del empleado del departamento de ventas", Int64.Type}, {"Nombre de empleado del departamento de ventas", type text}, {"Tipo de OC (Uso Exclusivo de A&L-OC)", Int64.Type}, {"Número Cto Marco", Int64.Type}, {"Desviación $Cop (PU)", type number}, {"Desviación p/encima del Ppto", Int64.Type}, {"Ind.: codigo Días de tratamiento", Int64.Type}, {"Ind.: Rango Días de tratamiento", type text}, {"Ind.: Días p/ entrega Prov.", Int64.Type}, {"Ko", type number}, {"Indic.:Entregado $Cop", type number}, {"Indic.:% Entrega", type number}, {"Ind.: Observaciones Ko", type text}, {"Código de condiciones de pago_1", Int64.Type}, {"Comentarios", type text}}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Total Líneas OC", Currency.Type}, {"Precio", Currency.Type}}),
+				    #"Tipo cambiado3" = Table.TransformColumnTypes(#"Tipo cambiado",{{"Código de condiciones de pago_1", type text}}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Tipo cambiado3",{{"Total Líneas OC", Currency.Type}, {"Precio", Currency.Type}}),
 				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado1", each ([Cancelado] = "N")),
 				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Filas filtradas",{{"Grupo de artículos", type text}}),
 				    #"Consultas combinadas" = Table.NestedJoin(#"Tipo cambiado2", {"Código del cálculo del costo 3"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),
 				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id subseco", "Id categoria"}, {"Dim_subseco.Id subseco", "Dim_subseco.Id categoria"}),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Se expandió Dim_subseco",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}})
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Se expandió Dim_subseco",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Código de condiciones de pago_1"})
 				in
-				    #"Columnas con nombre cambiado"
+				    #"Columnas quitadas"
 
 	annotation PBI_ResultType = Table
 

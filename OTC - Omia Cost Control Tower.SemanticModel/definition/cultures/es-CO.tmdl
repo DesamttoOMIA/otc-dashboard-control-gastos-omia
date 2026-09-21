@@ -5129,29 +5129,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra.código_de_condiciones_de_pago_1": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_ordenes_de_compra",
-			          "ConceptualProperty": "Código de condiciones de pago_1"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "código de condiciones de pago_1": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "código de condicione de pago_1": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.78
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.ind__observaciones_ko": {
 			      "Definition": {
 			        "Binding": {
@@ -7118,29 +7095,6 @@ cultureInfo es-CO
 			        }
 			      ],
 			      "SemanticType": "Time"
-			    },
-			    "fact_factura_proveedor_pago_efectuado.column_1": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
-			          "ConceptualProperty": "Column1"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "column 1": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Column1": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
 			    },
 			    "fact_presupuesto_final": {
 			      "Definition": {

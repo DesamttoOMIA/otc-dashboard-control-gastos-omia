@@ -1,0 +1,791 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e3b3b75f380d12a5020b",
+  "position": {
+    "x": 105,
+    "y": 33,
+    "z": 3001,
+    "height": 755,
+    "width": 1302,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "#"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.#)",
+              "nativeQueryRef": "Suma de #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Cancelado"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Cancelado",
+              "nativeQueryRef": "Cancelado"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Cantidad"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Cantidad)",
+              "nativeQueryRef": "Suma de Cantidad"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Cantidad_3"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Cantidad_3)",
+              "nativeQueryRef": "Suma de Cantidad_3"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Cantidad_9"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Cantidad_9)",
+              "nativeQueryRef": "Suma de Cantidad_9"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Código de condiciones de pago"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Código de condiciones de pago",
+              "nativeQueryRef": "Código de condiciones de pago"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Código Proyecto SC"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Código Proyecto SC",
+              "nativeQueryRef": "Código Proyecto SC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Descripción artículo/serv."
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Descripción artículo/serv.",
+              "nativeQueryRef": "Descripción artículo/serv."
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Descripción artículo/serv._2"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Descripción artículo/serv._2",
+              "nativeQueryRef": "Descripción artículo/serv._2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Descripción artículo/serv._8"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Descripción artículo/serv._8",
+              "nativeQueryRef": "Descripción artículo/serv._8"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Fecha de contabilización"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Fecha de contabilización",
+              "nativeQueryRef": "Fecha de contabilización"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Fecha de creación"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Fecha de creación",
+              "nativeQueryRef": "Fecha de creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Fecha de creación_13"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Fecha de creación_13",
+              "nativeQueryRef": "Fecha de creación_13"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Fecha de creación_20"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Fecha de creación_20",
+              "nativeQueryRef": "Fecha de creación_20"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Fecha de creación_6"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Fecha de creación_6",
+              "nativeQueryRef": "Fecha de creación_6"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "No. Entrada de Mercancía"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.No. Entrada de Mercancía)",
+              "nativeQueryRef": "Suma de No. Entrada de Mercancía"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "No. Orden de Compra"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.No. Orden de Compra)",
+              "nativeQueryRef": "Suma de No. Orden de Compra"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "No. Pago SAP"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.No. Pago SAP)",
+              "nativeQueryRef": "Suma de No. Pago SAP"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "No. Solped"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.No. Solped)",
+              "nativeQueryRef": "Suma de No. Solped"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "No.Factura SAP"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.No.Factura SAP)",
+              "nativeQueryRef": "Suma de No.Factura SAP"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Nombre de cliente/proveedor"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Nombre de cliente/proveedor",
+              "nativeQueryRef": "Nombre de cliente/proveedor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Nombre de usuario"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Nombre de usuario",
+              "nativeQueryRef": "Nombre de usuario"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Número de artículo"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Número de artículo",
+              "nativeQueryRef": "Número de artículo"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Número de artículo_1"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Número de artículo_1",
+              "nativeQueryRef": "Número de artículo_1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Número de artículo_14"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Número de artículo_14",
+              "nativeQueryRef": "Número de artículo_14"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Número de artículo_7"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Número de artículo_7",
+              "nativeQueryRef": "Número de artículo_7"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Precio"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Precio)",
+              "nativeQueryRef": "Suma de Precio"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Precio tras el descuento"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Precio tras el descuento)",
+              "nativeQueryRef": "Suma de Precio tras el descuento"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Precio_11"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Precio_11)",
+              "nativeQueryRef": "Suma de Precio_11"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Precio_18"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Precio_18)",
+              "nativeQueryRef": "Suma de Precio_18"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Subceco SC"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Subceco SC",
+              "nativeQueryRef": "Subceco SC"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Total líneas"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Total líneas)",
+              "nativeQueryRef": "Suma de Total líneas"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Total líneas_12"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Total líneas_12)",
+              "nativeQueryRef": "Suma de Total líneas_12"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Total líneas_19"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Total líneas_19)",
+              "nativeQueryRef": "Suma de Total líneas_19"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                        }
+                      },
+                      "Property": "Total líneas_5"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_factura_proveedor_pago_efectuado.Total líneas_5)",
+              "nativeQueryRef": "Suma de Total líneas_5"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Unidad"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Unidad",
+              "nativeQueryRef": "Unidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Unidad_10"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Unidad_10",
+              "nativeQueryRef": "Unidad_10"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Unidad_17"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Unidad_17",
+              "nativeQueryRef": "Unidad_17"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                    }
+                  },
+                  "Property": "Unidad_4"
+                }
+              },
+              "queryRef": "Fact_factura_proveedor_pago_efectuado.Unidad_4",
+              "nativeQueryRef": "Unidad_4"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "581873c6dae0c284110a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_factura_proveedor_pago_efectuado"
+                  }
+                },
+                "Property": "#"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "22b70e370d15ee80d0b7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_factura_proveedor_pago_efectuado"
+              }
+            },
+            "Property": "Cancelado"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0ec027b5d147e04254e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_factura_proveedor_pago_efectuado"
+                  }
+                },
+                "Property": "Cantidad"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bdc764f94327c4dde6a0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_factura_proveedor_pago_efectuado"
+                  }
+                },
+                "Property": "Cantidad_3"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6c13bea0e4b20e8d0340",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_factura_proveedor_pago_efectuado"
+                  }
+                },
+                "Property": "Cantidad_9"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d1726db25777d2870e87",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_factura_proveedor_pago_efectuado"
+              }
+            },
+            "Property": "Código de condiciones de pago"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "30f55a72d000540750a9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_factura_proveedor_pago_efectuado"
+              }
+            },
+            "Property": "Código Proyecto SC"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d7a21b56207e63a5500d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Fact_factura_proveedor_pago_efectuado"
+              }
+            },
+            "Property": "Descripción artículo/serv."
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

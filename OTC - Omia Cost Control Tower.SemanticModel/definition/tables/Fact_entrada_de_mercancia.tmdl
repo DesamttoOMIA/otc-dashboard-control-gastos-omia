@@ -361,7 +361,7 @@ table Fact_entrada_de_mercancia
 				in
 				    #"Columna agregada TieneOC"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navegación
 

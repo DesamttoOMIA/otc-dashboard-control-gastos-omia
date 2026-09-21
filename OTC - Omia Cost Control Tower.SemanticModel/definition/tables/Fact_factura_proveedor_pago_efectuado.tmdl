@@ -370,11 +370,11 @@ table Fact_factura_proveedor_pago_efectuado
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column Column1
+	column 'Subceco SC'
 		dataType: string
-		lineageTag: 4b5f9999-3809-447f-9d6c-e3dfd8e60f07
+		lineageTag: 970f1877-1a99-4cf4-8561-af395ccb09ef
 		summarizeBy: none
-		sourceColumn: Column1
+		sourceColumn: Subceco SC
 
 		annotation SummarizationSetBy = Automatic
 
@@ -398,5 +398,5 @@ table Fact_factura_proveedor_pago_efectuado
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2a6d1f7880245e4606d6",
   "position": {
-    "x": 1245,
-    "y": 74,
-    "z": 15000,
-    "height": 83,
-    "width": 173,
+    "x": 1242,
+    "y": 110,
+    "z": 11000,
+    "height": 133,
+    "width": 186,
     "tabOrder": 15000
   },
   "visual": {
@@ -87,6 +87,27 @@
           "selector": {
             "metadata": "_Medidas.SOLPED en gestión"
           }
+        },
+        {
+          "properties": {
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1000000D"
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Pagado Total"
+          }
         }
       ],
       "label": [
@@ -96,6 +117,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'SOLPED'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
                 }
               }
             }
@@ -112,6 +140,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
             }
           },
           "selector": {
@@ -123,7 +158,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'PAGO EFECTUADO'"
+                  "Value": "'C. Desembolsado'"
                 }
               }
             },
@@ -172,6 +207,25 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Pagado Total"
           }
         }
       ],
@@ -231,6 +285,41 @@
                   "Value": "true"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Pago efectuado'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
             }
           }
         }
@@ -248,6 +337,17 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "spaceAbovePlotArea": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
           }
         }
       ],

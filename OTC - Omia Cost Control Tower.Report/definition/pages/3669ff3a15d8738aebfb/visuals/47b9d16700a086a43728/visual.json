@@ -4,7 +4,7 @@
   "position": {
     "x": 75,
     "y": 350,
-    "z": 0,
+    "z": 1000,
     "height": 443,
     "width": 890,
     "tabOrder": 1000
@@ -396,8 +396,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#6156A1'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.1
                     }
                   }
                 }
@@ -414,8 +415,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#6156A1'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.2
                     }
                   }
                 }
@@ -431,7 +433,7 @@
             "fillTransparency": {
               "expr": {
                 "Literal": {
-                  "Value": "70D"
+                  "Value": "0D"
                 }
               }
             }
@@ -665,6 +667,25 @@
           "selector": {
             "metadata": "_Medidas.Presupuesto Anual"
           }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Consumo dentro presupuesto"
+          }
         }
       ]
     },
@@ -728,7 +749,7 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'Canvas'"
+                  "Value": "'Default'"
                 }
               }
             },
@@ -736,6 +757,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'77c673e71ca0970dd6e8'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

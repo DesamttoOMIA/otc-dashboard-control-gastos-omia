@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 0
+        "y": 141.42857142857144
       },
       "nodes": [
         {
@@ -139,8 +139,8 @@
         },
         {
           "location": {
-            "x": 2112.9285714285716,
-            "y": 655.625
+            "x": 2141.5,
+            "y": 414.19642857142856
           },
           "nodeIndex": "Monto Simulado",
           "nodeLineageTag": "56fc359d-dde6-4e00-add0-5d2a7b8d05e0",

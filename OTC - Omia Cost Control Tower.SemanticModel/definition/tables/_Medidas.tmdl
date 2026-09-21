@@ -1,7 +1,7 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Consumo Total' = [Comprometido] + [Ejecutado Conformada]
+	measure 'Consumo Total' = [SOLPED en gestión]+[Comprometido] + [Ejecutado Conformada]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Medidas núcleo
 		lineageTag: 670411b9-5073-45c2-ac7b-7b9f70fe0fbc
