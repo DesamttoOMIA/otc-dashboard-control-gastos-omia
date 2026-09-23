@@ -5,7 +5,7 @@
     "x": 496.8,
     "y": 111,
     "z": 2000,
-    "height": 132,
+    "height": 131,
     "width": 186,
     "tabOrder": 11000
   },
@@ -532,23 +532,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dc2f6815eb6aeb0c36a6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "OC pendiente por recibir"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

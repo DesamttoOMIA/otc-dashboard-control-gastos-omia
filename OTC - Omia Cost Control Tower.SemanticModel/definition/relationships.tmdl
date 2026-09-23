@@ -62,7 +62,11 @@ relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
 	fromColumn: Fact_ordenes_de_compra.'Código de proyecto'
 	toColumn: Dim_proyecto.'Código de proyecto'
 
-relationship 069adac3-67c8-270c-21d2-164ec18a6cdd
+relationship AutoDetected_84a3645a-ce7f-454f-b7fd-aa9eed2877e3
+	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Id categoria'
+	toColumn: Dim_categoria.'Id categoria'
+
+relationship a1888e60-06cb-93da-70e4-962def0dd9be
 	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Subceco SC'
-	toColumn: Dim_subseco.'Id subseco'
+	toColumn: Dim_subseco.Subseco
 

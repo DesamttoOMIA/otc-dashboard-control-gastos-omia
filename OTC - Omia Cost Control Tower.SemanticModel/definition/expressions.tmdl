@@ -277,3 +277,14 @@ expression 'Errores en Fact_ordenes_de_compra (3)' =
 
 	annotation PBI_ResultType = Table
 
+expression 'Detalle documental_SOLPED_OC_FC_EM_FP_PE' =
+		let
+		    Origen = Fact_SOLPED_OC_FC_EM_FP_PE
+		in
+		    Origen
+	lineageTag: 1a1c924f-8677-4f1b-8fba-a27a802d280f
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

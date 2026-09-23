@@ -40,13 +40,6 @@ table _Medidas
 		displayFolder: Vista general
 		lineageTag: 2b6d8e4a-1f3c-4d9e-a5b7-8c1d3e6f2a94
 
-	measure 'Presupuesto Mensual' = SUM(Fact_presupuesto_final[COP])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Vista general
-		lineageTag: 9d2a7c5e-3b1f-4a8d-b6e4-5c9a2d7f1b63
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
 	measure 'Presupuesto YTD' =
 			SUMX(
 			    VALUES(Dim_proyecto[Id proyecto]),
@@ -61,149 +54,6 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure Disponible = [Presupuesto YTD] - [Consumo Total]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Vista general
-		lineageTag: 7a3d9c2e-5b8f-4e1a-9d6c-3a7e2b5d8f14
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% Consumo' = DIVIDE([Consumo Total], [Presupuesto YTD])
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Vista general
-		lineageTag: 1c5e8a3d-7f2b-4c9e-8a1d-6b3f9e5c2a87
-
-	measure 'Estado Semaforo' =
-			SWITCH(
-			    TRUE(),
-			    [% Consumo] > 1, "Rojo",
-			    [% Consumo] >= 0.8, "Ambar",
-			    "Verde"
-			)
-		displayFolder: Vista general
-		lineageTag: 6f9b2d5a-4e7c-4a3f-9b8e-2d6a4c9f7e15
-
-	measure 'Comprometido Neto (pendiente de facturar)' = [OC pendiente por recibir] - [FC pendiente por facturar]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Coordinador
-		lineageTag: 3a8e5c1d-9f4b-4d7a-8c2e-5b9d3f1a6e70
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Consumo Simulado' = [Consumo Total] + [Monto Simulado Value]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Coordinador
-		lineageTag: 8d4b7e2a-6c9f-4a1d-b5e8-3c7a9d2f4b61
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% Consumo Simulado' = DIVIDE([Consumo Simulado], [Presupuesto YTD])
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Coordinador
-		lineageTag: 5e9a3c7d-1b8f-4e6a-9d2c-7f4b1a8e3c92
-
-	measure 'Estado Semaforo Simulado' =
-			SWITCH(
-			    TRUE(),
-			    [% Consumo Simulado] > 1, "Rojo",
-			    [% Consumo Simulado] >= 0.8, "Ambar",
-			    "Verde"
-			)
-		displayFolder: Coordinador
-		lineageTag: 2f7c4a9e-8d1b-4c5f-a3e6-9b2d7c4f1a58
-
-	measure 'Recibido (Entrada Mercancia)' =
-			CALCULATE(
-			    SUM(Fact_entrada_de_mercancia[Total líneas]),
-			    Fact_entrada_de_mercancia[TieneOC] = TRUE
-			)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 9c2e5a8d-4f1b-4d7e-8a3c-6b9f2d5a7e14
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Facturado Total' =
-			CALCULATE(
-			    SUM(Fact_SOLPED_OC_FC_EM_FP_PE[Total líneas_19]),
-			    NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No.Factura SAP])
-			) + [FC pendiente por facturar]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a9d3c7e-2b5f-4a8d-9e1c-4f7a2d9c5b63
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Pagado Total' =
-			CALCULATE(
-			    SUM(Fact_SOLPED_OC_FC_EM_FP_PE[Total líneas_19]),
-			    NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Pago SAP])
-			)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 4d8a2c6e-9f3b-4e7d-a1c5-8b3f6a9d2e57
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Comprometido por Subsecco' = [OC pendiente por recibir]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 7e1c4a9d-3f8b-4c5e-9a2d-6c4f8b1e3a95
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Dias SC a OC' =
-			AVERAGEX(
-			    Fact_SOLPED_OC_FC_EM_FP_PE,
-			    DATEDIFF(
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación],
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_6],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 1a5e9c3d-7b2f-4a8e-9c6d-3f1a7e5b9c28
-
-	measure 'Dias OC a EM' =
-			AVERAGEX(
-			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Entrada de Mercancía])),
-			    DATEDIFF(
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_6],
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_13],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 8c3f7a1d-5e9b-4c2f-8a6d-2b7e5c9f3a41
-
-	measure 'Dias EM a Factura' =
-			AVERAGEX(
-			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No.Factura SAP])),
-			    DATEDIFF(
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_13],
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_20],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 5b9d2c6e-8f4a-4d1c-9b3e-7a5c1f9d4b62
-
-	measure 'Dias Factura a Pago' =
-			AVERAGEX(
-			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Pago SAP])),
-			    DATEDIFF(
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_20],
-			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de contabilización],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 3f7a1c9e-6d2b-4a5f-8c9e-1d3f7a6c9e58
-
 	measure 'Consumo dentro presupuesto' =
 			
 			MIN (
@@ -211,6 +61,7 @@ table _Medidas
 			    [Presupuesto Anual]
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 1c3f2ff4-de6d-4225-b8e6-65568f734d8e
 
 	measure 'Disponible dentro presupuesto' =
@@ -220,6 +71,7 @@ table _Medidas
 			    0
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 938ed00c-7383-4052-8cbc-3ab05f4fd7a4
 
 	measure 'Exceso presupuesto' =
@@ -228,18 +80,8 @@ table _Medidas
 			    [Consumo Total] - [Presupuesto Anual],
 			    0
 			)
+		displayFolder: Vista general
 		lineageTag: a03d6d17-045d-4b7b-9e95-7de5ddf080b0
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Consumo categoría' =
-			
-			DIVIDE (
-			    [Consumo Total],
-			    [Presupuesto Anual],
-			    0
-			)
-		lineageTag: 5efc2b93-1c38-48b2-95cf-1fef1bcb6da4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -252,6 +94,7 @@ table _Medidas
 			    ) * 12
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
 		lineageTag: 8c198d23-94a6-4059-8cd7-69a30ee28493
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
@@ -260,102 +103,8 @@ table _Medidas
 			
 			[Presupuesto Anual] - [Consumo Total]
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 3f6e0ef4-cb6e-4941-bb12-f3e69c945a5f
-
-	measure '% Consumo Anual' =
-			
-			DIVIDE (
-			    [Consumo Total],
-			    [Presupuesto Anual],
-			    0
-			)
-		lineageTag: 577141a2-3edb-41f4-8e16-e37898642c09
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Estado Alerta Presupuesto' =
-			
-			VAR Presupuesto = [Presupuesto Anual]
-			VAR Consumo = [Consumo Total]
-			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
-			RETURN
-			    SWITCH (
-			        TRUE (),
-			        Consumo <= 0, BLANK (),
-			        Presupuesto <= 0 && Consumo > 0, "🔴 Sin presupuesto",
-			        Porcentaje > 1, "🔴 Sobrepresupuesto",
-			        Porcentaje >= 0.8, "🟠 Próximo al límite",
-			        BLANK ()
-			    )
-		lineageTag: 599dd7b9-cd58-4a69-a66c-dedfc1af29b8
-
-	measure 'Alerta Activa' =
-			
-			VAR Presupuesto = [Presupuesto Anual]
-			VAR Consumo = [Consumo Total]
-			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
-			RETURN
-			    IF (
-			        Consumo > 0
-			            && (
-			                Presupuesto <= 0
-			                || Porcentaje >= 0.8
-			            ),
-			        1,
-			        0
-			    )
-		formatString: 0
-		lineageTag: 40dab425-bcf1-48c1-9a90-0217a06ebca2
-
-	measure 'Cantidad Alertas Presupuesto' =
-			
-			SUMX (
-			    VALUES ( Dim_categoria[Id categoria] ),
-			    CALCULATE ( [Alerta Activa] )
-			)
-		formatString: 0
-		lineageTag: 8d3334a7-92ad-4a52-a5fa-98d14e4f373b
-
-	measure '% del grupo (dinámico)' = ```
-			
-			VAR DenominadorTotalDirecto = 
-			    CALCULATE(
-			        [Consumo Total],
-			        REMOVEFILTERS(Dim_Subseco[Distribución Costos]),
-			        REMOVEFILTERS(Dim_Subseco[Descripción])
-			    )
-			VAR DenominadorDentroDistribucion = 
-			    CALCULATE(
-			        [Consumo Total],
-			        REMOVEFILTERS(Dim_Subseco[Descripción])
-			    )
-			RETURN
-			    IF(
-			        ISFILTERED(Dim_Subseco[Descripción]),
-			        DIVIDE([Consumo Total], DenominadorDentroDistribucion),
-			        DIVIDE([Consumo Total], DenominadorTotalDirecto)
-			    )
-			```
-		lineageTag: 832f0e8b-01b5-43da-a53a-121229bcb953
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Etiqueta Consumo %' =
-			
-			FORMAT([Consumo Total]/1000000, "$#,##0.0") & " mill. | " & FORMAT([% del grupo (dinámico)], "0%")
-		lineageTag: 3b9e38b7-0686-4945-b90f-5e9c47b718de
-
-	measure 'Incidencia Presupuesto' =
-			
-			SUM ( Fact_presupuesto_final[Incidencia] )
-		lineageTag: ecd10642-2549-49d0-8f97-0b350175665d
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Etiqueta Incidencia' =
-			
-			FORMAT([Presupuesto Anual]/1000000, "$#,##0.0") & " mill. | " & FORMAT([Incidencia Presupuesto], "0%")
-		lineageTag: cfe337d7-8b34-4a2a-b18d-83c22d032323
 
 	measure 'SOLPED pendiente por ordenar' =
 			

@@ -271,20 +271,7 @@
           }
         },
         {
-          "properties": {
-            "dynamicLabelValue": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Etiqueta Consumo %"
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {

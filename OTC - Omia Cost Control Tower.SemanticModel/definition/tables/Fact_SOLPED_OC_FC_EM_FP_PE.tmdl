@@ -378,6 +378,15 @@ table Fact_SOLPED_OC_FC_EM_FP_PE
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Id categoria'
+		dataType: int64
+		formatString: 0
+		lineageTag: 400a9be9-b58b-4335-b999-a7da492813e5
+		summarizeBy: none
+		sourceColumn: Id categoria
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_SOLPED_OC_FC_EM_FP_PE = m
 		mode: import
 		source =
@@ -392,11 +401,14 @@ table Fact_SOLPED_OC_FC_EM_FP_PE
 				        {"No.Factura SAP", Int64.Type}, {"Número de artículo_14", type text}, {"Descripción artículo/serv._15", type text}, {"Cantidad_16", type number}, {"Unidad_17", type text}, {"Precio_18", type number}, {"Total líneas_19", Currency.Type}, {"Fecha de creación_20", type date},
 				        {"No. Pago SAP", Int64.Type}, {"Fecha de contabilización", type date}
 				    }),
-				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"'SC'", "'OC'", "'EM'", "'FP'"})
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"'SC'", "'OC'", "'EM'", "'FP'"}),
+				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas quitadas", {"Subceco SC"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),
+				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id categoria"}, {"Id categoria"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Se expandió Dim_subseco",{{"Id categoria", Int64.Type}})
 				in
-				    #"Columnas quitadas"
+				    #"Tipo cambiado1"
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
