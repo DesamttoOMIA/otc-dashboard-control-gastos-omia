@@ -177,7 +177,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.fecha_de_creación_6": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Fecha de creación_6"
 			        }
 			      },
@@ -200,7 +200,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.total_líneas_5": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Total líneas_5"
 			        }
 			      },
@@ -236,7 +236,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.precio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Precio"
 			        }
 			      },
@@ -252,7 +252,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.unidad_4": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Unidad_4"
 			        }
 			      },
@@ -275,7 +275,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.cantidad_3": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Cantidad_3"
 			        }
 			      },
@@ -344,7 +344,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.descripción_artículo_serv__2": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Descripción artículo/serv._2"
 			        }
 			      },
@@ -378,7 +378,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.número_de_artículo_1": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Número de artículo_1"
 			        }
 			      },
@@ -394,7 +394,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.no__orden_de_compra": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "No. Orden de Compra"
 			        }
 			      },
@@ -420,7 +420,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.nombre_de_cliente_proveedor": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Nombre de cliente/proveedor"
 			        }
 			      },
@@ -454,7 +454,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.código_proyecto_SC": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Código Proyecto SC"
 			        }
 			      },
@@ -2046,7 +2046,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.nombre_de_usuario": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Nombre de usuario"
 			        }
 			      },
@@ -2062,7 +2062,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.fecha_de_creación": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Fecha de creación"
 			        }
 			      },
@@ -2085,7 +2085,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.total_línea": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Total líneas"
 			        }
 			      },
@@ -2121,7 +2121,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.precio_tras_el_descuento": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Precio tras el descuento"
 			        }
 			      },
@@ -2144,7 +2144,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.unidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Unidad"
 			        }
 			      },
@@ -2296,7 +2296,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.cantidad": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Cantidad"
 			        }
 			      },
@@ -2312,7 +2312,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.descripción_artículo_serv_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Descripción artículo/serv."
 			        }
 			      },
@@ -2346,7 +2346,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.número_de_artículo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Número de artículo"
 			        }
 			      },
@@ -2362,7 +2362,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.no__solped": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "No. Solped"
 			        }
 			      },
@@ -2388,7 +2388,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.cancelado": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Cancelado"
 			        }
 			      },
@@ -2706,7 +2706,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.v_": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "#"
 			        }
 			      },
@@ -2722,7 +2722,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			        }
 			      },
 			      "State": "Generated",
@@ -4983,7 +4983,7 @@ cultureInfo es-CO
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Ejecutado Conformada"
+			          "ConceptualProperty": "FC pendiente por facturar"
 			        }
 			      },
 			      "State": "Generated",
@@ -5009,7 +5009,7 @@ cultureInfo es-CO
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Comprometido"
+			          "ConceptualProperty": "OC pendiente por recibir"
 			        }
 			      },
 			      "State": "Generated",
@@ -5027,22 +5027,6 @@ cultureInfo es-CO
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "entity__medida.SOLPED_en_gestión": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "SOLPED en gestión"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "SOLPED en gestión": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -6439,7 +6423,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.código_de_condiciones_de_pago": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Código de condiciones de pago"
 			        }
 			      },
@@ -6462,7 +6446,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.no__entrada_de_mercancía": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "No. Entrada de Mercancía"
 			        }
 			      },
@@ -6488,7 +6472,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.número_de_artículo_7": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Número de artículo_7"
 			        }
 			      },
@@ -6504,7 +6488,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.descripción_artículo_serv__8": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Descripción artículo/serv._8"
 			        }
 			      },
@@ -6538,7 +6522,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.cantidad_9": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Cantidad_9"
 			        }
 			      },
@@ -6561,7 +6545,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.unidad_10": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Unidad_10"
 			        }
 			      },
@@ -6584,7 +6568,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.precio_11": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Precio_11"
 			        }
 			      },
@@ -6607,7 +6591,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.total_líneas_12": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Total líneas_12"
 			        }
 			      },
@@ -6643,7 +6627,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.fecha_de_creación_13": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Fecha de creación_13"
 			        }
 			      },
@@ -6666,7 +6650,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.no_factura_SAP": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "No.Factura SAP"
 			        }
 			      },
@@ -6782,7 +6766,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.número_de_artículo_14": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Número de artículo_14"
 			        }
 			      },
@@ -6798,7 +6782,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.descripción_artículo_serv__15": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Descripción artículo/serv._15"
 			        }
 			      },
@@ -6832,7 +6816,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.cantidad_16": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Cantidad_16"
 			        }
 			      },
@@ -6855,7 +6839,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.unidad_17": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Unidad_17"
 			        }
 			      },
@@ -6878,7 +6862,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.precio_18": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Precio_18"
 			        }
 			      },
@@ -6901,7 +6885,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.total_líneas_19": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Total líneas_19"
 			        }
 			      },
@@ -6937,7 +6921,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.fecha_de_creación_20": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Fecha de creación_20"
 			        }
 			      },
@@ -6960,7 +6944,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.no__pago_SAP": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "No. Pago SAP"
 			        }
 			      },
@@ -7076,7 +7060,7 @@ cultureInfo es-CO
 			    "fact_factura_proveedor_pago_efectuado.fecha_de_contabilización": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado",
+			          "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE",
 			          "ConceptualProperty": "Fecha de contabilización"
 			        }
 			      },
@@ -8257,7 +8241,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_column_1": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8290,7 +8274,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_fecha_de_contabilización": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8323,7 +8307,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_no__pago_SAP": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8356,7 +8340,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_fecha_de_creación_20": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8389,7 +8373,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_total_líneas_19": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8449,7 +8433,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_precio_18": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8482,7 +8466,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_unidad_17": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8515,7 +8499,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_cantidad_16": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8548,7 +8532,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_descripción_artículo_serv__15": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8581,7 +8565,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_número_de_artículo_14": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8614,7 +8598,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_no_factura_SAP": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8647,7 +8631,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_fecha_de_creación_13": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8680,7 +8664,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_total_líneas_12": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8740,7 +8724,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_precio_11": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8773,7 +8757,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_unidad_10": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8806,7 +8790,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_cantidad_9": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8839,7 +8823,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_descripción_artículo_serv__8": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8872,7 +8856,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_número_de_artículo_7": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8905,7 +8889,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_no__entrada_de_mercancía": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -8938,7 +8922,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_código_de_condiciones_de_pago": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11249,7 +11233,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_entity__medida_facturado_total": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -11315,7 +11299,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_entity__medida_pagado_total": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13361,7 +13345,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_v_": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13724,7 +13708,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_cancelado": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13757,7 +13741,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_no__solped": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13790,7 +13774,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_número_de_artículo": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13823,7 +13807,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_descripción_artículo_serv_": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -13856,7 +13840,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_cantidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14120,7 +14104,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_unidad": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14153,7 +14137,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_precio_tras_el_descuento": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14186,7 +14170,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_total_línea": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14246,7 +14230,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_fecha_de_creación": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -14279,7 +14263,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_nombre_de_usuario": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16313,7 +16297,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_nombre_de_cliente_proveedor": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16346,7 +16330,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_no__orden_de_compra": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16379,7 +16363,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_número_de_artículo_1": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16412,7 +16396,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_descripción_artículo_serv__2": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16511,7 +16495,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_cantidad_3": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16544,7 +16528,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_unidad_4": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16577,7 +16561,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_precio": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16610,7 +16594,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_total_líneas_5": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16670,7 +16654,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_fecha_de_creación_6": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -16956,7 +16940,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_dim_proyecto": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {
@@ -17009,7 +16993,7 @@ cultureInfo es-CO
 			    },
 			    "fact_factura_proveedor_pago_efectuado_has_calendario": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_factura_proveedor_pago_efectuado"
+			        "ConceptualEntity": "Fact_SOLPED_OC_FC_EM_FP_PE"
 			      },
 			      "State": "Generated",
 			      "Roles": {

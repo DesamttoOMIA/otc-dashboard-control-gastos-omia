@@ -1,50 +1,48 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Consumo Total' = [SOLPED en gestión]+[Comprometido] + [Ejecutado Conformada]
+	measure 'Consumo Total' = [SOLPED pendiente por ordenar] + [OC pendiente por recibir] + [FC pendiente por facturar] + [EM pendiente por facturar] + [FP pendiente por pagar] + [Pago efectuado]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 670411b9-5073-45c2-ac7b-7b9f70fe0fbc
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'SOLPED en gestión' = SUM('Fact_solicitud_de_pedido'[Total líneas])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: SOLPED (informativo, no usar en presupuesto)
-		lineageTag: 115d40b4-d7a4-4b72-9a80-e2b510b714ac
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure Comprometido =
-			CALCULATE(
-			    SUM(Fact_ordenes_de_compra[Total Líneas OC]),
-			    Fact_ordenes_de_compra[Cancelado] = "N"
+	measure 'OC pendiente por recibir' =
+			
+			SUMX (
+			    FILTER (
+			        Fact_ordenes_de_compra,
+			        Fact_ordenes_de_compra[Status de la línea] = "O"
+			    ),
+			    Fact_ordenes_de_compra[Cantidad abierta restante] * Fact_ordenes_de_compra[Precio]
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 8f0a5b2e-6c3d-4a1f-9e7b-2d5c4a1f6e30
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Ejecutado Conformada' =
-			CALCULATE(
-			    SUM(Fact_entrada_de_mercancia[Total líneas]),
-			    Fact_entrada_de_mercancia[TieneOC] = FALSE
+	measure 'FC pendiente por facturar' =
+			
+			CALCULATE (
+			    SUM ( Fact_entrada_de_mercancia[Total líneas] ),
+			    ISBLANK ( Fact_entrada_de_mercancia[Orden de Compra] )
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 3c7e1a9d-4f2b-4e8a-b1c6-7a9d2e4f5b81
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Meses Transcurridos' = MONTH(TODAY())
 		formatString: 0
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 2b6d8e4a-1f3c-4d9e-a5b7-8c1d3e6f2a94
 
 	measure 'Presupuesto Mensual' = SUM(Fact_presupuesto_final[COP])
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 9d2a7c5e-3b1f-4a8d-b6e4-5c9a2d7f1b63
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
@@ -58,21 +56,21 @@ table _Medidas
 			    RETURN PresupuestoMensualProyecto * MesesTranscurridos
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 4e8b1d6a-9c3f-4b7e-a2d5-1f6c8a3e9b52
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure Disponible = [Presupuesto YTD] - [Consumo Total]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 7a3d9c2e-5b8f-4e1a-9d6c-3a7e2b5d8f14
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure '% Consumo' = DIVIDE([Consumo Total], [Presupuesto YTD])
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 1c5e8a3d-7f2b-4c9e-8a1d-6b3f9e5c2a87
 
 	measure 'Estado Semaforo' =
@@ -82,10 +80,10 @@ table _Medidas
 			    [% Consumo] >= 0.8, "Ambar",
 			    "Verde"
 			)
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 6f9b2d5a-4e7c-4a3f-9b8e-2d6a4c9f7e15
 
-	measure 'Comprometido Neto (pendiente de facturar)' = [Comprometido] - [Ejecutado Conformada]
+	measure 'Comprometido Neto (pendiente de facturar)' = [OC pendiente por recibir] - [FC pendiente por facturar]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Coordinador
 		lineageTag: 3a8e5c1d-9f4b-4d7a-8c2e-5b9d3f1a6e70
@@ -127,9 +125,9 @@ table _Medidas
 
 	measure 'Facturado Total' =
 			CALCULATE(
-			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
-			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])
-			) + [Ejecutado Conformada]
+			    SUM(Fact_SOLPED_OC_FC_EM_FP_PE[Total líneas_19]),
+			    NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No.Factura SAP])
+			) + [FC pendiente por facturar]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen ejecutivo
 		lineageTag: 6a9d3c7e-2b5f-4a8d-9e1c-4f7a2d9c5b63
@@ -138,8 +136,8 @@ table _Medidas
 
 	measure 'Pagado Total' =
 			CALCULATE(
-			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
-			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])
+			    SUM(Fact_SOLPED_OC_FC_EM_FP_PE[Total líneas_19]),
+			    NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Pago SAP])
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen ejecutivo
@@ -147,7 +145,7 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Comprometido por Subsecco' = [Comprometido]
+	measure 'Comprometido por Subsecco' = [OC pendiente por recibir]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Resumen ejecutivo
 		lineageTag: 7e1c4a9d-3f8b-4c5e-9a2d-6c4f8b1e3a95
@@ -156,10 +154,10 @@ table _Medidas
 
 	measure 'Dias SC a OC' =
 			AVERAGEX(
-			    Fact_factura_proveedor_pago_efectuado,
+			    Fact_SOLPED_OC_FC_EM_FP_PE,
 			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_6],
 			        DAY
 			    )
 			)
@@ -169,10 +167,10 @@ table _Medidas
 
 	measure 'Dias OC a EM' =
 			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Entrada de Mercancía])),
+			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Entrada de Mercancía])),
 			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_6],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_13],
 			        DAY
 			    )
 			)
@@ -182,10 +180,10 @@ table _Medidas
 
 	measure 'Dias EM a Factura' =
 			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])),
+			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No.Factura SAP])),
 			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_13],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_20],
 			        DAY
 			    )
 			)
@@ -195,10 +193,10 @@ table _Medidas
 
 	measure 'Dias Factura a Pago' =
 			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])),
+			    FILTER(Fact_SOLPED_OC_FC_EM_FP_PE, NOT ISBLANK(Fact_SOLPED_OC_FC_EM_FP_PE[No. Pago SAP])),
 			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de contabilización],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de creación_20],
+			        Fact_SOLPED_OC_FC_EM_FP_PE[Fecha de contabilización],
 			        DAY
 			    )
 			)
@@ -358,6 +356,58 @@ table _Medidas
 			
 			FORMAT([Presupuesto Anual]/1000000, "$#,##0.0") & " mill. | " & FORMAT([Incidencia Presupuesto], "0%")
 		lineageTag: cfe337d7-8b34-4a2a-b18d-83c22d032323
+
+	measure 'SOLPED pendiente por ordenar' =
+			
+			CALCULATE (
+			    SUM ( 'Fact_solicitud_de_pedido'[Total líneas] ),
+			    'Fact_solicitud_de_pedido'[Status de la línea] = "O",
+			    'Fact_solicitud_de_pedido'[Cancelado] = "N",
+			    'Fact_solicitud_de_pedido'[Línea cerrada manualmente] = "N",
+			    'Fact_solicitud_de_pedido'[Clase de documento de destino] = -1
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: b3a80cd9-824c-423b-ba1a-6256e30e515f
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'EM pendiente por facturar' =
+			
+			CALCULATE (
+			    SUM ( 'Fact_entrada_de_mercancia'[Total líneas] ),
+			    'Fact_entrada_de_mercancia'[Status de documento] = "O",
+			    'Fact_entrada_de_mercancia'[Clase de documento de destino] = -1,
+			    NOT ISBLANK ( 'Fact_entrada_de_mercancia'[Orden de Compra] )
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
+		lineageTag: fa641be4-2fdd-4ac9-b8a5-5d432beb4cff
+
+	measure 'FP pendiente por pagar' =
+			
+			CALCULATE (
+			    SUM ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No.Factura SAP] ),
+			    ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No. Pago SAP] )
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: 67cb2ad0-3c24-47ac-92de-44cca1ac0036
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Pago efectuado' =
+			
+			CALCULATE (
+			    SUM ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No. Pago SAP] )
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: 065323f5-3aa3-4986-8118-1c352b0b9025
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	partition _Medidas = m
 		mode: import

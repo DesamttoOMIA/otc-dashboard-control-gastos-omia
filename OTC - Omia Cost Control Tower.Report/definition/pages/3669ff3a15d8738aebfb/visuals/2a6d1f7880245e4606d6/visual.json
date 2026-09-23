@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2a6d1f7880245e4606d6",
   "position": {
-    "x": 1242,
-    "y": 110,
+    "x": 1252,
+    "y": 111,
     "z": 11000,
     "height": 133,
     "width": 186,
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Pagado Total"
+                  "Property": "Pago efectuado"
                 }
               },
-              "queryRef": "_Medidas.Pagado Total",
-              "nativeQueryRef": "Pagado Total"
+              "queryRef": "_Medidas.Pago efectuado",
+              "nativeQueryRef": "Pago efectuado"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Pagado Total"
+                "Property": "Pago efectuado"
               }
             },
             "direction": "Descending"
@@ -106,7 +106,7 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Pagado Total"
+            "metadata": "_Medidas.Pago efectuado"
           }
         }
       ],
@@ -155,23 +155,16 @@
         },
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'C. Desembolsado'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Pagado Total"
+            "metadata": "_Medidas.Pago efectuado"
           }
         }
       ],
@@ -197,8 +190,8 @@
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.1
+                      "ColorId": 2,
+                      "Percent": -0.5
                     }
                   }
                 }
@@ -207,25 +200,6 @@
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.Pagado Total"
           }
         }
       ],
@@ -303,7 +277,7 @@
             "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -318,6 +292,18 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
                 }
               }
             }
@@ -378,6 +364,40 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Costo desembolsado'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }

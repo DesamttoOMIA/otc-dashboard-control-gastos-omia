@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "dcf8b042ec9626278cb0",
   "position": {
-    "x": 1052.6588235294118,
-    "y": 110,
+    "x": 1063.2,
+    "y": 111,
     "z": 8000,
     "height": 131,
     "width": 186,
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Facturado Total"
+                  "Property": "FP pendiente por pagar"
                 }
               },
-              "queryRef": "_Medidas.Facturado Total",
-              "nativeQueryRef": "Facturado Total"
+              "queryRef": "_Medidas.Factura pendiente por pagar",
+              "nativeQueryRef": "FP pendiente por pagar"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Facturado Total"
+                "Property": "FP pendiente por pagar"
               }
             },
             "direction": "Descending"
@@ -106,7 +106,7 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.Facturado Total"
+            "metadata": "_Medidas.Factura pendiente por pagar"
           }
         }
       ],
@@ -155,23 +155,16 @@
         },
         {
           "properties": {
-            "text": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "'C. Causado'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
+                  "Value": "false"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "_Medidas.Facturado Total"
+            "metadata": "_Medidas.Factura pendiente por pagar"
           }
         }
       ],
@@ -253,6 +246,25 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Factura pendiente por pagar"
+          }
         }
       ]
     },
@@ -284,7 +296,7 @@
             "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -299,6 +311,18 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
                 }
               }
             }
@@ -359,6 +383,40 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Costo causado pendiente de pago'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }

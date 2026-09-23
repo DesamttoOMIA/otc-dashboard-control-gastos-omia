@@ -4,10 +4,10 @@
   "position": {
     "x": 105,
     "y": 33,
-    "z": 3001,
+    "z": 1000,
     "height": 755,
     "width": 1302,
-    "tabOrder": 3001
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "#"
@@ -39,7 +39,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Cancelado"
@@ -55,7 +55,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Cantidad"
@@ -74,7 +74,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Cantidad_3"
@@ -93,7 +93,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Cantidad_9"
@@ -110,7 +110,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Código de condiciones de pago"
@@ -124,7 +124,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Código Proyecto SC"
@@ -138,7 +138,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Descripción artículo/serv."
@@ -152,7 +152,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Descripción artículo/serv._2"
@@ -166,7 +166,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Descripción artículo/serv._8"
@@ -180,7 +180,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Fecha de contabilización"
@@ -194,7 +194,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Fecha de creación"
@@ -208,7 +208,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Fecha de creación_13"
@@ -222,7 +222,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Fecha de creación_20"
@@ -236,7 +236,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Fecha de creación_6"
@@ -252,7 +252,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "No. Entrada de Mercancía"
@@ -271,7 +271,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "No. Orden de Compra"
@@ -290,7 +290,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "No. Pago SAP"
@@ -309,7 +309,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "No. Solped"
@@ -328,7 +328,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "No.Factura SAP"
@@ -345,7 +345,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Nombre de cliente/proveedor"
@@ -359,7 +359,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Nombre de usuario"
@@ -373,7 +373,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Número de artículo"
@@ -387,7 +387,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Número de artículo_1"
@@ -401,7 +401,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Número de artículo_14"
@@ -415,7 +415,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Número de artículo_7"
@@ -431,7 +431,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Precio"
@@ -450,7 +450,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Precio tras el descuento"
@@ -469,7 +469,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Precio_11"
@@ -488,7 +488,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Precio_18"
@@ -505,7 +505,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Subceco SC"
@@ -521,7 +521,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Total líneas"
@@ -540,7 +540,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Total líneas_12"
@@ -559,7 +559,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Total líneas_19"
@@ -578,7 +578,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_factura_proveedor_pago_efectuado"
+                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                         }
                       },
                       "Property": "Total líneas_5"
@@ -595,7 +595,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Unidad"
@@ -609,7 +609,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Unidad_10"
@@ -623,7 +623,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Unidad_17"
@@ -637,7 +637,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_factura_proveedor_pago_efectuado"
+                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
                     }
                   },
                   "Property": "Unidad_4"
@@ -651,141 +651,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "581873c6dae0c284110a",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_factura_proveedor_pago_efectuado"
-                  }
-                },
-                "Property": "#"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "22b70e370d15ee80d0b7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_factura_proveedor_pago_efectuado"
-              }
-            },
-            "Property": "Cancelado"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "b0ec027b5d147e04254e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_factura_proveedor_pago_efectuado"
-                  }
-                },
-                "Property": "Cantidad"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "bdc764f94327c4dde6a0",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_factura_proveedor_pago_efectuado"
-                  }
-                },
-                "Property": "Cantidad_3"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6c13bea0e4b20e8d0340",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Fact_factura_proveedor_pago_efectuado"
-                  }
-                },
-                "Property": "Cantidad_9"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d1726db25777d2870e87",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_factura_proveedor_pago_efectuado"
-              }
-            },
-            "Property": "Código de condiciones de pago"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "30f55a72d000540750a9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_factura_proveedor_pago_efectuado"
-              }
-            },
-            "Property": "Código Proyecto SC"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d7a21b56207e63a5500d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact_factura_proveedor_pago_efectuado"
-              }
-            },
-            "Property": "Descripción artículo/serv."
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

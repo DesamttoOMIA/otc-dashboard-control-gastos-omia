@@ -1,4 +1,4 @@
-table Fact_factura_proveedor_pago_efectuado
+table Fact_SOLPED_OC_FC_EM_FP_PE
 	lineageTag: 89064307-007d-41ca-94ae-16398bfeae48
 
 	column #
@@ -378,7 +378,7 @@ table Fact_factura_proveedor_pago_efectuado
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Fact_factura_proveedor_pago_efectuado = m
+	partition Fact_SOLPED_OC_FC_EM_FP_PE = m
 		mode: import
 		source =
 				let

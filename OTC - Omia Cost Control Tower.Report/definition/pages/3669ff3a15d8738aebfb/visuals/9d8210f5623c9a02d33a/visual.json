@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "9d8210f5623c9a02d33a",
   "position": {
-    "x": 501.34117647058827,
-    "y": 109,
+    "x": 496.8,
+    "y": 111,
     "z": 2000,
     "height": 132,
-    "width": 180,
+    "width": 186,
     "tabOrder": 11000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Comprometido"
+                  "Property": "OC pendiente por recibir"
                 }
               },
               "queryRef": "_Medidas.Comprometido",
-              "nativeQueryRef": "Comprometido"
+              "nativeQueryRef": "OC pendiente por recibir"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Comprometido"
+                "Property": "OC pendiente por recibir"
               }
             },
             "direction": "Descending"
@@ -166,6 +166,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'aboveValue'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -482,7 +489,28 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'C. comprometido pendiente de EM'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
@@ -504,5 +532,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc2f6815eb6aeb0c36a6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "OC pendiente por recibir"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

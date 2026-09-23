@@ -129,7 +129,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Comprometido"
+                  "Property": "OC pendiente por recibir"
                 }
               },
               "queryRef": "_Medidas.Comprometido",
@@ -144,7 +144,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Ejecutado Conformada"
+                  "Property": "FC pendiente por facturar"
                 }
               },
               "queryRef": "_Medidas.Ejecutado Conformada",

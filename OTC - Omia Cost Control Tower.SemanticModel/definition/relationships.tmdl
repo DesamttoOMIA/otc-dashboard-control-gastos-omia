@@ -51,11 +51,11 @@ relationship AutoDetected_5b810830-2805-4c2d-b3d7-c82393b1373e
 	toColumn: Dim_proyecto.'Id proyecto'
 
 relationship a2c4fc4a-3152-0026-9a8e-93b3706145f3
-	fromColumn: Fact_factura_proveedor_pago_efectuado.'Código Proyecto SC'
+	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Código Proyecto SC'
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship 4265a6b8-1994-4d46-c2fb-82d9d887c485
-	fromColumn: Fact_factura_proveedor_pago_efectuado.'Fecha de creación'
+	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Fecha de creación'
 	toColumn: Calendario.Date
 
 relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
@@ -63,6 +63,6 @@ relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship 069adac3-67c8-270c-21d2-164ec18a6cdd
-	fromColumn: Fact_factura_proveedor_pago_efectuado.'Subceco SC'
+	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Subceco SC'
 	toColumn: Dim_subseco.'Id subseco'
 

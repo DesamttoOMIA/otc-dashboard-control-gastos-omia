@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "40c882a3d03308bb1067",
   "position": {
-    "x": 323,
-    "y": 110,
+    "x": 308,
+    "y": 111,
     "z": 0,
     "height": 131,
-    "width": 175,
+    "width": 186,
     "tabOrder": 10000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "SOLPED en gestión"
+                  "Property": "SOLPED pendiente por ordenar"
                 }
               },
-              "queryRef": "_Medidas.SOLPED en gestión",
-              "nativeQueryRef": "SOLPED en gestión"
+              "queryRef": "_Medidas.SOLPED pendiente por ordenar",
+              "nativeQueryRef": "SOLPED pendiente por ordenar"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "SOLPED en gestión"
+                "Property": "SOLPED pendiente por ordenar"
               }
             },
             "direction": "Descending"
@@ -53,6 +53,20 @@
     },
     "objects": {
       "value": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
         {
           "properties": {
             "labelDisplayUnits": {
@@ -71,67 +85,11 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
+            "metadata": "_Medidas.SOLPED pendiente por ordenar"
           }
         }
       ],
       "label": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'C. Solicitado y aprobado'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'aboveValue'"
-                }
-              }
-            },
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "heading": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Heading4'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        },
         {
           "properties": {
             "fontSize": {
@@ -145,20 +103,34 @@
           "selector": {
             "id": "default"
           }
-        }
-      ],
-      "outline": [
+        },
         {
           "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 2,
-                      "Percent": -0.5
-                    }
-                  }
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'C. aprobado pendiente de OC'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
                 }
               }
             },
@@ -171,9 +143,11 @@
             }
           },
           "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
+            "metadata": "_Medidas.SOLPED pendiente por ordenar"
           }
-        },
+        }
+      ],
+      "outline": [
         {
           "properties": {
             "show": {
@@ -198,58 +172,36 @@
                   "Value": "true"
                 }
               }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1B4379'"
-                    }
-                  }
-                }
-              }
-            },
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        },
+        {
+          "properties": {
             "width": {
               "expr": {
                 "Literal": {
                   "Value": "3D"
                 }
               }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        },
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
+                    }
+                  }
                 }
               }
             }
           },
           "selector": {
-            "id": "default"
-          }
-        }
-      ],
-      "shadowCustom": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
+            "metadata": "_Medidas.SOLPED pendiente por ordenar"
           }
         }
       ],
@@ -295,138 +247,6 @@
                 }
               }
             }
-          }
-        }
-      ],
-      "glowCustom": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "paddingUniform": {
-              "expr": {
-                "Literal": {
-                  "Value": "12L"
-                }
-              }
-            },
-            "paddingIndividual": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        }
-      ],
-      "cardImage": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'numero-1.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "numero-19877125674502969.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Fit'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
-          }
-        }
-      ],
-      "image": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "image": {
-              "image": {
-                "name": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'numero-1.png'"
-                    }
-                  }
-                },
-                "url": {
-                  "expr": {
-                    "ResourcePackageItem": {
-                      "PackageName": "RegisteredResources",
-                      "PackageType": 1,
-                      "ItemName": "numero-17761719011683424.png"
-                    }
-                  }
-                },
-                "scaling": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'Normal'"
-                    }
-                  }
-                }
-              }
-            },
-            "fit": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Normal'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Medidas.SOLPED en gestión"
           }
         }
       ]
@@ -510,7 +330,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "11D"
                 }
               }
             },
@@ -559,7 +379,28 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Costo aprobado pendiente de OC'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }

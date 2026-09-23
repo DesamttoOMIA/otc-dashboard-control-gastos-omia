@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 261.49999999999977,
         "y": 14.285714285714286
       },
       "nodes": [
@@ -113,19 +113,6 @@
         },
         {
           "location": {
-            "x": 0,
-            "y": 245.30357142857144
-          },
-          "nodeIndex": "Fact_factura_proveedor_pago_efectuado",
-          "nodeLineageTag": "89064307-007d-41ca-94ae-16398bfeae48",
-          "size": {
-            "height": 300,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
             "x": 1692.2857142857142,
             "y": 157.30357142857139
           },
@@ -159,6 +146,18 @@
           "size": {
             "height": 300,
             "width": 275.42857142857144
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 245.30357142857144
+          },
+          "nodeIndex": "Fact_SOLPED_OC_FC_EM_FP_PE",
+          "size": {
+            "height": 300,
+            "width": 234
           },
           "zIndex": 0
         }
