@@ -26,7 +26,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","ETL_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_factura_proveedor_pago_efectuado","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","Detalle_documental_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_factura_proveedor_pago_efectuado","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)"]
 
 ref table Fact_solicitud_de_pedido
 ref table Fact_entrada_de_mercancia

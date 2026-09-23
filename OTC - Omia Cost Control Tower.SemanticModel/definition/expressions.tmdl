@@ -1,4 +1,4 @@
-expression ETL_solicitud_de_pedido =
+expression Detalle_documental_solicitud_de_pedido =
 		let
 		    Origen = Fact_solicitud_de_pedido,
 		    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"ID de documento interno", "Nombre de usuario", "Fecha de documento", "Fecha necesaria", "Prioridad", "Reembolsable", "Norma de reparto", "Código del cálculo del costo 2", "Precio tras el descuento", "Línea cerrada manualmente", "Clase de documento de destino", "Comprador", "Antiguedad", "Tiempo Necesidad"}),
@@ -196,7 +196,7 @@ expression Fact_presupuesto =
 
 expression Fact_detalle_documental =
 		let
-		    Origen = Table.Combine({ETL_solicitud_de_pedido, ETL_ordenes_de_compra, ETL_facturas_conformadas}),
+		    Origen = Table.Combine({Detalle_documental_solicitud_de_pedido, ETL_ordenes_de_compra, ETL_facturas_conformadas}),
 		    #"Filas filtradas" = Table.SelectRows(Origen, each true)
 		in
 		    #"Filas filtradas"

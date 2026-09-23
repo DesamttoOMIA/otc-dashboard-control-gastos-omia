@@ -62,3 +62,7 @@ relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
 	fromColumn: Fact_ordenes_de_compra.'Código de proyecto'
 	toColumn: Dim_proyecto.'Código de proyecto'
 
+relationship 069adac3-67c8-270c-21d2-164ec18a6cdd
+	fromColumn: Fact_factura_proveedor_pago_efectuado.'Subceco SC'
+	toColumn: Dim_subseco.'Id subseco'
+

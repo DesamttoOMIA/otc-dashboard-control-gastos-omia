@@ -5,7 +5,7 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 141.42857142857144
+        "y": 14.285714285714286
       },
       "nodes": [
         {
@@ -113,8 +113,8 @@
         },
         {
           "location": {
-            "x": 58.571428571428584,
-            "y": 351.01785714285717
+            "x": 0,
+            "y": 245.30357142857144
           },
           "nodeIndex": "Fact_factura_proveedor_pago_efectuado",
           "nodeLineageTag": "89064307-007d-41ca-94ae-16398bfeae48",

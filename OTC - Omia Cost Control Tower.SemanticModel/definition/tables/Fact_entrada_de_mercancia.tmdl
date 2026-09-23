@@ -357,11 +357,12 @@ table Fact_entrada_de_mercancia
 				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id subseco", "Id categoria"}, {"Dim_subseco.Id subseco", "Dim_subseco.Id categoria"}),
 				    #"Filas filtradas" = Table.SelectRows(#"Se expandió Dim_subseco", each ([Dim_subseco.Id subseco] <> null)),
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas filtradas",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}}),
-				    #"Columna agregada TieneOC" = Table.AddColumn(#"Columnas con nombre cambiado", "TieneOC", each [Orden de Compra] <> null and [Orden de Compra] <> "", type logical)
+				    #"Columna agregada TieneOC" = Table.AddColumn(#"Columnas con nombre cambiado", "TieneOC", each [Orden de Compra] <> null and [Orden de Compra] <> "", type logical),
+				    #"Filas filtradas1" = Table.SelectRows(#"Columna agregada TieneOC", each true)
 				in
-				    #"Columna agregada TieneOC"
+				    #"Filas filtradas1"
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navegación
 
