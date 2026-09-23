@@ -3,7 +3,7 @@ relationship 690a7a82-67c3-8cea-111c-a3e80102aa12
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship 85e7175c-fd6a-27a4-f945-68f231081bff
-	fromColumn: Fact_entrada_de_mercancia.Proyecto
+	fromColumn: Fact_entrada_de_mercancia_factura_conformada.Proyecto
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship eb619fc7-4275-357a-f848-33f7299e053a
@@ -11,7 +11,7 @@ relationship eb619fc7-4275-357a-f848-33f7299e053a
 	toColumn: Calendario.Date
 
 relationship ec91535e-32e3-90cc-fa05-7a803401bd38
-	fromColumn: Fact_entrada_de_mercancia.'Fecha de contabilización'
+	fromColumn: Fact_entrada_de_mercancia_factura_conformada.'Fecha de contabilización'
 	toColumn: Calendario.Date
 
 relationship e82653a2-e3e0-4a07-9247-c4e82bec125c
@@ -23,7 +23,7 @@ relationship ae9f4378-c3a6-27a1-2a62-b29dc91e5f98
 	toColumn: Dim_subseco.'Id subseco'
 
 relationship 44add28a-2592-2fdb-6a88-783988031c55
-	fromColumn: Fact_entrada_de_mercancia.'Id subseco'
+	fromColumn: Fact_entrada_de_mercancia_factura_conformada.'Id subseco'
 	toColumn: Dim_subseco.'Id subseco'
 
 relationship 3c21b3fc-c64e-151e-f9cb-f77533d74bed
@@ -35,7 +35,7 @@ relationship AutoDetected_866ad6b0-72eb-4a7c-a345-71dc6130664f
 	toColumn: Dim_categoria.'Id categoria'
 
 relationship AutoDetected_b58f106d-c2f2-4879-892a-c4d8e444cce3
-	fromColumn: Fact_entrada_de_mercancia.'Id categoria'
+	fromColumn: Fact_entrada_de_mercancia_factura_conformada.'Id categoria'
 	toColumn: Dim_categoria.'Id categoria'
 
 relationship AutoDetected_7d4787a3-198e-4c7a-a58c-f7ec337bddfc
@@ -51,11 +51,11 @@ relationship AutoDetected_5b810830-2805-4c2d-b3d7-c82393b1373e
 	toColumn: Dim_proyecto.'Id proyecto'
 
 relationship a2c4fc4a-3152-0026-9a8e-93b3706145f3
-	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Código Proyecto SC'
+	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.'Código Proyecto SC'
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship 4265a6b8-1994-4d46-c2fb-82d9d887c485
-	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Fecha de creación'
+	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.'Fecha de creación'
 	toColumn: Calendario.Date
 
 relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
@@ -63,10 +63,10 @@ relationship AutoDetected_6c8aa3ea-c02c-4e6e-ba8f-ec089c14c0fe
 	toColumn: Dim_proyecto.'Código de proyecto'
 
 relationship AutoDetected_84a3645a-ce7f-454f-b7fd-aa9eed2877e3
-	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Id categoria'
+	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.'Id categoria'
 	toColumn: Dim_categoria.'Id categoria'
 
 relationship a1888e60-06cb-93da-70e4-962def0dd9be
-	fromColumn: Fact_SOLPED_OC_FC_EM_FP_PE.'Subceco SC'
+	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.'Subceco SC'
 	toColumn: Dim_subseco.Subseco
 

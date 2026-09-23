@@ -26,10 +26,10 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","Detalle_documental_solicitud_de_pedido","ETL_facturas_conformadas","ETL_ordenes_de_compra","Fact_detalle_documental","Fact_SOLPED_OC_FC_EM_FP_PE","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)","Detalle documental_SOLPED_OC_FC_EM_FP_PE"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia_factura_conformada","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","stg_solicitud_de_pedido","stg_entrada_de_mercancia_factura_conformada","stg_orden_de_compra","Fact_stg_solped_oc_fc_em_fp_pe","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)","stg_solped_oc_fc_em_fp_pe","Fact_bitacora_documental"]
 
 ref table Fact_solicitud_de_pedido
-ref table Fact_entrada_de_mercancia
+ref table Fact_entrada_de_mercancia_factura_conformada
 ref table Fact_ordenes_de_compra
 ref table Dim_proyecto
 ref table Calendario
@@ -37,8 +37,9 @@ ref table 'Dim_Subseco stanby'
 ref table _Medidas
 ref table Dim_subseco
 ref table Dim_categoria
-ref table Fact_SOLPED_OC_FC_EM_FP_PE
+ref table Fact_stg_solped_oc_fc_em_fp_pe
 ref table Fact_presupuesto_final
+ref table Fact_bitacora_documental
 
 ref cultureInfo es-CO
 

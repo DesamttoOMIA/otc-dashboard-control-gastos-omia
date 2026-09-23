@@ -1,4 +1,4 @@
-table Fact_SOLPED_OC_FC_EM_FP_PE
+table Fact_stg_solped_oc_fc_em_fp_pe
 	lineageTag: 89064307-007d-41ca-94ae-16398bfeae48
 
 	column #
@@ -387,7 +387,7 @@ table Fact_SOLPED_OC_FC_EM_FP_PE
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Fact_SOLPED_OC_FC_EM_FP_PE = m
+	partition Fact_stg_solped_oc_fc_em_fp_pe = m
 		mode: import
 		source =
 				let

@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "#"
@@ -39,7 +39,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Cancelado"
@@ -55,7 +55,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Cantidad"
@@ -74,7 +74,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Cantidad_3"
@@ -93,7 +93,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Cantidad_9"
@@ -110,7 +110,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Código de condiciones de pago"
@@ -124,7 +124,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Código Proyecto SC"
@@ -138,7 +138,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Descripción artículo/serv."
@@ -152,7 +152,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Descripción artículo/serv._2"
@@ -166,7 +166,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Descripción artículo/serv._8"
@@ -180,7 +180,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Fecha de contabilización"
@@ -194,7 +194,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Fecha de creación"
@@ -208,7 +208,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Fecha de creación_13"
@@ -222,7 +222,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Fecha de creación_20"
@@ -236,7 +236,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Fecha de creación_6"
@@ -252,7 +252,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "No. Entrada de Mercancía"
@@ -271,7 +271,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "No. Orden de Compra"
@@ -290,7 +290,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "No. Pago SAP"
@@ -309,7 +309,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "No. Solped"
@@ -328,7 +328,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "No.Factura SAP"
@@ -345,7 +345,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Nombre de cliente/proveedor"
@@ -359,7 +359,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Nombre de usuario"
@@ -373,7 +373,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Número de artículo"
@@ -387,7 +387,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Número de artículo_1"
@@ -401,7 +401,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Número de artículo_14"
@@ -415,7 +415,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Número de artículo_7"
@@ -431,7 +431,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Precio"
@@ -450,7 +450,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Precio tras el descuento"
@@ -469,7 +469,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Precio_11"
@@ -488,7 +488,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Precio_18"
@@ -505,7 +505,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Subceco SC"
@@ -521,7 +521,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Total líneas"
@@ -540,7 +540,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Total líneas_12"
@@ -559,7 +559,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Total líneas_19"
@@ -578,7 +578,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                          "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                         }
                       },
                       "Property": "Total líneas_5"
@@ -595,7 +595,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Unidad"
@@ -609,7 +609,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Unidad_10"
@@ -623,7 +623,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Unidad_17"
@@ -637,7 +637,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Fact_SOLPED_OC_FC_EM_FP_PE"
+                      "Entity": "Fact_stg_solped_oc_fc_em_fp_pe"
                     }
                   },
                   "Property": "Unidad_4"

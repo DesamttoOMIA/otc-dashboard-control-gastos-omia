@@ -26,8 +26,8 @@ table _Medidas
 	measure 'FC pendiente por facturar' =
 			
 			CALCULATE (
-			    SUM ( Fact_entrada_de_mercancia[Total líneas] ),
-			    ISBLANK ( Fact_entrada_de_mercancia[Orden de Compra] )
+			    SUM ( Fact_entrada_de_mercancia_factura_conformada[Total líneas] ),
+			    ISBLANK ( Fact_entrada_de_mercancia_factura_conformada[Orden de Compra] )
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Vista general
@@ -124,10 +124,10 @@ table _Medidas
 	measure 'EM pendiente por facturar' =
 			
 			CALCULATE (
-			    SUM ( 'Fact_entrada_de_mercancia'[Total líneas] ),
-			    'Fact_entrada_de_mercancia'[Status de documento] = "O",
-			    'Fact_entrada_de_mercancia'[Clase de documento de destino] = -1,
-			    NOT ISBLANK ( 'Fact_entrada_de_mercancia'[Orden de Compra] )
+			    SUM ( 'Fact_entrada_de_mercancia_factura_conformada'[Total líneas] ),
+			    'Fact_entrada_de_mercancia_factura_conformada'[Status de documento] = "O",
+			    'Fact_entrada_de_mercancia_factura_conformada'[Clase de documento de destino] = -1,
+			    NOT ISBLANK ( 'Fact_entrada_de_mercancia_factura_conformada'[Orden de Compra] )
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Vista general
@@ -136,9 +136,9 @@ table _Medidas
 	measure 'FP pendiente por pagar' =
 			
 			CALCULATE (
-			    SUM ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[Total líneas_19] ),
-			    NOT ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No.Factura SAP] ),
-			    ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No. Pago SAP] )
+			    SUM ( 'Fact_stg_solped_oc_fc_em_fp_pe'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No.Factura SAP] ),
+			    ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No. Pago SAP] )
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Vista general
@@ -149,8 +149,8 @@ table _Medidas
 	measure 'Pago efectuado' =
 			
 			CALCULATE (
-			    SUM ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[Total líneas_19] ),
-			    NOT ISBLANK ( 'Fact_SOLPED_OC_FC_EM_FP_PE'[No. Pago SAP] )
+			    SUM ( 'Fact_stg_solped_oc_fc_em_fp_pe'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No. Pago SAP] )
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
 		displayFolder: Vista general

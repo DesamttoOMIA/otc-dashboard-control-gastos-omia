@@ -22,7 +22,7 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Fact_entrada_de_mercancia"
+                          "Entity": "Fact_entrada_de_mercancia_factura_conformada"
                         }
                       },
                       "Property": "Total líneas"
@@ -46,7 +46,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "Fact_entrada_de_mercancia"
+                        "Entity": "Fact_entrada_de_mercancia_factura_conformada"
                       }
                     },
                     "Property": "Total líneas"

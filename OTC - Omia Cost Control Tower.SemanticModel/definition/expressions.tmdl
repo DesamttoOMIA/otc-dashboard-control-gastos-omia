@@ -1,92 +1,201 @@
-expression Detalle_documental_solicitud_de_pedido =
+expression stg_solicitud_de_pedido =
 		let
 		    Origen = Fact_solicitud_de_pedido,
-		    #"Columnas quitadas" = Table.RemoveColumns(Origen,{"ID de documento interno", "Nombre de usuario", "Fecha de documento", "Fecha necesaria", "Prioridad", "Reembolsable", "Norma de reparto", "Código del cálculo del costo 2", "Precio tras el descuento", "Línea cerrada manualmente", "Clase de documento de destino", "Comprador", "Antiguedad", "Tiempo Necesidad"}),
-		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"#", "Número interno"}, {"Adjudicacion Directa", "Adjudicación Directa"}}),
-		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas con nombre cambiado",{{"Código del cálculo del costo 3", "Código subseco"}}),
-		    #"Columnas quitadas1" = Table.RemoveColumns(#"Columnas con nombre cambiado1",{"Texto"}),
-		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas quitadas1",{{"Total líneas", "Total línea"}}),
-		    #"Personalizada agregada" = Table.AddColumn(#"Columnas con nombre cambiado2", "Tipo de documento", each "Solicitud de pedido abierta"),
-		    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Código subseco", "Descripción artículo/serv.", "Total línea", "Unidad", "Status de la línea", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas reordenadas",{{"Fecha de creación", "Fecha de creación/Contabilización"}}),
-		    #"Columnas reordenadas1" = Table.ReorderColumns(#"Columnas con nombre cambiado3",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Cantidad", "Total línea", "Unidad", "Código subseco", "Status de la línea", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado4" = Table.RenameColumns(#"Columnas reordenadas1",{{"Status de la línea", "Estado línea/documento"}}),
-		    #"Personalizada agregada1" = Table.AddColumn(#"Columnas con nombre cambiado4", "Comentarios adicionales", each "null"),
-		    #"Columnas reordenadas2" = Table.ReorderColumns(#"Personalizada agregada1",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Comentarios adicionales", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado5" = Table.RenameColumns(#"Columnas reordenadas2",{{"Fecha de creación/Contabilización", "Fecha de creación/Contabilización NC"}})
+		
+		    Pendientes = Table.SelectRows(Origen, each
+		        [#"Status de la línea"] = "O"
+		        and [Cancelado] = "N"
+		        and [#"Línea cerrada manualmente"] = "N"
+		        and [#"Clase de documento de destino"] = -1),
+		
+		    ConTipo    = Table.AddColumn(Pendientes, "Tipo de documento", each "SOLPED", type text),
+		    ConEstado  = Table.AddColumn(ConTipo, "Estado", each "Pendiente por ordenar", type text),
+		    ConOrden   = Table.AddColumn(ConEstado, "Orden etapa", each 1, Int64.Type),
+		    ConOrigen  = Table.AddColumn(ConOrden, "SOLPED origen", each [#"Número de documento"]),
+		    ConOC      = Table.AddColumn(ConOrigen, "OC asociada", each null, Int64.Type),
+		    ConFactura = Table.AddColumn(ConOC, "Factura asociada", each null, Int64.Type),
+		    ConProveedor = Table.AddColumn(ConFactura, "Proveedor", each null, type text),
+		    ConDias = Table.AddColumn(ConProveedor, "Días en la etapa",
+		        each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([#"Fecha de documento"])), Int64.Type),
+		
+		    Seleccion = Table.SelectColumns(ConDias, {
+		        "Tipo de documento", "Estado", "Orden etapa",
+		        "Número de documento", "SOLPED origen", "OC asociada", "Factura asociada",
+		        "Fecha de documento", "Días en la etapa",
+		        "Proveedor", "Número de artículo", "Descripción artículo/serv.",
+		        "Cantidad", "Unidad", "Total líneas",
+		        "Nombre de usuario",
+		        "Código del cálculo del costo 3", "Código de proyecto",
+		        "Fecha necesaria", "Prioridad", "Comprador", "Comentarios"
+		    }),
+		
+		    Renombradas = Table.RenameColumns(Seleccion, {
+		        {"Número de documento", "N° documento"},
+		        {"Fecha de documento", "Fecha documento"},
+		        {"Número de artículo", "Artículo"},
+		        {"Descripción artículo/serv.", "Descripción"},
+		        {"Cantidad", "Cantidad pendiente"},
+		        {"Total líneas", "Valor"},
+		        {"Nombre de usuario", "Responsable"},
+		        {"Código del cálculo del costo 3", "Subseco"},
+		        {"Código de proyecto", "Proyecto"},
+		        {"Comprador", "Comprador asignado"}
+		    }),
+		
+		    Tipos = Table.TransformColumnTypes(Renombradas, {
+		        {"N° documento", Int64.Type}, {"SOLPED origen", Int64.Type},
+		        {"Fecha documento", type date}, {"Fecha necesaria", type date},
+		        {"Artículo", type text}, {"Descripción", type text}, {"Unidad", type text},
+		        {"Cantidad pendiente", type number}, {"Valor", type number},
+		        {"Responsable", type text}, {"Comprador asignado", type text},
+		        {"Subseco", Int64.Type}, {"Proyecto", type text}
+		    })
 		in
-		    #"Columnas con nombre cambiado5"
+		    Tipos
 	lineageTag: 9bcb61f1-b80f-4172-a2ba-6832d98e31d1
 
 	annotation PBI_NavigationStepName = Navegación
 
 	annotation PBI_ResultType = Table
 
-expression ETL_facturas_conformadas =
+expression stg_entrada_de_mercancia_factura_conformada =
 		let
-		    Origen = Fact_entrada_de_mercancia,
-		    #"Columnas con nombre cambiado" = Table.RenameColumns(Origen,{{"Número interno", "Número de documento"}, {"#", "Número interno"}}),
-		    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Entrada mercancías", "Serie"}),
-		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas",{{"Fecha de contabilización", "Fecha de creación/Contabilización"}}),
-		    #"Columnas quitadas1" = Table.RemoveColumns(#"Columnas con nombre cambiado1",{"Código de cliente/proveedor", "Nombre de cliente/proveedor", "Número de artículo"}),
-		    #"Columnas quitadas2" = Table.RemoveColumns(#"Columnas quitadas1",{"Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Código de cuenta"}),
-		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas quitadas2",{{"Precio", "Total línea"}}),
-		    #"Columnas quitadas3" = Table.RemoveColumns(#"Columnas con nombre cambiado2",{"Código de almacén", "Nombre de almacén", "Destino Compra"}),
-		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas quitadas3",{{"Proyecto", "Código de proyecto"}}),
-		    #"Columnas quitadas4" = Table.RemoveColumns(#"Columnas con nombre cambiado3",{"Nombre de proyecto", "Norma de reparto", "Código del cálculo del costo 2"}),
-		    #"Columnas con nombre cambiado4" = Table.RenameColumns(#"Columnas quitadas4",{{"Código del cálculo del costo 3", "Código subseco"}}),
-		    #"Columnas quitadas5" = Table.RemoveColumns(#"Columnas con nombre cambiado4",{"Código del cálculo del costo 4", "Total antes de IVA", "Total línea"}),
-		    #"Columnas con nombre cambiado5" = Table.RenameColumns(#"Columnas quitadas5",{{"Total líneas", "Total línea"}}),
-		    #"Columnas quitadas6" = Table.RemoveColumns(#"Columnas con nombre cambiado5",{"Reembolsable", "Procedencia  Entrada de Mercancia", "Orden de Compra", "Referencia"}),
-		    #"Columnas con nombre cambiado6" = Table.RenameColumns(#"Columnas quitadas6",{{"Status de documento", "Estado línea/documento"}}),
-		    #"Columnas quitadas7" = Table.RemoveColumns(#"Columnas con nombre cambiado6",{"Solicitud de compra", "Clase de documento de destino", "DOCDESTINO", "Creador EM"}),
-		    #"Personalizada agregada" = Table.AddColumn(#"Columnas quitadas7", "Tipo de documento", each "Factura conformada"),
-		    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Cantidad", "Unidad", "Código de proyecto", "Código subseco", "Total línea", "Estado línea/documento", "Comentarios", "Id subseco", "Id categoria"}),
-		    #"Personalizada agregada1" = Table.AddColumn(#"Columnas reordenadas", "Adjudicación Directa", each "null"),
-		    #"Columnas reordenadas1" = Table.ReorderColumns(#"Personalizada agregada1",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Id subseco", "Id categoria"}),
-		    #"Personalizada agregada2" = Table.AddColumn(#"Columnas reordenadas1", "Cancelado", each "null"),
-		    #"Columnas reordenadas2" = Table.ReorderColumns(#"Personalizada agregada2",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas reordenadas3" = Table.ReorderColumns(#"Columnas reordenadas2",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación/Contabilización", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Personalizada agregada4" = Table.AddColumn(#"Columnas reordenadas3", "Comentarios adicionales", each "null"),
-		    #"Columnas reordenadas4" = Table.ReorderColumns(#"Personalizada agregada4",{"Tipo de documento", "Número interno", "Número de documento", "Descripción artículo/serv.", "Adjudicación Directa", "Código de proyecto", "Comentarios", "Comentarios adicionales", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado7" = Table.RenameColumns(#"Columnas reordenadas4",{{"Fecha de creación/Contabilización", "Fecha de creación/Contabilización NC"}})
+		    Origen = Fact_entrada_de_mercancia_factura_conformada,
+		
+		    // Marca si la EM viene sin orden de compra (factura conformada)
+		    ConMarca = Table.AddColumn(Origen, "EsConformada",
+		        each [#"Orden de Compra"] = null or [#"Orden de Compra"] = "", type logical),
+		
+		    // Conformadas (todas) + EM con OC abiertas y sin factura destino
+		    Filtradas = Table.SelectRows(ConMarca, each
+		        [EsConformada]
+		        or ([#"Status de documento"] = "O" and [#"Clase de documento de destino"] = -1)),
+		
+		    ConTipo = Table.AddColumn(Filtradas, "Tipo de documento",
+		        each if [EsConformada] then "Factura conformada" else "Entrada de mercancía", type text),
+		    ConEstado = Table.AddColumn(ConTipo, "Estado",
+		        each if [EsConformada] then "Recibido sin OC" else "Pendiente por facturar", type text),
+		    ConOrden = Table.AddColumn(ConEstado, "Orden etapa",
+		        each if [EsConformada] then 3 else 4, Int64.Type),
+		
+		    ConOC = Table.AddColumn(ConOrden, "OC asociada",
+		        each if [EsConformada] then null else [#"Orden de Compra"]),
+		    ConFactura = Table.AddColumn(ConOC, "Factura asociada", each null, Int64.Type),
+		
+		    ConDias = Table.AddColumn(ConFactura, "Días en la etapa",
+		        each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([#"Fecha de contabilización"])), Int64.Type),
+		
+		    Seleccion = Table.SelectColumns(ConDias, {
+		        "Tipo de documento", "Estado", "Orden etapa",
+		        "Entrada mercancías", "Solicitud de compra", "OC asociada", "Factura asociada",
+		        "Fecha de contabilización", "Días en la etapa",
+		        "Nombre de cliente/proveedor", "Número de artículo", "Descripción artículo/serv.",
+		        "Cantidad", "Unidad", "Total líneas",
+		        "Creador EM",
+		        "Código del cálculo del costo 3", "Proyecto",
+		        "Código de cuenta", "Comentarios"
+		    }),
+		
+		    Renombradas = Table.RenameColumns(Seleccion, {
+		        {"Entrada mercancías", "N° documento"},
+		        {"Solicitud de compra", "SOLPED origen"},
+		        {"Fecha de contabilización", "Fecha documento"},
+		        {"Nombre de cliente/proveedor", "Proveedor"},
+		        {"Número de artículo", "Artículo"},
+		        {"Descripción artículo/serv.", "Descripción"},
+		        {"Cantidad", "Cantidad pendiente"},
+		        {"Total líneas", "Valor"},
+		        {"Creador EM", "Responsable"},
+		        {"Código del cálculo del costo 3", "Subseco"}
+		    }),
+		
+		    Tipos = Table.TransformColumnTypes(Renombradas, {
+		        {"N° documento", Int64.Type}, {"SOLPED origen", Int64.Type}, {"OC asociada", Int64.Type},
+		        {"Fecha documento", type date},
+		        {"Proveedor", type text}, {"Artículo", type text}, {"Descripción", type text}, {"Unidad", type text},
+		        {"Cantidad pendiente", type number}, {"Valor", type number},
+		        {"Responsable", type text}, {"Subseco", Int64.Type}, {"Proyecto", type text},
+		        {"Código de cuenta", type text}
+		    }),
+		    #"Filas filtradas" = Table.SelectRows(Tipos, each true)
 		in
-		    #"Columnas con nombre cambiado7"
+		    #"Filas filtradas"
 	lineageTag: 067ea0f1-1236-4422-ae39-c9d3ae10c7d6
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
-expression ETL_ordenes_de_compra =
+expression stg_orden_de_compra =
 		let
 		    Origen = Fact_ordenes_de_compra,
-		    #"Columnas con nombre cambiado" = Table.RenameColumns(Origen,{{"#", "Número interno"}, {"Orden de Compra", "Número de documento"}}),
-		    #"Columnas quitadas" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Código Proveedor", "Nombre Proveedor"}),
-		    #"Columnas reordenadas" = Table.ReorderColumns(#"Columnas quitadas",{"Número interno", "Cancelado", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Pedido visual", "No. Solped", "PU Solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped $Cop", "Fecha creacion Solped", "Número de artículo", "Descripción general", "Detalle adicional", "Comentarios adicionales", "Equipo", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "Cantidad OC", "Unidad Medida OC", "PU OC", "Moneda del precio", "Tipo de cambio", "Total Líneas OC $Cop", "Status línea OC", "Prioridad OC", "Adjudicacion Directa", "Reembolsable", "F. Entrega línea", "Código Proyecto", "Nombre Proyecto", "Código Almacen", "Nombre Almacen", "Norma Reparto", "Código del cálculo del costo 2", "Código del cálculo del costo 3", "Cantidad abierta restante", "Código Resp.de C&C Línea", "Nombre Resp.de C&C Línea", "Comprador", "Tipo de OC 1Normal 2OC de CM 3OC-LV", "Número Cto Marco", "Tipo OP (Uso Exclusivo de A&L-OC)", "CM Lic. / Adj. Dir", "Desviación $Cop (PU)", "Desviación $Cop (PU) %", "Ko", "Ind.: Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Código de condiciones de pago", "Condiciones de Pago", "Ind.:Días para Creación OC/SAP", "Id subseco", "Id categoria"}),
-		    #"Columnas quitadas1" = Table.RemoveColumns(#"Columnas reordenadas",{"Pedido visual", "No. Solped", "PU Solped", "Cantidad Solped", "Moneda Solped", "Tipo de cambio Solped", "Total Lineas Solped $Cop", "Fecha creacion Solped", "Número de artículo", "Equipo", "Grupo de artículos", "Nombre de grupo", "Sub Grupo", "Linea Mat/Serv", "Referencia Uso/Raiz", "PU OC", "Moneda del precio", "Tipo de cambio"}),
-		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Columnas quitadas1",{{"Total Líneas OC $Cop", "Total línea"}, {"Status línea OC", "Estado línea/documento"}}),
-		    #"Columnas quitadas2" = Table.RemoveColumns(#"Columnas con nombre cambiado1",{"Prioridad OC", "Reembolsable", "F. Entrega línea", "Nombre Proyecto", "Código Almacen", "Nombre Almacen", "Norma Reparto", "Código del cálculo del costo 2"}),
-		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas quitadas2",{{"Código del cálculo del costo 3", "Código subseco"}}),
-		    #"Columnas quitadas3" = Table.RemoveColumns(#"Columnas con nombre cambiado2",{"Cantidad abierta restante", "Código Resp.de C&C Línea", "Nombre Resp.de C&C Línea", "Comprador", "Tipo de OC 1Normal 2OC de CM 3OC-LV", "Número Cto Marco", "Tipo OP (Uso Exclusivo de A&L-OC)", "CM Lic. / Adj. Dir", "Desviación $Cop (PU)", "Desviación $Cop (PU) %", "Ko", "Ind.: Días de tratamiento", "Ind.: Rango Días de tratamiento", "Ind.: Días p/ entrega Prov.", "Indic.:Entregado $Cop", "Indic.:% Entrega", "Código de condiciones de pago", "Condiciones de Pago", "Ind.:Días para Creación OC/SAP"}),
-		    #"Columnas reordenadas1" = Table.ReorderColumns(#"Columnas quitadas3",{"Número interno", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Descripción general", "Detalle adicional", "Comentarios adicionales", "Cantidad OC", "Unidad Medida OC", "Total línea", "Estado línea/documento", "Adjudicacion Directa", "Código Proyecto", "Código subseco", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Personalizada agregada" = Table.AddColumn(#"Columnas reordenadas1", "Tipo de documento", each "Orden de compra cerrada"),
-		    #"Columnas reordenadas2" = Table.ReorderColumns(#"Personalizada agregada",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Descripción general", "Detalle adicional", "Comentarios adicionales", "Cantidad OC", "Unidad Medida OC", "Total línea", "Estado línea/documento", "Adjudicacion Directa", "Código Proyecto", "Código subseco", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas reordenadas2",{{"Descripción general", "Descripción artículo/serv."}}),
-		    #"Columnas reordenadas3" = Table.ReorderColumns(#"Columnas con nombre cambiado3",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Descripción artículo/serv.", "Adjudicacion Directa", "Código Proyecto", "Detalle adicional", "Comentarios adicionales", "Cantidad OC", "Unidad Medida OC", "Total línea", "Estado línea/documento", "Código subseco", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado4" = Table.RenameColumns(#"Columnas reordenadas3",{{"Detalle adicional", "Comentarios"}, {"Cantidad OC", "Cantidad"}}),
-		    #"Columnas reordenadas4" = Table.ReorderColumns(#"Columnas con nombre cambiado4",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Descripción artículo/serv.", "Adjudicacion Directa", "Código Proyecto", "Comentarios", "Comentarios adicionales", "Cantidad", "Total línea", "Unidad Medida OC", "Estado línea/documento", "Código subseco", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado5" = Table.RenameColumns(#"Columnas reordenadas4",{{"Unidad Medida OC", "Unidad"}}),
-		    #"Columnas reordenadas5" = Table.ReorderColumns(#"Columnas con nombre cambiado5",{"Tipo de documento", "Número interno", "Número de documento", "Fecha de creación", "Fecha de contabilización", "Descripción artículo/serv.", "Adjudicacion Directa", "Código Proyecto", "Comentarios", "Comentarios adicionales", "Cantidad", "Total línea", "Unidad", "Código subseco", "Estado línea/documento", "Cancelado", "Id subseco", "Id categoria"}),
-		    #"Columnas con nombre cambiado6" = Table.RenameColumns(#"Columnas reordenadas5",{{"Adjudicacion Directa", "Adjudicación Directa"}, {"Código Proyecto", "Código de proyecto"}, {"Fecha de contabilización", "Fecha de Contabilización"}, {"Fecha de creación", "Fecha de creación/Contabilización NC"}}),
-		    #"Columnas quitadas4" = Table.RemoveColumns(#"Columnas con nombre cambiado6",{"Fecha de Contabilización"})
+		
+		    // Solo líneas de OC con saldo pendiente por recibir
+		    Abiertas = Table.SelectRows(Origen, each [#"Status de la línea"] = "O"),
+		
+		    // Valor pendiente = cantidad abierta × precio (saldo real, incluye recepciones parciales)
+		    ConValor = Table.AddColumn(Abiertas, "Valor", each [#"Cantidad abierta restante"] * [Precio], type number),
+		
+		    // Columnas de clasificación
+		    ConTipo   = Table.AddColumn(ConValor,  "Tipo de documento", each "Orden de compra", type text),
+		    ConEstado = Table.AddColumn(ConTipo,   "Estado", each "Pendiente por recibir", type text),
+		    ConOrden  = Table.AddColumn(ConEstado, "Orden etapa", each 2, Int64.Type),
+		
+		    // Trazabilidad: la OC es su propia "OC asociada"; aún no tiene factura
+		    ConOC      = Table.AddColumn(ConOrden, "OC asociada", each [#"Número de documento"]),
+		    ConFactura = Table.AddColumn(ConOC, "Factura asociada", each null, Int64.Type),
+		
+		    // Días desde que se creó la OC hasta hoy (se recalcula en cada actualización)
+		    ConDias = Table.AddColumn(ConFactura, "Días en la etapa",
+		        each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([#"Fecha de creación"])), Int64.Type),
+		
+		    // Columnas comunes + columnas propias para el tooltip
+		    Seleccion = Table.SelectColumns(ConDias, {
+		        "Tipo de documento", "Estado", "Orden etapa",
+		        "Número de documento", "No. Solped", "OC asociada", "Factura asociada",
+		        "Fecha de creación", "Días en la etapa",
+		        "Nombre de cliente/proveedor", "Número de artículo", "Descripción artículo/serv.",
+		        "Cantidad abierta restante", "Unidad", "Valor",
+		        "Nombre de empleado del departamento de ventas",
+		        "Código del cálculo del costo 3", "Código de proyecto",
+		        "Fecha de entrega de la línea", "Código de condiciones de pago_1", "Número Cto Marco",
+		        "Tipo de OC (Uso Exclusivo de A&L-OC)", "Ind.: Días p/ entrega Prov.", "Indic.:% Entrega",
+		        "Comentarios"
+		    }),
+		
+		    Renombradas = Table.RenameColumns(Seleccion, {
+		        {"Número de documento", "N° documento"},
+		        {"No. Solped", "SOLPED origen"},
+		        {"Fecha de creación", "Fecha documento"},
+		        {"Nombre de cliente/proveedor", "Proveedor"},
+		        {"Número de artículo", "Artículo"},
+		        {"Descripción artículo/serv.", "Descripción"},
+		        {"Cantidad abierta restante", "Cantidad pendiente"},
+		        {"Nombre de empleado del departamento de ventas", "Responsable"},
+		        {"Código del cálculo del costo 3", "Subseco"},
+		        {"Código de proyecto", "Proyecto"},
+		        {"Fecha de entrega de la línea", "Fecha entrega OC"},
+		        {"Código de condiciones de pago_1", "Condiciones de pago"},
+		        {"Número Cto Marco", "Contrato marco"},
+		        {"Tipo de OC (Uso Exclusivo de A&L-OC)", "Tipo de OC"},
+		        {"Ind.: Días p/ entrega Prov.", "Días para entrega proveedor"},
+		        {"Indic.:% Entrega", "% entrega"}
+		    }),
+		
+		    Tipos = Table.TransformColumnTypes(Renombradas, {
+		        {"N° documento", Int64.Type}, {"SOLPED origen", Int64.Type}, {"OC asociada", Int64.Type},
+		        {"Fecha documento", type date}, {"Fecha entrega OC", type date},
+		        {"Artículo", type text}, {"Cantidad pendiente", type number},
+		        {"Subseco", Int64.Type}, {"Proyecto", type text}, {"Responsable", type text},
+		        {"Proveedor", type text}, {"Descripción", type text}, {"Unidad", type text}
+		    })
 		in
-		    #"Columnas quitadas4"
+		    Tipos
 	lineageTag: 8d791f10-6b96-4132-98ef-ee0915ecaf0c
 
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 expression 'Dim_categoria (1)' =
 		let
@@ -194,18 +303,6 @@ expression Fact_presupuesto =
 
 	annotation PBI_ResultType = Table
 
-expression Fact_detalle_documental =
-		let
-		    Origen = Table.Combine({Detalle_documental_solicitud_de_pedido, ETL_ordenes_de_compra, ETL_facturas_conformadas}),
-		    #"Filas filtradas" = Table.SelectRows(Origen, each true)
-		in
-		    #"Filas filtradas"
-	lineageTag: 7b1e0001-7d8e-4638-b4d1-63ed36051731
-
-	annotation PBI_NavigationStepName = Navegación
-
-	annotation PBI_ResultType = Exception
-
 expression 'Errores en Fact_ordenes_de_compra' =
 		let
 		Origen = Fact_ordenes_de_compra,
@@ -277,11 +374,71 @@ expression 'Errores en Fact_ordenes_de_compra (3)' =
 
 	annotation PBI_ResultType = Table
 
-expression 'Detalle documental_SOLPED_OC_FC_EM_FP_PE' =
+expression stg_solped_oc_fc_em_fp_pe =
 		let
-		    Origen = Fact_SOLPED_OC_FC_EM_FP_PE
+		    Origen = Fact_stg_solped_oc_fc_em_fp_pe,
+		
+		    // Solo líneas que ya tienen factura de proveedor
+		    ConFactura = Table.SelectRows(Origen, each
+		        [#"No.Factura SAP"] <> null and [#"No.Factura SAP"] <> ""),
+		
+		    // Marca si la factura ya fue pagada
+		    ConMarca = Table.AddColumn(ConFactura, "EsPagada",
+		        each [#"No. Pago SAP"] <> null and [#"No. Pago SAP"] <> "", type logical),
+		
+		    ConTipo = Table.AddColumn(ConMarca, "Tipo de documento",
+		        each if [EsPagada] then "Pago efectuado" else "Factura de proveedor", type text),
+		    ConEstado = Table.AddColumn(ConTipo, "Estado",
+		        each if [EsPagada] then "Desembolsado" else "Pendiente por pagar", type text),
+		    ConOrden = Table.AddColumn(ConEstado, "Orden etapa",
+		        each if [EsPagada] then 6 else 5, Int64.Type),
+		
+		    // Documento y fecha según la etapa
+		    ConDoc = Table.AddColumn(ConOrden, "N° documento",
+		        each if [EsPagada] then [#"No. Pago SAP"] else [#"No.Factura SAP"]),
+		    ConFecha = Table.AddColumn(ConDoc, "Fecha documento",
+		        each if [EsPagada] then [#"Fecha de contabilización"] else [#"Fecha de creación_20"]),
+		    ConDias = Table.AddColumn(ConFecha, "Días en la etapa",
+		        each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([Fecha documento])), Int64.Type),
+		    ConResp = Table.AddColumn(ConDias, "Responsable", each null, type text),
+		
+		    Seleccion = Table.SelectColumns(ConResp, {
+		        "Tipo de documento", "Estado", "Orden etapa",
+		        "N° documento", "No. Solped", "No. Orden de Compra", "No.Factura SAP",
+		        "Fecha documento", "Días en la etapa",
+		        "Nombre de cliente/proveedor", "Número de artículo_14", "Descripción artículo/serv._15",
+		        "Cantidad_16", "Unidad_17", "Total líneas_19",
+		        "Responsable",
+		        "Subceco SC", "Código Proyecto SC",
+		        "Código de condiciones de pago"
+		    }),
+		
+		    Renombradas = Table.RenameColumns(Seleccion, {
+		        {"No. Solped", "SOLPED origen"},
+		        {"No. Orden de Compra", "OC asociada"},
+		        {"No.Factura SAP", "Factura asociada"},
+		        {"Nombre de cliente/proveedor", "Proveedor"},
+		        {"Número de artículo_14", "Artículo"},
+		        {"Descripción artículo/serv._15", "Descripción"},
+		        {"Cantidad_16", "Cantidad pendiente"},
+		        {"Unidad_17", "Unidad"},
+		        {"Total líneas_19", "Valor"},
+		        {"Subceco SC", "Subseco"},
+		        {"Código Proyecto SC", "Proyecto"},
+		        {"Código de condiciones de pago", "Condiciones de pago"}
+		    }),
+		
+		    Tipos = Table.TransformColumnTypes(Renombradas, {
+		        {"N° documento", Int64.Type}, {"SOLPED origen", Int64.Type},
+		        {"OC asociada", Int64.Type}, {"Factura asociada", Int64.Type},
+		        {"Fecha documento", type date},
+		        {"Proveedor", type text}, {"Artículo", type text}, {"Descripción", type text}, {"Unidad", type text},
+		        {"Cantidad pendiente", type number}, {"Valor", type number},
+		        {"Subseco", Int64.Type}, {"Proyecto", type text},
+		        {"Condiciones de pago", type text}
+		    })
 		in
-		    Origen
+		    Tipos
 	lineageTag: 1a1c924f-8677-4f1b-8fba-a27a802d280f
 
 	annotation PBI_NavigationStepName = Navegación

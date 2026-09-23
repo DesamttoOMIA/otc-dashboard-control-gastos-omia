@@ -11,7 +11,7 @@
         {
           "location": {
             "x": 435.71428571428572,
-            "y": 769.41071428571433
+            "y": 783.47321428571433
           },
           "nodeIndex": "Dim_proyecto",
           "nodeLineageTag": "cb17ece2-4ae8-4ef0-b220-05c63d715efe",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 945.67857142857156,
-            "y": 769.48214285714278
+            "y": 783.54464285714278
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "1204d9b0-08e1-4fd3-bd73-92d6810bc558",
@@ -32,12 +32,12 @@
             "height": 314.28571428571433,
             "width": 234
           },
-          "zIndex": 11
+          "zIndex": 10
         },
         {
           "location": {
             "x": 1590.3571428571429,
-            "y": 784.482142857143
+            "y": 798.544642857143
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "4083414b-79ed-4e5c-8305-daebc257801b",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 1756.25,
-            "y": 1344.625
+            "y": 1358.6875
           },
           "nodeIndex": "Dim_Subseco stanby",
           "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 318.86111111111086,
-            "y": 28.125
+            "y": 42.1875
           },
           "nodeIndex": "Dim_subseco",
           "nodeLineageTag": "3fb20a8c-48d2-4290-98dc-2e0959ae765e",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1048.0357142857142,
-            "y": 358.48214285714278
+            "y": 372.54464285714278
           },
           "nodeIndex": "Fact_ordenes_de_compra",
           "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
@@ -84,12 +84,12 @@
             "height": 292,
             "width": 259.28571428571422
           },
-          "zIndex": 10
+          "zIndex": 12
         },
         {
           "location": {
             "x": 413.21428571428567,
-            "y": 345.08928571428572
+            "y": 359.15178571428572
           },
           "nodeIndex": "Fact_solicitud_de_pedido",
           "nodeLineageTag": "34017f5b-ed79-4eaa-b7e1-64165f44a057",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 1076.5,
-            "y": 28.125
+            "y": 42.1875
           },
           "nodeIndex": "Dim_categoria",
           "size": {
@@ -114,7 +114,7 @@
         {
           "location": {
             "x": 1352.2857142857142,
-            "y": 361.58928571428572
+            "y": 375.65178571428572
           },
           "nodeIndex": "Fact_presupuesto_final",
           "nodeLineageTag": "2fc1d294-88ab-4dd6-8068-10fbbb198822",
@@ -126,41 +126,40 @@
         },
         {
           "location": {
-            "x": 2141.5,
-            "y": 414.19642857142856
-          },
-          "nodeIndex": "Monto Simulado",
-          "nodeLineageTag": "56fc359d-dde6-4e00-add0-5d2a7b8d05e0",
-          "size": {
-            "height": 224,
-            "width": 234
-          },
-          "zIndex": 1
-        },
-        {
-          "location": {
             "x": 710.07142857142867,
-            "y": 351.33928571428572
+            "y": 365.40178571428572
           },
-          "nodeIndex": "Fact_entrada_de_mercancia",
+          "nodeIndex": "Fact_entrada_de_mercancia_factura_conformada",
           "size": {
             "height": 300,
             "width": 275.42857142857144
           },
-          "zIndex": 2
+          "zIndex": 0
         },
         {
           "location": {
             "x": 2.8571428571428896,
-            "y": 342.44642857142861
+            "y": 356.50892857142861
           },
-          "nodeIndex": "Fact_SOLPED_OC_FC_EM_FP_PE",
-          "nodeLineageTag": "89064307-007d-41ca-94ae-16398bfeae48",
+          "nodeIndex": "Fact_stg_solped_oc_fc_em_fp_pe",
           "size": {
             "height": 300,
             "width": 234
           },
-          "zIndex": 12
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2037.3928571428571,
+            "y": 622.3125
+          },
+          "nodeIndex": "Fact_bitacora_documental",
+          "nodeLineageTag": "15d0dea1-230c-416d-ad7f-1b14725d4bb6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

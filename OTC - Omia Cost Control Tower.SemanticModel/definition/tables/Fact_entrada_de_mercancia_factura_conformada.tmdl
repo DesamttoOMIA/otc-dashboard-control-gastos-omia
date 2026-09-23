@@ -1,4 +1,4 @@
-table Fact_entrada_de_mercancia
+table Fact_entrada_de_mercancia_factura_conformada
 	lineageTag: 511c3121-604c-4659-ada4-5a6f34b1dcb4
 
 	column #
@@ -344,7 +344,7 @@ table Fact_entrada_de_mercancia
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Fact_entrada_de_mercancia = m
+	partition Fact_entrada_de_mercancia_factura_conformada = m
 		mode: import
 		source =
 				let
