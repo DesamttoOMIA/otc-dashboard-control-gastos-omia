@@ -8,7 +8,63 @@
   "filterConfig": {
     "filters": [
       {
+        "name": "f6c2b2a4aa06b70ae8bd",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Descripción"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_subseco",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Descripción"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Otros gastos varios directos'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
         "name": "ae6d04c11730c4e0d6cd",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -68,6 +124,27 @@
           ]
         }
       }
+    ],
+    "filterSortOrder": "Custom"
+  },
+  "pageBinding": {
+    "name": "c290667b1007ac39a1a4",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "a8ba8c25a9540cea9bd2",
+        "boundFilter": "f6c2b2a4aa06b70ae8bd",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Descripción"
+          }
+        }
+      }
     ]
   },
   "objects": {
@@ -84,5 +161,6 @@
         }
       }
     ]
-  }
+  },
+  "type": "Drillthrough"
 }

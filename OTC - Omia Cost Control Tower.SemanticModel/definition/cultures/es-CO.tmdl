@@ -40,16 +40,6 @@ cultureInfo es-CO
 			          "#": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Número interno": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -121,16 +111,6 @@ cultureInfo es-CO
 			        {
 			          "número de documento": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Número de solicitud de pedido": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -498,16 +478,6 @@ cultureInfo es-CO
 			        {
 			          "adjudicacion directa": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Adjudicación Directa": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -999,16 +969,6 @@ cultureInfo es-CO
 			          "#": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Número interno": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -1024,16 +984,6 @@ cultureInfo es-CO
 			        {
 			          "número interno": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Factura conformada": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -1872,16 +1822,6 @@ cultureInfo es-CO
 			            },
 			            "Weight": 0.591
 			          }
-			        },
-			        {
-			          "Estado de documento": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -1990,16 +1930,6 @@ cultureInfo es-CO
 			        {
 			          "#": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Número interno": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4548,16 +4478,6 @@ cultureInfo es-CO
 			          "ejecutado conformada": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Factura Conformada": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -4573,16 +4493,6 @@ cultureInfo es-CO
 			        {
 			          "comprometido": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Orden de Compra": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -4948,26 +4858,6 @@ cultureInfo es-CO
 			          "descripción": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Descripción Subceco": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Descripción subseco": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -5133,16 +5023,6 @@ cultureInfo es-CO
 			        {
 			          "codigo": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Código - Base Cero": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -6825,19 +6705,7 @@ cultureInfo es-CO
 			          "ConceptualProperty": "Orden de Compra"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Orden de compra": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_ordenes_de_compra.unidad_medida_oc": {
 			      "Definition": {
@@ -6846,19 +6714,7 @@ cultureInfo es-CO
 			          "ConceptualProperty": "Unidad Medida OC"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Unidad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_ordenes_de_compra.cantidad_oc": {
 			      "Definition": {
@@ -6867,19 +6723,7 @@ cultureInfo es-CO
 			          "ConceptualProperty": "Cantidad OC"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Cantidad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    }
 			  },
 			  "Relationships": {

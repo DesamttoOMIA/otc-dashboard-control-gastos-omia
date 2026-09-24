@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "3701b50db028e5915027",
   "position": {
-    "x": 978,
+    "x": 979,
     "y": 372,
     "z": 5000,
     "height": 421,
@@ -410,5 +410,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "df6d91e07e27066d064d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Distribución Costos"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fd1cff60c0b4b0066540",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Descripción"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb0fbb2ab3ea8e918715",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo Total"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
