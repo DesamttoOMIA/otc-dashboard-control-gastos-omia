@@ -3,7 +3,7 @@
   "name": "be1aa25fc89e4202ca87",
   "position": {
     "x": 685.6,
-    "y": 111,
+    "y": 141,
     "z": 6000,
     "height": 131.1764705882353,
     "width": 186,
@@ -101,6 +101,13 @@
               "expr": {
                 "Literal": {
                   "Value": "1L"
+                }
+              }
+            },
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }

@@ -64,7 +64,7 @@ table Fact_bitacora_documental
 
 	column 'Fecha documento'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: 82fc9b56-7e96-4d5d-ab90-bf42657a756a
 		summarizeBy: none
 		sourceColumn: Fecha documento
@@ -268,6 +268,14 @@ table Fact_bitacora_documental
 		sourceColumn: #
 
 		annotation SummarizationSetBy = User
+
+	column 'Adjudicacion Directa'
+		dataType: string
+		lineageTag: a4c83013-002f-4587-8f4e-4d15922e5b90
+		summarizeBy: none
+		sourceColumn: Adjudicacion Directa
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Fact_bitacora_documental = m
 		mode: import

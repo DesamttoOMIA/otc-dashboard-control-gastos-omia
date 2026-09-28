@@ -173,7 +173,7 @@ table _Medidas
 		displayFolder: Detalle documental
 		lineageTag: 61cc8449-ddad-4638-a373-ddfd0a2947d7
 
-	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Dim_subseco ) ) )
+	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Fact_bitacora_documental ), VALUES ( Dim_proyecto ) ) )
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		displayFolder: Detalle documental
 		lineageTag: b06b5f98-3d5a-4614-871b-c600dcce28a2
@@ -202,6 +202,19 @@ table _Medidas
 	measure 'Pie etapa detalle' = IF ( ISBLANK ( [Consumo detalle] ), "Sin documentos", FORMAT ( [% etapa detalle], "0.0%" ) & " del total" )
 		displayFolder: Detalle documental
 		lineageTag: 878f8098-e12d-4263-91ee-b64f7e3c902c
+
+	measure 'Barra etapa detalle' = VAR _p = COALESCE ( [% etapa detalle], 0 ) VAR _w = IF ( _p > 0, MAX ( 4, ROUND ( _p * 200, 0 ) ), 0 ) RETURN IF ( ISBLANK ( [Consumo detalle] ), BLANK (), "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='8' viewBox='0 0 200 8'><rect x='0' y='0' width='200' height='8' rx='4' fill='%23EDF0F4'/><rect x='0' y='0' width='" & FORMAT ( _w, "0" ) & "' height='8' rx='4' fill='%231B4379'/></svg>" )
+		displayFolder: Detalle documental
+		lineageTag: cd2feec4-cc98-40f9-a21a-b03ecf4dabff
+		dataCategory: ImageUrl
+
+	measure 'Barra texto etapa' = VAR _p = COALESCE ( [% etapa detalle], 0 ) VAR _n = IF ( _p > 0, MAX ( 1, ROUND ( _p * 12, 0 ) ), 0 ) RETURN IF ( ISBLANK ( [Consumo detalle] ), BLANK (), REPT ( "█", _n ) & REPT ( "░", 12 - _n ) )
+		displayFolder: Detalle documental
+		lineageTag: 1844cb05-c281-458f-953b-943b69efb2a2
+
+	measure 'Pasos recorrido' = VAR _c = "%231B4379" VAR _circ = "<circle cx='{x}' cy='16' r='12' fill='" & _c & "'/><text x='{x}' y='20.5' font-family='Segoe UI, Arial' font-size='13' font-weight='700' fill='white' text-anchor='middle'>{n}</text>" VAR _xs = { ( 1, 93 ), ( 2, 281 ), ( 3, 470 ), ( 4, 659 ), ( 5, 848 ), ( 6, 1037 ) } VAR _circles = CONCATENATEX ( _xs, SUBSTITUTE ( SUBSTITUTE ( _circ, "{x}", [Value2] ), "{n}", [Value1] ), "", [Value1], ASC ) RETURN "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1130' height='32' viewBox='0 0 1130 32'><line x1='93' y1='16' x2='1037' y2='16' stroke='" & _c & "' stroke-width='2' stroke-opacity='0.35'/>" & _circles & "</svg>"
+		lineageTag: 5a27941a-9d68-477a-8feb-c98a1ea8289b
+		dataCategory: ImageUrl
 
 	partition _Medidas = m
 		mode: import

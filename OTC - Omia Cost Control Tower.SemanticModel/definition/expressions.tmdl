@@ -1,37 +1,31 @@
-expression stg_solicitud_de_pedido =
+expression stg_solicitud_de_pedido = ```
 		let
 		    Origen = Fact_solicitud_de_pedido,
-		
-		    Pendientes = Table.SelectRows(Origen, each
+		    Pendientes = Table.SelectRows(Origen, each 
 		        [#"Status de la línea"] = "O"
 		        and [Cancelado] = "N"
 		        and [#"Línea cerrada manualmente"] = "N"
 		        and [#"Clase de documento de destino"] = -1),
-		
-		    ConTipo    = Table.AddColumn(Pendientes, "Tipo de documento", each "SOLPED", type text),
-		    ConEstado  = Table.AddColumn(ConTipo, "Estado", each "Pendiente por ordenar", type text),
-		    ConOrden   = Table.AddColumn(ConEstado, "Orden etapa", each 1, Int64.Type),
-		    ConOrigen  = Table.AddColumn(ConOrden, "SOLPED origen", each [#"Número de documento"]),
-		    ConOC      = Table.AddColumn(ConOrigen, "OC asociada", each null, Int64.Type),
+		    ConTipo = Table.AddColumn(Pendientes, "Tipo de documento", each "SOLPED", type text),
+		    ConEstado = Table.AddColumn(ConTipo, "Estado", each "Pendiente por ordenar", type text),
+		    ConOrden = Table.AddColumn(ConEstado, "Orden etapa", each 1, Int64.Type),
+		    ConOrigen = Table.AddColumn(ConOrden, "SOLPED origen", each [#"Número de documento"]),
+		    ConOC = Table.AddColumn(ConOrigen, "OC asociada", each null, Int64.Type),
 		    ConFactura = Table.AddColumn(ConOC, "Factura asociada", each null, Int64.Type),
 		    ConProveedor = Table.AddColumn(ConFactura, "Proveedor", each null, type text),
-		    ConDias = Table.AddColumn(ConProveedor, "Días en la etapa",
-		        each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([#"Fecha de documento"])), Int64.Type),
-		
+		    ConDias = Table.AddColumn(ConProveedor, "Días en la etapa", each Duration.Days(Date.From(DateTime.LocalNow()) - Date.From([#"Fecha de creación"])), Int64.Type),
 		    Seleccion = Table.SelectColumns(ConDias, {
 		        "Tipo de documento", "Estado", "Orden etapa",
 		        "Número de documento", "SOLPED origen", "OC asociada", "Factura asociada",
-		        "Fecha de documento", "Días en la etapa",
+		        "Fecha de creación", "Días en la etapa",
 		        "Proveedor", "Número de artículo", "Descripción artículo/serv.",
 		        "Cantidad", "Unidad", "Total líneas",
 		        "Nombre de usuario",
 		        "Código del cálculo del costo 3", "Código de proyecto",
-		        "Fecha necesaria", "Prioridad", "Comprador", "Comentarios"
-		    }),
-		
+		        "Fecha necesaria", "Prioridad", "Comprador", "Comentarios", "Adjudicacion Directa"}),
 		    Renombradas = Table.RenameColumns(Seleccion, {
 		        {"Número de documento", "N° documento"},
-		        {"Fecha de documento", "Fecha documento"},
+		        {"Fecha de creación", "Fecha documento"},
 		        {"Número de artículo", "Artículo"},
 		        {"Descripción artículo/serv.", "Descripción"},
 		        {"Cantidad", "Cantidad pendiente"},
@@ -39,19 +33,17 @@ expression stg_solicitud_de_pedido =
 		        {"Nombre de usuario", "Responsable"},
 		        {"Código del cálculo del costo 3", "Subseco"},
 		        {"Código de proyecto", "Proyecto"},
-		        {"Comprador", "Comprador asignado"}
-		    }),
-		
+		        {"Comprador", "Comprador asignado"}}),
 		    Tipos = Table.TransformColumnTypes(Renombradas, {
 		        {"N° documento", Int64.Type}, {"SOLPED origen", Int64.Type},
 		        {"Fecha documento", type date}, {"Fecha necesaria", type date},
 		        {"Artículo", type text}, {"Descripción", type text}, {"Unidad", type text},
 		        {"Cantidad pendiente", type number}, {"Valor", type number},
 		        {"Responsable", type text}, {"Comprador asignado", type text},
-		        {"Subseco", Int64.Type}, {"Proyecto", type text}
-		    })
+		        {"Subseco", Int64.Type}, {"Proyecto", type text}})
 		in
 		    Tipos
+		```
 	lineageTag: 9bcb61f1-b80f-4172-a2ba-6832d98e31d1
 
 	annotation PBI_NavigationStepName = Navegación

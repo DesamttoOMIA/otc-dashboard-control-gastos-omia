@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 411.42857142857144,
+        "x": 974.28571428571433,
         "y": 75.714285714285722
       },
       "nodes": [
         {
           "location": {
             "x": 435.71428571428572,
-            "y": 804.56696428571433
+            "y": 883.66852678571433
           },
           "nodeIndex": "Dim_proyecto",
           "nodeLineageTag": "cb17ece2-4ae8-4ef0-b220-05c63d715efe",
@@ -24,7 +24,7 @@
         {
           "location": {
             "x": 945.67857142857156,
-            "y": 804.63839285714278
+            "y": 883.73995535714278
           },
           "nodeIndex": "Calendario",
           "nodeLineageTag": "1204d9b0-08e1-4fd3-bd73-92d6810bc558",
@@ -37,7 +37,7 @@
         {
           "location": {
             "x": 1590.3571428571429,
-            "y": 819.638392857143
+            "y": 898.739955357143
           },
           "nodeIndex": "_Medidas",
           "nodeLineageTag": "4083414b-79ed-4e5c-8305-daebc257801b",
@@ -50,7 +50,7 @@
         {
           "location": {
             "x": 1756.25,
-            "y": 1379.78125
+            "y": 1458.8828125
           },
           "nodeIndex": "Dim_Subseco stanby",
           "nodeLineageTag": "4c475b82-8f87-4c8d-a5a6-066999bfbd9f",
@@ -63,7 +63,7 @@
         {
           "location": {
             "x": 318.86111111111086,
-            "y": 63.28125
+            "y": 142.3828125
           },
           "nodeIndex": "Dim_subseco",
           "nodeLineageTag": "3fb20a8c-48d2-4290-98dc-2e0959ae765e",
@@ -76,7 +76,7 @@
         {
           "location": {
             "x": 1022.3214285714284,
-            "y": 375.06696428571416
+            "y": 454.16852678571416
           },
           "nodeIndex": "Fact_ordenes_de_compra",
           "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
@@ -89,7 +89,7 @@
         {
           "location": {
             "x": 351.78571428571422,
-            "y": 380.24553571428572
+            "y": 459.34709821428572
           },
           "nodeIndex": "Fact_solicitud_de_pedido",
           "nodeLineageTag": "34017f5b-ed79-4eaa-b7e1-64165f44a057",
@@ -102,7 +102,7 @@
         {
           "location": {
             "x": 1076.5,
-            "y": 63.28125
+            "y": 142.3828125
           },
           "nodeIndex": "Dim_categoria",
           "size": {
@@ -114,7 +114,7 @@
         {
           "location": {
             "x": 1333.7142857142858,
-            "y": 379.60267857142856
+            "y": 458.70424107142856
           },
           "nodeIndex": "Fact_presupuesto_final",
           "nodeLineageTag": "2fc1d294-88ab-4dd6-8068-10fbbb198822",
@@ -127,7 +127,7 @@
         {
           "location": {
             "x": 665.78571428571433,
-            "y": 377.92410714285717
+            "y": 457.02566964285717
           },
           "nodeIndex": "Fact_entrada_de_mercancia_factura_conformada",
           "nodeLineageTag": "511c3121-604c-4659-ada4-5a6f34b1dcb4",
@@ -140,7 +140,7 @@
         {
           "location": {
             "x": 2.8571428571428896,
-            "y": 377.60267857142861
+            "y": 456.70424107142861
           },
           "nodeIndex": "Fact_stg_solped_oc_fc_em_fp_pe",
           "size": {
@@ -152,7 +152,7 @@
         {
           "location": {
             "x": 1647.3928571428571,
-            "y": 376.26339285714278
+            "y": 455.36495535714278
           },
           "nodeIndex": "Fact_bitacora_documental",
           "nodeLineageTag": "15d0dea1-230c-416d-ad7f-1b14725d4bb6",
@@ -165,9 +165,34 @@
         {
           "location": {
             "x": 2037.3928571428571,
-            "y": 679.34375
+            "y": 758.4453125
           },
           "nodeIndex": "Dim_etapa",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2318.5357142857138,
+            "y": 737.3515625
+          },
+          "nodeIndex": "Tabla",
+          "nodeLineageTag": "bb5eb2fe-2b85-4f09-bb43-3c17ad691fda",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2599.6785714285706,
+            "y": 705.7109375
+          },
+          "nodeIndex": "Campos",
           "size": {
             "height": 200,
             "width": 234
