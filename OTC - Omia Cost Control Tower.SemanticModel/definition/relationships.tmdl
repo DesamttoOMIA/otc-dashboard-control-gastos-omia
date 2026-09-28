@@ -70,3 +70,11 @@ relationship a1888e60-06cb-93da-70e4-962def0dd9be
 	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.'Subceco SC'
 	toColumn: Dim_subseco.Subseco
 
+relationship b55378f5-fe9f-c01e-1c04-7d1c89576b55
+	fromColumn: Fact_bitacora_documental.Subseco
+	toColumn: Dim_subseco.Subseco
+
+relationship 0dd2c91f-210f-5a87-c008-2ab868e9f70f
+	fromColumn: Fact_bitacora_documental.Proyecto
+	toColumn: Dim_proyecto.'Código de proyecto'
+

@@ -8,8 +8,63 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "f6c2b2a4aa06b70ae8bd",
+        "name": "408fddc14e7055a6397e",
         "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Distribución Costos"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_subseco",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Distribución Costos"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Materiales & Suministros'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "f6c2b2a4aa06b70ae8bd",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -50,7 +105,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Materiales de Mantenimiento'"
+                          "Value": "'Materiales de Operación'"
                         }
                       }
                     ]
@@ -64,7 +119,7 @@
       },
       {
         "name": "ae6d04c11730c4e0d6cd",
-        "ordinal": 1,
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -142,6 +197,22 @@
               }
             },
             "Property": "Descripción"
+          }
+        }
+      },
+      {
+        "name": "880bb94bd856e620b751",
+        "boundFilter": "408fddc14e7055a6397e",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Distribución Costos"
           }
         }
       }
