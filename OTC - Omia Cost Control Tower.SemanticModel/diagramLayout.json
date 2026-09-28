@@ -75,8 +75,8 @@
         },
         {
           "location": {
-            "x": 1048.0357142857142,
-            "y": 372.54464285714278
+            "x": 1022.3214285714284,
+            "y": 353.97321428571416
           },
           "nodeIndex": "Fact_ordenes_de_compra",
           "nodeLineageTag": "e60a5025-15b3-4b9c-8274-fecb2a9c881f",
@@ -88,7 +88,7 @@
         },
         {
           "location": {
-            "x": 413.21428571428567,
+            "x": 351.78571428571422,
             "y": 359.15178571428572
           },
           "nodeIndex": "Fact_solicitud_de_pedido",
@@ -113,8 +113,8 @@
         },
         {
           "location": {
-            "x": 1352.2857142857142,
-            "y": 375.65178571428572
+            "x": 1333.7142857142858,
+            "y": 358.50892857142856
           },
           "nodeIndex": "Fact_presupuesto_final",
           "nodeLineageTag": "2fc1d294-88ab-4dd6-8068-10fbbb198822",
@@ -126,10 +126,11 @@
         },
         {
           "location": {
-            "x": 710.07142857142867,
-            "y": 365.40178571428572
+            "x": 665.78571428571433,
+            "y": 356.83035714285717
           },
           "nodeIndex": "Fact_entrada_de_mercancia_factura_conformada",
+          "nodeLineageTag": "511c3121-604c-4659-ada4-5a6f34b1dcb4",
           "size": {
             "height": 300,
             "width": 275.42857142857144
@@ -150,8 +151,8 @@
         },
         {
           "location": {
-            "x": 2037.3928571428571,
-            "y": 622.3125
+            "x": 1647.3928571428571,
+            "y": 355.16964285714278
           },
           "nodeIndex": "Fact_bitacora_documental",
           "nodeLineageTag": "15d0dea1-230c-416d-ad7f-1b14725d4bb6",
