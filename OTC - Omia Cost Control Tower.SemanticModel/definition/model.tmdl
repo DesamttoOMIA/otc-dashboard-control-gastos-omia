@@ -40,6 +40,7 @@ ref table Dim_categoria
 ref table Fact_stg_solped_oc_fc_em_fp_pe
 ref table Fact_presupuesto_final
 ref table Fact_bitacora_documental
+ref table Dim_etapa
 
 ref cultureInfo es-CO
 

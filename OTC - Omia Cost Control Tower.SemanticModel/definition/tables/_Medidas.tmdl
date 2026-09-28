@@ -158,6 +158,51 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
+	measure 'Consumo detalle' = SUM ( Fact_bitacora_documental[Valor] )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Detalle documental
+		lineageTag: 18a48220-c5ad-4ffd-bc94-8d84cb5d8ac9
+
+	measure 'Lineas detalle' = COUNTROWS ( Fact_bitacora_documental )
+		formatString: 0
+		displayFolder: Detalle documental
+		lineageTag: 567db425-36b5-4afd-8c82-37a53388c16a
+
+	measure 'Documentos detalle' = COUNTROWS ( SUMMARIZE ( Fact_bitacora_documental, Fact_bitacora_documental[Tipo de documento], Fact_bitacora_documental[N° documento] ) )
+		formatString: 0
+		displayFolder: Detalle documental
+		lineageTag: 61cc8449-ddad-4638-a373-ddfd0a2947d7
+
+	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Dim_subseco ) ) )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Detalle documental
+		lineageTag: b06b5f98-3d5a-4614-871b-c600dcce28a2
+
+	measure 'Titulo detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Detalle documental · " & COALESCE ( _sub, _dist, "Todo el consumo" )
+		displayFolder: Detalle documental
+		lineageTag: be1df01f-5ced-4a4c-a019-947ff74fbb7c
+
+	measure 'Ruta detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _cod = SELECTEDVALUE ( Dim_subseco[Subseco] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Consumo por distribución de costos" & IF ( NOT ISBLANK ( _dist ), "  ›  " & _dist ) & IF ( NOT ISBLANK ( _sub ), "  ›  " & _cod & " · " & _sub )
+		displayFolder: Detalle documental
+		lineageTag: dbd73759-7b94-4812-9e94-98839d1704d7
+
+	measure 'Etiqueta tarjeta detalle' = SWITCH ( TRUE (), NOT ISBLANK ( SELECTEDVALUE ( Dim_subseco[Descripción] ) ), "CONSUMO DEL SUBSECCO", NOT ISBLANK ( SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) ), "CONSUMO DE LA DISTRIBUCIÓN", "CONSUMO TOTAL" )
+		displayFolder: Detalle documental
+		lineageTag: 2b4b8749-5ba8-455d-b1b0-7b9820329df8
+
+	measure 'Resumen detalle' = VAR _l = [Lineas detalle] VAR _d = [Documentos detalle] RETURN FORMAT ( _l, "#,0" ) & IF ( _l = 1, " línea · ", " líneas · " ) & FORMAT ( _d, "#,0" ) & IF ( _d = 1, " documento · ", " documentos · " ) & FORMAT ( [% consumo detalle], "0.0%" ) & " del consumo"
+		displayFolder: Detalle documental
+		lineageTag: 960ec410-d7c8-4e35-9209-bfa195fead32
+
+	measure '% etapa detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Dim_etapa ) ) )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Detalle documental
+		lineageTag: efafff4c-4f8d-441d-8e41-c2f89547bcdf
+
+	measure 'Pie etapa detalle' = IF ( ISBLANK ( [Consumo detalle] ), "Sin documentos", FORMAT ( [% etapa detalle], "0.0%" ) & " del total" )
+		displayFolder: Detalle documental
+		lineageTag: 878f8098-e12d-4263-91ee-b64f7e3c902c
+
 	partition _Medidas = m
 		mode: import
 		source =

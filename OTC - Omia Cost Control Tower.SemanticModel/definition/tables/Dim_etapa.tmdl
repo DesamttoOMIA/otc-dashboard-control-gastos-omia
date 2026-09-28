@@ -1,0 +1,36 @@
+table Dim_etapa
+	lineageTag: 125c6b62-fef9-40f0-a64d-8880ebe2d7ec
+
+	column Etapa
+		lineageTag: f9349c87-63a0-4146-84ce-8d35c7f1ea58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Etapa]
+		sortByColumn: 'Orden etapa'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Orden etapa'
+		formatString: 0
+		lineageTag: d6709279-881a-4c28-a702-dde4b36f823e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Orden etapa]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etapa corta'
+		lineageTag: 3a0630d4-f2bb-4fdb-b32c-c337adf9c2f8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Etapa corta]
+		sortByColumn: 'Orden etapa'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_etapa = calculated
+		mode: import
+		source = DATATABLE ( "Etapa", STRING, "Orden etapa", INTEGER, "Etapa corta", STRING, { { "SOLPED", 1, "SOLPED" }, { "Orden de compra", 2, "Orden de compra" }, { "Factura conformada", 3, "Factura conformada" }, { "Entrada de mercancía", 4, "Entrada mercancía" }, { "Factura de proveedor", 5, "Factura proveedor" }, { "Pago efectuado", 6, "Pago efectuado" } } )
+
+	annotation PBI_Id = 3403e97d270b418f8ab2c375bb979a85
+

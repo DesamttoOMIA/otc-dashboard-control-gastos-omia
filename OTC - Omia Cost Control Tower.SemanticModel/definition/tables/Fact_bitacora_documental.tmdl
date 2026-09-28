@@ -260,14 +260,24 @@ table Fact_bitacora_documental
 
 		annotation SummarizationSetBy = Automatic
 
+	column #
+		dataType: int64
+		formatString: 0
+		lineageTag: a6785f1b-f644-486d-afa5-27ce7acb071e
+		summarizeBy: none
+		sourceColumn: #
+
+		annotation SummarizationSetBy = User
+
 	partition Fact_bitacora_documental = m
 		mode: import
 		source =
 				let
 				    Origen = Table.Combine({stg_solicitud_de_pedido, stg_orden_de_compra, stg_entrada_de_mercancia_factura_conformada, stg_solped_oc_fc_em_fp_pe}),
-				    #"Filas filtradas" = Table.SelectRows(Origen, each true)
+				    #"Filas filtradas" = Table.SelectRows(Origen, each true),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Filas filtradas", "#", 1, 1, Int64.Type)
 				in
-				    #"Filas filtradas"
+				    #"Índice agregado"
 
 	annotation PBI_NavigationStepName = Navegación
 

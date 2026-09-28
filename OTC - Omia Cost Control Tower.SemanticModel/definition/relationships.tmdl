@@ -78,3 +78,7 @@ relationship 0dd2c91f-210f-5a87-c008-2ab868e9f70f
 	fromColumn: Fact_bitacora_documental.Proyecto
 	toColumn: Dim_proyecto.'Código de proyecto'
 
+relationship 3071cb34-64b3-071e-0d43-a002876bac3f
+	fromColumn: Fact_bitacora_documental.'Tipo de documento'
+	toColumn: Dim_etapa.Etapa
+
