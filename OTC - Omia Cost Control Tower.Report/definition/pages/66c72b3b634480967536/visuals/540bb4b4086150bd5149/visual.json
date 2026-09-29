@@ -41,7 +41,8 @@
                 }
               },
               "queryRef": "Fact_bitacora_documental.Tipo de documento",
-              "nativeQueryRef": "Tipo de documento"
+              "nativeQueryRef": "T. de documento",
+              "displayName": "T. de documento"
             },
             {
               "field": {
@@ -69,7 +70,8 @@
                 }
               },
               "queryRef": "Sum(Fact_bitacora_documental.Subseco)",
-              "nativeQueryRef": "Subseco"
+              "nativeQueryRef": "Subceco",
+              "displayName": "Subceco"
             },
             {
               "field": {
@@ -97,7 +99,36 @@
                 }
               },
               "queryRef": "Fact_bitacora_documental.Fecha documento",
-              "nativeQueryRef": "Fecha documento"
+              "nativeQueryRef": "Fecha creación",
+              "displayName": "Fecha creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Cantidad"
+                }
+              },
+              "queryRef": "Sum(Fact_bitacora_documental.Cantidad pendiente)",
+              "nativeQueryRef": "Cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Unidad"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Unidad",
+              "nativeQueryRef": "Unidad"
             },
             {
               "field": {
@@ -109,14 +140,15 @@
                           "Entity": "Fact_bitacora_documental"
                         }
                       },
-                      "Property": "Valor"
+                      "Property": "Valor total"
                     }
                   },
                   "Function": 0
                 }
               },
               "queryRef": "Sum(Fact_bitacora_documental.Valor)",
-              "nativeQueryRef": "Suma de Valor"
+              "nativeQueryRef": "Valor total",
+              "displayName": "Valor total"
             },
             {
               "field": {
@@ -145,10 +177,10 @@
                     "Entity": "Fact_bitacora_documental"
                   }
                 },
-                "Property": "Tipo de documento"
+                "Property": "Cantidad"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -173,6 +205,28 @@
       "columnHeaders": [
         {
           "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'9a310908c109ca7d6b18'"
+                }
+              }
+            }
+          }
         }
       ]
     },

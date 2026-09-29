@@ -7037,10 +7037,23 @@ cultureInfo es-CO
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "tipo de documento": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "T. de documento": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7166,6 +7179,16 @@ cultureInfo es-CO
 			            "State": "Generated",
 			            "Weight": 0.7
 			          }
+			        },
+			        {
+			          "Fecha creación": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "SemanticType": "Time"
@@ -7241,17 +7264,17 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_bitacora_documental.cantidad_pendiente": {
+			    "fact_bitacora_documental.cantidad": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Fact_bitacora_documental",
-			          "ConceptualProperty": "Cantidad pendiente"
+			          "ConceptualProperty": "Cantidad"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "cantidad pendiente": {
+			          "cantidad": {
 			            "State": "Generated"
 			          }
 			        }
@@ -7273,118 +7296,38 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_bitacora_documental.valor": {
+			    "fact_bitacora_documental.valor_total": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Fact_bitacora_documental",
-			          "ConceptualProperty": "Valor"
+			          "ConceptualProperty": "Valor total"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "valor": {
+			          "valor total": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "courage": {
+			          "valor aggregate": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
+			            "Weight": 0.727
 			          }
 			        },
 			        {
-			          "bravery": {
+			          "valor overall": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "heroism": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "fearlessness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "boldness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "gallantry": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "lionheartedness": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.491
-			          }
-			        },
-			        {
-			          "pluck": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "spirit": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
-			          "nerve": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
+			            "Weight": 0.727
 			          }
 			        }
 			      ]
@@ -7420,6 +7363,16 @@ cultureInfo es-CO
 			        {
 			          "subseco": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Subceco": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7666,10 +7619,1116 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
+			    },
+			    "entity__medida.etapa_detalle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% etapa detalle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% etapa detalle": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage etapa detalle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct etapa detalle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.pie_etapa_detalle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Pie etapa detalle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pie etapa detalle": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.barra_etapa_detalle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Barra etapa detalle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "barra etapa detalle": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.barra_texto_etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Barra texto etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "barra texto etapa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.pasos_recorrido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Pasos recorrido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pasos recorrido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental.v_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_bitacora_documental",
+			          "ConceptualProperty": "#"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "#": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental.adjudicacion_directa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_bitacora_documental",
+			          "ConceptualProperty": "Adjudicacion Directa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "adjudicacion directa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim etapa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_etapa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_etapa.etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_etapa",
+			          "ConceptualProperty": "Etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etapa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_etapa.orden_etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_etapa",
+			          "ConceptualProperty": "Orden etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "orden etapa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_etapa.etapa_corta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_etapa",
+			          "ConceptualProperty": "Etapa corta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "etapa corta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.TT_html": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "TT html"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TT html": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "html": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fact_bitacora_documental_has_cantidad_pendiente": {
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          },
+			          "Nouns": [
+			            {
+			              "subceco SC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          },
+			          "Nouns": [
+			            {
+			              "código proyecto SC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_TT_html": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.TT_html": {
+			          "Target": {
+			            "Entity": "entity__medida.TT_html"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.TT_html"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_TT_html"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_etapa_corta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "dim_etapa.etapa_corta": {
+			          "Target": {
+			            "Entity": "dim_etapa.etapa_corta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "dim_etapa.etapa_corta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_etapa_cortas"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_orden_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "dim_etapa.orden_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa.orden_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "dim_etapa.orden_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_orden_etapas"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "dim_etapa.etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa.etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "dim_etapa.etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_etapas"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_adjudicacion_directa": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_bitacora_documental"
 			      },
@@ -7680,9 +8739,9 @@ cultureInfo es-CO
 			            "Entity": "fact_bitacora_documental"
 			          }
 			        },
-			        "fact_bitacora_documental.cantidad_pendiente": {
+			        "fact_bitacora_documental.adjudicacion_directa": {
 			          "Target": {
-			            "Entity": "fact_bitacora_documental.cantidad_pendiente"
+			            "Entity": "fact_bitacora_documental.adjudicacion_directa"
 			          }
 			        }
 			      },
@@ -7693,12 +8752,705 @@ cultureInfo es-CO
 			              "Role": "fact_bitacora_documental"
 			            },
 			            "Object": {
-			              "Role": "fact_bitacora_documental.cantidad_pendiente"
+			              "Role": "fact_bitacora_documental.adjudicacion_directa"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_cantidad_pendientes"
+			          "ID": "fact_bitacora_documental_have_adjudicacion_directas"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_v_": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.v_": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.v_"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.v_"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_pasos_recorrido": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.pasos_recorrido": {
+			          "Target": {
+			            "Entity": "entity__medida.pasos_recorrido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.pasos_recorrido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_pasos_recorrido"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_entity__medida_barra_texto_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "entity__medida.barra_texto_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.barra_texto_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.barra_texto_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_barra_texto_etapa"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_entity__medida_barra_etapa_detalle": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "entity__medida.barra_etapa_detalle": {
+			          "Target": {
+			            "Entity": "entity__medida.barra_etapa_detalle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.barra_etapa_detalle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_barra_etapa_detalle"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_entity__medida_pie_etapa_detalle": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "entity__medida.pie_etapa_detalle": {
+			          "Target": {
+			            "Entity": "entity__medida.pie_etapa_detalle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.pie_etapa_detalle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_pie_etapa_detalle"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_entity__medida_etapa_detalle": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "entity__medida.etapa_detalle": {
+			          "Target": {
+			            "Entity": "entity__medida.etapa_detalle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.etapa_detalle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have__etapa_detalle"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_código_de_cuenta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.código_de_cuenta": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.código_de_cuenta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.código_de_cuenta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_código_de_cuentas"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_entrega": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.entrega": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.entrega"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.entrega"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have__entregas"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_días_para_entrega_proveedor": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.días_para_entrega_proveedor": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.días_para_entrega_proveedor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.días_para_entrega_proveedor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_días_para_entrega_proveedors"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_tipo_de_OC": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.tipo_de_OC": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.tipo_de_OC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.tipo_de_OC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_tipo_de_OC"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_contrato_marco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.contrato_marco": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.contrato_marco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.contrato_marco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_contrato_marco"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_condiciones_de_pago": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.condiciones_de_pago": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.condiciones_de_pago"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.condiciones_de_pago"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_condiciones_de_pago"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_fecha_entrega_OC": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.fecha_entrega_OC": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.fecha_entrega_OC"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.fecha_entrega_OC"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_fecha_entrega_OC"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_comentario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.comentario": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.comentario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.comentario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_comentarios"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_comprador_asignado": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.comprador_asignado": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.comprador_asignado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.comprador_asignado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_comprador_asignados"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_prioridad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.prioridad": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.prioridad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.prioridad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_prioridads"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_fecha_necesaria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.fecha_necesaria": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.fecha_necesaria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.fecha_necesaria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_fecha_necesarias"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_responsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.responsable": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.responsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.responsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_responsables"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_valor_total": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.valor_total": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.valor_total"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.valor_total"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_valor_totals"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_unidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.unidad": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.unidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.unidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_unidads"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "fact_bitacora_documental.cantidad": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental.cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental.cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_cantidads"
 			        }
 			      ]
 			    },
@@ -8062,39 +9814,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_bitacora_documental_have_estado"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_tipo_de_documento": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.tipo_de_documento": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.tipo_de_documento"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.tipo_de_documento"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_tipo_de_documentos"
 			        }
 			      ]
 			    },
@@ -16745,1218 +18464,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_bitacora_documental_has_unidad": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.unidad": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.unidad"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.unidad"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_unidads"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_valor": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.valor": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.valor"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.valor"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_valor"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_responsable": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.responsable": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.responsable"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.responsable"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_responsables"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_fecha_necesaria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.fecha_necesaria": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.fecha_necesaria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.fecha_necesaria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_fecha_necesarias"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_prioridad": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.prioridad": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.prioridad"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.prioridad"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_prioridads"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_comprador_asignado": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.comprador_asignado": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.comprador_asignado"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.comprador_asignado"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_comprador_asignados"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_comentario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.comentario": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.comentario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.comentario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_comentarios"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_fecha_entrega_OC": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.fecha_entrega_OC": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.fecha_entrega_OC"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.fecha_entrega_OC"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_fecha_entrega_OC"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_condiciones_de_pago": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.condiciones_de_pago": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.condiciones_de_pago"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.condiciones_de_pago"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_condiciones_de_pago"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_contrato_marco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.contrato_marco": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.contrato_marco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.contrato_marco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_contrato_marco"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_tipo_de_OC": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.tipo_de_OC": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.tipo_de_OC"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.tipo_de_OC"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_tipo_de_OC"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_días_para_entrega_proveedor": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.días_para_entrega_proveedor": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.días_para_entrega_proveedor"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.días_para_entrega_proveedor"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_días_para_entrega_proveedors"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_entrega": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.entrega": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.entrega"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.entrega"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have__entregas"
-			        }
-			      ]
-			    },
-			    "fact_bitacora_documental_has_código_de_cuenta": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_bitacora_documental"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_bitacora_documental": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental"
-			          }
-			        },
-			        "fact_bitacora_documental.código_de_cuenta": {
-			          "Target": {
-			            "Entity": "fact_bitacora_documental.código_de_cuenta"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_bitacora_documental"
-			            },
-			            "Object": {
-			              "Role": "fact_bitacora_documental.código_de_cuenta"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_bitacora_documental_have_código_de_cuentas"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          },
-			          "Nouns": [
-			            {
-			              "código proyecto SC": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          },
-			          "Nouns": [
-			            {
-			              "subceco SC": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
 			    "fact_presupuesto_final_has_dim_categoria": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_presupuesto_final"
@@ -18138,6 +18645,52 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_fact_bitacora_documental"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_dim_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "dim_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_dim_etapas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_fact_bitacora_documental"
 			        }
 			      ]
 			    },
