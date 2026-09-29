@@ -200,6 +200,20 @@
           "selector": {
             "metadata": "Fact_bitacora_documental.Descripción"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_bitacora_documental.#"
+          }
         }
       ],
       "columnHeaders": [

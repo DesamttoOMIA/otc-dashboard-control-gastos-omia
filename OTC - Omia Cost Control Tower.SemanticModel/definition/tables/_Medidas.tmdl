@@ -216,11 +216,9 @@ table _Medidas
 		lineageTag: 5a27941a-9d68-477a-8feb-c98a1ea8289b
 		dataCategory: ImageUrl
 
-	measure 'TT html' =
+	measure 'TT html' = ```
 			
 			VAR _tipo = SELECTEDVALUE ( Fact_bitacora_documental[Tipo de documento] )
-			VAR _est  = IF ( _tipo = "SOLPED", "Solicitud aprobada, pendiente de convertir en OC",
-			                 SELECTEDVALUE ( Fact_bitacora_documental[Estado] ) )
 			VAR _dias = SELECTEDVALUE ( Fact_bitacora_documental[Días en la etapa] )
 			VAR _f    = SELECTEDVALUE ( Fact_bitacora_documental[Fecha necesaria] )
 			VAR _hoy  = TODAY ()
@@ -235,23 +233,95 @@ table _Medidas
 			VAR _comp = SELECTEDVALUE ( Fact_bitacora_documental[Comprador asignado] )
 			VAR _adj  = SELECTEDVALUE ( Fact_bitacora_documental[Adjudicacion Directa] )
 			VAR _com  = SELECTEDVALUE ( Fact_bitacora_documental[Comentarios] )
+			VAR _pago = SELECTEDVALUE ( Fact_bitacora_documental[Condiciones de pago] )
+			VAR _estAct = SELECTEDVALUE ( Fact_bitacora_documental[Estado] )
+			VAR _sol  = SELECTEDVALUE ( Fact_bitacora_documental[SOLPED origen] )
+			VAR _oc   = SELECTEDVALUE ( Fact_bitacora_documental[OC asociada] )
+			VAR _fac  = SELECTEDVALUE ( Fact_bitacora_documental[Factura asociada] )
 			
-			VAR _a = "<tr><td style='color:#575756;padding:3px 0;white-space:nowrap'>"
+			// Campos de OC
+			VAR _pct0 = SELECTEDVALUE ( Fact_bitacora_documental[% entrega] )
+			VAR _pct  = IF ( _pct0 > 1, _pct0 / 100, _pct0 )
+			VAR _pend = ISBLANK ( _pct ) || _pct < 1
+			VAR _toc  =
+			    SWITCH ( SELECTEDVALUE ( Fact_bitacora_documental[Tipo de OC] ),
+			        1, "Normal", 2, "Cto. marco / Ac. global", 3, "Larga vigencia", "" )
+			
+			// Campos de EM / facturas
+			VAR _sinFac = ISBLANK ( _fac ) || _fac = 0
+			
+			VAR _est =
+			    SWITCH ( _tipo,
+			        "SOLPED", "Solicitud aprobada, pendiente de convertir en OC",
+			        "Orden de compra", IF ( _pend, "Costo comprometido pendiente de convertir en EM", _estAct ),
+			        "Entrada de mercancía", IF ( _sinFac, "Costo recibido pendiente de facturar", _estAct ),
+			        _estAct
+			    )
+			
+			VAR _a = "<tr><td style='color:#575756;padding:3px 0;white-space:nowrap;vertical-align:top'>"
 			VAR _b = "</td><td style='text-align:right;font-weight:600;padding:3px 0 3px 12px;white-space:nowrap'>"
 			VAR _c = "</td></tr>"
 			
+			VAR _filasSol =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin ordenar" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _f ), _a & "Requerida" & _b & FORMAT ( _f, "dd/MM/yyyy" ) & _c, "" )
+			    & IF ( _venc <> "", _a & "Vencimiento" & _b
+			        & "<span style='color:" & IF ( _hoy > _f, "#C62828", "#1B4379" ) & "'>" & _venc & "</span>" & _c, "" )
+			    & IF ( _prio <> "", _a & "Prioridad" & _b
+			        & "<span style='color:" & IF ( _prio = "Normal", "#1B4379", "#F8AA00" ) & "'>" & _prio & "</span>" & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    & IF ( NOT ISBLANK ( _adj ),  _a & "A. directa" & _b & _adj & _c, "" )
+			
+			VAR _filasOC =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin recibir" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _pct ), _a & "% entrega" & _b & FORMAT ( _pct, "0%" ) & _c, "" )
+			    & IF ( _toc <> "", _a & "Tipo de OC" & _b & _toc & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ), _a & "SOLPED origen" & _b & _sol & _c, "" )
+			
+			VAR _filasEM =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin facturar" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _pago ), _a & "Cond. de pago" & _b & _pago & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasFC =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días en la etapa" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT _sinFac, _a & "Factura" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasFP =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días en la etapa" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT _sinFac,           _a & "Factura asociada" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _pago ), _a & "Cond. de pago" & _b & _pago & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasPG =
+			    IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT _sinFac,           _a & "Factura asociada" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    
 			VAR _filas =
-			    IF ( _tipo <> "SOLPED", "",
-			        IF ( NOT ISBLANK ( _dias ), _a & "Días sin ordenar" & _b & _dias & " días" & _c, "" )
-			        & IF ( NOT ISBLANK ( _f ), _a & "Requerida" & _b & FORMAT ( _f, "dd/MM/yyyy" ) & _c, "" )
-			        & IF ( _venc <> "", _a & "Vencimiento" & _b
-			            & "<span style='color:" & IF ( _hoy > _f, "#C62828", "#1B4379" ) & "'>" & _venc & "</span>" & _c, "" )
-			        & IF ( _prio <> "", _a & "Prioridad" & _b
-			            & "<span style='color:" & IF ( _prio = "Normal", "#1B4379", "#F8AA00" ) & "'>" & _prio & "</span>" & _c, "" )
-			        & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
-			        & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
-			        & IF ( NOT ISBLANK ( _adj ),  _a & "A. directa" & _b & _adj & _c, "" )
-			    )
+			    SWITCH ( _tipo,
+			        "SOLPED", _filasSol,
+			        "Orden de compra", _filasOC,
+			        "Entrada de mercancía", _filasEM,
+			        "Factura conformada", _filasFC,
+			        "Factura de proveedor", _filasFP,
+			        "Pago efectuado", _filasPG,
+			        "Pago", _filasPG,
+			        "" )
 			
 			RETURN
 			"<div style='font-family:Segoe UI,sans-serif;font-size:12px;color:#333'>"
@@ -263,6 +333,7 @@ table _Medidas
 			& IF ( NOT ISBLANK ( _com ), "<div style='margin-top:6px;font-size:11px;color:#575756;line-height:1.3'>"
 			    & "<b>Comentarios</b><br>" & _com & "</div>", "" )
 			& "</div></div>"
+			```
 		lineageTag: 2a39a321-dc55-4f96-a477-834e16167f80
 
 	partition _Medidas = m
