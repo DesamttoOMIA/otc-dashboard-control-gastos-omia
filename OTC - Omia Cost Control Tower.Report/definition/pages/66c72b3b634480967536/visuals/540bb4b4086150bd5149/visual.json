@@ -1,0 +1,249 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "540bb4b4086150bd5149",
+  "position": {
+    "x": 30,
+    "y": 280,
+    "z": 1000,
+    "height": 524,
+    "width": 1388,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "#"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.#",
+              "nativeQueryRef": "#"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Tipo de documento"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Tipo de documento",
+              "nativeQueryRef": "T. de documento",
+              "displayName": "T. de documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "N° documento"
+                }
+              },
+              "queryRef": "Sum(Fact_bitacora_documental.N° documento)",
+              "nativeQueryRef": "N° documento"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Subseco"
+                }
+              },
+              "queryRef": "Sum(Fact_bitacora_documental.Subseco)",
+              "nativeQueryRef": "Subceco",
+              "displayName": "Subceco"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Proveedor"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Proveedor",
+              "nativeQueryRef": "Proveedor"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Fecha documento"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Fecha documento",
+              "nativeQueryRef": "Fecha creación",
+              "displayName": "Fecha creación"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Cantidad"
+                }
+              },
+              "queryRef": "Sum(Fact_bitacora_documental.Cantidad pendiente)",
+              "nativeQueryRef": "Cantidad"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Unidad"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Unidad",
+              "nativeQueryRef": "Unidad"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Fact_bitacora_documental"
+                        }
+                      },
+                      "Property": "Valor total"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Fact_bitacora_documental.Valor)",
+              "nativeQueryRef": "Valor total",
+              "displayName": "Valor total"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_bitacora_documental"
+                    }
+                  },
+                  "Property": "Descripción"
+                }
+              },
+              "queryRef": "Fact_bitacora_documental.Descripción",
+              "nativeQueryRef": "Descripción"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Fact_bitacora_documental"
+                  }
+                },
+                "Property": "Cantidad"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "753D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_bitacora_documental.Descripción"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Fact_bitacora_documental.#"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'9a310908c109ca7d6b18'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,294 @@
+table Fact_bitacora_documental
+	lineageTag: 15d0dea1-230c-416d-ad7f-1b14725d4bb6
+
+	column 'Tipo de documento'
+		dataType: string
+		lineageTag: 4e4d3cdb-f658-4873-b067-14a83814e5b5
+		summarizeBy: none
+		sourceColumn: Tipo de documento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Estado
+		dataType: string
+		lineageTag: 50c7206c-b0b9-4f91-affb-f02ece3f57c9
+		summarizeBy: none
+		sourceColumn: Estado
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Orden etapa'
+		dataType: int64
+		formatString: 0
+		lineageTag: 871ba61f-9f8f-4d6b-9e1e-d70009676db1
+		summarizeBy: sum
+		sourceColumn: Orden etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'N° documento'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fa23045-a544-4cab-b373-27c267a234ec
+		summarizeBy: sum
+		sourceColumn: N° documento
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SOLPED origen'
+		dataType: int64
+		formatString: 0
+		lineageTag: 04d2387f-69ce-432c-aea7-e6c93c5061bc
+		summarizeBy: sum
+		sourceColumn: SOLPED origen
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OC asociada'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ca99b33-9135-4a8a-8441-6364c19dbd9f
+		summarizeBy: sum
+		sourceColumn: OC asociada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Factura asociada'
+		dataType: int64
+		formatString: 0
+		lineageTag: db8d371c-44e3-4b03-9de7-25c9bb172ce7
+		summarizeBy: sum
+		sourceColumn: Factura asociada
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha documento'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 82fc9b56-7e96-4d5d-ab90-bf42657a756a
+		summarizeBy: none
+		sourceColumn: Fecha documento
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Días en la etapa'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8efa083-93de-417e-a7e6-96fe0428f6e6
+		summarizeBy: sum
+		sourceColumn: Días en la etapa
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proveedor
+		dataType: string
+		lineageTag: aa529b45-adec-467e-8892-152b0a86d10a
+		summarizeBy: none
+		sourceColumn: Proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Artículo
+		dataType: string
+		lineageTag: 1e1e8872-9e00-4370-b360-892ec386fcc9
+		summarizeBy: none
+		sourceColumn: Artículo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Descripción
+		dataType: string
+		lineageTag: 11425954-8d84-4c55-a6e0-e76b8e2ddaf8
+		summarizeBy: none
+		sourceColumn: Descripción
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cantidad
+		dataType: double
+		lineageTag: 78d8a21a-43a2-4655-bb6a-a4a24fd4c5ac
+		summarizeBy: sum
+		sourceColumn: Cantidad
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Unidad
+		dataType: string
+		lineageTag: 5a3187a2-9037-46bc-b9bf-8a85364e068d
+		summarizeBy: none
+		sourceColumn: Unidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valor total'
+		dataType: double
+		lineageTag: 00892f1b-6738-460d-a2dd-eb532bcdc14e
+		summarizeBy: sum
+		sourceColumn: Valor total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Responsable
+		dataType: string
+		lineageTag: 245c33f2-ef50-402f-9a9b-3d0643e48dda
+		summarizeBy: none
+		sourceColumn: Responsable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subseco
+		dataType: string
+		lineageTag: c32368bc-9464-4eaa-a1e5-8640b48aa25e
+		summarizeBy: none
+		sourceColumn: Subseco
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proyecto
+		dataType: string
+		lineageTag: 5277d2f9-023c-457a-ba5f-a039fc08def7
+		summarizeBy: none
+		sourceColumn: Proyecto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha necesaria'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f34c435a-7665-4fdf-922c-8da8d39287e2
+		summarizeBy: none
+		sourceColumn: Fecha necesaria
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Prioridad
+		dataType: int64
+		formatString: 0
+		lineageTag: f8e375e0-69a2-4eb7-845d-273fccab493b
+		summarizeBy: sum
+		sourceColumn: Prioridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Comprador asignado'
+		dataType: string
+		lineageTag: 9a3ec13e-ef3b-4887-b43d-19e800ab243b
+		summarizeBy: none
+		sourceColumn: Comprador asignado
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comentarios
+		dataType: string
+		lineageTag: fdc84265-bc75-474b-a3cd-9d89e413224a
+		summarizeBy: none
+		sourceColumn: Comentarios
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha entrega OC'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9fc3aef3-6ca4-4d4b-8889-946a7574aa83
+		summarizeBy: none
+		sourceColumn: Fecha entrega OC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Condiciones de pago'
+		dataType: string
+		lineageTag: f000ddad-2fa6-4307-86c3-eacc03631e0c
+		summarizeBy: none
+		sourceColumn: Condiciones de pago
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contrato marco'
+		dataType: int64
+		formatString: 0
+		lineageTag: b8f4d42a-c641-44b8-b562-3fdd32e02e27
+		summarizeBy: sum
+		sourceColumn: Contrato marco
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tipo de OC'
+		dataType: int64
+		formatString: 0
+		lineageTag: c27f3321-f0d9-427c-b8cd-a96c309a3ea1
+		summarizeBy: sum
+		sourceColumn: Tipo de OC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Días para entrega proveedor'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e1231eb-774f-4652-8566-954583babd14
+		summarizeBy: sum
+		sourceColumn: Días para entrega proveedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column '% entrega'
+		dataType: double
+		lineageTag: 05089201-e671-4d15-b96a-10906ca2f343
+		summarizeBy: sum
+		sourceColumn: % entrega
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Código de cuenta'
+		dataType: string
+		lineageTag: 442f53d1-6840-45b0-ab9d-1b6458f3e25e
+		summarizeBy: none
+		sourceColumn: Código de cuenta
+
+		annotation SummarizationSetBy = Automatic
+
+	column #
+		dataType: int64
+		formatString: 0
+		lineageTag: a6785f1b-f644-486d-afa5-27ce7acb071e
+		summarizeBy: none
+		sourceColumn: #
+
+		annotation SummarizationSetBy = User
+
+	column 'Adjudicacion Directa'
+		dataType: string
+		lineageTag: a4c83013-002f-4587-8f4e-4d15922e5b90
+		summarizeBy: none
+		sourceColumn: Adjudicacion Directa
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_bitacora_documental = m
+		mode: import
+		source =
+				let
+				    Origen = Table.Combine({stg_solicitud_de_pedido, stg_orden_de_compra, stg_entrada_de_mercancia_factura_conformada, stg_solped_oc_fc_em_fp_pe}),
+				    #"Filas filtradas" = Table.SelectRows(Origen, each true),
+				    #"Índice agregado" = Table.AddIndexColumn(#"Filas filtradas", "#", 1, 1, Int64.Type),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Índice agregado",{{"Cantidad pendiente", "Cantidad"}, {"Valor", "Valor total"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

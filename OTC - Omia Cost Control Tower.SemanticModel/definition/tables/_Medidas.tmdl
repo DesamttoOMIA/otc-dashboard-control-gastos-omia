@@ -1,373 +1,44 @@
 table _Medidas
 	lineageTag: 4083414b-79ed-4e5c-8305-daebc257801b
 
-	measure 'Consumo Total' = [Comprometido] + [Ejecutado Conformada]
+	measure 'Consumo Total' = [SOLPED pendiente por ordenar] + [OC pendiente por recibir] + [FC pendiente por facturar] + [EM pendiente por facturar] + [FP pendiente por pagar] + [Pago efectuado]
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 670411b9-5073-45c2-ac7b-7b9f70fe0fbc
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'SOLPED en gestión' = SUM('Fact_solicitud_de_pedido'[Total líneas])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: SOLPED (informativo, no usar en presupuesto)
-		lineageTag: 115d40b4-d7a4-4b72-9a80-e2b510b714ac
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Card HTML - SOLPED' =
-			
-			VAR Activo = IF("SOLPED" IN VALUES('Dim_tipo documento'[Tipo documento]), 1, 0)
-			
-			VAR Consumo = IF(Activo = 1, [SOLPED en gestión], 0)
-			
-			VAR ValorNum = Consumo / 1000000
-			
-			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
-			
-			VAR Participacion = DIVIDE(Consumo, [Presupuesto Anual])
-			
-			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			
-			VAR Cantidad = IF(Activo = 1, FORMAT(DISTINCTCOUNT('Fact_solicitud_de_pedido'[ID de documento interno]), "0"), "0")
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#2679BA;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>SOLPED</span></div>  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto anual</div>  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#2679BA;'>" & Cantidad & "</span> solicitudes de pedido abiertas</div></div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0005-4a00-8000-000000000005
-
-	measure 'Card HTML - ODC' =
-			
-			VAR Activo = IF("ODC" IN VALUES('Dim_tipo documento'[Tipo documento]), 1, 0)
-			
-			VAR Consumo = IF(Activo = 1, [Recibido (Entrada Mercancia)], 0)
-			
-			VAR ValorNum = Consumo / 1000000
-			
-			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
-			
-			VAR Participacion = DIVIDE(Consumo, [Presupuesto Anual])
-			
-			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			
-			VAR Cantidad = IF(Activo = 1, FORMAT(CALCULATE(DISTINCTCOUNT('Fact_entrada_de_mercancia'[Entrada mercancías]), 'Fact_entrada_de_mercancia'[TieneOC] = TRUE), "0"), "0")
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#F8AA00;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ODC</span></div>  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto anual</div>  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#F8AA00;'>" & Cantidad & "</span> entradas de mercancía con OC</div></div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0006-4a00-8000-000000000006
-
-	measure 'Card HTML - Facturas' =
-			
-			VAR Activo = IF("Factura" IN VALUES('Dim_tipo documento'[Tipo documento]), 1, 0)
-			
-			VAR Consumo = IF(Activo = 1, [Facturado Total], 0)
-			
-			VAR ValorNum = Consumo / 1000000
-			
-			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FontValor = SWITCH(TRUE(), LEN(ValorTexto) >= 9, "20px", LEN(ValorTexto) >= 7, "24px", "28px")
-			
-			VAR Participacion = DIVIDE(Consumo, [Presupuesto Anual])
-			
-			VAR ParticipacionTexto = FORMAT(Participacion, "0.0%")
-			
-			VAR Cantidad = IF(Activo = 1, FORMAT(CALCULATE(DISTINCTCOUNT('Fact_factura_proveedor_pago_efectuado'[No.Factura SAP]), NOT ISBLANK('Fact_factura_proveedor_pago_efectuado'[No.Factura SAP])), "0"), "0")
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>  <div style='display:flex;align-items:center;gap:8px;margin-bottom:10px;'><span style='width:20px;height:2px;background:#6156A1;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>FACTURAS</span></div>  <div style='font-size:" & FontValor & ";color:#1E293B;font-weight:300;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:10px;'>$ " & ValorTexto & " <span style='font-size:12px;color:#575756;font-weight:400;'>mill.</span></div>  <div style='font-size:10px;color:#575756;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:6px;'>" & ParticipacionTexto & " consumido del presupuesto anual</div>  <div style='font-size:11px;color:#575756;font-weight:400;'><span style='color:#6156A1;'>" & Cantidad & "</span> facturas conformadas</div></div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0007-4a00-8000-000000000007
-
-	measure 'Card HTML - Disponible' =
-			
-			VAR Disponible = [Disponible Anual]
-			
-			VAR ValorNum = Disponible / 1000000
-			
-			VAR ValorTexto = FORMAT(ValorNum, SWITCH(TRUE(), ABS(ValorNum) >= 1000, "#,0", ABS(ValorNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR ColorDisp = IF(Disponible < 0, "#E7344C", "#71B73A")
-			
-			VAR PresuNum = [Presupuesto Anual] / 1000000
-			
-			VAR PresuTexto = FORMAT(PresuNum, SWITCH(TRUE(), ABS(PresuNum) >= 1000, "#,0", ABS(PresuNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FontCombinada = SWITCH(TRUE(), LEN(ValorTexto) + LEN(PresuTexto) >= 16, "15px", LEN(ValorTexto) + LEN(PresuTexto) >= 13, "17px", LEN(ValorTexto) + LEN(PresuTexto) >= 10, "19px", "22px")
-			
-			VAR DispDir = [Presupuesto directo] - [Consumo directo]
-			
-			VAR DispDirNum = DispDir / 1000000
-			
-			VAR DispDirTexto = FORMAT(ABS(DispDirNum), SWITCH(TRUE(), ABS(DispDirNum) >= 1000, "#,0", ABS(DispDirNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FilaDir = IF(ISBLANK(DispDir), "<div style='display:flex;justify-content:space-between;font-size:11px;color:#9CA3AF;margin-bottom:4px;'><span>Directo</span><span>—</span></div>", "<div style='display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;'><span style='color:#575756;'>Directo</span><span style='color:" & IF(DispDir < 0, "#E7344C", "#71B73A") & ";font-weight:600;'>" & IF(DispDir < 0, "-$", "$") & DispDirTexto & " mill.</span></div>")
-			
-			VAR DispInd = [Presupuesto indirecto] - [Consumo indirecto]
-			
-			VAR DispIndNum = DispInd / 1000000
-			
-			VAR DispIndTexto = FORMAT(ABS(DispIndNum), SWITCH(TRUE(), ABS(DispIndNum) >= 1000, "#,0", ABS(DispIndNum) >= 100, "#,0.0", "#,0.00"))
-			
-			VAR FilaInd = IF(ISBLANK(DispInd), "<div style='display:flex;justify-content:space-between;font-size:11px;color:#9CA3AF;margin-bottom:8px;'><span>Indirecto</span><span>—</span></div>", "<div style='display:flex;justify-content:space-between;font-size:11px;margin-bottom:8px;'><span style='color:#575756;'>Indirecto</span><span style='color:" & IF(DispInd < 0, "#E7344C", "#71B73A") & ";font-weight:600;'>" & IF(DispInd < 0, "-$", "$") & DispIndTexto & " mill.</span></div>")
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>  <div style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:10px;'>DISPONIBLE</div>  <div style='font-size:" & FontCombinada & ";color:" & ColorDisp & ";font-weight:600;line-height:1;white-space:nowrap;overflow:hidden;margin-bottom:12px;'>$ " & ValorTexto & " <span style='font-size:11px;color:#575756;font-weight:400;'>mill.</span> <span style='font-size:12px;color:#575756;font-weight:400;'>de</span> <span style='color:#164379;'>$ " & PresuTexto & "</span> <span style='font-size:11px;color:#575756;font-weight:400;'>mill.</span></div>  " & FilaDir & "  " & FilaInd & "</div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0008-4a00-8000-000000000008
-
-	measure 'Consumo directo' =
-			
-			CALCULATE([Consumo Total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000c-4a00-8000-00000000000c
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Consumo indirecto' =
-			
-			CALCULATE([Consumo Total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000d-4a00-8000-00000000000d
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Presupuesto directo' =
-			
-			CALCULATE([Presupuesto Anual], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000a-4a00-8000-00000000000a
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Presupuesto indirecto' =
-			
-			CALCULATE([Presupuesto Anual], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000b-4a00-8000-00000000000b
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Fila HTML - Consumo subseco' =
-			
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			
-			VAR Consumo = [Consumo por tipo documento]
-			
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
-			
-			VAR ConsumoCat = CALCULATE([Consumo por tipo documento], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
-			
-			VAR PctReal = DIVIDE(ConsumoCat, Presupuesto)
-			
-			VAR PctTexto = IF(ISBLANK(PctReal), "—", FORMAT(PctReal, "0%"))
-			
-			VAR Color = SWITCH(TRUE(), ISBLANK(PctReal), IF(COALESCE(ConsumoCat, 0) > 0, "#E7344C", "#9CA3AF"), PctReal < 0.8, "#71B73A", PctReal < 1, "#EE7600", "#E7344C")
-			
-			VAR Width = IF(ISBLANK(PctReal), IF(COALESCE(ConsumoCat, 0) > 0, "100.0", "0.0"), SUBSTITUTE(FORMAT(MIN(PctReal, 1) * 100, "0.0"), ",", "."))
-			
-			VAR Nombre = SELECTEDVALUE('Dim_subseco'[Descripción])
-			
-			VAR ConsumoTexto = FORMAT(Consumo / 1000000, "0.0")
-			
-			VAR CatN2 = LOOKUPVALUE('Dim_categoria'[Desc_N2], 'Dim_categoria'[Id categoria], CatActual)
-			
-			VAR CatN3 = LOOKUPVALUE('Dim_categoria'[Desc_N3_OK], 'Dim_categoria'[Id categoria], CatActual)
-			
-			VAR CatRuta = IF(ISBLANK(CatN2), "—", CatN2 & IF(NOT ISBLANK(CatN3) && CatN3 <> CatN2, " - " & CatN3, ""))
-			
-			VAR Etiqueta = IF(PctReal > 0.85, "<div style='position:absolute;top:50%;left:" & Width & "%;transform:translate(-100%,-50%);padding-right:6px;font-size:10px;font-weight:600;color:#FFFFFF;white-space:nowrap;'>$ " & ConsumoTexto & "M</div>", "<div style='position:absolute;top:50%;left:" & Width & "%;transform:translateY(-50%);padding-left:6px;font-size:10px;font-weight:600;color:#164379;white-space:nowrap;'>$ " & ConsumoTexto & "M</div>")
-			
-			VAR Disp = Presupuesto - ConsumoCat
-			
-			VAR DispTexto = FORMAT(ABS(Disp / 1000000), "0.0")
-			
-			VAR DispHTML = IF(ISBLANK(Presupuesto) || Presupuesto <= 0, IF(COALESCE(Consumo, 0) > 0, "<div style='font-size:10px;color:#E7344C;font-weight:600;white-space:nowrap;'>⚠ sin presupuesto · $" & FORMAT(Consumo / 1000000, "0.0") & "M</div>", "<div style='font-size:10px;color:#9CA3AF;white-space:nowrap;'>sin presup.</div>"), IF(Disp < 0, "<div style='font-size:10px;color:#E7344C;font-weight:600;white-space:nowrap;'>-$" & DispTexto & "M</div>", "<div style='font-size:10px;color:#575756;white-space:nowrap;'>$" & DispTexto & "M disp.</div>"))
-			
-			RETURN "<div style='display:flex;align-items:center;gap:14px;padding:5px 0;'>  <div style='flex:0 0 240px;overflow:hidden;'>    <div style='font-size:12px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & Nombre & "</div>    <div style='font-size:10px;color:#575756;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & CatRuta & "</div>  </div>  <div style='flex:1;position:relative;height:14px;background:#EDF0F4;border-radius:999px;overflow:hidden;'>    <div style='height:100%;width:" & Width & "%;background:" & Color & ";border-radius:999px;'></div>    " & Etiqueta & "  </div>  <div style='flex:0 0 110px;text-align:right;'>    <div style='font-size:13px;color:" & Color & ";font-weight:700;'>" & PctTexto & "</div>    " & DispHTML & "  </div></div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0003-4a00-8000-000000000003
-
-	measure 'Card HTML - Consumo vs presupuesto' =
-			
-			VAR Base = ADDCOLUMNS(SUMMARIZE('Dim_subseco', 'Dim_subseco'[Id subseco], 'Dim_subseco'[Descripción], 'Dim_subseco'[Id categoria]), "__Presu", VAR c = 'Dim_subseco'[Id categoria] RETURN CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = c), "__Consumo", [Consumo por tipo documento], "__Pct", [% consumido subseco])
-			
-			VAR ConPresu = FILTER(Base, [__Presu] > 0)
-			
-			VAR SinPresu = FILTER(Base, ([__Presu] <= 0 || ISBLANK([__Presu])) && [__Consumo] > 0)
-			
-			VAR HaySel = ISFILTERED('Dim_categoria')
-			
-			VAR CatSel = CALCULATETABLE(VALUES('Dim_categoria'[Id categoria]), ALL('Dim_subseco'))
-			
-			VAR EnSel = FILTER(Base, [Id categoria] IN CatSel)
-			
-			VAR FilasSin = CONCATENATEX(SinPresu, [Fila HTML - Consumo subseco], "", [__Consumo], DESC)
-			
-			VAR FilasTop = CONCATENATEX(TOPN(10, ConPresu, [__Consumo], DESC), [Fila HTML - Consumo subseco], "", [__Consumo], DESC)
-			
-			VAR Filas = IF(HaySel, CONCATENATEX(EnSel, [Fila HTML - Consumo subseco], "", [__Consumo], DESC), FilasSin & FilasTop)
-			
-			VAR ConsumoTotal = [Consumo por tipo documento]
-			
-			VAR PresupuestoTotal = [Presupuesto Anual]
-			
-			VAR PctTotalReal = DIVIDE(ConsumoTotal, PresupuestoTotal)
-			
-			VAR PctTotal = FORMAT(PctTotalReal, "0%")
-			
-			VAR VistaCtx = IF(COUNTROWS(VALUES('Dim_tipo documento'[Tipo documento])) = 3, "general", CONCATENATEX(VALUES('Dim_tipo documento'[Tipo documento]), 'Dim_tipo documento'[Tipo documento], " + "))
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:10px;padding:12px 16px 10px;width:100%;height:100%;box-sizing:border-box;display:flex;flex-direction:column;'>  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;'>    <div style='display:flex;align-items:center;gap:8px;'><span style='width:20px;height:2px;background:#164379;display:inline-block;'></span><span style='font-size:16px;color:#164379;font-weight:600;'>Consumo vs presupuesto por subseco</span></div>    <span style='font-size:13px;color:#575756;font-weight:600;'>" & PctTotal & " del total · Vista: " & VistaCtx & "</span>  </div>  <div style='flex:1;min-height:0;overflow-y:auto;'>" & Filas & "</div></div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0004-4a00-8000-000000000004
-
-	measure '% consumido subseco' =
-			
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			
-			VAR ConsumoCat = CALCULATE([Consumo por tipo documento], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
-			
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
-			
-			RETURN DIVIDE(ConsumoCat, Presupuesto)
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0002-4a00-8000-000000000002
-
-	measure 'Consumo por tipo documento' =
-			
-			VAR V = VALUES('Dim_tipo documento'[Tipo documento])
-			
-			RETURN IF("SOLPED" IN V, [SOLPED en gestión]) + IF("ODC" IN V, [Recibido (Entrada Mercancia)]) + IF("Factura" IN V, [Ejecutado Conformada])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0001-4a00-8000-000000000001
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% consumido directo' =
-			
-			VAR Consumo = COALESCE(CALCULATE([Consumo Total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR"), 0)
-			
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "DIR")
-			
-			RETURN IF(ISBLANK(Presupuesto) || Presupuesto = 0, IF(Consumo > 0, 1, 0), DIVIDE(Consumo, Presupuesto))
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000e-4a00-8000-00000000000e
-
-	measure '% consumido indirecto' =
-			
-			VAR Consumo = COALESCE(CALCULATE([Consumo Total], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND"), 0)
-			
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], LEFT(UPPER('Dim_categoria'[Tipo costo]), 3) = "IND")
-			
-			RETURN IF(ISBLANK(Presupuesto) || Presupuesto = 0, IF(Consumo > 0, 1, 0), DIVIDE(Consumo, Presupuesto))
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-000f-4a00-8000-00000000000f
-
-	measure 'Card HTML - Alertas' =
-			
-			VAR Base = ADDCOLUMNS(SUMMARIZE('Dim_categoria', 'Dim_categoria'[Id categoria], 'Dim_categoria'[Descripción], 'Dim_categoria'[Tipo costo]), "__Presu", CALCULATE([Presupuesto Anual]), "__Consumo", CALCULATE([Consumo Total]), "__Pct", DIVIDE(CALCULATE([Consumo Total]), CALCULATE([Presupuesto Anual])))
-			
-			VAR Activos = FILTER(Base, [__Presu] > 0 || [__Consumo] > 0)
-			
-			VAR ConPresu = FILTER(Activos, [__Presu] > 0)
-			
-			VAR SinPresu = FILTER(Activos, [__Presu] <= 0)
-			
-			VAR Sobre = COUNTROWS(FILTER(ConPresu, [__Pct] >= 1))
-			
-			VAR Alerta = COUNTROWS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1))
-			
-			VAR NopSin = COUNTROWS(SinPresu)
-			
-			VAR Total = Sobre + Alerta + NopSin
-			
-			VAR MaxPct = COALESCE(MAXX(ConPresu, [__Pct]), 0)
-			
-			VAR MaxPctTexto = FORMAT(MaxPct, "0%")
-			
-			VAR TopFinal = TOPN(5, UNION(ADDCOLUMNS(SinPresu, "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 1), "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1), "__Sev", 1)), [__Sev], DESC, [__Consumo], DESC)
-			
-			VAR Filas = CONCATENATEX(TopFinal, IF(ISBLANK([__Pct]), "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & TRIM('Dim_categoria'[Descripción]) & "</div><div style='font-size:9px;color:#E7344C;font-weight:600;'>⚠ gasto " & FORMAT([__Consumo] / 1000000, SWITCH(TRUE(), [__Consumo] / 1000000 >= 1000, "#,0", [__Consumo] / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · SIN PRESUPUESTO · " & UPPER(TRIM('Dim_categoria'[Tipo costo])) & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:#E7344C;font-weight:700;'>—</div></div></div>", "<div style='display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:8px;'><div style='flex:1;min-width:0;'><div style='font-size:11px;color:#1E293B;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>" & TRIM('Dim_categoria'[Descripción]) & "</div><div style='font-size:9px;color:" & IF([__Pct] >= 1, "#E7344C", "#575756") & ";font-weight:400;'>" & IF([__Pct] >= 1, "sobregasto +$", "faltan $") & FORMAT(ABS([__Consumo] - [__Presu]) / 1000000, SWITCH(TRUE(), ABS([__Consumo] - [__Presu]) / 1000000 >= 1000, "#,0", ABS([__Consumo] - [__Presu]) / 1000000 >= 100, "#,0.0", "#,0.00")) & " mill · " & UPPER(TRIM('Dim_categoria'[Tipo costo])) & "</div></div><div style='flex:0 0 auto;text-align:right;white-space:nowrap;'><div style='font-size:13px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:700;'>" & FORMAT([__Pct], "0%") & "</div></div></div>"), "")
-			
-			VAR Cuerpo = IF(Total = 0, "<div style='font-size:13px;color:#71B73A;font-weight:700;margin-bottom:4px;'>SIN ALERTAS</div><div style='font-size:10px;color:#575756;font-weight:400;'>Máx consumo " & MaxPctTexto & "</div>", Filas & "<div style='font-size:10px;color:#575756;font-weight:400;'>" & FORMAT(Sobre + NopSin, "0") & " sobregasto · " & FORMAT(Alerta, "0") & " en alerta" & IF(NopSin > 0, " · " & FORMAT(NopSin, "0") & " sin presupuesto", "") & "</div>")
-			
-			VAR ColorConteo = IF(Sobre + NopSin > 0, "#E7344C", IF(Alerta > 0, "#EE7600", "#71B73A"))
-			
-			VAR ColorFondo = IF(Sobre + NopSin > 0, "#FEF2F2", IF(Alerta > 0, "#FFF7ED", "#F0FDF4"))
-			
-			VAR ColorBorde = ColorConteo
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:" & ColorFondo & ";border:1px solid " & ColorBorde & ";border-radius:10px;padding:12px 14px 11px;width:100%;height:100%;box-sizing:border-box;'>  <div style='display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;'>    <div style='display:flex;align-items:center;gap:8px;'><span style='width:20px;height:2px;background:#E7344C;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ALERTAS</span></div>    <span style='font-size:12px;color:" & ColorConteo & ";font-weight:700;'>" & FORMAT(Total, "0") & "</span>  </div>  " & Cuerpo & "</div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0009-4a00-8000-000000000009
-
-	measure 'Etiqueta de actualización' =
-			
-			VAR ref = NOW()
-			
-			VAR s = MAX('Fact_solicitud_de_pedido'[Fecha de creación])
-			
-			VAR o = MAX('Fact_ordenes_de_compra'[Fecha de contabilización])
-			
-			VAR e = MAX('Fact_entrada_de_mercancia'[Fecha de contabilización])
-			
-			VAR f = MAX('Fact_factura_proveedor_pago_efectuado'[Fecha de contabilización])
-			
-			RETURN "<div style='font-size:9px;color:#575756;white-space:nowrap;'>Actualizado: " & FORMAT(ref, "dd/mm/yyyy hh:mm") & " &nbsp;&#183;&nbsp; SAP al: SOLPED " & FORMAT(s, "dd/mm") & " &#183; OC " & FORMAT(o, "dd/mm") & " &#183; EM " & FORMAT(e, "dd/mm") & " &#183; Fact " & FORMAT(f, "dd/mm") & "</div>"
-		formatString: General
-		displayFolder: Resumen Gerencial
-		lineageTag: 6a000001-0010-4a00-8000-000000000010
-
-	measure Comprometido =
-			CALCULATE(
-			    SUM(Fact_ordenes_de_compra[Total Líneas OC]),
-			    Fact_ordenes_de_compra[Cancelado] = "N"
+	measure 'OC pendiente por recibir' =
+			
+			SUMX (
+			    FILTER (
+			        Fact_ordenes_de_compra,
+			        Fact_ordenes_de_compra[Status de la línea] = "O"
+			    ),
+			    Fact_ordenes_de_compra[Cantidad abierta restante] * Fact_ordenes_de_compra[Precio]
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 8f0a5b2e-6c3d-4a1f-9e7b-2d5c4a1f6e30
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Ejecutado Conformada' =
-			CALCULATE(
-			    SUM(Fact_entrada_de_mercancia[Total líneas]),
-			    Fact_entrada_de_mercancia[TieneOC] = FALSE
+	measure 'FC pendiente por facturar' =
+			
+			CALCULATE (
+			    SUM ( Fact_entrada_de_mercancia_factura_conformada[Total líneas] ),
+			    ISBLANK ( Fact_entrada_de_mercancia_factura_conformada[Orden de Compra] )
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 3c7e1a9d-4f2b-4e8a-b1c6-7a9d2e4f5b81
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Meses Transcurridos' = MONTH(TODAY())
 		formatString: 0
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 2b6d8e4a-1f3c-4d9e-a5b7-8c1d3e6f2a94
-
-	measure 'Presupuesto Mensual' = SUM(Fact_presupuesto_final[COP])
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
-		lineageTag: 9d2a7c5e-3b1f-4a8d-b6e4-5c9a2d7f1b63
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
 	measure 'Presupuesto YTD' =
 			SUMX(
@@ -378,153 +49,10 @@ table _Medidas
 			    RETURN PresupuestoMensualProyecto * MesesTranscurridos
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
+		displayFolder: Vista general
 		lineageTag: 4e8b1d6a-9c3f-4b7e-a2d5-1f6c8a3e9b52
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure Disponible = [Presupuesto YTD] - [Consumo Total]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Medidas núcleo
-		lineageTag: 7a3d9c2e-5b8f-4e1a-9d6c-3a7e2b5d8f14
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% Consumo' = DIVIDE([Consumo Total], [Presupuesto YTD])
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Medidas núcleo
-		lineageTag: 1c5e8a3d-7f2b-4c9e-8a1d-6b3f9e5c2a87
-
-	measure 'Estado Semaforo' =
-			SWITCH(
-			    TRUE(),
-			    [% Consumo] > 1, "Rojo",
-			    [% Consumo] >= 0.8, "Ambar",
-			    "Verde"
-			)
-		displayFolder: Medidas núcleo
-		lineageTag: 6f9b2d5a-4e7c-4a3f-9b8e-2d6a4c9f7e15
-
-	measure 'Comprometido Neto (pendiente de facturar)' = [Comprometido] - [Ejecutado Conformada]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Coordinador
-		lineageTag: 3a8e5c1d-9f4b-4d7a-8c2e-5b9d3f1a6e70
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Consumo Simulado' = [Consumo Total] + [Monto Simulado Value]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Coordinador
-		lineageTag: 8d4b7e2a-6c9f-4a1d-b5e8-3c7a9d2f4b61
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure '% Consumo Simulado' = DIVIDE([Consumo Simulado], [Presupuesto YTD])
-		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: Coordinador
-		lineageTag: 5e9a3c7d-1b8f-4e6a-9d2c-7f4b1a8e3c92
-
-	measure 'Estado Semaforo Simulado' =
-			SWITCH(
-			    TRUE(),
-			    [% Consumo Simulado] > 1, "Rojo",
-			    [% Consumo Simulado] >= 0.8, "Ambar",
-			    "Verde"
-			)
-		displayFolder: Coordinador
-		lineageTag: 2f7c4a9e-8d1b-4c5f-a3e6-9b2d7c4f1a58
-
-	measure 'Recibido (Entrada Mercancia)' =
-			CALCULATE(
-			    SUM(Fact_entrada_de_mercancia[Total líneas]),
-			    Fact_entrada_de_mercancia[TieneOC] = TRUE
-			)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 9c2e5a8d-4f1b-4d7e-8a3c-6b9f2d5a7e14
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Facturado Total' =
-			CALCULATE(
-			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
-			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])
-			) + [Ejecutado Conformada]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a9d3c7e-2b5f-4a8d-9e1c-4f7a2d9c5b63
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Pagado Total' =
-			CALCULATE(
-			    SUM(Fact_factura_proveedor_pago_efectuado[Total líneas_19]),
-			    NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])
-			)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 4d8a2c6e-9f3b-4e7d-a1c5-8b3f6a9d2e57
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Comprometido por Subsecco' = [Comprometido]
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 7e1c4a9d-3f8b-4c5e-9a2d-6c4f8b1e3a95
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Dias SC a OC' =
-			AVERAGEX(
-			    Fact_factura_proveedor_pago_efectuado,
-			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 1a5e9c3d-7b2f-4a8e-9c6d-3f1a7e5b9c28
-
-	measure 'Dias OC a EM' =
-			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Entrada de Mercancía])),
-			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_6],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 8c3f7a1d-5e9b-4c2f-8a6d-2b7e5c9f3a41
-
-	measure 'Dias EM a Factura' =
-			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No.Factura SAP])),
-			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_13],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 5b9d2c6e-8f4a-4d1c-9b3e-7a5c1f9d4b62
-
-	measure 'Dias Factura a Pago' =
-			AVERAGEX(
-			    FILTER(Fact_factura_proveedor_pago_efectuado, NOT ISBLANK(Fact_factura_proveedor_pago_efectuado[No. Pago SAP])),
-			    DATEDIFF(
-			        Fact_factura_proveedor_pago_efectuado[Fecha de creación_20],
-			        Fact_factura_proveedor_pago_efectuado[Fecha de contabilización],
-			        DAY
-			    )
-			)
-		formatString: #,0.0
-		displayFolder: Trazabilidad
-		lineageTag: 3f7a1c9e-6d2b-4a5f-8c9e-1d3f7a6c9e58
 
 	measure 'Consumo dentro presupuesto' =
 			
@@ -532,9 +60,9 @@ table _Medidas
 			    [Consumo Total],
 			    [Presupuesto Anual]
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 1c3f2ff4-de6d-4225-b8e6-65568f734d8e
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Disponible dentro presupuesto' =
 			
@@ -542,9 +70,9 @@ table _Medidas
 			    [Presupuesto Anual] - [Consumo Total],
 			    0
 			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 938ed00c-7383-4052-8cbc-3ab05f4fd7a4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Exceso presupuesto' =
 			
@@ -552,18 +80,8 @@ table _Medidas
 			    [Consumo Total] - [Presupuesto Anual],
 			    0
 			)
+		displayFolder: Vista general
 		lineageTag: a03d6d17-045d-4b7b-9e95-7de5ddf080b0
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Consumo categoría' =
-			
-			DIVIDE (
-			    [Consumo Total],
-			    [Presupuesto Anual],
-			    0
-			)
-		lineageTag: 5efc2b93-1c38-48b2-95cf-1fef1bcb6da4
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -576,6 +94,7 @@ table _Medidas
 			    ) * 12
 			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
 		lineageTag: 8c198d23-94a6-4059-8cd7-69a30ee28493
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
@@ -583,182 +102,239 @@ table _Medidas
 	measure 'Disponible Anual' =
 			
 			[Presupuesto Anual] - [Consumo Total]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
 		lineageTag: 3f6e0ef4-cb6e-4941-bb12-f3e69c945a5f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% Consumo Anual' =
+	measure 'SOLPED pendiente por ordenar' =
 			
-			DIVIDE (
-			    [Consumo Total],
-			    [Presupuesto Anual],
-			    0
+			CALCULATE (
+			    SUM ( 'Fact_solicitud_de_pedido'[Total líneas] ),
+			    'Fact_solicitud_de_pedido'[Status de la línea] = "O",
+			    'Fact_solicitud_de_pedido'[Cancelado] = "N",
+			    'Fact_solicitud_de_pedido'[Línea cerrada manualmente] = "N",
+			    'Fact_solicitud_de_pedido'[Clase de documento de destino] = -1
 			)
-		lineageTag: 577141a2-3edb-41f4-8e16-e37898642c09
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: b3a80cd9-824c-423b-ba1a-6256e30e515f
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Estado Alerta Presupuesto' =
+	measure 'EM pendiente por facturar' =
 			
-			VAR Presupuesto = [Presupuesto Anual]
-			VAR Consumo = [Consumo Total]
-			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
-			RETURN
-			    SWITCH (
-			        TRUE (),
-			        Consumo <= 0, BLANK (),
-			        Presupuesto <= 0 && Consumo > 0, "🔴 Sin presupuesto",
-			        Porcentaje > 1, "🔴 Sobrepresupuesto",
-			        Porcentaje >= 0.8, "🟠 Próximo al límite",
-			        BLANK ()
-			    )
-		lineageTag: 599dd7b9-cd58-4a69-a66c-dedfc1af29b8
-
-	measure 'Alerta Activa' =
-			
-			VAR Presupuesto = [Presupuesto Anual]
-			VAR Consumo = [Consumo Total]
-			VAR Porcentaje = DIVIDE ( Consumo, Presupuesto )
-			RETURN
-			    IF (
-			        Consumo > 0
-			            && (
-			                Presupuesto <= 0
-			                || Porcentaje >= 0.8
-			            ),
-			        1,
-			        0
-			    )
-		formatString: 0
-		lineageTag: 40dab425-bcf1-48c1-9a90-0217a06ebca2
-
-	measure 'Cantidad Alertas Presupuesto' =
-			
-			SUMX (
-			    VALUES ( Dim_categoria[Id categoria] ),
-			    CALCULATE ( [Alerta Activa] )
+			CALCULATE (
+			    SUM ( 'Fact_entrada_de_mercancia_factura_conformada'[Total líneas] ),
+			    'Fact_entrada_de_mercancia_factura_conformada'[Status de documento] = "O",
+			    'Fact_entrada_de_mercancia_factura_conformada'[Clase de documento de destino] = -1,
+			    NOT ISBLANK ( 'Fact_entrada_de_mercancia_factura_conformada'[Orden de Compra] )
 			)
-		formatString: 0
-		lineageTag: 8d3334a7-92ad-4a52-a5fa-98d14e4f373b
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Vista general
+		lineageTag: fa641be4-2fdd-4ac9-b8a5-5d432beb4cff
 
-	measure 'Card HTML - Alertas Banner' =
+	measure 'FP pendiente por pagar' =
 			
-			VAR Base = ADDCOLUMNS(SUMMARIZE('Dim_categoria', 'Dim_categoria'[Id categoria], 'Dim_categoria'[Descripción], 'Dim_categoria'[Tipo costo]), "__Presu", CALCULATE([Presupuesto Anual]), "__Consumo", CALCULATE([Consumo Total]), "__Pct", DIVIDE(CALCULATE([Consumo Total]), CALCULATE([Presupuesto Anual])))
-			
-			VAR Activos = FILTER(Base, [__Presu] > 0 || [__Consumo] > 0)
-			
-			VAR ConPresu = FILTER(Activos, [__Presu] > 0)
-			
-			VAR SinPresu = FILTER(Activos, [__Presu] <= 0)
-			
-			VAR Sobre = COUNTROWS(FILTER(ConPresu, [__Pct] >= 1))
-			
-			VAR Alerta = COUNTROWS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1))
-			
-			VAR NopSin = COUNTROWS(SinPresu)
-			
-			VAR Total = Sobre + Alerta + NopSin
-			
-			VAR MaxPct = COALESCE(MAXX(ConPresu, [__Pct]), 0)
-			
-			VAR MaxPctTexto = FORMAT(MaxPct, "0%")
-			
-			VAR TopFinal = TOPN(3, UNION(ADDCOLUMNS(SinPresu, "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 1), "__Sev", 2), ADDCOLUMNS(FILTER(ConPresu, [__Pct] >= 0.8 && [__Pct] < 1), "__Sev", 1)), [__Sev], DESC, [__Consumo], DESC)
-			
-			VAR Items = CONCATENATEX(TopFinal, IF(ISBLANK([__Pct]), "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#E7344C;font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:#E7344C;display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · sin presupuesto</span>", "<span style='display:inline-flex;align-items:center;gap:5px;font-size:11px;color:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";font-weight:600;white-space:nowrap;'><span style='width:6px;height:6px;border-radius:50%;background:" & IF([__Pct] >= 1, "#E7344C", "#EE7600") & ";display:inline-block;'></span>" & TRIM('Dim_categoria'[Descripción]) & " · " & FORMAT([__Pct], "0%") & "</span>"), "<span style='color:#D1D5DB;'>|</span>")
-			
-			VAR ColorConteo = IF(Sobre + NopSin > 0, "#E7344C", IF(Alerta > 0, "#EE7600", "#71B73A"))
-			
-			VAR ColorFondo = IF(Sobre + NopSin > 0, "#FEF2F2", IF(Alerta > 0, "#FFF7ED", "#F0FDF4"))
-			
-			VAR Resumen = IF(Total = 0, "<span style='font-size:12px;color:#71B73A;font-weight:700;'>SIN ALERTAS</span><span style='font-size:11px;color:#575756;font-weight:400;'> · máx consumo " & MaxPctTexto & "</span>", "<span style='font-size:20px;color:" & ColorConteo & ";font-weight:700;line-height:1;'>" & FORMAT(Total, "0") & "</span><span style='font-size:11px;color:#575756;font-weight:400;'>" & FORMAT(Sobre + NopSin, "0") & " sobregasto · " & FORMAT(Alerta, "0") & " en alerta" & IF(NopSin > 0, " · " & FORMAT(NopSin, "0") & " sin presupuesto", "") & "</span>")
-			
-			RETURN "<div style='font-family:Segoe UI,Arial,sans-serif;background:" & ColorFondo & ";border:1px solid " & ColorConteo & ";border-radius:10px;padding:12px 16px;width:100%;height:100%;box-sizing:border-box;display:flex;align-items:center;gap:16px;'>" & "<div style='display:flex;align-items:center;gap:8px;flex:0 0 auto;'><span style='width:20px;height:2px;background:#E7344C;display:inline-block;'></span><span style='font-size:10px;color:#575756;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;'>ALERTAS</span></div>" & "<div style='display:flex;align-items:baseline;gap:6px;flex:0 0 auto;'>" & Resumen & "</div>" & "<div style='flex:1;min-width:0;display:flex;align-items:center;gap:10px;overflow:hidden;'>" & Items & "</div>" & "</div>"
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0020-4a00-8000-000000000020
-
-	measure '% consumido categoria subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			VAR ConsumoCat = CALCULATE([Consumo subseco], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
-			VAR Presupuesto = [Presupuesto subseco]
-			RETURN DIVIDE(ConsumoCat, Presupuesto)
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0026-4a00-8000-000000000026
-
-	measure 'Color barra subseco' =
-			VAR Pct = [% consumido categoria subseco]
-			VAR SinPresu = ISBLANK([Presupuesto subseco]) && [Consumo subseco] > 0
-			RETURN IF(SinPresu, "#E7344C", IF(Pct < 0.8, "#164379", IF(Pct < 1, "#EE7600", "#E7344C")))
-		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0025-4a00-8000-000000000025
-
-	measure 'Consumo subseco' = [Consumo Total]
+			CALCULATE (
+			    SUM ( 'Fact_stg_solped_oc_fc_em_fp_pe'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No.Factura SAP] ),
+			    ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No. Pago SAP] )
+			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0023-4a00-8000-000000000023
+		displayFolder: Vista general
+		lineageTag: 67cb2ad0-3c24-47ac-92de-44cca1ac0036
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure '% consumido subseco (total)' =
-			VAR Pct = DIVIDE([Consumo subseco], [Presupuesto subseco])
-			RETURN Pct
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0024-4a00-8000-000000000024
-
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Presupuesto subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			VAR Presupuesto = CALCULATE([Presupuesto Anual], 'Dim_categoria'[Id categoria] = CatActual)
-			RETURN Presupuesto
+	measure 'Pago efectuado' =
+			
+			CALCULATE (
+			    SUM ( 'Fact_stg_solped_oc_fc_em_fp_pe'[Total líneas_19] ),
+			    NOT ISBLANK ( 'Fact_stg_solped_oc_fc_em_fp_pe'[No. Pago SAP] )
+			)
 		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0021-4a00-8000-000000000021
+		displayFolder: Vista general
+		lineageTag: 065323f5-3aa3-4986-8118-1c352b0b9025
 
 		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
 
-	measure 'Presupuesto remanente subseco' =
-			VAR Remanente = [Presupuesto subseco] - [Consumo subseco]
-			RETURN MAX(0, Remanente)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0022-4a00-8000-000000000022
+	measure 'Consumo detalle' = SUM ( Fact_bitacora_documental[Valor total] )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Detalle documental
+		lineageTag: 18a48220-c5ad-4ffd-bc94-8d84cb5d8ac9
 
-		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
-
-	measure 'Visible subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			RETURN IF(NOT ISFILTERED('Dim_categoria'), 1, IF(CatActual IN VALUES('Dim_categoria'[Id categoria]), 1, 0))
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0028-4a00-8000-000000000028
-
-	measure 'Valor color subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			VAR ConsumoCat = CALCULATE([Consumo subseco], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
-			VAR PctCat = DIVIDE(ConsumoCat, [Presupuesto subseco])
-			RETURN IF(ISBLANK([Presupuesto subseco]) && ConsumoCat > 0, 9, COALESCE(PctCat, 0))
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0027-4a00-8000-000000000027
-
-	measure 'Leyenda HTML subcecos' = "<div style='font-family:Segoe UI,Arial,sans-serif;display:flex;align-items:center;gap:18px;width:100%;height:100%;color:#575756;font-size:10px;font-weight:500;box-sizing:border-box;'><span style='display:inline-flex;align-items:center;gap:5px;white-space:nowrap;'><span style='width:8px;height:8px;border-radius:50%;background:#E7344C;display:inline-block;'></span>Excede presupuesto</span><span style='display:inline-flex;align-items:center;gap:5px;white-space:nowrap;'><span style='width:8px;height:8px;border-radius:50%;background:#EE7600;display:inline-block;'></span>En alerta (80-99%)</span><span style='display:inline-flex;align-items:center;gap:5px;white-space:nowrap;'><span style='width:8px;height:8px;border-radius:50%;background:#164379;display:inline-block;'></span>Dentro de presupuesto</span></div>"
+	measure 'Lineas detalle' = COUNTROWS ( Fact_bitacora_documental )
 		formatString: 0
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-002a-4a00-8000-00000000002a
+		displayFolder: Detalle documental
+		lineageTag: 567db425-36b5-4afd-8c82-37a53388c16a
 
-	measure 'Estado color subseco' =
-			VAR CatActual = SELECTEDVALUE('Dim_subseco'[Id categoria])
-			VAR SinP = ISBLANK([Presupuesto subseco]) && [Consumo subseco] > 0
-			VAR ConsumoCat = CALCULATE([Consumo subseco], REMOVEFILTERS('Dim_subseco'), 'Dim_categoria'[Id categoria] = CatActual)
-			RETURN IF(SinP, 9, COALESCE(DIVIDE(ConsumoCat, [Presupuesto subseco]), 0))
-		formatString: 0.0%
-		displayFolder: Resumen ejecutivo
-		lineageTag: 6a000001-0029-4a00-8000-000000000029
+	measure 'Documentos detalle' = COUNTROWS ( SUMMARIZE ( Fact_bitacora_documental, Fact_bitacora_documental[Tipo de documento], Fact_bitacora_documental[N° documento] ) )
+		formatString: 0
+		displayFolder: Detalle documental
+		lineageTag: 61cc8449-ddad-4638-a373-ddfd0a2947d7
+
+	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Fact_bitacora_documental ), VALUES ( Dim_proyecto ) ) )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Detalle documental
+		lineageTag: b06b5f98-3d5a-4614-871b-c600dcce28a2
+
+	measure 'Titulo detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Detalle documental · " & COALESCE ( _sub, _dist, "Todo el consumo" )
+		displayFolder: Detalle documental
+		lineageTag: be1df01f-5ced-4a4c-a019-947ff74fbb7c
+
+	measure 'Ruta detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _cod = SELECTEDVALUE ( Dim_subseco[Subseco] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Consumo por distribución de costos" & IF ( NOT ISBLANK ( _dist ), "  ›  " & _dist ) & IF ( NOT ISBLANK ( _sub ), "  ›  " & _cod & " · " & _sub )
+		displayFolder: Detalle documental
+		lineageTag: dbd73759-7b94-4812-9e94-98839d1704d7
+
+	measure 'Etiqueta tarjeta detalle' = SWITCH ( TRUE (), NOT ISBLANK ( SELECTEDVALUE ( Dim_subseco[Descripción] ) ), "CONSUMO DEL SUBSECCO", NOT ISBLANK ( SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) ), "CONSUMO DE LA DISTRIBUCIÓN", "CONSUMO TOTAL" )
+		displayFolder: Detalle documental
+		lineageTag: 2b4b8749-5ba8-455d-b1b0-7b9820329df8
+
+	measure 'Resumen detalle' = VAR _l = [Lineas detalle] VAR _d = [Documentos detalle] RETURN FORMAT ( _l, "#,0" ) & IF ( _l = 1, " línea · ", " líneas · " ) & FORMAT ( _d, "#,0" ) & IF ( _d = 1, " documento · ", " documentos · " ) & FORMAT ( [% consumo detalle], "0.0%" ) & " del consumo"
+		displayFolder: Detalle documental
+		lineageTag: 960ec410-d7c8-4e35-9209-bfa195fead32
+
+	measure '% etapa detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Dim_etapa ) ) )
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: Detalle documental
+		lineageTag: efafff4c-4f8d-441d-8e41-c2f89547bcdf
+
+	measure 'Pie etapa detalle' = IF ( ISBLANK ( [Consumo detalle] ), "Sin documentos", FORMAT ( [% etapa detalle], "0.0%" ) & " del total" )
+		displayFolder: Detalle documental
+		lineageTag: 878f8098-e12d-4263-91ee-b64f7e3c902c
+
+	measure 'Barra etapa detalle' = VAR _p = COALESCE ( [% etapa detalle], 0 ) VAR _w = IF ( _p > 0, MAX ( 4, ROUND ( _p * 200, 0 ) ), 0 ) RETURN IF ( ISBLANK ( [Consumo detalle] ), BLANK (), "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='8' viewBox='0 0 200 8'><rect x='0' y='0' width='200' height='8' rx='4' fill='%23EDF0F4'/><rect x='0' y='0' width='" & FORMAT ( _w, "0" ) & "' height='8' rx='4' fill='%231B4379'/></svg>" )
+		displayFolder: Detalle documental
+		lineageTag: cd2feec4-cc98-40f9-a21a-b03ecf4dabff
+		dataCategory: ImageUrl
+
+	measure 'Barra texto etapa' = VAR _p = COALESCE ( [% etapa detalle], 0 ) VAR _n = IF ( _p > 0, MAX ( 1, ROUND ( _p * 12, 0 ) ), 0 ) RETURN IF ( ISBLANK ( [Consumo detalle] ), BLANK (), REPT ( "█", _n ) & REPT ( "░", 12 - _n ) )
+		displayFolder: Detalle documental
+		lineageTag: 1844cb05-c281-458f-953b-943b69efb2a2
+
+	measure 'Pasos recorrido' = VAR _c = "%231B4379" VAR _circ = "<circle cx='{x}' cy='16' r='12' fill='" & _c & "'/><text x='{x}' y='20.5' font-family='Segoe UI, Arial' font-size='13' font-weight='700' fill='white' text-anchor='middle'>{n}</text>" VAR _xs = { ( 1, 93 ), ( 2, 281 ), ( 3, 470 ), ( 4, 659 ), ( 5, 848 ), ( 6, 1037 ) } VAR _circles = CONCATENATEX ( _xs, SUBSTITUTE ( SUBSTITUTE ( _circ, "{x}", [Value2] ), "{n}", [Value1] ), "", [Value1], ASC ) RETURN "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1130' height='32' viewBox='0 0 1130 32'><line x1='93' y1='16' x2='1037' y2='16' stroke='" & _c & "' stroke-width='2' stroke-opacity='0.35'/>" & _circles & "</svg>"
+		lineageTag: 5a27941a-9d68-477a-8feb-c98a1ea8289b
+		dataCategory: ImageUrl
+
+	measure 'TT html' = ```
+			
+			VAR _tipo = SELECTEDVALUE ( Fact_bitacora_documental[Tipo de documento] )
+			VAR _dias = SELECTEDVALUE ( Fact_bitacora_documental[Días en la etapa] )
+			VAR _f    = SELECTEDVALUE ( Fact_bitacora_documental[Fecha necesaria] )
+			VAR _hoy  = TODAY ()
+			VAR _venc =
+			    IF ( ISBLANK ( _f ), "",
+			        IF ( _hoy > _f, "Vencida · " & DATEDIFF ( _f, _hoy, DAY ) & " días",
+			            IF ( _hoy = _f, "Vence hoy", "Faltan " & DATEDIFF ( _hoy, _f, DAY ) & " días" ) ) )
+			VAR _prio =
+			    SWITCH ( SELECTEDVALUE ( Fact_bitacora_documental[Prioridad] ),
+			        1, "Normal", 2, "Urgente", 3, "Emergencia", 4, "Hecho cumplido", 5, "Donación", "" )
+			VAR _resp = SELECTEDVALUE ( Fact_bitacora_documental[Responsable] )
+			VAR _comp = SELECTEDVALUE ( Fact_bitacora_documental[Comprador asignado] )
+			VAR _adj  = SELECTEDVALUE ( Fact_bitacora_documental[Adjudicacion Directa] )
+			VAR _com  = SELECTEDVALUE ( Fact_bitacora_documental[Comentarios] )
+			VAR _pago = SELECTEDVALUE ( Fact_bitacora_documental[Condiciones de pago] )
+			VAR _estAct = SELECTEDVALUE ( Fact_bitacora_documental[Estado] )
+			VAR _sol  = SELECTEDVALUE ( Fact_bitacora_documental[SOLPED origen] )
+			VAR _oc   = SELECTEDVALUE ( Fact_bitacora_documental[OC asociada] )
+			VAR _fac  = SELECTEDVALUE ( Fact_bitacora_documental[Factura asociada] )
+			
+			// Campos de OC
+			VAR _pct0 = SELECTEDVALUE ( Fact_bitacora_documental[% entrega] )
+			VAR _pct  = IF ( _pct0 > 1, _pct0 / 100, _pct0 )
+			VAR _pend = ISBLANK ( _pct ) || _pct < 1
+			VAR _toc  =
+			    SWITCH ( SELECTEDVALUE ( Fact_bitacora_documental[Tipo de OC] ),
+			        1, "Normal", 2, "Cto. marco / Ac. global", 3, "Larga vigencia", "" )
+			
+			// Campos de EM / facturas
+			VAR _sinFac = ISBLANK ( _fac ) || _fac = 0
+			
+			VAR _est =
+			    SWITCH ( _tipo,
+			        "SOLPED", "Solicitud aprobada, pendiente de convertir en OC",
+			        "Orden de compra", IF ( _pend, "Costo comprometido pendiente de convertir en EM", _estAct ),
+			        "Entrada de mercancía", IF ( _sinFac, "Costo recibido pendiente de facturar", _estAct ),
+			        _estAct
+			    )
+			
+			VAR _a = "<tr><td style='color:#575756;padding:3px 0;white-space:nowrap;vertical-align:top'>"
+			VAR _b = "</td><td style='text-align:right;font-weight:600;padding:3px 0 3px 12px;white-space:nowrap'>"
+			VAR _c = "</td></tr>"
+			
+			VAR _filasSol =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin ordenar" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _f ), _a & "Requerida" & _b & FORMAT ( _f, "dd/MM/yyyy" ) & _c, "" )
+			    & IF ( _venc <> "", _a & "Vencimiento" & _b
+			        & "<span style='color:" & IF ( _hoy > _f, "#C62828", "#1B4379" ) & "'>" & _venc & "</span>" & _c, "" )
+			    & IF ( _prio <> "", _a & "Prioridad" & _b
+			        & "<span style='color:" & IF ( _prio = "Normal", "#1B4379", "#F8AA00" ) & "'>" & _prio & "</span>" & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    & IF ( NOT ISBLANK ( _adj ),  _a & "A. directa" & _b & _adj & _c, "" )
+			
+			VAR _filasOC =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin recibir" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _pct ), _a & "% entrega" & _b & FORMAT ( _pct, "0%" ) & _c, "" )
+			    & IF ( _toc <> "", _a & "Tipo de OC" & _b & _toc & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ), _a & "SOLPED origen" & _b & _sol & _c, "" )
+			
+			VAR _filasEM =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días sin facturar" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _pago ), _a & "Cond. de pago" & _b & _pago & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasFC =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días en la etapa" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT _sinFac, _a & "Factura" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasFP =
+			    IF ( NOT ISBLANK ( _dias ), _a & "Días en la etapa" & _b & _dias & " días" & _c, "" )
+			    & IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT _sinFac,           _a & "Factura asociada" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _pago ), _a & "Cond. de pago" & _b & _pago & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			
+			VAR _filasPG =
+			    IF ( NOT ISBLANK ( _sol ),  _a & "SOLPED origen" & _b & _sol & _c, "" )
+			    & IF ( NOT ISBLANK ( _oc ),   _a & "OC asociada" & _b & _oc & _c, "" )
+			    & IF ( NOT _sinFac,           _a & "Factura asociada" & _b & _fac & _c, "" )
+			    & IF ( NOT ISBLANK ( _resp ), _a & "Solicitante" & _b & _resp & _c, "" )
+			    & IF ( NOT ISBLANK ( _comp ), _a & "Comprador" & _b & _comp & _c, "" )
+			    
+			VAR _filas =
+			    SWITCH ( _tipo,
+			        "SOLPED", _filasSol,
+			        "Orden de compra", _filasOC,
+			        "Entrada de mercancía", _filasEM,
+			        "Factura conformada", _filasFC,
+			        "Factura de proveedor", _filasFP,
+			        "Pago efectuado", _filasPG,
+			        "Pago", _filasPG,
+			        "" )
+			
+			RETURN
+			"<div style='font-family:Segoe UI,sans-serif;font-size:12px;color:#333'>"
+			& "<div style='background:#1B4379;color:#fff;padding:7px 10px;border-radius:4px 4px 0 0'>"
+			& "<div style='font-size:14px;font-weight:700'>" & _tipo & " " & SELECTEDVALUE ( Fact_bitacora_documental[N° documento] ) & "</div>"
+			& "<div style='font-size:11px;opacity:.85'>" & _est & "</div></div>"
+			& "<div style='padding:4px 12px 8px;border:1px solid #ddd;border-top:none;border-radius:0 0 4px 4px'>"
+			& IF ( _filas <> "", "<table style='width:100%;border-collapse:collapse'>" & _filas & "</table>", "" )
+			& IF ( NOT ISBLANK ( _com ), "<div style='margin-top:6px;font-size:11px;color:#575756;line-height:1.3'>"
+			    & "<b>Comentarios</b><br>" & _com & "</div>", "" )
+			& "</div></div>"
+			```
+		lineageTag: 2a39a321-dc55-4f96-a477-834e16167f80
 
 	partition _Medidas = m
 		mode: import

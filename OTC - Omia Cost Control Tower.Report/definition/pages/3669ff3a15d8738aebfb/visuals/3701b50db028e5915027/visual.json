@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "3701b50db028e5915027",
   "position": {
-    "x": 978,
-    "y": 296,
-    "z": 2000,
-    "height": 497,
+    "x": 979,
+    "y": 372,
+    "z": 5000,
+    "height": 421,
     "width": 460,
     "tabOrder": 2000
   },
@@ -23,45 +23,27 @@
                       "Entity": "Dim_subseco"
                     }
                   },
+                  "Property": "Distribución Costos"
+                }
+              },
+              "queryRef": "Dim_subseco.Distribución Costos",
+              "nativeQueryRef": "Distribución Costos",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_subseco"
+                    }
+                  },
                   "Property": "Descripción"
                 }
               },
               "queryRef": "Dim_subseco.Descripción",
               "nativeQueryRef": "Descripción",
-              "active": true
-            }
-          ],
-          "showAll": true
-        },
-        "Tooltips": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "% consumido categoria subseco"
-                }
-              },
-              "queryRef": "_Medidas.% consumido categoria subseco",
-              "nativeQueryRef": "% consumido categoria subseco"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Presupuesto subseco"
-                }
-              },
-              "queryRef": "_Medidas.Presupuesto subseco",
-              "nativeQueryRef": "Presupuesto subseco"
+              "active": false
             }
           ]
         },
@@ -75,11 +57,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Consumo subseco"
+                  "Property": "Consumo Total"
                 }
               },
-              "queryRef": "_Medidas.Consumo subseco",
-              "nativeQueryRef": "Consumo subseco"
+              "queryRef": "_Medidas.Consumo Total",
+              "nativeQueryRef": "Consumo Total"
             }
           ]
         }
@@ -94,7 +76,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Consumo subseco"
+                "Property": "Consumo Total"
               }
             },
             "direction": "Descending"
@@ -146,13 +128,6 @@
               "expr": {
                 "Literal": {
                   "Value": "35L"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
                 }
               }
             }
@@ -294,6 +269,19 @@
               }
             }
           }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "highlightMatching": 1
+          }
         }
       ],
       "ribbonBands": [
@@ -342,82 +330,14 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "_Medidas"
-                                    }
-                                  },
-                                  "Property": "Estado color subseco"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "1D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#E7344C'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "_Medidas"
-                                    }
-                                  },
-                                  "Property": "Estado color subseco"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0.8D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#EE7600'"
-                            }
-                          }
-                        }
-                      ],
-                      "DefaultValue": {
-                        "Literal": {
-                          "Value": "'#164379'"
-                        }
-                      }
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": -0.5
                     }
                   }
                 }
               }
             }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ]
           }
         }
       ]
@@ -455,7 +375,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Consumo vs presupuesto por subceco'"
+                  "Value": "'Consumo por distribución de costos/Subceco'"
                 }
               }
             }
@@ -490,114 +410,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cf_visible_subseco",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Visible subseco"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "_Medidas",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 2,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "d"
-                        }
-                      },
-                      "Property": "Visible subseco"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "0.5D"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "7df8b8cda5ca1c240ec1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_subseco"
-              }
-            },
-            "Property": "Descripción"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "599290630e417034d646",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "% consumido categoria subseco"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ab180dd7814d363260bd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Presupuesto subseco"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "dd31c9cf2054ae1193d0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Consumo subseco"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

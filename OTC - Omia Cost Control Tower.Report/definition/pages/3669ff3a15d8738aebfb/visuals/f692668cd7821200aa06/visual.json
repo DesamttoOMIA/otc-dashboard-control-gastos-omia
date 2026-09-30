@@ -4,7 +4,7 @@
   "position": {
     "x": 75,
     "y": 818,
-    "z": 1000,
+    "z": 3000,
     "height": 467,
     "width": 1343,
     "tabOrder": 0
@@ -73,7 +73,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N3_OK",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N3_OK",
-              "active": false
+              "active": true
             }
           ]
         },
@@ -120,36 +120,6 @@
               },
               "queryRef": "_Medidas.Disponible Anual",
               "nativeQueryRef": "Disponible Anual"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Comprometido"
-                }
-              },
-              "queryRef": "_Medidas.Comprometido",
-              "nativeQueryRef": "Orden de Compra",
-              "displayName": "Orden de Compra"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Medidas"
-                    }
-                  },
-                  "Property": "Ejecutado Conformada"
-                }
-              },
-              "queryRef": "_Medidas.Ejecutado Conformada",
-              "nativeQueryRef": "Factura Conformada",
-              "displayName": "Factura Conformada"
             }
           ]
         }
@@ -227,7 +197,39 @@
                   }
                 }
               ],
-              "isToggled": true
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Equipos Indirectos'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Gastos varios Indirectos'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "' Remuneraciones'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
             }
           ]
         }
