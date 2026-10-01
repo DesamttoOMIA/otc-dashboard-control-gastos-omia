@@ -1,0 +1,53 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "926d620acc6409032332",
+  "position": {
+    "x": 310,
+    "y": 229,
+    "z": 17001,
+    "height": 121,
+    "width": 1128,
+    "tabOrder": 17001
+  },
+  "visual": {
+    "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
+    "query": {
+      "queryState": {
+        "content": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Alertas franja html"
+                }
+              },
+              "queryRef": "_Medidas.Alertas franja html",
+              "nativeQueryRef": "Alertas franja html"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "stylesheet": [
+        {
+          "properties": {
+            "stylesheet": {
+              "expr": {
+                "Literal": {
+                  "Value": "'body{overflow:hidden !important;margin:0;padding:0}'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,12 @@
+EVALUATE
+CALCULATETABLE (
+    FILTER (
+        ADDCOLUMNS (
+            SELECTCOLUMNS ( FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" ), "cod", Dim_categoria[Codigo], "id", Dim_categoria[Id categoria] ),
+            "@c", CALCULATE ( [Consumo Total], Dim_categoria[Id categoria] = EARLIER ( [id] ) ),
+            "@p", CALCULATE ( [Presupuesto Anual], Dim_categoria[Id categoria] = EARLIER ( [id] ) )
+        ),
+        NOT ISBLANK ( [@c] ) || [@p] > 0
+    ),
+    Dim_proyecto[Id proyecto] = 122
+)
