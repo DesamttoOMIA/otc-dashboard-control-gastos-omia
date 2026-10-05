@@ -1,0 +1,31 @@
+table 'Estados alerta'
+	lineageTag: ab7fc030-ea0e-4c83-ac72-c2702e5629cf
+
+	column Estado
+		lineageTag: 8631ca46-86fe-4a97-aada-089cdcf9310e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Estado]
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		formatString: 0
+		lineageTag: 10b113ac-6d20-4aa9-82e1-5a6ad6c8d82a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Orden]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Estados alerta' = calculated
+		mode: import
+		source =
+				
+				DATATABLE ( "Estado", STRING, "Orden", INTEGER,
+				    { { "Sobrepresupuestada", 1 }, { "Cerca del límite", 2 },
+				      { "Sin presupuesto", 3 }, { "Con presupuesto, sin gastar", 4 } } )
+
+	annotation PBI_Id = 9bd1cf09dd6e495fba3702b27628a29f
+

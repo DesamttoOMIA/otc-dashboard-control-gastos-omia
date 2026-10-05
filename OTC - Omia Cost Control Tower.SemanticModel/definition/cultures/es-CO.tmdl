@@ -3119,6 +3119,16 @@ cultureInfo es-CO
 			          "presupuesto anual": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Presupuesto": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4512,6 +4522,16 @@ cultureInfo es-CO
 			            },
 			            "Weight": 0.727
 			          }
+			        },
+			        {
+			          "Consumo": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5006,6 +5026,16 @@ cultureInfo es-CO
 			          "codigo": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Código": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -5021,6 +5051,16 @@ cultureInfo es-CO
 			        {
 			          "descripción": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Línea REE": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -7843,176 +7883,1548 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
+			    },
+			    "entity__medida.alertas_franja_html": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Alertas franja html"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alertas franja html": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.alertas_cantidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Alertas cantidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alertas cantidad": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.alertas_centro_html": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Alertas centro html"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alertas centro html": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.estado_alerta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Estado alerta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estado alerta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Estado": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.punto_estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Punto estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "punto estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.color_estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Color estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.color_texto_estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Color texto estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "color texto estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo_ppto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% consumo ppto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% consumo ppto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage consumo ppto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct consumo ppto": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.por_fuera_ppto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Por fuera ppto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "por fuera ppto": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Por fuera": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.filtro_estado_alerta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Filtro estado alerta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "filtro estado alerta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "estados_alerta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Estados alerta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estados alerta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "estado alerta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "estados_alerta.estado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Estados alerta",
+			          "ConceptualProperty": "Estado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "estado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "estados_alerta.orden": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Estados alerta",
+			          "ConceptualProperty": "Orden"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "orden": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.notif_gestion_visible": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Notif gestion visible"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notif gestion visible": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.notif_gestion_cantidad": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Notif gestion cantidad"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notif gestion cantidad": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.notif_gestion_encabezado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Notif gestion encabezado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notif gestion encabezado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.notif_gestion_vacio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Notif gestion vacio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notif gestion vacio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notificaciones gestion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "notificacione gestion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.proyecto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Proyecto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "proyecto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.orden": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Orden"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "orden": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.notificación": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Notificación"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notificación": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.documento": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Documento"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "documento": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.proveedor___descripción": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Proveedor / descripción"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "proveedor / descripción": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "proveedor descripción": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.id_categoria": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Id categoria"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id categoria": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification categoria": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity categoria": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier categoria": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential categoria": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.valor": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Valor"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "courage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bravery": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "heroism": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "fearlessness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "boldness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "gallantry": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "lionheartedness": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "pluck": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spirit": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "nerve": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.día": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Días"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "día": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.detalle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Detalle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "detalle": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.línea_REE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Línea REE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "línea REE": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion.título": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Notificaciones gestion",
+			          "ConceptualProperty": "Título"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "título": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_subseco": {
+			    "notificaciones_gestion_has_título": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			        "ConceptualEntity": "Notificaciones gestion"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			        "notificaciones_gestion": {
 			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			            "Entity": "notificaciones_gestion"
 			          }
 			        },
-			        "dim_subseco": {
+			        "notificaciones_gestion.título": {
 			          "Target": {
-			            "Entity": "dim_subseco"
+			            "Entity": "notificaciones_gestion.título"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.título"
+			            }
 			          },
-			          "Nouns": [
-			            {
-			              "subceco SC": {
-			                "State": "Generated"
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_títulos"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_línea_REE": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.línea_REE": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.línea_REE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.línea_REE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_línea_REEs"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_detalle": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.detalle": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.detalle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.detalle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_detalles"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.día": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_días"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_valor": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.valor": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.valor"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.valor"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_valor"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
 			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_stg_solped_oc_fc_em_fp_pe"
-			        }
-			      ]
-			    },
-			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_stg_solped_oc_fc_em_fp_pe": {
-			          "Target": {
-			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          },
-			          "Nouns": [
-			            {
-			              "código proyecto SC": {
-			                "State": "Generated"
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
 			              }
+			            ],
+			            "Measurement": {
+			              "Role": "notificaciones_gestion.valor"
 			            }
-			          ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "valor_indicates_how_expensive_notificaciones_gestions_are"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_id_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.id_categoria": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.id_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.id_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_id_categorias"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_proveedor___descripción": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.proveedor___descripción": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.proveedor___descripción"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.proveedor___descripción"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_proveedor___descripcións"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_documento": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.documento": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.documento"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.documento"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_documentos"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_notificación": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.notificación": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.notificación"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.notificación"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notificacións"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_orden": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.orden": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.orden"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.orden"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_ordens"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "notificaciones_gestion.proyecto": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion.proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "notificaciones_gestion.proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_proyectos"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_entity__medida_notif_gestion_vacio": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "entity__medida.notif_gestion_vacio": {
+			          "Target": {
+			            "Entity": "entity__medida.notif_gestion_vacio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.notif_gestion_vacio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notif_gestion_vacio"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_entity__medida_notif_gestion_encabezado": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "entity__medida.notif_gestion_encabezado": {
+			          "Target": {
+			            "Entity": "entity__medida.notif_gestion_encabezado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.notif_gestion_encabezado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notif_gestion_encabezado"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_entity__medida_notif_gestion_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "entity__medida.notif_gestion_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.notif_gestion_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.notif_gestion_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notif_gestion_cantidad"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_entity__medida_notif_gestion_visible": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "entity__medida.notif_gestion_visible": {
+			          "Target": {
+			            "Entity": "entity__medida.notif_gestion_visible"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.notif_gestion_visible"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notif_gestion_visible"
+			        }
+			      ]
+			    },
+			    "estados_alerta_has_orden": {
+			      "Binding": {
+			        "ConceptualEntity": "Estados alerta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estados_alerta": {
+			          "Target": {
+			            "Entity": "estados_alerta"
+			          }
+			        },
+			        "estados_alerta.orden": {
+			          "Target": {
+			            "Entity": "estados_alerta.orden"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estados_alerta"
+			            },
+			            "Object": {
+			              "Role": "estados_alerta.orden"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estados_alertas_have_ordens"
+			        }
+			      ]
+			    },
+			    "estados_alerta_has_estado": {
+			      "Binding": {
+			        "ConceptualEntity": "Estados alerta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "estados_alerta": {
+			          "Target": {
+			            "Entity": "estados_alerta"
+			          }
+			        },
+			        "estados_alerta.estado": {
+			          "Target": {
+			            "Entity": "estados_alerta.estado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "estados_alerta"
+			            },
+			            "Object": {
+			              "Role": "estados_alerta.estado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "estados_alertas_have_estado"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_filtro_estado_alerta": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.filtro_estado_alerta": {
+			          "Target": {
+			            "Entity": "entity__medida.filtro_estado_alerta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.filtro_estado_alerta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_filtro_estado_alerta"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_por_fuera_ppto": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.por_fuera_ppto": {
+			          "Target": {
+			            "Entity": "entity__medida.por_fuera_ppto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.por_fuera_ppto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_por_fuera_ppto"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_consumo_ppto": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.consumo_ppto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_ppto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_ppto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have__consumo_ppto"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_color_texto_estado": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.color_texto_estado": {
+			          "Target": {
+			            "Entity": "entity__medida.color_texto_estado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.color_texto_estado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_color_texto_estado"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_color_estado": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.color_estado": {
+			          "Target": {
+			            "Entity": "entity__medida.color_estado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.color_estado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_color_estado"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_punto_estado": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.punto_estado": {
+			          "Target": {
+			            "Entity": "entity__medida.punto_estado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.punto_estado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_punto_estado"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_estado_alerta": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.estado_alerta": {
+			          "Target": {
+			            "Entity": "entity__medida.estado_alerta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.estado_alerta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_estado_alerta"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_alertas_centro_html": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.alertas_centro_html": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_centro_html"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_centro_html"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_alertas_centro_html"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_alertas_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
 			        }
 			      },
 			      "Phrasings": [
@@ -8022,29 +9434,82 @@ cultureInfo es-CO
 			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
 			            },
 			            "Object": {
-			              "Role": "dim_proyecto"
+			              "Role": "entity__medida.alertas_cantidad"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_stg_solped_oc_fc_em_fp_pe"
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_alertas_cantidad"
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra_has_dim_proyecto": {
+			    "fact_solicitud_de_pedido_has_entity__medida_alertas_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_alertas_cantidad"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_entity__medida_alertas_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_alertas_cantidad"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_alertas_cantidad": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
@@ -8055,55 +9520,108 @@ cultureInfo es-CO
 			            "Entity": "fact_ordenes_de_compra"
 			          }
 			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_alertas_cantidad"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_alertas_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_cantidad"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_alertas_cantidad"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_alertas_cantidad": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
 			        "dim_proyecto": {
 			          "Target": {
 			            "Entity": "dim_proyecto"
 			          }
+			        },
+			        "entity__medida.alertas_cantidad": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_cantidad"
+			          }
 			        }
 			      },
 			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
-			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_proyecto"
 			            },
 			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
+			              "Role": "entity__medida.alertas_cantidad"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
+			          "ID": "dim_proyectos_have_alertas_cantidad"
 			        }
 			      ]
 			    },
-			    "fact_ordenes_de_compra_has_dim_categoria": {
+			    "entity__medida_has_alertas_franja_html": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			        "ConceptualEntity": "_Medidas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_ordenes_de_compra": {
+			        "entity__medida": {
 			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
+			            "Entity": "entity__medida"
 			          }
 			        },
-			        "dim_categoria": {
+			        "entity__medida.alertas_franja_html": {
 			          "Target": {
-			            "Entity": "dim_categoria"
+			            "Entity": "entity__medida.alertas_franja_html"
 			          }
 			        }
 			      },
@@ -8111,488 +9629,15 @@ cultureInfo es-CO
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
+			              "Role": "entity__medida"
 			            },
 			            "Object": {
-			              "Role": "dim_categoria"
+			              "Role": "entity__medida.alertas_franja_html"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_ordenes_de_compras"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_categoria": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_proyecto": {
-			          "Target": {
-			            "Entity": "dim_proyecto"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			          "ID": "Phrasing_medidas_have_alertas_franja_html"
 			        }
 			      ]
 			    },
@@ -18461,6 +19506,756 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "fact_ordenes_de_compras_are_solped_on_fecha_creacion_solpeds"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          },
+			          "Nouns": [
+			            {
+			              "código proyecto SC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          },
+			          "Nouns": [
+			            {
+			              "subceco SC": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_stg_solped_oc_fc_em_fp_pe"
 			        }
 			      ]
 			    },

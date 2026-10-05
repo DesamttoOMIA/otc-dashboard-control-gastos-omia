@@ -93,7 +93,7 @@ table _Medidas
 			        SUM ( Fact_presupuesto_final[COP] )
 			    ) * 12
 			)
-		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
 		displayFolder: Vista general
 		lineageTag: 8c198d23-94a6-4059-8cd7-69a30ee28493
 
@@ -539,6 +539,102 @@ table _Medidas
 			        & "<div style='font-size:12px;color:#5A6475;margin-top:10px'>Ordenadas por el monto que está por fuera del presupuesto. La ruta es el camino en la gráfica &quot;Consumo presupuesto por categoría REE&quot; para llegar a la barra en rojo.</div>" )
 			    & "</div>"
 		lineageTag: ef1042ec-03e4-41db-a586-9ec99afdb107
+
+	measure 'Estado alerta' =
+			
+			VAR _hoja =
+			    HASONEVALUE ( Dim_categoria[Id categoria] )
+			        && UPPER ( SELECTEDVALUE ( Dim_categoria[TieneHijos] ) & "" ) = "FALSE"
+			VAR _c = [Consumo Total]
+			VAR _p = [Presupuesto Anual]
+			VAR _nomina = TRIM ( SELECTEDVALUE ( Dim_categoria[Cod_N2] ) ) IN { "1.2", "2.1" }
+			RETURN
+			    IF ( _hoja,
+			        SWITCH ( TRUE (),
+			            _p > 0 && _c >= _p, "Sobrepresupuestada",
+			            _p > 0 && _c >= 0.8 * _p, "Cerca del límite",
+			            NOT ( _p > 0 ) && _c > 0, "Sin presupuesto",
+			            _p > 0 && ( ISBLANK ( _c ) || _c = 0 ) && NOT _nomina, "Con presupuesto, sin gastar"
+			        )
+			    )
+		lineageTag: c0aeba3d-b633-4fe9-877e-0f136d61ddb2
+
+	measure 'Punto estado' = IF ( NOT ISBLANK ( [Estado alerta] ), "●" )
+		lineageTag: 0188347c-a544-4fdc-9bb4-bb09b673dad9
+
+	measure 'Color estado' =
+			
+			SWITCH ( [Estado alerta],
+			    "Sobrepresupuestada", "#E7344C",
+			    "Cerca del límite", "#F8AA00",
+			    "Sin presupuesto", "#EE7600",
+			    "Con presupuesto, sin gastar", "#2B79BA" )
+		lineageTag: fd646d69-1a22-4af2-8fc7-ee7bba4a7113
+
+	measure 'Color texto estado' =
+			
+			SWITCH ( [Estado alerta],
+			    "Sobrepresupuestada", "#C4213A",
+			    "Cerca del límite", "#9A6700",
+			    "Sin presupuesto", "#A85300",
+			    "Con presupuesto, sin gastar", "#1F5F95" )
+		lineageTag: bb17541f-138e-4848-bead-f6eb0e4b4aa3
+
+	measure '% consumo ppto' =
+			
+			IF ( NOT ISBLANK ( [Estado alerta] ) && [Presupuesto Anual] > 0,
+			    DIVIDE ( [Consumo Total], [Presupuesto Anual] ) + 0 )
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 5412a2dc-98e4-4fa2-ad6b-e9606bfc1e14
+
+	measure 'Por fuera ppto' =
+			
+			SWITCH ( [Estado alerta],
+			    "Sobrepresupuestada", [Consumo Total] - [Presupuesto Anual],
+			    "Sin presupuesto", [Consumo Total] )
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 358512ba-796f-4ff0-afa0-27f84d164d11
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	measure 'Filtro estado alerta' =
+			
+			VAR _e = [Estado alerta]
+			RETURN
+			    IF ( NOT ISBLANK ( _e )
+			        && ( NOT ISFILTERED ( 'Estados alerta'[Estado] ) || _e IN VALUES ( 'Estados alerta'[Estado] ) ), 1 )
+		lineageTag: d54678cf-c13e-4b14-ac84-f14b508ee8fe
+
+	measure 'Notif gestion visible' = ```
+			
+			        VAR _p = VALUES ( Dim_proyecto[Código de proyecto] )
+			        RETURN
+			            IF ( NOT ISEMPTY ( FILTER ( 'Notificaciones gestion', 'Notificaciones gestion'[Proyecto] IN _p ) ), 1 )
+			```
+		formatString: 0
+		lineageTag: d47a9e7d-710c-4bf3-8614-626ba3aa461f
+
+	measure 'Notif gestion cantidad' = ```
+			
+			        COUNTROWS ( FILTER ( 'Notificaciones gestion', 'Notificaciones gestion'[Proyecto] IN VALUES ( Dim_proyecto[Código de proyecto] ) ) ) + 0
+			```
+		formatString: 0
+		lineageTag: 24e7a692-dfeb-4e76-aedf-65e3950d2ab8
+
+	measure 'Notif gestion encabezado' = ```
+			
+			        VAR _n = [Notif gestion cantidad]
+			        RETURN
+			            "Notificaciones de gestión · "
+			                & SWITCH ( TRUE (), _n = 0, "sin notificaciones en este corte", _n = 1, "1 notificación", _n & " notificaciones" )
+			```
+		lineageTag: 473b6b93-3b1d-4e5b-af95-fc52123e1534
+
+	measure 'Notif gestion vacio' = ```
+			
+			        IF ( [Notif gestion cantidad] = 0, "Sin notificaciones de gestión en este corte.", "" )
+			```
+		lineageTag: 3f2d1a87-6f11-4d12-acbc-0441157448ec
 
 	partition _Medidas = m
 		mode: import
