@@ -636,6 +636,72 @@ table _Medidas
 			```
 		lineageTag: 3f2d1a87-6f11-4d12-acbc-0441157448ec
 
+	measure 'Notif gestion html' =
+			
+			VAR _t =
+			    FILTER (
+			        'Notificaciones gestion',
+			        'Notificaciones gestion'[Proyecto] IN VALUES ( Dim_proyecto[Código de proyecto] )
+			    )
+			VAR _n = COUNTROWS ( _t ) + 0
+			VAR _bell = "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#1B4379' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9'/><path d='M13.7 21a2 2 0 0 1-3.4 0'/></svg>"
+			VAR _cab =
+			    "<div style='display:flex;align-items:center;gap:8px;margin-bottom:8px'>" & _bell
+			        & "<span style='font-size:14px;font-weight:700;color:#1B2433'>Notificaciones de gestión</span>"
+			        & "<span style='font-size:13px;color:#5A6475'>· " & _n & IF ( _n = 1, " notificación", " notificaciones" ) & "</span></div>"
+			VAR _tarjetas =
+			    CONCATENATEX (
+			        _t,
+			        VAR _o = 'Notificaciones gestion'[Orden]
+			        VAR _det = 'Notificaciones gestion'[Detalle] & ""
+			        VAR _v = 'Notificaciones gestion'[Valor]
+			        VAR _d = 'Notificaciones gestion'[Días]
+			        VAR _tag =
+			            SWITCH (
+			                _o,
+			                1, "SOLPED sin OC",
+			                2, IF ( CONTAINSSTRING ( _det, "sobre" ), "SOLPED · línea sobrepresup.", "SOLPED · línea sin ppto" ),
+			                3, "OC más cara que SOLPED",
+			                4, "Factura conformada",
+			                5, "EM sin factura",
+			                6, IF ( LEFT ( _det, 7 ) = "Vencida", "Factura vencida", "Factura por vencer" )
+			            )
+			        VAR _pref = SWITCH ( _o, 1, "SOLPED ", 2, "SOLPED ", 3, "OC ", 4, "FC ", 5, "EM ", 6, "Factura " )
+			        VAR _val =
+			            IF ( _v >= 1E6, "$ " & FORMAT ( _v / 1E6, "#,##0.0" ) & " M", "$ " & FORMAT ( _v, "#,##0" ) )
+			        VAR _prov =
+			            SUBSTITUTE ( SUBSTITUTE ( 'Notificaciones gestion'[Proveedor / descripción] & "", "&", "&amp;" ), "<", "&lt;" )
+			        VAR _ree = 'Notificaciones gestion'[Línea REE] & ""
+			        VAR _detH = SUBSTITUTE ( SUBSTITUTE ( _det, "&", "&amp;" ), "<", "&lt;" )
+			        VAR _pillDias =
+			            IF (
+			                ISBLANK ( _d ) || _o = 6,
+			                "",
+			                "<span style='font-size:10.5px;font-weight:600;color:#3A4352;background:#EEF1F5;border-radius:999px;padding:0 7px;white-space:nowrap'>" & _d & " d</span>"
+			            )
+			        RETURN
+			            "<div style='background:#FFFFFF;border:1px solid #DCE1E8;border-left:3px solid #2B79BA;border-radius:6px;padding:6px 10px;margin-bottom:6px'>"
+			                & "<div style='display:flex;justify-content:space-between;align-items:center;gap:8px'>"
+			                & "<div style='display:flex;align-items:center;gap:6px;min-width:0'>"
+			                & "<span style='font-size:10px;font-weight:700;color:#1B4379;background:#EAF1F8;border-radius:4px;padding:1px 6px;white-space:nowrap'>" & _tag & "</span>"
+			                & "<span style='font-size:12.5px;font-weight:700;color:#1B2433;white-space:nowrap'>" & _pref & 'Notificaciones gestion'[Documento] & "</span></div>"
+			                & "<span style='font-size:12.5px;font-weight:700;color:#1B2433;white-space:nowrap'>" & _val & "</span></div>"
+			                & "<div style='display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:2px'>"
+			                & "<span style='font-size:11.5px;color:#3A4352;white-space:nowrap;overflow:hidden;text-overflow:ellipsis'>" & _detH & "</span>" & _pillDias & "</div>"
+			                & "<div style='font-size:11px;color:#5A6475;white-space:nowrap;overflow:hidden;text-overflow:ellipsis'>" & _prov & " · " & _ree & "</div>"
+			                & "</div>",
+			        "",
+			        'Notificaciones gestion'[Orden], ASC,
+			        'Notificaciones gestion'[Días], DESC,
+			        'Notificaciones gestion'[Valor], DESC
+			    )
+			VAR _vacio =
+			    "<div style='font-size:12px;color:#5A6475;padding:12px;border:1px dashed #C9D1DC;border-radius:6px'>Sin notificaciones de gestión en este corte.</div>"
+			RETURN
+			    "<div style='font-family:Segoe UI,sans-serif;height:100%;overflow-y:auto;padding-right:4px'>"
+			        & _cab & IF ( _n = 0, _vacio, _tarjetas ) & "</div>"
+		lineageTag: 06c58a44-0d3d-4534-a8b6-cdaa7939c69a
+
 	partition _Medidas = m
 		mode: import
 		source =
