@@ -4,10 +4,10 @@
   "position": {
     "x": 75,
     "y": 119,
-    "z": 17001,
+    "z": 5000,
     "height": 282,
     "width": 919,
-    "tabOrder": 17001
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -364,118 +364,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "acd5c46d5426adf0589f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Punto estado"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c3b8270905e459048b1c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_categoria"
-              }
-            },
-            "Property": "Codigo"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a82c4e316c0988e1bee8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_categoria"
-              }
-            },
-            "Property": "Descripción"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "11d1f5843132467fe667",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Estado alerta"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "73797a0688867a0968f6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Consumo Total"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "eb5c30b9ea61e5f07c64",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Presupuesto Anual"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b1804121714118c8c29b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "% consumo ppto"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4c746ccc0ecc75144c2c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Por fuera ppto"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "90054cd2af8e2438e865",
         "field": {

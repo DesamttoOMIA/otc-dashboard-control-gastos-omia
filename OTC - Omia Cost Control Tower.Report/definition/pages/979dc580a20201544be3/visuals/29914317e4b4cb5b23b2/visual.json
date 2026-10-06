@@ -4,10 +4,10 @@
   "position": {
     "x": 1011,
     "y": 70,
-    "z": 17004,
+    "z": 7000,
     "height": 40,
     "width": 420,
-    "tabOrder": 17004
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -206,20 +206,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "f79dfe83b31a90a80f4b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Notificaciones gestion"
-              }
-            },
-            "Property": "Notificación"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "0780e3ba16613bfb6346",
         "field": {
