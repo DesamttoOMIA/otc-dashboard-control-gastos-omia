@@ -702,6 +702,64 @@ table _Medidas
 			        & _cab & IF ( _n = 0, _vacio, _tarjetas ) & "</div>"
 		lineageTag: 06c58a44-0d3d-4534-a8b6-cdaa7939c69a
 
+	measure '% Presupuesto tarjeta' =
+			
+			DIVIDE (
+			    [Presupuesto Anual],
+			    CALCULATE ( [Presupuesto Anual], REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Dim_subseco ) )
+			)
+		lineageTag: fcc923e6-725b-4559-9bc6-ce7962e9921a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Consumo tarjeta' =
+			
+			DIVIDE ( [Consumo Total], [Presupuesto Anual] )
+		lineageTag: 503ddc8c-055d-4b44-93d8-eef6763bb916
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SVG Presupuesto tarjeta' =
+			
+			VAR _p = [% Presupuesto tarjeta]
+			VAR _arc = ROUND ( MIN ( MAX ( _p, 0 ), 1 ) * 100, 0 )
+			VAR _txt = FORMAT ( ROUND ( _p * 100, 0 ), "0" ) & "%25"
+			RETURN
+			    IF (
+			        NOT ISBLANK ( _p ),
+			        "data:image/svg+xml;utf8,"
+			            & "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+			            & "<circle cx='50' cy='50' r='40' fill='none' stroke='white' stroke-opacity='0.25' stroke-width='9'/>"
+			            & "<circle cx='50' cy='50' r='40' fill='none' stroke='white' stroke-width='9' pathLength='100' stroke-dasharray='" & _arc & " 100' transform='rotate(-90 50 50)'/>"
+			            & "<text x='50' y='51' text-anchor='middle' dominant-baseline='central' font-family='Segoe UI, Arial' font-weight='700' font-size='22' fill='white'>" & _txt & "</text>"
+			            & "</svg>"
+			    )
+		lineageTag: 178f8981-0c9b-43df-b2ce-130af68d80fb
+		dataCategory: ImageUrl
+
+	measure 'SVG Consumo tarjeta' =
+			
+			VAR _c = [Consumo Total]
+			VAR _b = [Presupuesto Anual]
+			VAR _sinPpto = NOT ( _b > 0 ) && _c > 0
+			VAR _p = [% Consumo tarjeta]
+			VAR _arc = IF ( _sinPpto, 100, ROUND ( MIN ( MAX ( _p, 0 ), 1 ) * 100, 0 ) )
+			VAR _txt = IF ( _sinPpto, "s/ppto", FORMAT ( ROUND ( _p * 100, 0 ), "0" ) & "%25" )
+			VAR _fs = IF ( _sinPpto, 17, 22 )
+			VAR _col = IF ( _sinPpto || _p >= 1, "%23E7344C", IF ( _p >= 0.8, "%23F8AC06", "white" ) )
+			RETURN
+			    IF (
+			        _sinPpto || NOT ISBLANK ( _p ),
+			        "data:image/svg+xml;utf8,"
+			            & "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+			            & "<circle cx='50' cy='50' r='40' fill='none' stroke='white' stroke-opacity='0.25' stroke-width='9'/>"
+			            & "<circle cx='50' cy='50' r='40' fill='none' stroke='" & _col & "' stroke-width='9' pathLength='100' stroke-dasharray='" & _arc & " 100' transform='rotate(-90 50 50)'/>"
+			            & "<text x='50' y='51' text-anchor='middle' dominant-baseline='central' font-family='Segoe UI, Arial' font-weight='700' font-size='" & _fs & "' fill='white'>" & _txt & "</text>"
+			            & "</svg>"
+			    )
+		lineageTag: 89493fe2-a415-43b7-8788-6ee31c532e85
+		dataCategory: ImageUrl
+
 	partition _Medidas = m
 		mode: import
 		source =
