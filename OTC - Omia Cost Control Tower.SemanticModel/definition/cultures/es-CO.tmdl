@@ -8555,9 +8555,627 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
+			    },
+			    "entity__medida.notif_gestion_html": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Notif gestion html"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "notif gestion html": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.presupuesto_tarjeta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Presupuesto tarjeta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% presupuesto tarjeta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage presupuesto tarjeta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct presupuesto tarjeta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo_tarjeta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "% Consumo tarjeta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% consumo tarjeta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage consumo tarjeta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct consumo tarjeta": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.SVG_presupuesto_tarjeta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "SVG Presupuesto tarjeta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG presupuesto tarjeta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.SVG_consumo_tarjeta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "SVG Consumo tarjeta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SVG consumo tarjeta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.valor_etapa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Valor etapa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "valor etapa": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.consumo_vista": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Consumo vista"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "consumo vista": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "consumo panorama": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "consumo outlook": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "consumo scene": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "consumo seascape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "consumo view": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "consumo landscape": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "CONSUMO": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "fact_presupuesto_final_has_entity__medida_SVG_presupuesto_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.SVG_presupuesto_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_presupuesto_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_presupuesto_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_SVG_presupuesto_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_SVG_presupuesto_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        },
+			        "entity__medida.SVG_presupuesto_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_presupuesto_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_presupuesto_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_SVG_presupuesto_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have__consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_entity__medida_presupuesto_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.presupuesto_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have__presupuesto_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_presupuesto_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        },
+			        "entity__medida.presupuesto_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have__presupuesto_tarjeta"
+			        }
+			      ]
+			    },
+			    "notificaciones_gestion_has_entity__medida_notif_gestion_html": {
+			      "Binding": {
+			        "ConceptualEntity": "Notificaciones gestion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "notificaciones_gestion": {
+			          "Target": {
+			            "Entity": "notificaciones_gestion"
+			          }
+			        },
+			        "entity__medida.notif_gestion_html": {
+			          "Target": {
+			            "Entity": "entity__medida.notif_gestion_html"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "notificaciones_gestion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.notif_gestion_html"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "notificaciones_gestions_have_notif_gestion_html"
+			        }
+			      ]
+			    },
 			    "notificaciones_gestion_has_título": {
 			      "Binding": {
 			        "ConceptualEntity": "Notificaciones gestion"
@@ -14376,6 +14994,39 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
+			    "dim_etapa_has_entity__medida_consumo_dentro_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.consumo_dentro_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_dentro_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_dentro_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_consumo_dentro_presupuesto"
+			        }
+			      ]
+			    },
 			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_disponible_dentro_presupuesto": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
@@ -14571,6 +15222,39 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_disponible_dentro_presupuesto"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_disponible_dentro_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.disponible_dentro_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.disponible_dentro_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.disponible_dentro_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_disponible_dentro_presupuesto"
 			        }
 			      ]
 			    },
@@ -15132,6 +15816,39 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_exceso_presupuesto"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_exceso_presupuesto": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.exceso_presupuesto": {
+			          "Target": {
+			            "Entity": "entity__medida.exceso_presupuesto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.exceso_presupuesto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_exceso_presupuesto"
 			        }
 			      ]
 			    },
@@ -19506,6 +20223,567 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "fact_ordenes_de_compras_are_solped_on_fecha_creacion_solpeds"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_SVG_consumo_tarjeta": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.SVG_consumo_tarjeta": {
+			          "Target": {
+			            "Entity": "entity__medida.SVG_consumo_tarjeta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.SVG_consumo_tarjeta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_SVG_consumo_tarjeta"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_valor_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.valor_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.valor_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.valor_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_valor_etapa"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_valor_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "entity__medida.valor_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.valor_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.valor_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_valor_etapa"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_valor_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.valor_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.valor_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.valor_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_valor_etapa"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_valor_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.valor_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.valor_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.valor_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_valor_etapa"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_valor_etapa": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.valor_etapa": {
+			          "Target": {
+			            "Entity": "entity__medida.valor_etapa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.valor_etapa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_valor_etapa"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_consumo_vista": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.consumo_vista": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_vista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_vista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_consumo_vista"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_consumo_vista": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "entity__medida.consumo_vista": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_vista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_vista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_consumo_vista"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_consumo_vista": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.consumo_vista": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_vista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_vista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_consumo_vista"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_consumo_vista": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.consumo_vista": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_vista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_vista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_consumo_vista"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_consumo_vista": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.consumo_vista": {
+			          "Target": {
+			            "Entity": "entity__medida.consumo_vista"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.consumo_vista"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_consumo_vista"
 			        }
 			      ]
 			    },

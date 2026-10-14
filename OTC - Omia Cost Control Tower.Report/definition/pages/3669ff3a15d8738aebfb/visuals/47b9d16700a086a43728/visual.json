@@ -785,5 +785,122 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ed40ef415f92091ba2cf",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "395a5b035a410fb26ae2",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f8244c450b737529b630",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Desc_N3_OK"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "15e66077d7f80c8950c4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo dentro presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1b7779427649a06a6a1a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Disponible dentro presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9ac5203f6b56897c3619",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Exceso presupuesto"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "136f1160cc8869a630d6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Presupuesto Anual"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

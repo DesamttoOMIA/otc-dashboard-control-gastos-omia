@@ -57,11 +57,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Consumo Total"
+                  "Property": "Consumo vista"
                 }
               },
-              "queryRef": "_Medidas.Consumo Total",
-              "nativeQueryRef": "Consumo Total"
+              "queryRef": "_Medidas.Consumo vista",
+              "nativeQueryRef": "Consumo vista"
             }
           ]
         }
@@ -76,7 +76,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Consumo Total"
+                "Property": "Consumo vista"
               }
             },
             "direction": "Descending"
@@ -410,5 +410,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2466a247b22f9deb0fc5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Distribución Costos"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "530206ae8b0a59500dc1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Descripción"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "804db56a02b67d368d86",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo vista"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

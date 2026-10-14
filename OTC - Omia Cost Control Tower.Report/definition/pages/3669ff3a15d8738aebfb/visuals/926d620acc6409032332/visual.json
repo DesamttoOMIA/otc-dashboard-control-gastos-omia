@@ -4,7 +4,7 @@
   "position": {
     "x": 310,
     "y": 229,
-    "z": 17000,
+    "z": 20001,
     "height": 121,
     "width": 1128,
     "tabOrder": 17000
@@ -49,5 +49,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2932ad1e42f63be98812",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Alertas franja html"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

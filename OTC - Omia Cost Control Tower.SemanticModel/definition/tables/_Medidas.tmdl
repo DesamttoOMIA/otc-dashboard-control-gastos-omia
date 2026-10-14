@@ -57,7 +57,7 @@ table _Medidas
 	measure 'Consumo dentro presupuesto' =
 			
 			MIN (
-			    [Consumo Total],
+			    [Consumo vista],
 			    [Presupuesto Anual]
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
@@ -67,7 +67,7 @@ table _Medidas
 	measure 'Disponible dentro presupuesto' =
 			
 			MAX (
-			    [Presupuesto Anual] - [Consumo Total],
+			    [Presupuesto Anual] - [Consumo vista],
 			    0
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
@@ -77,7 +77,7 @@ table _Medidas
 	measure 'Exceso presupuesto' =
 			
 			MAX (
-			    [Consumo Total] - [Presupuesto Anual],
+			    [Consumo vista] - [Presupuesto Anual],
 			    0
 			)
 		displayFolder: Vista general
@@ -714,7 +714,7 @@ table _Medidas
 
 	measure '% Consumo tarjeta' =
 			
-			DIVIDE ( [Consumo Total], [Presupuesto Anual] )
+			DIVIDE ( [Consumo vista], [Presupuesto Anual] )
 		lineageTag: 503ddc8c-055d-4b44-93d8-eef6763bb916
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -739,7 +739,7 @@ table _Medidas
 
 	measure 'SVG Consumo tarjeta' =
 			
-			VAR _c = [Consumo Total]
+			VAR _c = [Consumo vista]
 			VAR _b = [Presupuesto Anual]
 			VAR _sinPpto = NOT ( _b > 0 ) && _c > 0
 			VAR _p = [% Consumo tarjeta]
@@ -759,6 +759,32 @@ table _Medidas
 			    )
 		lineageTag: 89493fe2-a415-43b7-8788-6ee31c532e85
 		dataCategory: ImageUrl
+
+	measure 'Valor etapa' =
+			
+			VAR _o = SELECTEDVALUE ( Dim_etapa[Orden etapa] )
+			RETURN
+			    SWITCH (
+			        _o,
+			        1, [SOLPED pendiente por ordenar],
+			        2, [OC pendiente por recibir],
+			        3, [FC pendiente por facturar],
+			        4, [EM pendiente por facturar],
+			        5, [FP pendiente por pagar],
+			        6, [Pago efectuado]
+			    )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 91a1fe49-b3ee-4e36-a7e4-1d827c0ca9da
+
+	measure 'Consumo vista' =
+			
+			IF (
+			    ISFILTERED ( Dim_etapa ),
+			    SUMX ( VALUES ( Dim_etapa[Orden etapa] ), [Valor etapa] ),
+			    [Consumo Total]
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 80de75a4-9e3c-4c50-9288-1331afed932e
 
 	partition _Medidas = m
 		mode: import

@@ -113,5 +113,52 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "47b9d16700a086a43728",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "3701b50db028e5915027",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "8ef6d92b5426c4cae015",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "8ef6d92b5426c4cae015",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "926d620acc6409032332",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "d7d57664a9f8512c9d82",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "e172d774bbe86ed55b7c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "e172d774bbe86ed55b7c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "d7d57664a9f8512c9d82",
+      "type": "DataFilter"
+    }
+  ]
 }
