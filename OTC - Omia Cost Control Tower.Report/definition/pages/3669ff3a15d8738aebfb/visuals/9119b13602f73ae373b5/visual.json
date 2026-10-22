@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "9119b13602f73ae373b5",
   "position": {
-    "x": 311,
-    "y": 107,
+    "x": 355.11221945137157,
+    "y": 72.817955112219451,
     "z": 19000,
-    "height": 120,
-    "width": 1130,
+    "height": 147.63092269326685,
+    "width": 1129.1770573566084,
     "tabOrder": 19000
   },
   "visual": {
@@ -573,14 +573,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Recorrido del costo'"
+                  "Value": "'Recorrido del gasto'"
                 }
               }
             },
@@ -588,6 +588,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'left'"
+                }
+              }
+            },
+            "heading": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Heading3'"
                 }
               }
             }
@@ -613,14 +620,19 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "text": {
               "expr": {
-                "Literal": {
-                  "Value": "'Haz clic en una etapa para filtrar el detalle'"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Texto horizonte"
                 }
               }
             },

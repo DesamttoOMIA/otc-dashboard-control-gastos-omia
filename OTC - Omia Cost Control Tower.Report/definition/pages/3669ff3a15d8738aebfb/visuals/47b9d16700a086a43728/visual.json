@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 75,
-    "y": 372,
+    "x": 74.812967581047388,
+    "y": 372.069825436409,
     "z": 1000,
-    "height": 421,
-    "width": 890,
+    "height": 420.94763092269329,
+    "width": 951.62094763092273,
     "tabOrder": 0
   },
   "visual": {
@@ -134,11 +134,12 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto Anual"
+                  "Property": "Presupuesto vista"
                 }
               },
               "queryRef": "_Medidas.Presupuesto Anual",
-              "nativeQueryRef": "Presupuesto Anual"
+              "nativeQueryRef": "Presupuesto contrato",
+              "displayName": "Presupuesto contrato"
             }
           ]
         }
@@ -153,7 +154,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto Anual"
+                "Property": "Presupuesto vista"
               }
             },
             "direction": "Descending"
@@ -896,7 +897,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "Presupuesto Anual"
+            "Property": "Presupuesto vista"
           }
         },
         "type": "Advanced"

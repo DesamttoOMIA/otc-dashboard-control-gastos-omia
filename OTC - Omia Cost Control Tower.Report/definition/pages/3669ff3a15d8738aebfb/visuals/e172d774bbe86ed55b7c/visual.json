@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e172d774bbe86ed55b7c",
   "position": {
-    "x": 75,
-    "y": 73,
+    "x": 74.812967581047388,
+    "y": 72.817955112219451,
     "z": 13000,
-    "height": 83,
-    "width": 224,
+    "height": 83.790523690773071,
+    "width": 272.31920199501246,
     "tabOrder": 7000
   },
   "visual": {
@@ -23,11 +23,11 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto Anual"
+                  "Property": "Presupuesto vista"
                 }
               },
               "queryRef": "_Medidas.Presupuesto Anual",
-              "nativeQueryRef": "Presupuesto Anual"
+              "nativeQueryRef": "Presupuesto vista"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto Anual"
+                "Property": "Presupuesto vista"
               }
             },
             "direction": "Descending"
@@ -79,7 +79,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'PRESUPUESTO ANUAL'"
+                  "Value": "'PRESUPUESTO CONTRATO'"
                 }
               }
             },

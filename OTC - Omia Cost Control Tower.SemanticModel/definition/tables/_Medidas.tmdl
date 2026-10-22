@@ -58,7 +58,7 @@ table _Medidas
 			
 			MIN (
 			    [Consumo vista],
-			    [Presupuesto Anual]
+			    [Presupuesto vista]
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Vista general
@@ -67,7 +67,7 @@ table _Medidas
 	measure 'Disponible dentro presupuesto' =
 			
 			MAX (
-			    [Presupuesto Anual] - [Consumo vista],
+			    [Presupuesto vista] - [Consumo vista],
 			    0
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
@@ -77,7 +77,7 @@ table _Medidas
 	measure 'Exceso presupuesto' =
 			
 			MAX (
-			    [Consumo vista] - [Presupuesto Anual],
+			    [Consumo vista] - [Presupuesto vista],
 			    0
 			)
 		displayFolder: Vista general
@@ -85,14 +85,7 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Presupuesto Anual' =
-			
-			SUMX (
-			    VALUES ( Dim_proyecto[Id proyecto] ),
-			    CALCULATE (
-			        SUM ( Fact_presupuesto_final[COP] )
-			    ) * 12
-			)
+	measure 'Presupuesto vista' = [Presupuesto Contrato]
 		formatString: \$\ #,0;-\$\ #,0;\$\ #,0
 		displayFolder: Vista general
 		lineageTag: 8c198d23-94a6-4059-8cd7-69a30ee28493
@@ -101,7 +94,7 @@ table _Medidas
 
 	measure 'Disponible Anual' =
 			
-			[Presupuesto Anual] - [Consumo Total]
+			[Presupuesto vista] - [Consumo Total]
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Vista general
 		lineageTag: 3f6e0ef4-cb6e-4941-bb12-f3e69c945a5f
@@ -342,7 +335,7 @@ table _Medidas
 			    ADDCOLUMNS (
 			        FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" ),
 			        "@c", [Consumo Total],
-			        "@p", [Presupuesto Anual]
+			        "@p", [Presupuesto vista]
 			    )
 			VAR _e =
 			    ADDCOLUMNS (
@@ -427,7 +420,7 @@ table _Medidas
 			    ADDCOLUMNS (
 			        FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" ),
 			        "@c", [Consumo Total],
-			        "@p", [Presupuesto Anual]
+			        "@p", [Presupuesto vista]
 			    )
 			RETURN
 			    COUNTROWS ( FILTER ( _t, ( [@p] > 0 && [@c] >= 0.8 * [@p] ) || ( NOT ( [@p] > 0 ) && [@c] > 0 ) ) ) + 0
@@ -440,7 +433,7 @@ table _Medidas
 			    ADDCOLUMNS (
 			        FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" ),
 			        "@c", [Consumo Total],
-			        "@p", [Presupuesto Anual]
+			        "@p", [Presupuesto vista]
 			    )
 			VAR _e =
 			    ADDCOLUMNS (
@@ -546,7 +539,7 @@ table _Medidas
 			    HASONEVALUE ( Dim_categoria[Id categoria] )
 			        && UPPER ( SELECTEDVALUE ( Dim_categoria[TieneHijos] ) & "" ) = "FALSE"
 			VAR _c = [Consumo Total]
-			VAR _p = [Presupuesto Anual]
+			VAR _p = [Presupuesto vista]
 			VAR _nomina = TRIM ( SELECTEDVALUE ( Dim_categoria[Cod_N2] ) ) IN { "1.2", "2.1" }
 			RETURN
 			    IF ( _hoja,
@@ -582,15 +575,15 @@ table _Medidas
 
 	measure '% consumo ppto' =
 			
-			IF ( NOT ISBLANK ( [Estado alerta] ) && [Presupuesto Anual] > 0,
-			    DIVIDE ( [Consumo Total], [Presupuesto Anual] ) + 0 )
+			IF ( NOT ISBLANK ( [Estado alerta] ) && [Presupuesto vista] > 0,
+			    DIVIDE ( [Consumo Total], [Presupuesto vista] ) + 0 )
 		formatString: 0\ %;-0\ %;0\ %
 		lineageTag: 5412a2dc-98e4-4fa2-ad6b-e9606bfc1e14
 
 	measure 'Por fuera ppto' =
 			
 			SWITCH ( [Estado alerta],
-			    "Sobrepresupuestada", [Consumo Total] - [Presupuesto Anual],
+			    "Sobrepresupuestada", [Consumo Total] - [Presupuesto vista],
 			    "Sin presupuesto", [Consumo Total] )
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 358512ba-796f-4ff0-afa0-27f84d164d11
@@ -705,8 +698,8 @@ table _Medidas
 	measure '% Presupuesto tarjeta' =
 			
 			DIVIDE (
-			    [Presupuesto Anual],
-			    CALCULATE ( [Presupuesto Anual], REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Dim_subseco ) )
+			    [Presupuesto vista],
+			    CALCULATE ( [Presupuesto vista], REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Dim_subseco ) )
 			)
 		lineageTag: fcc923e6-725b-4559-9bc6-ce7962e9921a
 
@@ -714,7 +707,7 @@ table _Medidas
 
 	measure '% Consumo tarjeta' =
 			
-			DIVIDE ( [Consumo vista], [Presupuesto Anual] )
+			DIVIDE ( [Consumo vista], [Presupuesto vista] )
 		lineageTag: 503ddc8c-055d-4b44-93d8-eef6763bb916
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -740,7 +733,7 @@ table _Medidas
 	measure 'SVG Consumo tarjeta' =
 			
 			VAR _c = [Consumo vista]
-			VAR _b = [Presupuesto Anual]
+			VAR _b = [Presupuesto vista]
 			VAR _sinPpto = NOT ( _b > 0 ) && _c > 0
 			VAR _p = [% Consumo tarjeta]
 			VAR _arc = IF ( _sinPpto, 100, ROUND ( MIN ( MAX ( _p, 0 ), 1 ) * 100, 0 ) )
@@ -785,6 +778,47 @@ table _Medidas
 			)
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 80de75a4-9e3c-4c50-9288-1331afed932e
+
+	measure 'Presupuesto Contrato' =
+			
+			SUMX (
+			    VALUES ( Dim_proyecto[Id proyecto] ),
+			    VAR _mensual = CALCULATE ( SUM ( Fact_presupuesto_final[COP] ) )
+			    VAR _plazo   = COALESCE ( CALCULATE ( MAX ( Dim_proyecto[Plazo meses] ) ), 12 )
+			    RETURN _mensual * _plazo
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: 5c6a8f06-0fb0-4a29-90cc-c439628fe1c1
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Presupuesto Anual' =
+			
+			SUMX (
+			    VALUES ( Dim_proyecto[Id proyecto] ),
+			    CALCULATE ( SUM ( Fact_presupuesto_final[COP] ) ) * 12
+			)
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: b9ea4c4f-117d-41f8-9bda-bed4305413fe
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Texto horizonte' =
+			
+			VAR _proy  = SELECTEDVALUE ( Dim_proyecto[Nombre de proyecto], "Varios proyectos" )
+			VAR _ini   = MIN ( Dim_proyecto[FechaInicioContrato] )
+			VAR _fin   = MAX ( Dim_proyecto[FechaFinContrato] )
+			VAR _plazo = MAX ( Dim_proyecto[Plazo meses] )
+			RETURN
+			    IF (
+			        NOT ISBLANK ( _ini ),
+			        _proy & " · Contrato " & _plazo & " meses · " & FORMAT ( _ini, "mmm yyyy" ) & " a " & FORMAT ( _fin, "mmm yyyy" ),
+			        _proy & " · Montos acumulados del contrato"
+			    )
+		displayFolder: Vista general
+		lineageTag: ad289f34-18f3-4a66-a77d-ecfc6dbd4068
 
 	partition _Medidas = m
 		mode: import

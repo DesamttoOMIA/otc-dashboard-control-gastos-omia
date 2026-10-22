@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "eaddc46e6658595ad89f",
   "position": {
     "x": 75,
@@ -98,7 +98,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto Anual"
+                  "Property": "Presupuesto vista"
                 }
               },
               "queryRef": "_Medidas.Presupuesto Anual",
@@ -161,7 +161,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto Anual"
+                "Property": "Presupuesto vista"
               }
             },
             "direction": "Descending"
