@@ -1,8 +1,6 @@
-DEFINE
-    MEASURE _Medidas[Notif gestion encabezado] =
-        VAR _n = [Notif gestion cantidad]
-        RETURN
-            "Notificaciones de gestión · "
-                & SWITCH ( TRUE (), _n = 0, "sin notificaciones en este corte", _n = 1, "1 notificación", _n & " notificaciones" )
 EVALUATE
-CALCULATETABLE ( ROW ( "h", [Notif gestion encabezado] ), Dim_proyecto[Id proyecto] = 122 )
+SELECTCOLUMNS (
+    FILTER ( INFO.VIEW.MEASURES (),
+        CONTAINSSTRING ( [Expression], "Desc_N" )
+            || CONTAINSSTRING ( [Expression], "Dim_subseco[Descripción]" ) ),
+    "Medida", [Name], "Fórmula", [Expression] )

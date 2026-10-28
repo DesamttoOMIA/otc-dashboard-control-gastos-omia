@@ -175,7 +175,14 @@ table _Medidas
 		displayFolder: Detalle documental
 		lineageTag: be1df01f-5ced-4a4c-a019-947ff74fbb7c
 
-	measure 'Ruta detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _cod = SELECTEDVALUE ( Dim_subseco[Subseco] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Consumo por distribución de costos" & IF ( NOT ISBLANK ( _dist ), "  ›  " & _dist ) & IF ( NOT ISBLANK ( _sub ), "  ›  " & _cod & " · " & _sub )
+	measure 'Ruta detalle' =
+			
+			VAR _sub  = SELECTEDVALUE ( Dim_subseco[Descripción] )
+			VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] )
+			RETURN
+			    "Consumo por distribución de costos"
+			        & IF ( NOT ISBLANK ( _dist ), "  ›  " & _dist )
+			        & IF ( NOT ISBLANK ( _sub ), "  ›  " & _sub )
 		displayFolder: Detalle documental
 		lineageTag: dbd73759-7b94-4812-9e94-98839d1704d7
 

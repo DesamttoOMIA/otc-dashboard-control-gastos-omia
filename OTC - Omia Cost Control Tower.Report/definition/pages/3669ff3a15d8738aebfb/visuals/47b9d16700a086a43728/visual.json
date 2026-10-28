@@ -3,10 +3,10 @@
   "name": "47b9d16700a086a43728",
   "position": {
     "x": 74.812967581047388,
-    "y": 372.069825436409,
+    "y": 350.12468827930178,
     "z": 1000,
-    "height": 420.94763092269329,
-    "width": 951.62094763092273,
+    "height": 442.89276807980053,
+    "width": 965.58603491271822,
     "tabOrder": 0
   },
   "visual": {
@@ -53,7 +53,7 @@
               },
               "queryRef": "Dim_categoria.Tipo costo Jerarquía.Desc_N2",
               "nativeQueryRef": "Tipo costo Jerarquía Desc_N2",
-              "active": false
+              "active": true
             },
             {
               "field": {
@@ -176,7 +176,7 @@
             "concatenateLabels": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -190,7 +190,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "8D"
                 }
               }
             },
@@ -201,17 +201,17 @@
                 }
               }
             },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
             "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
                   "Value": "20D"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "40L"
                 }
               }
             }
@@ -901,6 +901,65 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "a5c36bd7527958bfbcc3",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_categoria"
+                  }
+                },
+                "Hierarchy": "Tipo costo Jerarquía"
+              }
+            },
+            "Level": "Tipo costo"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Tipo costo"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Directo'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "Drill"
       }
     ]
   }

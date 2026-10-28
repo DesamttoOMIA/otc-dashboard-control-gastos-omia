@@ -2653,75 +2653,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "dim_categoria.column_10": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_categoria",
-			          "ConceptualProperty": "Column10"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "column 10": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Column10": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "dim_categoria.column_9": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_categoria",
-			          "ConceptualProperty": "Column9"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "column 9": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Column9": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
-			    "dim_categoria.column_8": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_categoria",
-			          "ConceptualProperty": "Column8"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "column 8": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Column8": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
-			    },
 			    "fact_ordenes_de_compra.código_del_cálculo_del_costo_2": {
 			      "Definition": {
 			        "Binding": {
@@ -3066,29 +2997,6 @@ cultureInfo es-CO
 			        }
 			      ],
 			      "SemanticType": "Time"
-			    },
-			    "dim_categoria.column_7": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_categoria",
-			          "ConceptualProperty": "Column7"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "column 7": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Column7": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        }
-			      ]
 			    },
 			    "entity__medida.disponible_anual": {
 			      "Definition": {
@@ -5205,39 +5113,6 @@ cultureInfo es-CO
 			        },
 			        {
 			          "description n2": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.6
-			          }
-			        }
-			      ]
-			    },
-			    "dim_categoria.desc_N3": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Dim_categoria",
-			          "ConceptualProperty": "Desc_N3"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "desc N3": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "Desc_N3": {
-			            "Type": "Noun",
-			            "State": "Generated",
-			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "description n3": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
