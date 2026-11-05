@@ -4,9 +4,9 @@
   "position": {
     "x": 1048.3790523690773,
     "y": 350.12468827930178,
-    "z": 4000,
+    "z": 5000,
     "height": 442.89276807980053,
-    "width": 435.91022443890279,
+    "width": 444.88778054862843,
     "tabOrder": 1000
   },
   "visual": {
@@ -424,51 +424,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2466a247b22f9deb0fc5",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_subseco"
-              }
-            },
-            "Property": "Distribución Costos"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "530206ae8b0a59500dc1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_subseco"
-              }
-            },
-            "Property": "Descripción"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "804db56a02b67d368d86",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Consumo vista"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

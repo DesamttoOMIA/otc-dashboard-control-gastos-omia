@@ -11,6 +11,94 @@
       "type": "SharedResources"
     }
   },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "43f639cacb20c5c86ee7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_categoria"
+              }
+            },
+            "Property": "Tipo costo"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "76d7a20cb36029836058",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_subseco"
+              }
+            },
+            "Property": "Distribución Costos"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "14a2a9895b776030c856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_reembolsable"
+              }
+            },
+            "Property": "Reembolsable"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_reembolsable",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Reembolsable"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'No reembolsable'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
   "objects": {
     "section": [
       {
@@ -66,8 +154,28 @@
       "type": "RegisteredResources",
       "items": [
         {
+          "name": "api-book774427152155518.svg",
+          "path": "api-book774427152155518.svg",
+          "type": "Image"
+        },
+        {
+          "name": "bell30458129627910824.svg",
+          "path": "bell30458129627910824.svg",
+          "type": "Image"
+        },
+        {
           "name": "calendario4540233154034201.png",
           "path": "calendario4540233154034201.png",
+          "type": "Image"
+        },
+        {
+          "name": "inicio592049563432825.svg",
+          "path": "inicio592049563432825.svg",
+          "type": "Image"
+        },
+        {
+          "name": "logo_omia4274483091590541.svg",
+          "path": "logo_omia4274483091590541.svg",
           "type": "Image"
         },
         {
@@ -76,8 +184,18 @@
           "type": "Image"
         },
         {
+          "name": "message-2-cog6646243059957537.svg",
+          "path": "message-2-cog6646243059957537.svg",
+          "type": "Image"
+        },
+        {
           "name": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
           "path": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
+          "type": "Image"
+        },
+        {
+          "name": "simulador07272203889629547.svg",
+          "path": "simulador07272203889629547.svg",
           "type": "Image"
         }
       ]

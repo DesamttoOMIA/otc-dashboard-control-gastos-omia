@@ -170,10 +170,10 @@ table Fact_ordenes_de_compra
 		annotation SummarizationSetBy = Automatic
 
 	column Reembolsable
-		dataType: int64
+		dataType: double
 		formatString: 0
 		lineageTag: c88ec966-e683-424f-b8ae-142aed25a505
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Reembolsable
 
 		annotation SummarizationSetBy = Automatic
@@ -547,9 +547,10 @@ table Fact_ordenes_de_compra
 				    #"Tipo cambiado2" = Table.TransformColumnTypes(#"Filas filtradas",{{"Grupo de artículos", type text}}),
 				    #"Consultas combinadas" = Table.NestedJoin(#"Tipo cambiado2", {"Código del cálculo del costo 3"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),
 				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id subseco", "Id categoria"}, {"Dim_subseco.Id subseco", "Dim_subseco.Id categoria"}),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Se expandió Dim_subseco",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}})
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Se expandió Dim_subseco",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}}),
+				  #"Valor reemplazado" = Table.ReplaceValue(#"Columnas con nombre cambiado", null, 2, Replacer.ReplaceValue, {"Reembolsable"})
 				in
-				    #"Columnas con nombre cambiado"
+				    #"Valor reemplazado"
 
 	annotation PBI_ResultType = Table
 

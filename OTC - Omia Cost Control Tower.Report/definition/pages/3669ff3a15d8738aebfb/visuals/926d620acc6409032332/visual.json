@@ -3,11 +3,11 @@
   "name": "926d620acc6409032332",
   "position": {
     "x": 354.11471321695763,
-    "y": 227.43142144638406,
-    "z": 20001,
-    "height": 122.69326683291771,
-    "width": 1130.1745635910224,
-    "tabOrder": 17000
+    "y": 232.41895261845389,
+    "z": 0,
+    "height": 117.70573566084789,
+    "width": 1139.1521197007482,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
@@ -62,23 +62,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2932ad1e42f63be98812",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Alertas franja html"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

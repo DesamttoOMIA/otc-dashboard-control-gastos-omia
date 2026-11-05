@@ -1,0 +1,35 @@
+table Dim_reembolsable
+	lineageTag: 43855d8b-8970-47a2-a640-6601cd21b794
+
+	column 'Id reembolsable'
+		dataType: int64
+		formatString: 0
+		lineageTag: 08443f40-fc5e-4733-9db5-0d20b709e2f3
+		summarizeBy: none
+		sourceColumn: Id reembolsable
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reembolsable
+		dataType: string
+		lineageTag: 316403c9-2253-4063-8fcc-8cb14b35049e
+		summarizeBy: none
+		sourceColumn: Reembolsable
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_reembolsable = m
+		mode: import
+		source =
+				let
+				    Origen = #table(
+				        type table [#"Id reembolsable" = Int64.Type, Reembolsable = text],
+				        {
+				            {1, "Reembolsable"},
+				            {2, "No reembolsable"}
+				        })
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table
+

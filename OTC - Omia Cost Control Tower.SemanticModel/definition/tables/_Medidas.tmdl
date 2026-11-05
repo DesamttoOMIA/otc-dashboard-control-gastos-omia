@@ -827,6 +827,18 @@ table _Medidas
 		displayFolder: Vista general
 		lineageTag: ad289f34-18f3-4a66-a77d-ecfc6dbd4068
 
+	measure 'Texto contrato' = VAR _p = SELECTEDVALUE ( Dim_proyecto[Nombre de proyecto] ) VAR _ini = MIN ( Dim_proyecto[FechaInicioContrato] ) VAR _fin = MAX ( Dim_proyecto[FechaFinContrato] ) VAR _pl = MAX ( Dim_proyecto[Plazo meses] ) RETURN "Contrato " & _p & " · " & _pl & " meses · " & FORMAT ( _ini, "d mmm yyyy" ) & " a " & FORMAT ( _fin, "d mmm yyyy" )
+		lineageTag: de3286a3-8ae6-4ffc-8dfe-2625d54a5d76
+
+	measure 'Texto periodo' = VAR _ini = MIN ( Fact_solicitud_de_pedido[Fecha de documento] ) VAR _fin = MAX ( Actualizacion[Fecha] ) RETURN "Periodo analizado — " & FORMAT ( _ini, "d mmm yyyy" ) & " a " & FORMAT ( _fin, "d mmm yyyy" )
+		lineageTag: 028bb6a0-5e1f-4b1d-8231-7c477544418e
+
+	measure 'Texto actualizado' = "Actualizado — " & FORMAT ( MAX ( Actualizacion[Fecha] ), "d mmm yyyy · hh:mm" ) & " · diario"
+		lineageTag: c6dc712c-8ad9-468c-a78b-abb6ac01eb4c
+
+	measure 'Alertas texto' = VAR _n = COUNTROWS ( FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" && NOT ISBLANK ( [Estado alerta] ) ) ) RETURN FORMAT ( _n + 0, "0" )
+		lineageTag: 3ac0bb75-a183-467b-9398-84cdb996796d
+
 	partition _Medidas = m
 		mode: import
 		source =

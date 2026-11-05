@@ -4,10 +4,10 @@
   "position": {
     "x": 355.11221945137157,
     "y": 72.817955112219451,
-    "z": 19000,
+    "z": 12000,
     "height": 147.63092269326685,
-    "width": 1129.1770573566084,
-    "tabOrder": 19000
+    "width": 1138.1546134663342,
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -620,7 +620,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -655,37 +655,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8d5bde6d886ba7f109a0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_etapa"
-              }
-            },
-            "Property": "Etapa corta"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "33162ab42178b5000db3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Medidas"
-              }
-            },
-            "Property": "Valor etapa"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
