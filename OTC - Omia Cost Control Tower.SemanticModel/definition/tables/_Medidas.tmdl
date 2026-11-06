@@ -166,23 +166,16 @@ table _Medidas
 		displayFolder: Detalle documental
 		lineageTag: 61cc8449-ddad-4638-a373-ddfd0a2947d7
 
-	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Fact_bitacora_documental ), VALUES ( Dim_proyecto ) ) )
+	measure '% consumo detalle' = DIVIDE ( [Consumo detalle], CALCULATE ( [Consumo detalle], REMOVEFILTERS ( Dim_subseco ), REMOVEFILTERS ( Dim_etapa ), REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Fact_bitacora_documental[Buscar documento] ), REMOVEFILTERS ( Fact_bitacora_documental[Proveedor] ) ) )
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		displayFolder: Detalle documental
 		lineageTag: b06b5f98-3d5a-4614-871b-c600dcce28a2
 
-	measure 'Titulo detalle' = VAR _sub = SELECTEDVALUE ( Dim_subseco[Descripción] ) VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) RETURN "Detalle documental · " & COALESCE ( _sub, _dist, "Todo el consumo" )
+	measure 'Titulo detalle' = "Control de presupuesto / Vista global / Detalle documental"
 		displayFolder: Detalle documental
 		lineageTag: be1df01f-5ced-4a4c-a019-947ff74fbb7c
 
-	measure 'Ruta detalle' =
-			
-			VAR _sub  = SELECTEDVALUE ( Dim_subseco[Descripción] )
-			VAR _dist = SELECTEDVALUE ( Dim_subseco[Distribución Costos] )
-			RETURN
-			    "Consumo por distribución de costos"
-			        & IF ( NOT ISBLANK ( _dist ), "  ›  " & _dist )
-			        & IF ( NOT ISBLANK ( _sub ), "  ›  " & _sub )
+	measure 'Ruta detalle' = VAR _dist = IF ( ISFILTERED ( Dim_subseco[Distribución Costos] ) || ISFILTERED ( Dim_subseco[Descripción] ), SELECTEDVALUE ( Dim_subseco[Distribución Costos] ) ) VAR _sub = IF ( ISFILTERED ( Dim_subseco[Descripción] ), SELECTEDVALUE ( Dim_subseco[Descripción] ) ) VAR _et = IF ( ISFILTERED ( Dim_etapa[Etapa corta] ), SELECTEDVALUE ( Dim_etapa[Etapa corta] ) ) RETURN COALESCE ( _dist, "Todo el consumo" ) & IF ( NOT ISBLANK ( _sub ), "  ›  " & _sub ) & IF ( NOT ISBLANK ( _et ), "  ·  " & _et )
 		displayFolder: Detalle documental
 		lineageTag: dbd73759-7b94-4812-9e94-98839d1704d7
 
@@ -190,7 +183,7 @@ table _Medidas
 		displayFolder: Detalle documental
 		lineageTag: 2b4b8749-5ba8-455d-b1b0-7b9820329df8
 
-	measure 'Resumen detalle' = VAR _l = [Lineas detalle] VAR _d = [Documentos detalle] RETURN FORMAT ( _l, "#,0" ) & IF ( _l = 1, " línea · ", " líneas · " ) & FORMAT ( _d, "#,0" ) & IF ( _d = 1, " documento · ", " documentos · " ) & FORMAT ( [% consumo detalle], "0.0%" ) & " del consumo"
+	measure 'Resumen detalle' = VAR _l = [Lineas detalle] VAR _d = [Documentos detalle] RETURN FORMAT ( _l, "#,0" ) & IF ( _l = 1, " línea · ", " líneas · " ) & FORMAT ( _d, "#,0" ) & IF ( _d = 1, " doc. · ", " docs. · " ) & FORMAT ( [% consumo detalle], "0.0%" ) & " del consumo"
 		displayFolder: Detalle documental
 		lineageTag: 960ec410-d7c8-4e35-9209-bfa195fead32
 
@@ -830,7 +823,15 @@ table _Medidas
 	measure 'Texto contrato' = VAR _p = SELECTEDVALUE ( Dim_proyecto[Nombre de proyecto] ) VAR _ini = MIN ( Dim_proyecto[FechaInicioContrato] ) VAR _fin = MAX ( Dim_proyecto[FechaFinContrato] ) VAR _pl = MAX ( Dim_proyecto[Plazo meses] ) RETURN "Contrato " & _p & " · " & _pl & " meses · " & FORMAT ( _ini, "d mmm yyyy" ) & " a " & FORMAT ( _fin, "d mmm yyyy" )
 		lineageTag: de3286a3-8ae6-4ffc-8dfe-2625d54a5d76
 
-	measure 'Texto periodo' = VAR _ini = MIN ( Fact_solicitud_de_pedido[Fecha de documento] ) VAR _fin = MAX ( Actualizacion[Fecha] ) RETURN "Periodo analizado — " & FORMAT ( _ini, "d mmm yyyy" ) & " a " & FORMAT ( _fin, "d mmm yyyy" )
+	measure 'Texto periodo' =
+			
+			VAR _ini = CALCULATE ( MIN ( Fact_solicitud_de_pedido[Fecha de documento] ),
+			    REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Dim_subseco ),
+			    REMOVEFILTERS ( Dim_reembolsable ), REMOVEFILTERS ( Dim_etapa ) )
+			VAR _fin = CALCULATE ( MAX ( Fact_solicitud_de_pedido[Fecha de documento] ),
+			    REMOVEFILTERS ( Dim_categoria ), REMOVEFILTERS ( Dim_subseco ),
+			    REMOVEFILTERS ( Dim_reembolsable ), REMOVEFILTERS ( Dim_etapa ) )
+			RETURN "Periodo analizado — " & FORMAT ( _ini, "d mmm yyyy" ) & " a " & FORMAT ( _fin, "d mmm yyyy" )
 		lineageTag: 028bb6a0-5e1f-4b1d-8231-7c477544418e
 
 	measure 'Texto actualizado' = "Actualizado — " & FORMAT ( MAX ( Actualizacion[Fecha] ), "d mmm yyyy · hh:mm" ) & " · diario"
@@ -838,6 +839,58 @@ table _Medidas
 
 	measure 'Alertas texto' = VAR _n = COUNTROWS ( FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "FALSE" && NOT ISBLANK ( [Estado alerta] ) ) ) RETURN FORMAT ( _n + 0, "0" )
 		lineageTag: 3ac0bb75-a183-467b-9398-84cdb996796d
+
+	measure 'Presupuesto mensual' = SUM ( Fact_presupuesto_final[COP] )
+		formatString: \$\ #,0.###############;-\$\ #,0.###############;\$\ #,0.###############
+		displayFolder: Vista general
+		lineageTag: 020e385e-2748-4f3a-981e-39905f3201cc
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-CO"}
+
+	measure 'Mes contrato' =
+			
+			VAR _ini = MIN ( Dim_proyecto[FechaInicioContrato] )
+			VAR _hoy = MAX ( Actualizacion[Fecha] )
+			VAR _pl  = MAX ( Dim_proyecto[Plazo meses] )
+			VAR _m   = INT ( DIVIDE ( _hoy - _ini, 30.4375 ) ) + 1
+			RETURN MIN ( _pl, MAX ( 0, _m ) )
+		formatString: 0
+		displayFolder: Vista general
+		lineageTag: 931ee7f7-8fef-4228-ae66-9b28fc1bd24b
+
+	measure 'Texto mes contrato' = [Mes contrato] & " de " & MAX ( Dim_proyecto[Plazo meses] )
+		displayFolder: Vista general
+		lineageTag: acca5c27-7f6c-47ad-a6ab-88f615afbb7b
+
+	measure 'Meses restantes' = MAX ( Dim_proyecto[Plazo meses] ) - [Mes contrato] + 1
+		formatString: 0
+		displayFolder: Vista general
+		lineageTag: 41be1640-1477-4ffb-b97e-a8d5799d0061
+
+	measure 'En gestión SOLPED' = CALCULATE ( [Valor etapa], Dim_etapa[Orden etapa] = 1 )
+		displayFolder: Vista general
+		lineageTag: 5cfabd4c-5f6a-42ad-89db-e86a2b9310d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ya comprometido' = [Consumo vista] - [En gestión SOLPED]
+		displayFolder: Vista general
+		lineageTag: a0baee07-dfbb-4afd-84bf-2157f4d21951
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Disponible por mes' = DIVIDE ( [Disponible Anual], [Meses restantes] )
+		displayFolder: Vista general
+		lineageTag: 39b228c9-efc1-4031-a23b-92b18156264b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SVG Disponible tarjeta' = VAR _b = [Presupuesto vista] VAR _c = [Consumo vista] VAR _p = DIVIDE ( _b - _c, _b ) VAR _arc = ROUND ( MIN ( MAX ( _p, 0 ), 1 ) * 100, 0 ) VAR _txt = FORMAT ( ROUND ( _p * 100, 0 ), "0" ) & "%25" VAR _col = IF ( _p <= 0, "%23E7344C", IF ( _p <= 0.2, "%23F8AC06", "%23252423" ) ) RETURN IF ( _b > 0, "data:image/svg+xml;utf8," & "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>" & "<circle cx='50' cy='50' r='40' fill='none' stroke='%23252423' stroke-opacity='0.15' stroke-width='9'/>" & "<circle cx='50' cy='50' r='40' fill='none' stroke='" & _col & "' stroke-width='9' pathLength='100' stroke-dasharray='" & _arc & " 100' transform='rotate(-90 50 50)'/>" & "<text x='50' y='51' text-anchor='middle' dominant-baseline='central' font-family='Segoe UI, Arial' font-weight='700' font-size='22' fill='%23252423'>" & _txt & "</text>" & "</svg>" )
+		lineageTag: cdd976cf-41f2-44a3-8bd6-84a253c0f490
+		dataCategory: ImageUrl
+
+	measure 'Color badge alertas' = IF ( VALUE ( [Alertas texto] ) > 0, "#E7344C", "#FFFFFF00" )
+		lineageTag: 5a0cec3d-0497-4098-b54d-099055345135
 
 	partition _Medidas = m
 		mode: import

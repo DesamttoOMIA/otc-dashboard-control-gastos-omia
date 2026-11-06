@@ -102,3 +102,7 @@ relationship 430b602d-735c-4e25-3e53-e99b34680b78
 	fromColumn: Fact_entrada_de_mercancia_factura_conformada.Reembolsable
 	toColumn: Dim_reembolsable.'Id reembolsable'
 
+relationship 9e6ebe06-ab1b-789c-b060-cb3a1221fb74
+	fromColumn: 'Notificaciones gestion'.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+

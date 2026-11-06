@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "79644cda80eee8bb227e",
   "position": {
-    "x": 12,
-    "y": 8,
-    "z": 0,
+    "x": 8,
+    "y": 66,
+    "z": 1000,
     "height": 40,
-    "width": 100,
+    "width": 39,
     "tabOrder": 0
   },
   "visual": {
@@ -19,6 +19,18 @@
               "expr": {
                 "Literal": {
                   "Value": "'back'"
+                }
+              }
+            },
+            "lineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }

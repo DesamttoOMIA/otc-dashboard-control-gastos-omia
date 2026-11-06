@@ -484,6 +484,9 @@ cultureInfo es-CO
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "reembolsable": {
@@ -1629,6 +1632,9 @@ cultureInfo es-CO
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "reembolsable": {
@@ -2607,6 +2613,9 @@ cultureInfo es-CO
 			        }
 			      },
 			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
 			      "Terms": [
 			        {
 			          "reembolsable": {
@@ -8800,10 +8809,547 @@ cultureInfo es-CO
 			          }
 			        }
 			      ]
+			    },
+			    "entity__medida.texto_horizonte": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Texto horizonte"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto horizonte": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.texto_contrato": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Texto contrato"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto contrato": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.texto_periodo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Texto periodo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto periodo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.texto_actualizado": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Texto actualizado"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto actualizado": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.alertas_texto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Alertas texto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "alertas texto": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.presupuesto_mensual": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Presupuesto mensual"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "presupuesto mensual": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.mes_contrato": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Mes contrato"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mes contrato": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.texto_mes_contrato": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Texto mes contrato"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "texto mes contrato": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Mes del contrato": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.meses_restantes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Meses restantes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "meses restantes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.en_gestión_SOLPED": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "En gestión SOLPED"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "en gestión SOLPED": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.ya_comprometido": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Ya comprometido"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ya comprometido": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.disponible_por_mes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "Disponible por mes"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "disponible por mes": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe.reembolsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe",
+			          "ConceptualProperty": "Reembolsable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "reembolsable": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental.reembolsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Fact_bitacora_documental",
+			          "ConceptualProperty": "Reembolsable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "reembolsable": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "actualizacion": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "actualizacion.fecha": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Actualizacion",
+			          "ConceptualProperty": "Fecha"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fecha": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_reembolsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_reembolsable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim reembolsable": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Dim_reembolsable": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_reembolsable.id_reembolsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_reembolsable",
+			          "ConceptualProperty": "Id reembolsable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "id reembolsable": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification reembolsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identity reembolsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "identifier reembolsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "credential reembolsable": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_reembolsable.reembolsable": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Dim_reembolsable",
+			          "ConceptualProperty": "Reembolsable"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "reembolsable": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "fact_ordenes_de_compra_has_calendario": {
+			    "dim_reembolsable_has_id_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_reembolsable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        },
+			        "dim_reembolsable.id_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable.id_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable.id_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_id_reembolsables"
+			        }
+			      ]
+			    },
+			    "actualizacion_has_fecha": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizacion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizacion": {
+			          "Target": {
+			            "Entity": "actualizacion"
+			          }
+			        },
+			        "actualizacion.fecha": {
+			          "Target": {
+			            "Entity": "actualizacion.fecha"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizacion"
+			            },
+			            "Object": {
+			              "Role": "actualizacion.fecha"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "actualizacions_have_fechas"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_disponible_por_mes": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.disponible_por_mes": {
+			          "Target": {
+			            "Entity": "entity__medida.disponible_por_mes"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.disponible_por_mes"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_disponible_por_mes"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_ya_comprometido": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.ya_comprometido": {
+			          "Target": {
+			            "Entity": "entity__medida.ya_comprometido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.ya_comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_ya_comprometido"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_ya_comprometido": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.ya_comprometido": {
+			          "Target": {
+			            "Entity": "entity__medida.ya_comprometido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.ya_comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_ya_comprometido"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_ya_comprometido": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
 			      },
@@ -8814,9 +9360,9 @@ cultureInfo es-CO
 			            "Entity": "fact_ordenes_de_compra"
 			          }
 			        },
-			        "calendario": {
+			        "entity__medida.ya_comprometido": {
 			          "Target": {
-			            "Entity": "calendario"
+			            "Entity": "entity__medida.ya_comprometido"
 			          }
 			        }
 			      },
@@ -8827,29 +9373,181 @@ cultureInfo es-CO
 			              "Role": "fact_ordenes_de_compra"
 			            },
 			            "Object": {
-			              "Role": "calendario"
+			              "Role": "entity__medida.ya_comprometido"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_calendarios"
+			          "ID": "fact_ordenes_de_compras_have_ya_comprometido"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_ya_comprometido": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
 			        },
+			        "entity__medida.ya_comprometido": {
+			          "Target": {
+			            "Entity": "entity__medida.ya_comprometido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "calendario"
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
 			            },
 			            "Object": {
+			              "Role": "entity__medida.ya_comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_ya_comprometido"
+			        }
+			      ]
+			    },
+			    "dim_etapa_has_entity__medida_ya_comprometido": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_etapa"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_etapa": {
+			          "Target": {
+			            "Entity": "dim_etapa"
+			          }
+			        },
+			        "entity__medida.ya_comprometido": {
+			          "Target": {
+			            "Entity": "entity__medida.ya_comprometido"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_etapa"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.ya_comprometido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_etapas_have_ya_comprometido"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_entity__medida_en_gestión_SOLPED": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "entity__medida.en_gestión_SOLPED": {
+			          "Target": {
+			            "Entity": "entity__medida.en_gestión_SOLPED"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.en_gestión_SOLPED"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_en_gestión_SOLPED"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_en_gestión_SOLPED": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.en_gestión_SOLPED": {
+			          "Target": {
+			            "Entity": "entity__medida.en_gestión_SOLPED"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.en_gestión_SOLPED"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_en_gestión_SOLPED"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_entity__medida_en_gestión_SOLPED": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "entity__medida.en_gestión_SOLPED": {
+			          "Target": {
+			            "Entity": "entity__medida.en_gestión_SOLPED"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
 			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.en_gestión_SOLPED"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_ordenes_de_compras"
+			          "ID": "fact_ordenes_de_compras_have_en_gestión_SOLPED"
 			        }
 			      ]
 			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
+			    "fact_entrada_de_mercancia_factura_conformada_has_entity__medida_en_gestión_SOLPED": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
 			      },
@@ -8860,9 +9558,9 @@ cultureInfo es-CO
 			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
 			          }
 			        },
-			        "dim_categoria": {
+			        "entity__medida.en_gestión_SOLPED": {
 			          "Target": {
-			            "Entity": "dim_categoria"
+			            "Entity": "entity__medida.en_gestión_SOLPED"
 			          }
 			        }
 			      },
@@ -8873,42 +9571,29 @@ cultureInfo es-CO
 			              "Role": "fact_entrada_de_mercancia_factura_conformada"
 			            },
 			            "Object": {
-			              "Role": "dim_categoria"
+			              "Role": "entity__medida.en_gestión_SOLPED"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_en_gestión_SOLPED"
 			        }
 			      ]
 			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
+			    "dim_etapa_has_entity__medida_en_gestión_SOLPED": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			        "ConceptualEntity": "Dim_etapa"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
+			        "dim_etapa": {
 			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			            "Entity": "dim_etapa"
 			          }
 			        },
-			        "dim_subseco": {
+			        "entity__medida.en_gestión_SOLPED": {
 			          "Target": {
-			            "Entity": "dim_subseco"
+			            "Entity": "entity__medida.en_gestión_SOLPED"
 			          }
 			        }
 			      },
@@ -8916,45 +9601,32 @@ cultureInfo es-CO
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			              "Role": "dim_etapa"
 			            },
 			            "Object": {
-			              "Role": "dim_subseco"
+			              "Role": "entity__medida.en_gestión_SOLPED"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
+			          "ID": "dim_etapas_have_en_gestión_SOLPED"
 			        }
 			      ]
 			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
+			    "entity__medida_has_meses_restantes": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			        "ConceptualEntity": "_Medidas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
+			        "entity__medida": {
 			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			            "Entity": "entity__medida"
 			          }
 			        },
-			        "calendario": {
+			        "entity__medida.meses_restantes": {
 			          "Target": {
-			            "Entity": "calendario"
+			            "Entity": "entity__medida.meses_restantes"
 			          }
 			        }
 			      },
@@ -8962,258 +9634,312 @@ cultureInfo es-CO
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			              "Role": "entity__medida"
 			            },
 			            "Object": {
-			              "Role": "calendario"
+			              "Role": "entity__medida.meses_restantes"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
+			          "ID": "Phrasing_medidas_have_meses_restantes"
 			        }
 			      ]
 			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
+			    "entity__medida_has_texto_mes_contrato": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			        "ConceptualEntity": "_Medidas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
+			        "entity__medida": {
 			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			            "Entity": "entity__medida"
 			          }
 			        },
+			        "entity__medida.texto_mes_contrato": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_mes_contrato"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.texto_mes_contrato"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_texto_mes_contrato"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_mes_contrato": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.mes_contrato": {
+			          "Target": {
+			            "Entity": "entity__medida.mes_contrato"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.mes_contrato"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_mes_contrato"
+			        }
+			      ]
+			    },
+			    "fact_presupuesto_final_has_entity__medida_presupuesto_mensual": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_presupuesto_final"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_presupuesto_final": {
+			          "Target": {
+			            "Entity": "fact_presupuesto_final"
+			          }
+			        },
+			        "entity__medida.presupuesto_mensual": {
+			          "Target": {
+			            "Entity": "entity__medida.presupuesto_mensual"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_presupuesto_final"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.presupuesto_mensual"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_presupuesto_finals_have_presupuesto_mensual"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_alertas_texto": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.alertas_texto": {
+			          "Target": {
+			            "Entity": "entity__medida.alertas_texto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.alertas_texto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_alertas_texto"
+			        }
+			      ]
+			    },
+			    "actualizacion_has_entity__medida_texto_actualizado": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizacion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizacion": {
+			          "Target": {
+			            "Entity": "actualizacion"
+			          }
+			        },
+			        "entity__medida.texto_actualizado": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_actualizado"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizacion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.texto_actualizado"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "actualizacions_have_texto_actualizado"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_entity__medida_texto_periodo": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "entity__medida.texto_periodo": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_periodo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.texto_periodo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_texto_periodo"
+			        }
+			      ]
+			    },
+			    "actualizacion_has_entity__medida_texto_periodo": {
+			      "Binding": {
+			        "ConceptualEntity": "Actualizacion"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "actualizacion": {
+			          "Target": {
+			            "Entity": "actualizacion"
+			          }
+			        },
+			        "entity__medida.texto_periodo": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_periodo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "actualizacion"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.texto_periodo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "actualizacions_have_texto_periodo"
+			        }
+			      ]
+			    },
+			    "dim_proyecto_has_entity__medida_texto_contrato": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_proyecto"
+			      },
+			      "State": "Generated",
+			      "Roles": {
 			        "dim_proyecto": {
 			          "Target": {
 			            "Entity": "dim_proyecto"
 			          }
+			        },
+			        "entity__medida.texto_contrato": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_contrato"
+			          }
 			        }
 			      },
 			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "dim_proyecto"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
-			        },
 			        {
 			          "Attribute": {
 			            "Subject": {
 			              "Role": "dim_proyecto"
 			            },
 			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			              "Role": "entity__medida.texto_contrato"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
+			          "ID": "dim_proyectos_have_texto_contrato"
 			        }
 			      ]
 			    },
-			    "fact_solicitud_de_pedido_has_dim_categoria": {
+			    "dim_proyecto_has_entity__medida_texto_horizonte": {
 			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			        "ConceptualEntity": "Dim_proyecto"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_subseco": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "dim_subseco": {
-			          "Target": {
-			            "Entity": "dim_subseco"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "dim_subseco"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_subseco"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_calendario": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "calendario"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
-			        }
-			      ]
-			    },
-			    "fact_solicitud_de_pedido_has_dim_proyecto": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
 			        "dim_proyecto": {
 			          "Target": {
 			            "Entity": "dim_proyecto"
 			          }
+			        },
+			        "entity__medida.texto_horizonte": {
+			          "Target": {
+			            "Entity": "entity__medida.texto_horizonte"
+			          }
 			        }
 			      },
 			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
+			              "Role": "dim_proyecto"
 			            },
 			            "Object": {
-			              "Role": "dim_proyecto"
+			              "Role": "entity__medida.texto_horizonte"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_proyecto"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			          "ID": "dim_proyectos_have_texto_horizonte"
 			        }
 			      ]
 			    },
@@ -14672,39 +15398,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "dim_categoria_has_desc_N3": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        },
-			        "dim_categoria.desc_N3": {
-			          "Target": {
-			            "Entity": "dim_categoria.desc_N3"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.desc_N3"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_desc_N3"
-			        }
-			      ]
-			    },
 			    "dim_categoria_has_desc_N2": {
 			      "Binding": {
 			        "ConceptualEntity": "Dim_categoria"
@@ -17312,39 +18005,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "dim_categoria_has_column_7": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        },
-			        "dim_categoria.column_7": {
-			          "Target": {
-			            "Entity": "dim_categoria.column_7"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.column_7"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_column_7"
-			        }
-			      ]
-			    },
 			    "calendario_has_date": {
 			      "Binding": {
 			        "ConceptualEntity": "Calendario"
@@ -17774,105 +18434,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "dim_categoria_has_column_8": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        },
-			        "dim_categoria.column_8": {
-			          "Target": {
-			            "Entity": "dim_categoria.column_8"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.column_8"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_column_8"
-			        }
-			      ]
-			    },
-			    "dim_categoria_has_column_9": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        },
-			        "dim_categoria.column_9": {
-			          "Target": {
-			            "Entity": "dim_categoria.column_9"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.column_9"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_column_9"
-			        }
-			      ]
-			    },
-			    "dim_categoria_has_column_10": {
-			      "Binding": {
-			        "ConceptualEntity": "Dim_categoria"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_categoria": {
-			          "Target": {
-			            "Entity": "dim_categoria"
-			          }
-			        },
-			        "dim_categoria.column_10": {
-			          "Target": {
-			            "Entity": "dim_categoria.column_10"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_categoria"
-			            },
-			            "Object": {
-			              "Role": "dim_categoria.column_10"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_categorias_have_column_10"
-			        }
-			      ]
-			    },
 			    "fact_stg_solped_oc_fc_em_fp_pe_has_v_": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
@@ -17903,39 +18464,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_"
-			        }
-			      ]
-			    },
-			    "fact_ordenes_de_compra_has_reembolsable": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_ordenes_de_compra"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_ordenes_de_compra": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra"
-			          }
-			        },
-			        "fact_ordenes_de_compra.reembolsable": {
-			          "Target": {
-			            "Entity": "fact_ordenes_de_compra.reembolsable"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_ordenes_de_compra"
-			            },
-			            "Object": {
-			              "Role": "fact_ordenes_de_compra.reembolsable"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_ordenes_de_compras_have_reembolsables"
 			        }
 			      ]
 			    },
@@ -19184,39 +19712,6 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_procedencia__entrada_de_mercancias"
-			        }
-			      ]
-			    },
-			    "fact_entrada_de_mercancia_factura_conformada_has_reembolsable": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_entrada_de_mercancia_factura_conformada": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
-			          }
-			        },
-			        "fact_entrada_de_mercancia_factura_conformada.reembolsable": {
-			          "Target": {
-			            "Entity": "fact_entrada_de_mercancia_factura_conformada.reembolsable"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada"
-			            },
-			            "Object": {
-			              "Role": "fact_entrada_de_mercancia_factura_conformada.reembolsable"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_reembolsables"
 			        }
 			      ]
 			    },
@@ -20726,39 +21221,6 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
-			    "fact_solicitud_de_pedido_has_reembolsable": {
-			      "Binding": {
-			        "ConceptualEntity": "Fact_solicitud_de_pedido"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fact_solicitud_de_pedido": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido"
-			          }
-			        },
-			        "fact_solicitud_de_pedido.reembolsable": {
-			          "Target": {
-			            "Entity": "fact_solicitud_de_pedido.reembolsable"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fact_solicitud_de_pedido"
-			            },
-			            "Object": {
-			              "Role": "fact_solicitud_de_pedido.reembolsable"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fact_solicitud_de_pedidos_have_reembolsables"
-			        }
-			      ]
-			    },
 			    "fact_solicitud_de_pedido_has_adjudicacion_directa": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_solicitud_de_pedido"
@@ -21422,6 +21884,545 @@ cultureInfo es-CO
 			        }
 			      ]
 			    },
+			    "dim_reembolsable_has_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Dim_reembolsable"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        },
+			        "dim_reembolsable.reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable.reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable.reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_reembolsables"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_solicitud_de_pedido_has_dim_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_solicitud_de_pedido"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_solicitud_de_pedido": {
+			          "Target": {
+			            "Entity": "fact_solicitud_de_pedido"
+			          }
+			        },
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_solicitud_de_pedido"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_solicitud_de_pedidos_have_dim_reembolsables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "fact_solicitud_de_pedido"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_fact_solicitud_de_pedidos"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_proyecto": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_proyecto": {
+			          "Target": {
+			            "Entity": "dim_proyecto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_proyecto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_proyectos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_proyecto"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_proyectos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_subseco": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_subseco": {
+			          "Target": {
+			            "Entity": "dim_subseco"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_subseco"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_subsecos"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_subseco"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_subsecos_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_categoria": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_categoria": {
+			          "Target": {
+			            "Entity": "dim_categoria"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_categoria"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_categorias"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_categorias_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_entrada_de_mercancia_factura_conformada_has_dim_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_entrada_de_mercancia_factura_conformada"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_entrada_de_mercancia_factura_conformada": {
+			          "Target": {
+			            "Entity": "fact_entrada_de_mercancia_factura_conformada"
+			          }
+			        },
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_entrada_de_mercancia_factura_conformadas_have_dim_reembolsables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "fact_entrada_de_mercancia_factura_conformada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_fact_entrada_de_mercancia_factura_conformadas"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_calendario": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "calendario": {
+			          "Target": {
+			            "Entity": "calendario"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "calendario"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_calendarios"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendarios_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
 			    "fact_ordenes_de_compra_has_dim_subseco": {
 			      "Binding": {
 			        "ConceptualEntity": "Fact_ordenes_de_compra"
@@ -21557,6 +22558,52 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_proyectos_have_fact_ordenes_de_compras"
+			        }
+			      ]
+			    },
+			    "fact_ordenes_de_compra_has_dim_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_ordenes_de_compra"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_ordenes_de_compra": {
+			          "Target": {
+			            "Entity": "fact_ordenes_de_compra"
+			          }
+			        },
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_ordenes_de_compra"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_ordenes_de_compras_have_dim_reembolsables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "fact_ordenes_de_compra"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_fact_ordenes_de_compras"
 			        }
 			      ]
 			    },
@@ -21755,6 +22802,52 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_subsecos_have_fact_stg_solped_oc_fc_em_fp_pe"
+			        }
+			      ]
+			    },
+			    "fact_stg_solped_oc_fc_em_fp_pe_has_dim_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_stg_solped_oc_fc_em_fp_pe"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_stg_solped_oc_fc_em_fp_pe": {
+			          "Target": {
+			            "Entity": "fact_stg_solped_oc_fc_em_fp_pe"
+			          }
+			        },
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_stg_solped_oc_fc_em_fp_pe_have_dim_reembolsables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "fact_stg_solped_oc_fc_em_fp_pe"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_fact_stg_solped_oc_fc_em_fp_pe"
 			        }
 			      ]
 			    },
@@ -21985,6 +23078,52 @@ cultureInfo es-CO
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_etapas_have_fact_bitacora_documental"
+			        }
+			      ]
+			    },
+			    "fact_bitacora_documental_has_dim_reembolsable": {
+			      "Binding": {
+			        "ConceptualEntity": "Fact_bitacora_documental"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_bitacora_documental": {
+			          "Target": {
+			            "Entity": "fact_bitacora_documental"
+			          }
+			        },
+			        "dim_reembolsable": {
+			          "Target": {
+			            "Entity": "dim_reembolsable"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_bitacora_documental"
+			            },
+			            "Object": {
+			              "Role": "dim_reembolsable"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_bitacora_documental_have_dim_reembolsables"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_reembolsable"
+			            },
+			            "Object": {
+			              "Role": "fact_bitacora_documental"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_reembolsables_have_fact_bitacora_documental"
 			        }
 			      ]
 			    },

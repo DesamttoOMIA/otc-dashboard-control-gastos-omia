@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "71df7a355d0d3be8bbd6",
   "position": {
-    "x": 74.812967581047388,
-    "y": 0,
-    "z": 14000,
-    "height": 55.860349127182047,
-    "width": 532.66832917705733,
-    "tabOrder": 14000
+    "x": 79.451371571072315,
+    "y": 9.42643391521197,
+    "z": 13000,
+    "height": 64.638403990024941,
+    "width": 1100.1995012468828,
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "textbox",
@@ -21,8 +21,7 @@
                   {
                     "value": "Control de presupuesto/Vista global  ",
                     "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "20pt",
+                      "fontSize": "28pt",
                       "color": "#14447c"
                     }
                   }

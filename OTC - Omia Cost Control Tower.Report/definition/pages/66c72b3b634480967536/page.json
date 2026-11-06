@@ -2,14 +2,31 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "66c72b3b634480967536",
   "displayName": "Detalle documental",
-  "displayOption": "ActualSize",
-  "height": 800,
-  "width": 1500,
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
   "filterConfig": {
     "filters": [
       {
-        "name": "d011932d4b05245151ff",
+        "name": "ec283cc9b00b00eed9bb",
         "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo vista"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
+      },
+      {
+        "name": "d011932d4b05245151ff",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -21,11 +38,12 @@
           }
         },
         "type": "Categorical",
-        "howCreated": "Drillthrough"
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
       },
       {
         "name": "408fddc14e7055a6397e",
-        "ordinal": 1,
+        "ordinal": 2,
         "field": {
           "Column": {
             "Expression": {
@@ -76,11 +94,12 @@
             }
           ]
         },
-        "howCreated": "Drillthrough"
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
       },
       {
         "name": "f6c2b2a4aa06b70ae8bd",
-        "ordinal": 2,
+        "ordinal": 3,
         "field": {
           "Column": {
             "Expression": {
@@ -92,50 +111,12 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dim_subseco",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Descripción"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'112 Materiales de Operación'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "Drillthrough"
+        "howCreated": "Drillthrough",
+        "isHiddenInViewMode": true
       },
       {
         "name": "ae6d04c11730c4e0d6cd",
-        "ordinal": 3,
+        "ordinal": 4,
         "field": {
           "Column": {
             "Expression": {
@@ -187,6 +168,7 @@
           ]
         },
         "howCreated": "User",
+        "isHiddenInViewMode": true,
         "objects": {
           "general": [
             {
@@ -243,6 +225,20 @@
             "Property": "Etapa corta"
           }
         }
+      },
+      {
+        "name": "ad4adf7c250b1044263c",
+        "boundFilter": "ec283cc9b00b00eed9bb",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Consumo vista"
+          }
+        }
       }
     ]
   },
@@ -261,5 +257,6 @@
       }
     ]
   },
+  "visibility": "HiddenInViewMode",
   "type": "Drillthrough"
 }

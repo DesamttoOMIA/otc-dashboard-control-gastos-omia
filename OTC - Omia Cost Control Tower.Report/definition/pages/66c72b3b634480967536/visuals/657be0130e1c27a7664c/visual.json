@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "657be0130e1c27a7664c",
   "position": {
-    "x": 414,
-    "y": 110,
-    "z": 4000,
-    "height": 158,
-    "width": 1004,
+    "x": 572,
+    "y": 112,
+    "z": 5000,
+    "height": 190,
+    "width": 1308,
     "tabOrder": 4000
   },
   "visual": {
@@ -156,7 +156,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "13D"
                 }
               }
             },
@@ -209,7 +209,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "18D"
                 }
               }
             }
@@ -232,7 +232,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "14D"
                 }
               }
             },
@@ -531,7 +531,14 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'top'"
+                  "Value": "'middle'"
+                }
+              }
+            },
+            "calloutSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
                 }
               }
             }
@@ -761,7 +768,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Recorrido del costo'"
+                  "Value": "'Recorrido del consumo'"
                 }
               }
             },
@@ -769,6 +776,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'left'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

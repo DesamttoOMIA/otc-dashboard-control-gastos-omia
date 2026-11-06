@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "64215830cd2c45994000",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "bd7c7bf255d7b0d404d0",
   "position": {
-    "x": 75,
-    "y": 8,
-    "z": 0,
-    "height": 58,
-    "width": 153,
-    "tabOrder": 0
+    "x": 8,
+    "y": 10,
+    "z": 6000,
+    "height": 40,
+    "width": 40,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'OMIA_Positivo_Mesa-de-trabajo-1-Photoroom.png'"
+                      "Value": "'logo_omia.svg'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png"
+                      "ItemName": "logo_omia4274483091590541.svg"
                     }
                   }
                 },

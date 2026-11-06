@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "3701b50db028e5915027",
   "position": {
-    "x": 1048.3790523690773,
-    "y": 350.12468827930178,
+    "x": 1179.6508728179551,
+    "y": 507.68079800498754,
     "z": 5000,
-    "height": 442.89276807980053,
-    "width": 444.88778054862843,
+    "height": 548.07980049875312,
+    "width": 700.24937655860356,
     "tabOrder": 1000
   },
   "visual": {
@@ -99,7 +99,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "12D"
                 }
               }
             },
@@ -257,7 +257,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "12D"
                 }
               }
             },
@@ -390,6 +390,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Consumo por distribución de costos/Subceco'"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

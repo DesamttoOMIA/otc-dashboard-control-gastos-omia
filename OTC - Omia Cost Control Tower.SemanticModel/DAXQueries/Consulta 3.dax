@@ -1,6 +1,8 @@
 EVALUATE
-SELECTCOLUMNS (
-    FILTER ( INFO.VIEW.MEASURES (),
-        CONTAINSSTRING ( [Expression], "Desc_N" )
-            || CONTAINSSTRING ( [Expression], "Dim_subseco[Descripción]" ) ),
-    "Medida", [Name], "Fórmula", [Expression] )
+VAR _padres =
+    FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "TRUE" )
+RETURN
+    ROW (
+        "Consumo padres", CALCULATE ( [Consumo Total], _padres ),
+        "Ppto padres",    CALCULATE ( [Presupuesto vista], _padres )
+    )

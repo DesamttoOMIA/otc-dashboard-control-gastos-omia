@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "5259aead701131330a70",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "01aa6b438de49a40048d",
   "position": {
-    "x": 22,
-    "y": 114,
-    "z": 4000,
-    "height": 37,
-    "width": 29,
-    "tabOrder": 4000
+    "x": 8,
+    "y": 10,
+    "z": 8000,
+    "height": 40,
+    "width": 40,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'calendario.png'"
+                      "Value": "'logo_omia.svg'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "calendario4540233154034201.png"
+                      "ItemName": "logo_omia4274483091590541.svg"
                     }
                   }
                 },
@@ -42,10 +42,10 @@
                 }
               }
             },
-            "transparency": {
+            "fit": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "'Fill'"
                 }
               }
             }

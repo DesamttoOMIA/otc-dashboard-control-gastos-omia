@@ -14,36 +14,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "43f639cacb20c5c86ee7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_categoria"
-              }
-            },
-            "Property": "Tipo costo"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
-        "name": "76d7a20cb36029836058",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_subseco"
-              }
-            },
-            "Property": "Distribución Costos"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User"
-      },
-      {
         "name": "14a2a9895b776030c856",
         "field": {
           "Column": {
@@ -119,7 +89,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "false"
+                "Value": "true"
               }
             }
           },
@@ -164,11 +134,6 @@
           "type": "Image"
         },
         {
-          "name": "calendario4540233154034201.png",
-          "path": "calendario4540233154034201.png",
-          "type": "Image"
-        },
-        {
           "name": "inicio592049563432825.svg",
           "path": "inicio592049563432825.svg",
           "type": "Image"
@@ -179,18 +144,8 @@
           "type": "Image"
         },
         {
-          "name": "menu_(2)09678771576549405.png",
-          "path": "menu_(2)09678771576549405.png",
-          "type": "Image"
-        },
-        {
           "name": "message-2-cog6646243059957537.svg",
           "path": "message-2-cog6646243059957537.svg",
-          "type": "Image"
-        },
-        {
-          "name": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
-          "path": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
           "type": "Image"
         },
         {

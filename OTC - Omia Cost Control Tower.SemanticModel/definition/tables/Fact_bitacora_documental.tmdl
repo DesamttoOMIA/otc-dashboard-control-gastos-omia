@@ -286,6 +286,12 @@ table Fact_bitacora_documental
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Buscar documento' = FORMAT ( Fact_bitacora_documental[N° documento], "0" )
+		lineageTag: 75f4da81-9735-45fe-adaa-bce1663cb002
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_bitacora_documental = m
 		mode: import
 		source =

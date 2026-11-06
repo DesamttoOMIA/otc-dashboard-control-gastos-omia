@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e172d774bbe86ed55b7c",
   "position": {
-    "x": 74.812967581047388,
-    "y": 72.817955112219451,
+    "x": 80,
+    "y": 120,
     "z": 9000,
-    "height": 83.790523690773071,
-    "width": 272.31920199501246,
+    "height": 112,
+    "width": 460,
     "tabOrder": 2000
   },
   "visual": {
@@ -28,6 +28,39 @@
               },
               "queryRef": "_Medidas.Presupuesto Anual",
               "nativeQueryRef": "Presupuesto vista"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto mensual"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto mensual",
+              "nativeQueryRef": "Presupuesto mensual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Texto mes contrato"
+                }
+              },
+              "queryRef": "_Medidas.Texto mes contrato",
+              "nativeQueryRef": "Mes del contrato",
+              "displayName": "Mes del contrato"
             }
           ]
         }
@@ -72,7 +105,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "12D"
                 }
               }
             },
@@ -142,7 +175,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "26D"
                 }
               }
             },
@@ -168,7 +201,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "24D"
+                  "Value": "36D"
                 }
               }
             }
@@ -496,7 +529,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

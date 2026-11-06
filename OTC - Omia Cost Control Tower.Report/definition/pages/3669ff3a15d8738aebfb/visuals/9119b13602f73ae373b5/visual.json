@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "9119b13602f73ae373b5",
   "position": {
-    "x": 355.11221945137157,
-    "y": 72.817955112219451,
-    "z": 12000,
-    "height": 147.63092269326685,
-    "width": 1138.1546134663342,
-    "tabOrder": 12000
+    "x": 573.66583541147133,
+    "y": 111.77057356608479,
+    "z": 11000,
+    "height": 190,
+    "width": 1308,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -141,7 +141,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "26D"
                 }
               }
             },
@@ -194,7 +194,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "22D"
                 }
               }
             }
@@ -217,7 +217,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "14D"
                 }
               }
             },
@@ -374,7 +374,7 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'top'"
+                  "Value": "'middle'"
                 }
               }
             }
@@ -580,7 +580,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Recorrido del gasto'"
+                  "Value": "'Recorrido del consumo'"
                 }
               }
             },
@@ -595,6 +595,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'Heading3'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

@@ -94,6 +94,13 @@ table 'Notificaciones gestion'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Reembolsable = VAR _d = 'Notificaciones gestion'[Documento] VAR _r = MINX ( FILTER ( Fact_bitacora_documental, FORMAT ( Fact_bitacora_documental[N° documento], "0" ) = _d ), Fact_bitacora_documental[Reembolsable] ) RETURN IF ( ISBLANK ( _r ), 2, _r )
+		formatString: 0
+		lineageTag: 8d955f25-e3d6-4e81-9681-6b5e037fa08e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Notificaciones gestion' = calculated
 		mode: import
 		source =

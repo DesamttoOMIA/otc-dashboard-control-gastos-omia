@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "c591324c1d6a7d7cee34",
   "position": {
-    "x": 1011,
-    "y": 119,
-    "z": 8000,
-    "height": 654,
-    "width": 411,
-    "tabOrder": 8000
+    "x": 1204,
+    "y": 124,
+    "z": 3000,
+    "height": 932,
+    "width": 676,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6855",
@@ -41,6 +41,19 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stylesheet": [
+        {
+          "properties": {
+            "stylesheet": {
+              "expr": {
+                "Literal": {
+                  "Value": "'[style*=\"font-size:9px\"]{font-size:11px!important} [style*=\"font-size:9.5px\"]{font-size:11.5px!important} [style*=\"font-size:10px\"]{font-size:12px!important} [style*=\"font-size:10.5px\"]{font-size:12.5px!important} [style*=\"font-size:11px\"]{font-size:13px!important} [style*=\"font-size:11.5px\"]{font-size:13.5px!important} [style*=\"font-size:12px\"]{font-size:14px!important} [style*=\"font-size:13px\"]{font-size:16px!important} [style*=\"font-size:14px\"]{font-size:17px!important}'"
                 }
               }
             }
