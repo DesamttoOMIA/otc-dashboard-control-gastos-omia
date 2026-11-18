@@ -243,10 +243,10 @@ table Fact_entrada_de_mercancia_factura_conformada
 		annotation SummarizationSetBy = Automatic
 
 	column Reembolsable
-		dataType: int64
+		dataType: double
 		formatString: 0
 		lineageTag: 5fa3efb7-847f-40ec-8dc4-f7ba6267caad
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Reembolsable
 
 		annotation SummarizationSetBy = Automatic
@@ -358,9 +358,10 @@ table Fact_entrada_de_mercancia_factura_conformada
 				    #"Filas filtradas" = Table.SelectRows(#"Se expandió Dim_subseco", each ([Dim_subseco.Id subseco] <> null)),
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Filas filtradas",{{"Dim_subseco.Id subseco", "Id subseco"}, {"Dim_subseco.Id categoria", "Id categoria"}}),
 				    #"Columna agregada TieneOC" = Table.AddColumn(#"Columnas con nombre cambiado", "TieneOC", each [Orden de Compra] <> null and [Orden de Compra] <> "", type logical),
-				    #"Filas filtradas1" = Table.SelectRows(#"Columna agregada TieneOC", each true)
+				    #"Filas filtradas1" = Table.SelectRows(#"Columna agregada TieneOC", each true),
+				  #"Valor reemplazado" = Table.ReplaceValue(#"Filas filtradas1", null, 2, Replacer.ReplaceValue, {"Reembolsable"})
 				in
-				    #"Filas filtradas1"
+				    #"Valor reemplazado"
 
 	annotation PBI_ResultType = Table
 

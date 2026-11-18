@@ -82,3 +82,27 @@ relationship 3071cb34-64b3-071e-0d43-a002876bac3f
 	fromColumn: Fact_bitacora_documental.'Tipo de documento'
 	toColumn: Dim_etapa.Etapa
 
+relationship AutoDetected_58b16a55-ba7b-4ec7-b6cf-e54039295f4d
+	fromColumn: Fact_stg_solped_oc_fc_em_fp_pe.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+
+relationship AutoDetected_e23bb433-4e2b-42b2-a978-3b42fd20d668
+	fromColumn: Fact_bitacora_documental.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+
+relationship 0dee2296-6997-a593-d89b-1c2c00a08adc
+	fromColumn: Fact_solicitud_de_pedido.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+
+relationship 06069dd0-aeca-112d-dd43-fe602b64138e
+	fromColumn: Fact_ordenes_de_compra.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+
+relationship 430b602d-735c-4e25-3e53-e99b34680b78
+	fromColumn: Fact_entrada_de_mercancia_factura_conformada.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+
+relationship 9e6ebe06-ab1b-789c-b060-cb3a1221fb74
+	fromColumn: 'Notificaciones gestion'.Reembolsable
+	toColumn: Dim_reembolsable.'Id reembolsable'
+

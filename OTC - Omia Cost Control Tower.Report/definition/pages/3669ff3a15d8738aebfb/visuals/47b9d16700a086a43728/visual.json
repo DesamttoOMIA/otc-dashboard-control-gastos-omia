@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "47b9d16700a086a43728",
   "position": {
-    "x": 75,
-    "y": 372,
-    "z": 1000,
-    "height": 421,
-    "width": 890,
-    "tabOrder": 1000
+    "x": 79.451371571072315,
+    "y": 507.68079800498754,
+    "z": 2000,
+    "height": 548.07980049875312,
+    "width": 1081.3466334164589,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "lineStackedColumnComboChart",
@@ -134,11 +134,12 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto Anual"
+                  "Property": "Presupuesto vista"
                 }
               },
               "queryRef": "_Medidas.Presupuesto Anual",
-              "nativeQueryRef": "Presupuesto Anual"
+              "nativeQueryRef": "Presupuesto contrato",
+              "displayName": "Presupuesto contrato"
             }
           ]
         }
@@ -153,7 +154,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto Anual"
+                "Property": "Presupuesto vista"
               }
             },
             "direction": "Descending"
@@ -175,7 +176,7 @@
             "concatenateLabels": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -189,7 +190,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "12D"
                 }
               }
             },
@@ -200,17 +201,17 @@
                 }
               }
             },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "30L"
-                }
-              }
-            },
             "preferredCategoryWidth": {
               "expr": {
                 "Literal": {
                   "Value": "20D"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "40L"
                 }
               }
             }
@@ -313,7 +314,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "12D"
                 }
               }
             }
@@ -637,6 +638,13 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
             }
           }
         },
@@ -708,6 +716,13 @@
               }
             },
             "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "bold": {
               "expr": {
                 "Literal": {
                   "Value": "true"
@@ -785,5 +800,63 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3029b9d105ae6ed3e4e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_categoria"
+              }
+            },
+            "Property": "TieneHijos"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_categoria",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "TieneHijos"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'FALSE'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
   }
 }

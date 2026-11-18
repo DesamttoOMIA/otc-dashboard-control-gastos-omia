@@ -11,6 +11,64 @@
       "type": "SharedResources"
     }
   },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "14a2a9895b776030c856",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dim_reembolsable"
+              }
+            },
+            "Property": "Reembolsable"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_reembolsable",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "d"
+                          }
+                        },
+                        "Property": "Reembolsable"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'No reembolsable'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
   "objects": {
     "section": [
       {
@@ -66,18 +124,33 @@
       "type": "RegisteredResources",
       "items": [
         {
-          "name": "calendario4540233154034201.png",
-          "path": "calendario4540233154034201.png",
+          "name": "api-book774427152155518.svg",
+          "path": "api-book774427152155518.svg",
           "type": "Image"
         },
         {
-          "name": "menu_(2)09678771576549405.png",
-          "path": "menu_(2)09678771576549405.png",
+          "name": "bell30458129627910824.svg",
+          "path": "bell30458129627910824.svg",
           "type": "Image"
         },
         {
-          "name": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
-          "path": "OMIA_Positivo_Mesa-de-trabajo-9340833032244988.png",
+          "name": "inicio592049563432825.svg",
+          "path": "inicio592049563432825.svg",
+          "type": "Image"
+        },
+        {
+          "name": "logo_omia4274483091590541.svg",
+          "path": "logo_omia4274483091590541.svg",
+          "type": "Image"
+        },
+        {
+          "name": "message-2-cog6646243059957537.svg",
+          "path": "message-2-cog6646243059957537.svg",
+          "type": "Image"
+        },
+        {
+          "name": "simulador07272203889629547.svg",
+          "path": "simulador07272203889629547.svg",
           "type": "Image"
         }
       ]

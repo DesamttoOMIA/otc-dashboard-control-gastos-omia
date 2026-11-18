@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "540bb4b4086150bd5149",
   "position": {
-    "x": 30,
-    "y": 280,
-    "z": 1000,
-    "height": 524,
-    "width": 1388,
+    "x": 80,
+    "y": 326,
+    "z": 2000,
+    "height": 726,
+    "width": 1800,
     "tabOrder": 1000
   },
   "visual": {
@@ -177,7 +177,7 @@
                     "Entity": "Fact_bitacora_documental"
                   }
                 },
-                "Property": "Cantidad"
+                "Property": "Fecha documento"
               }
             },
             "direction": "Ascending"
@@ -218,7 +218,28 @@
       ],
       "columnHeaders": [
         {
-          "properties": {}
+          "properties": {
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
         }
       ]
     },
@@ -237,6 +258,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'9a310908c109ca7d6b18'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

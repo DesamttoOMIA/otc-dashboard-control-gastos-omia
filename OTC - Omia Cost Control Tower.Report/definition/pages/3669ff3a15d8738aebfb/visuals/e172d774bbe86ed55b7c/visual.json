@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "e172d774bbe86ed55b7c",
   "position": {
-    "x": 75,
-    "y": 73,
-    "z": 14000,
-    "height": 83,
-    "width": 224,
-    "tabOrder": 8000
+    "x": 80,
+    "y": 120,
+    "z": 9000,
+    "height": 112,
+    "width": 460,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,44 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Presupuesto Anual"
+                  "Property": "Presupuesto vista"
                 }
               },
               "queryRef": "_Medidas.Presupuesto Anual",
-              "nativeQueryRef": "Presupuesto Anual"
+              "nativeQueryRef": "Presupuesto vista"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Presupuesto mensual"
+                }
+              },
+              "queryRef": "_Medidas.Presupuesto mensual",
+              "nativeQueryRef": "Presupuesto mensual"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "Texto mes contrato"
+                }
+              },
+              "queryRef": "_Medidas.Texto mes contrato",
+              "nativeQueryRef": "Mes del contrato",
+              "displayName": "Mes del contrato"
             }
           ]
         }
@@ -42,7 +75,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Presupuesto Anual"
+                "Property": "Presupuesto vista"
               }
             },
             "direction": "Descending"
@@ -72,14 +105,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "12D"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'PRESUPUESTO ANUAL'"
+                  "Value": "'PRESUPUESTO CONTRATO'"
                 }
               }
             },
@@ -142,7 +175,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "26D"
                 }
               }
             },
@@ -161,6 +194,20 @@
           },
           "selector": {
             "metadata": "_Medidas.Presupuesto Anual"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "36D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ],
@@ -237,7 +284,7 @@
             "position": {
               "expr": {
                 "Literal": {
-                  "Value": "'below'"
+                  "Value": "'right'"
                 }
               }
             }
@@ -330,6 +377,17 @@
           "selector": {
             "id": "default"
           }
+        },
+        {
+          "properties": {
+            "calloutSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "78D"
+                }
+              }
+            }
+          }
         }
       ],
       "cardCalloutArea": [
@@ -375,6 +433,67 @@
             "id": "default"
           }
         }
+      ],
+      "cardImage": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "imageType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'imageData'"
+                }
+              }
+            },
+            "imageData": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "SVG Presupuesto tarjeta"
+                }
+              }
+            },
+            "addBackground": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backgroundTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "backgroundFillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 7,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -410,7 +529,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }

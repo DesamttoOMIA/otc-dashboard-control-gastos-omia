@@ -1,0 +1,18 @@
+table Actualizacion
+	lineageTag: d4d105f8-0117-440e-9393-b4781f7649f8
+
+	column Fecha
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a7894850-03ba-47de-aa77-f767ec9de325
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Actualizacion = m
+		mode: import
+		source = let Origen = #table(type table [Fecha = datetime], {{ DateTimeZone.RemoveZone(DateTimeZone.SwitchZone(DateTimeZone.UtcNow(), -5)) }}) in Origen
+
+	annotation PBI_ResultType = Table
+

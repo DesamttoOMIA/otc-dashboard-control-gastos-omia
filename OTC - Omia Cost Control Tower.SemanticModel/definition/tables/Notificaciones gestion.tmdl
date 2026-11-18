@@ -1,0 +1,284 @@
+table 'Notificaciones gestion'
+	lineageTag: b7c1a095-b0c7-4be9-8e09-2c47b8f4382b
+
+	column Proyecto
+		lineageTag: fcb4bfc2-7272-407e-b467-409db6942e77
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Proyecto]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Orden
+		formatString: 0
+		lineageTag: 3e7c647b-58d2-4a4a-9fae-557a7d980787
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Orden]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notificación
+		lineageTag: 3c8a5021-a6f1-400b-9f6e-ba6cde01c4bd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Notificación]
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Documento
+		lineageTag: 5d1cd46c-7912-4f78-b719-78dc82646a58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Documento]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proveedor / descripción'
+		lineageTag: 5b309c6f-a3c1-48ed-8fd3-40514627f416
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Proveedor / descripción]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Id categoria'
+		formatString: 0
+		lineageTag: 8800c806-6e1d-4d79-939a-534f724ad097
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Id categoria]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Valor
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: a6d0771a-c167-468f-804d-2395b97c21c7
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Valor]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"currencyCulture":"es-US"}
+
+	column Días
+		formatString: 0
+		lineageTag: 5c206970-fda7-4276-bae2-adec36494017
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Días]
+
+		annotation SummarizationSetBy = User
+
+	column Detalle
+		lineageTag: db7194fc-1442-456d-9369-d5f6e47084bb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Detalle]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Línea REE'
+		lineageTag: afba6c15-829f-420a-b738-fa5886d95b64
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Línea REE]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Título = 'Notificaciones gestion'[Notificación] & " · " & 'Notificaciones gestion'[Documento]
+		lineageTag: 8bf48674-89f9-485d-b94b-2d7db88835f0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reembolsable = VAR _d = 'Notificaciones gestion'[Documento] VAR _r = MINX ( FILTER ( Fact_bitacora_documental, FORMAT ( Fact_bitacora_documental[N° documento], "0" ) = _d ), Fact_bitacora_documental[Reembolsable] ) RETURN IF ( ISBLANK ( _r ), 2, _r )
+		formatString: 0
+		lineageTag: 8d955f25-e3d6-4e81-9681-6b5e037fa08e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Notificaciones gestion' = calculated
+		mode: import
+		source =
+				
+				VAR _bit =
+				    FILTER (
+				        Fact_bitacora_documental,
+				        Fact_bitacora_documental[Tipo de documento] IN { "SOLPED", "Factura conformada", "Entrada de mercancía", "Factura de proveedor" }
+				    )
+				VAR _docs =
+				    ADDCOLUMNS (
+				        SUMMARIZE ( _bit, Fact_bitacora_documental[Proyecto], Fact_bitacora_documental[Tipo de documento], Fact_bitacora_documental[N° documento] ),
+				        "@valor", CALCULATE ( SUM ( Fact_bitacora_documental[Valor total] ) ),
+				        "@dias", CALCULATE ( MAX ( Fact_bitacora_documental[Días en la etapa] ) ),
+				        "@subseco", CALCULATE ( MAX ( Fact_bitacora_documental[Subseco] ) ),
+				        "@prov", CALCULATE ( MAX ( Fact_bitacora_documental[Proveedor] ) ),
+				        "@coment", CALCULATE ( MAX ( Fact_bitacora_documental[Comentarios] ) ),
+				        "@cond", CALCULATE ( MAX ( Fact_bitacora_documental[Condiciones de pago] ) ),
+				        "@fecha", CALCULATE ( MIN ( Fact_bitacora_documental[Fecha documento] ) )
+				    )
+				VAR _cat =
+				    ADDCOLUMNS (
+				        _docs,
+				        "@cat", MAXX ( FILTER ( ALL ( Dim_subseco ), Dim_subseco[Subseco] = [@subseco] ), Dim_subseco[Id categoria] )
+				    )
+				VAR _r =
+				    ADDCOLUMNS (
+				        _cat,
+				        "@est",
+				            VAR _c = [@cat]
+				            VAR _p = Fact_bitacora_documental[Proyecto]
+				            RETURN
+				                IF (
+				                    Fact_bitacora_documental[Tipo de documento] = "SOLPED" && NOT ISBLANK ( _c ),
+				                    CALCULATE (
+				                        [Estado alerta],
+				                        REMOVEFILTERS ( Fact_bitacora_documental ),
+				                        FILTER ( ALL ( Dim_categoria ), Dim_categoria[Id categoria] = _c ),
+				                        FILTER ( ALL ( Dim_proyecto ), Dim_proyecto[Código de proyecto] = _p )
+				                    )
+				                ),
+				        "@plazo",
+				            VAR _t = [@cond] & ""
+				            VAR _d =
+				                CONCATENATEX (
+				                    FILTER ( GENERATESERIES ( 1, LEN ( _t ) + 0 ), MID ( _t, [Value], 1 ) IN { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" } ),
+				                    MID ( _t, [Value], 1 ), "", [Value], ASC
+				                )
+				            RETURN IF ( _d = "", BLANK (), VALUE ( _d ) ),
+				        "@desc",
+				            VAR _t = TRIM ( [@coment] & "" )
+				            VAR _p = SEARCH ( " CECO", _t, 1, 0 )
+				            VAR _c = TRIM ( SUBSTITUTE ( IF ( _p > 0, LEFT ( _t, _p - 1 ), _t ), " CAMPO TURPIAL", "" ) )
+				            RETURN IF ( LEN ( _c ) > 40, LEFT ( _c, 39 ) & "…", _c )
+				    )
+				VAR _sinOC =
+				    SELECTCOLUMNS (
+				        FILTER ( _r, Fact_bitacora_documental[Tipo de documento] = "SOLPED" && [@dias] > 10 ),
+				        "Proyecto", Fact_bitacora_documental[Proyecto],
+				        "Orden", 1,
+				        "Notificación", "SOLPED sin OC",
+				        "Documento", FORMAT ( Fact_bitacora_documental[N° documento], "0" ),
+				        "Proveedor / descripción", [@desc],
+				        "Id categoria", [@cat],
+				        "Valor", [@valor],
+				        "Días", [@dias],
+				        "Detalle", [@dias] & " días sin OC"
+				    )
+				VAR _solPpto =
+				    SELECTCOLUMNS (
+				        FILTER ( _r, [@est] IN { "Sobrepresupuestada", "Sin presupuesto" } ),
+				        "Proyecto", Fact_bitacora_documental[Proyecto],
+				        "Orden", 2,
+				        "Notificación", "SOLPED en línea sin presupuesto o sobrepresupuestada",
+				        "Documento", FORMAT ( Fact_bitacora_documental[N° documento], "0" ),
+				        "Proveedor / descripción", [@desc],
+				        "Id categoria", [@cat],
+				        "Valor", [@valor],
+				        "Días", [@dias],
+				        "Detalle", "Línea " & IF ( [@est] = "Sin presupuesto", "sin presupuesto", "sobrepresupuestada" )
+				    )
+				VAR _ocBase =
+				    ADDCOLUMNS (
+				        SUMMARIZE (
+				            FILTER ( Fact_ordenes_de_compra, Fact_ordenes_de_compra[Cancelado] <> "Y" ),
+				            Fact_ordenes_de_compra[Código de proyecto], Fact_ordenes_de_compra[Número de documento]
+				        ),
+				        "@oc", CALCULATE ( SUM ( Fact_ordenes_de_compra[Total Líneas OC] ) ),
+				        "@sc", CALCULATE ( SUM ( Fact_ordenes_de_compra[Total Lineas Solped] ) ),
+				        "@sol", CALCULATE ( MIN ( Fact_ordenes_de_compra[No. Solped] ) ),
+				        "@nsol", CALCULATE ( DISTINCTCOUNT ( Fact_ordenes_de_compra[No. Solped] ) ),
+				        "@prov", CALCULATE ( MAX ( Fact_ordenes_de_compra[Nombre de cliente/proveedor] ) ),
+				        "@cat", CALCULATE ( MAX ( Fact_ordenes_de_compra[Id categoria] ) )
+				    )
+				VAR _ocCara =
+				    SELECTCOLUMNS (
+				        FILTER ( _ocBase, ROUND ( [@oc] - [@sc], 0 ) > 0 ),
+				        "Proyecto", Fact_ordenes_de_compra[Código de proyecto],
+				        "Orden", 3,
+				        "Notificación", "OC más cara que su SOLPED",
+				        "Documento", FORMAT ( Fact_ordenes_de_compra[Número de documento], "0" ),
+				        "Proveedor / descripción", [@prov],
+				        "Id categoria", [@cat],
+				        "Valor", [@oc],
+				        "Días", BLANK (),
+				        "Detalle",
+				            VAR _d = [@oc] - [@sc]
+				            RETURN
+				                "+$ " & IF ( _d >= 1E6, FORMAT ( _d / 1E6, "#,##0.0" ) & " M", FORMAT ( _d, "#,##0" ) )
+				                    & " (+" & FORMAT ( DIVIDE ( _d, [@sc] ), "0.0%" ) & ") vs. "
+				                    & IF ( [@nsol] > 1, "sus SOLPED", "SOLPED " & FORMAT ( [@sol], "0" ) )
+				    )
+				VAR _fc =
+				    SELECTCOLUMNS (
+				        FILTER ( _r, Fact_bitacora_documental[Tipo de documento] = "Factura conformada" ),
+				        "Proyecto", Fact_bitacora_documental[Proyecto],
+				        "Orden", 4,
+				        "Notificación", "Factura conformada",
+				        "Documento", FORMAT ( Fact_bitacora_documental[N° documento], "0" ),
+				        "Proveedor / descripción", [@prov],
+				        "Id categoria", [@cat],
+				        "Valor", [@valor],
+				        "Días", [@dias],
+				        "Detalle",
+				            IF (
+				                [@dias] > 7,
+				                "Sin facturar · " & [@dias] & " días sin factura de proveedor",
+				                "Registrada · gasto sin SOLPED ni OC"
+				            )
+				    )
+				VAR _em =
+				    SELECTCOLUMNS (
+				        FILTER ( _r, Fact_bitacora_documental[Tipo de documento] = "Entrada de mercancía" && [@dias] > 7 ),
+				        "Proyecto", Fact_bitacora_documental[Proyecto],
+				        "Orden", 5,
+				        "Notificación", "Entrada sin factura de proveedor",
+				        "Documento", FORMAT ( Fact_bitacora_documental[N° documento], "0" ),
+				        "Proveedor / descripción", [@prov],
+				        "Id categoria", [@cat],
+				        "Valor", [@valor],
+				        "Días", [@dias],
+				        "Detalle", [@dias] & " días sin factura de proveedor"
+				    )
+				VAR _fp =
+				    SELECTCOLUMNS (
+				        FILTER (
+				            _r,
+				            Fact_bitacora_documental[Tipo de documento] = "Factura de proveedor"
+				                && NOT ISBLANK ( [@plazo] )
+				                && [@plazo] - [@dias] <= 7
+				        ),
+				        "Proyecto", Fact_bitacora_documental[Proyecto],
+				        "Orden", 6,
+				        "Notificación", "Factura por vencer o vencida",
+				        "Documento", FORMAT ( Fact_bitacora_documental[N° documento], "0" ),
+				        "Proveedor / descripción", [@prov],
+				        "Id categoria", [@cat],
+				        "Valor", [@valor],
+				        "Días", [@dias],
+				        "Detalle",
+				            VAR _rest = [@plazo] - [@dias]
+				            RETURN
+				                IF (
+				                    _rest < 0,
+				                    "Vencida hace " & ( - _rest ) & " días",
+				                    "Por vencer · vence el " & FORMAT ( [@fecha] + [@plazo], "dd/mm" )
+				                )
+				                    & " · crédito " & [@plazo] & " días"
+				    )
+				VAR _todo =
+				    UNION ( _sinOC, _solPpto, _ocCara, _fc, _em, _fp )
+				RETURN
+				    ADDCOLUMNS (
+				        _todo,
+				        "Línea REE",
+				            VAR _c = [Id categoria]
+				            RETURN MAXX ( FILTER ( ALL ( Dim_categoria ), Dim_categoria[Id categoria] = _c ), TRIM ( Dim_categoria[Codigo] ) & " " & TRIM ( Dim_categoria[Descripción] ) )
+				    )
+
+	annotation PBI_Id = bb45e3deceba4c2587f7770ae46098ca
+

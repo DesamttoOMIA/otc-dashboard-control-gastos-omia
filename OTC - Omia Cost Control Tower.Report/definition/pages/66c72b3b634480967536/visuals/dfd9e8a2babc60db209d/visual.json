@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
   "name": "dfd9e8a2babc60db209d",
   "position": {
-    "x": 70,
-    "y": 2,
-    "z": 3000,
-    "height": 105,
-    "width": 1020,
+    "x": 72,
+    "y": 4,
+    "z": 4000,
+    "height": 106,
+    "width": 1100,
     "tabOrder": 3000
   },
   "visual": {
@@ -74,6 +74,20 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "28D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.Titulo detalle"
           }
         }
       ],
@@ -143,7 +157,7 @@
             "valueFontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "14D"
                 }
               }
             }

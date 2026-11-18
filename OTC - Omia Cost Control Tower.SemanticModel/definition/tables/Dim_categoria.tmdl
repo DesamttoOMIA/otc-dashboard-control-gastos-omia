@@ -67,14 +67,6 @@ table Dim_categoria
 
 		annotation SummarizationSetBy = Automatic
 
-	column Desc_N3
-		dataType: string
-		lineageTag: 5a8a76db-a06b-49b3-b6f2-da6eae086011
-		summarizeBy: none
-		sourceColumn: Desc_N3
-
-		annotation SummarizationSetBy = Automatic
-
 	column Desc_N3_OK
 		dataType: string
 		lineageTag: 118cf8ec-30d3-4fbe-bdc3-ee9dc899b5cd
@@ -88,38 +80,6 @@ table Dim_categoria
 		lineageTag: 6d77148e-4d12-4455-8bc8-9bcaf5a2482f
 		summarizeBy: none
 		sourceColumn: TieneHijos
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column7
-		dataType: string
-		lineageTag: 58b5db32-45e2-45a4-a8a9-2143161856f0
-		summarizeBy: none
-		sourceColumn: Column7
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column8
-		dataType: string
-		lineageTag: 37145f7f-9864-4698-8c9d-3dd0a4fa0385
-		summarizeBy: none
-		sourceColumn: Column8
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column9
-		dataType: string
-		lineageTag: ae0ccdc4-d0e2-4770-92f8-6bdf650f8bc0
-		summarizeBy: none
-		sourceColumn: Column9
-
-		annotation SummarizationSetBy = Automatic
-
-	column Column10
-		dataType: string
-		lineageTag: b7c10395-238c-4767-bc73-c58a5375d962
-		summarizeBy: none
-		sourceColumn: Column10
 
 		annotation SummarizationSetBy = Automatic
 
@@ -158,9 +118,18 @@ table Dim_categoria
 				    #"Personalizada agregada3" = Table.AddColumn(#"Columnas quitadas", "Desc_N3_OK", each if [Nivel] = 3 then [Descripción]
 				  else if [Nivel] = 2 and [TieneHijos] = false then [Descripción]
 				  else null),
-				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada3",{"Id categoria", "Codigo", "Descripción", "Codigo padre", "Nivel", "Tipo costo", "Cod_N2", "Desc_N2", "Desc_N3", "Desc_N3_OK", "TieneHijos"})
+				    #"Columnas reordenadas" = Table.ReorderColumns(#"Personalizada agregada3",{"Id categoria", "Codigo", "Descripción", "Codigo padre", "Nivel", "Tipo costo", "Cod_N2", "Desc_N2", "Desc_N3", "Desc_N3_OK", "TieneHijos"}),
+				    #"Columnas conservadas" = Table.SelectColumns(#"Columnas reordenadas",{"Id categoria", "Codigo", "Descripción", "Codigo padre", "Nivel", "Tipo costo", "Cod_N2", "Desc_N2", "Desc_N3", "Desc_N3_OK", "TieneHijos"}),
+				    #"Código en descripciones" =
+				        Table.ReplaceValue(
+				            Table.ReplaceValue(#"Columnas conservadas",
+				                each [Desc_N2], each Text.Trim([Cod_N2]) & " " & [Desc_N2],
+				                Replacer.ReplaceValue, {"Desc_N2"}),
+				            each [Desc_N3_OK], each Text.Trim([Codigo]) & " " & [Desc_N3_OK],
+				            Replacer.ReplaceValue, {"Desc_N3_OK"}),
+				  #"Columnas quitadas 1" = Table.RemoveColumns(#"Código en descripciones", {"Desc_N3"})
 				in
-				    #"Columnas reordenadas"
+				    #"Columnas quitadas 1"
 
 	annotation PBI_NavigationStepName = Navegación
 

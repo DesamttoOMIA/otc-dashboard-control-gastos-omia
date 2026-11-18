@@ -277,6 +277,21 @@ table Fact_bitacora_documental
 
 		annotation SummarizationSetBy = Automatic
 
+	column Reembolsable
+		dataType: int64
+		formatString: 0
+		lineageTag: bee54042-2e27-4814-9979-6396be45d646
+		summarizeBy: none
+		sourceColumn: Reembolsable
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Buscar documento' = FORMAT ( Fact_bitacora_documental[N° documento], "0" )
+		lineageTag: 75f4da81-9735-45fe-adaa-bce1663cb002
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_bitacora_documental = m
 		mode: import
 		source =
@@ -284,9 +299,37 @@ table Fact_bitacora_documental
 				    Origen = Table.Combine({stg_solicitud_de_pedido, stg_orden_de_compra, stg_entrada_de_mercancia_factura_conformada, stg_solped_oc_fc_em_fp_pe}),
 				    #"Filas filtradas" = Table.SelectRows(Origen, each true),
 				    #"Índice agregado" = Table.AddIndexColumn(#"Filas filtradas", "#", 1, 1, Int64.Type),
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Índice agregado",{{"Cantidad pendiente", "Cantidad"}, {"Valor", "Valor total"}})
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Índice agregado",{{"Cantidad pendiente", "Cantidad"}, {"Valor", "Valor total"}}),
+				
+				    // ---- Diccionarios de marca reembolsable por documento ----
+				    Dic = (t as table, colDoc as text) =>
+				        let
+				            g = Table.Group(t, {colDoc}, {{"R", each List.Min([Reembolsable]), type nullable number}}),
+				            g2 = Table.SelectRows(g, each Record.Field(_, colDoc) <> null)
+				        in
+				            Record.FromList(g2[R], List.Transform(Table.Column(g2, colDoc), each Text.From(Number.From(_)))),
+				    DicSOL = Dic(Fact_solicitud_de_pedido, "Número de documento"),
+				    DicOC  = Dic(Fact_ordenes_de_compra, "Número de documento"),
+				    DicEM  = Dic(Fact_entrada_de_mercancia_factura_conformada, "Entrada mercancías"),
+				    Buscar = (dic as record, v) =>
+				        if v = null then null
+				        else try Record.FieldOrDefault(dic, Text.From(Number.From(v)), null) otherwise null,
+				
+				    #"Reembolsable" = Table.AddColumn(#"Columnas con nombre cambiado", "Reembolsable", each
+				        let
+				            tipo = [Tipo de documento],
+				            porDoc =
+				                if tipo = "SOLPED" then Buscar(DicSOL, [#"N° documento"])
+				                else if tipo = "Orden de compra" then Buscar(DicOC, [#"N° documento"])
+				                else if tipo = "Entrada de mercancía" or tipo = "Factura conformada" then Buscar(DicEM, [#"N° documento"])
+				                else null,
+				            porOC  = Buscar(DicOC, [OC asociada]),
+				            porSOL = Buscar(DicSOL, [SOLPED origen]),
+				            r = List.First(List.RemoveNulls({porDoc, porOC, porSOL}), 2)
+				        in
+				            r, Int64.Type)
 				in
-				    #"Columnas con nombre cambiado"
+				    Reembolsable
 
 	annotation PBI_NavigationStepName = Navegación
 

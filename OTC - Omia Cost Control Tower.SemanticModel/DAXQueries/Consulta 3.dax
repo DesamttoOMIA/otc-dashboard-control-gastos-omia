@@ -1,0 +1,8 @@
+EVALUATE
+VAR _padres =
+    FILTER ( ALL ( Dim_categoria ), UPPER ( Dim_categoria[TieneHijos] & "" ) = "TRUE" )
+RETURN
+    ROW (
+        "Consumo padres", CALCULATE ( [Consumo Total], _padres ),
+        "Ppto padres",    CALCULATE ( [Presupuesto vista], _padres )
+    )

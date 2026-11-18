@@ -1,10 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "3669ff3a15d8738aebfb",
-  "displayName": "Vista general",
+  "displayName": "Vista global",
   "displayOption": "FitToPage",
-  "height": 1300,
-  "width": 1450,
+  "height": 1080,
+  "width": 1920,
   "filterConfig": {
     "filters": [
       {
@@ -21,6 +21,7 @@
         },
         "type": "Categorical",
         "howCreated": "User",
+        "isHiddenInViewMode": true,
         "isLockedInViewMode": true,
         "objects": {
           "general": [
@@ -82,7 +83,8 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "isHiddenInViewMode": true
       }
     ]
   },
@@ -94,6 +96,28 @@
             "expr": {
               "Literal": {
                 "Value": "245L"
+              }
+            }
+          },
+          "foregroundColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#14447C'"
+                  }
+                }
+              }
+            }
+          },
+          "borderColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D5DBE5'"
+                  }
+                }
               }
             }
           }
@@ -112,6 +136,102 @@
           }
         }
       }
+    ],
+    "filterCard": [
+      {
+        "properties": {
+          "foregroundColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#14447C'"
+                  }
+                }
+              }
+            }
+          },
+          "backgroundColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D5DBE5'"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "Applied"
+        }
+      },
+      {
+        "properties": {
+          "borderColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#D5DBE5'"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "Available"
+        }
+      }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "47b9d16700a086a43728",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "3701b50db028e5915027",
+      "type": "DataFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "8ef6d92b5426c4cae015",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "8ef6d92b5426c4cae015",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "926d620acc6409032332",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "d7d57664a9f8512c9d82",
+      "type": "NoFilter"
+    },
+    {
+      "source": "3701b50db028e5915027",
+      "target": "e172d774bbe86ed55b7c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "e172d774bbe86ed55b7c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "9119b13602f73ae373b5",
+      "target": "d7d57664a9f8512c9d82",
+      "type": "DataFilter"
+    }
+  ]
 }

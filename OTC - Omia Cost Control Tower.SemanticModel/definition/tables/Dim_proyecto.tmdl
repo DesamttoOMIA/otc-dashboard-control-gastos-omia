@@ -29,9 +29,29 @@ table Dim_proyecto
 	column FechaInicioContrato
 		dataType: dateTime
 		formatString: Long Date
-		lineageTag: 6b9e2d4a-8c1f-4e7a-9d3b-5f8a2c6e9d17
+		lineageTag: 2889ff94-497b-410e-9b79-fe97ce48fa41
 		summarizeBy: none
 		sourceColumn: FechaInicioContrato
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Plazo meses'
+		dataType: int64
+		formatString: 0
+		lineageTag: a1150e65-c1e0-4e94-a74f-a912c1adf402
+		summarizeBy: sum
+		sourceColumn: Plazo meses
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaFinContrato
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2d06ea3f-f035-441e-a8c0-31f29ca2516f
+		summarizeBy: none
+		sourceColumn: FechaFinContrato
 
 		annotation SummarizationSetBy = Automatic
 
@@ -42,16 +62,16 @@ table Dim_proyecto
 		source =
 				let
 				    Origen = Excel.Workbook(Web.Contents("https://omiacolombia.sharepoint.com/sites/sgdingenieriamantenimiento/Documentos%20compartidos/2.Documentos%20Compartidos/Proyecto%20control%20de%20gastos/Lista%20de%20Proyectos%20(1).xlsx"), null, true),
-				    Sheet1_Sheet = Origen{[Item="Sheet1",Kind="Sheet"]}[Data],
-				    #"Encabezados promovidos" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
-				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Id proyecto", Int64.Type}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text}}),
-				    #"Filas filtradas" = Table.SelectRows(#"Tipo cambiado", each true),
-				    #"Columna agregada FechaInicioContrato" = Table.AddColumn(#"Filas filtradas", "FechaInicioContrato", each
-				        if [Código de proyecto] = "COOGO&MNDTPL5361" then #date(2026, 8, 1)
-				        else if [Código de proyecto] = "COMIMANCCCG5058" then #date(2025, 12, 1)
-				        else null, type nullable date)
+				    Tabla = Origen{[Item="Tabla1",Kind="Table"]}[Data],
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Tabla,{
+				        {"Id proyecto", Int64.Type}, {"Código de proyecto", type text}, {"Nombre de proyecto", type text},
+				        {"Fecha inicio contrato", type date}, {"Plazo meses", Int64.Type}}),
+				    #"Nombre conservado" = Table.RenameColumns(#"Tipo cambiado", {{"Fecha inicio contrato", "FechaInicioContrato"}}),
+				    #"Fecha fin contrato" = Table.AddColumn(#"Nombre conservado", "FechaFinContrato", each
+				        if [FechaInicioContrato] = null or [Plazo meses] = null then null
+				        else Date.AddDays(Date.AddMonths([FechaInicioContrato], [Plazo meses]), -1), type nullable date)
 				in
-				    #"Columna agregada FechaInicioContrato"
+				    #"Fecha fin contrato"
 
 	annotation PBI_NavigationStepName = Navegación
 

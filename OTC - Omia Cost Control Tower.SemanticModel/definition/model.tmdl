@@ -22,11 +22,21 @@ queryGroup 'Errores en las consultas: 14/09/2026 11:17:39 a  m'
 
 	annotation PBI_QueryGroupOrder = 2
 
+/// Errores en las consultas cargadas en 6/11/2026 2:59:25 p. m..
+queryGroup 'Errores en las consultas: 6/11/2026 2:59:25 p  m'
+
+	annotation PBI_QueryGroupOrder = 3
+
+/// Errores en las consultas cargadas en 6/11/2026 3:03:02 p. m..
+queryGroup 'Errores en las consultas: 6/11/2026 3:03:02 p  m'
+
+	annotation PBI_QueryGroupOrder = 4
+
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
-annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia_factura_conformada","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","stg_solicitud_de_pedido","stg_entrada_de_mercancia_factura_conformada","stg_orden_de_compra","Fact_stg_solped_oc_fc_em_fp_pe","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)","stg_solped_oc_fc_em_fp_pe","Fact_bitacora_documental"]
+annotation PBI_QueryOrder = ["Fact_solicitud_de_pedido","Fact_entrada_de_mercancia_factura_conformada","Fact_ordenes_de_compra","Fact_presupuesto","Dim_proyecto","_Medidas","Dim_categoria (1)","Dim_subseco","Dim_categoria","stg_solicitud_de_pedido","stg_entrada_de_mercancia_factura_conformada","stg_orden_de_compra","Fact_stg_solped_oc_fc_em_fp_pe","Fact_presupuesto_Turpial","Fact_presupuesto_final","Errores en Fact_ordenes_de_compra","Errores en Fact_ordenes_de_compra (2)","Errores en Fact_ordenes_de_compra (3)","stg_solped_oc_fc_em_fp_pe","Fact_bitacora_documental","Actualizacion","Dim_reembolsable","Errores en Fact_ordenes_de_compra (4)","Errores en Fact_ordenes_de_compra (5)"]
 
 ref table Fact_solicitud_de_pedido
 ref table Fact_entrada_de_mercancia_factura_conformada
@@ -41,6 +51,10 @@ ref table Fact_stg_solped_oc_fc_em_fp_pe
 ref table Fact_presupuesto_final
 ref table Fact_bitacora_documental
 ref table Dim_etapa
+ref table 'Estados alerta'
+ref table 'Notificaciones gestion'
+ref table Actualizacion
+ref table Dim_reembolsable
 
 ref cultureInfo es-CO
 

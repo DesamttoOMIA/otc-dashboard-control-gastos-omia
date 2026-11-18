@@ -387,6 +387,15 @@ table Fact_stg_solped_oc_fc_em_fp_pe
 
 		annotation SummarizationSetBy = Automatic
 
+	column Reembolsable
+		dataType: int64
+		formatString: 0
+		lineageTag: 54946497-908b-4641-8da3-0deafb7b39e9
+		summarizeBy: none
+		sourceColumn: Reembolsable
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Fact_stg_solped_oc_fc_em_fp_pe = m
 		mode: import
 		source =
@@ -404,9 +413,28 @@ table Fact_stg_solped_oc_fc_em_fp_pe
 				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"'SC'", "'OC'", "'EM'", "'FP'"}),
 				    #"Consultas combinadas" = Table.NestedJoin(#"Columnas quitadas", {"Subceco SC"}, Dim_subseco, {"Subseco"}, "Dim_subseco", JoinKind.LeftOuter),
 				    #"Se expandió Dim_subseco" = Table.ExpandTableColumn(#"Consultas combinadas", "Dim_subseco", {"Id categoria"}, {"Id categoria"}),
-				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Se expandió Dim_subseco",{{"Id categoria", Int64.Type}})
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Se expandió Dim_subseco",{{"Id categoria", Int64.Type}}),
+				
+				    // ---- Reembolsable heredado desde la OC y, si no hay OC, desde la SOLPED ----
+				    ReembOC = Table.Group(
+				        Table.TransformColumnTypes(Fact_ordenes_de_compra, {{"Número de documento", Int64.Type}}),
+				        {"Número de documento"}, {{"ReembOC", each List.Min([Reembolsable]), type nullable number}}),
+				    ReembSOL = Table.Group(
+				        Table.TransformColumnTypes(Fact_solicitud_de_pedido, {{"Número de documento", Int64.Type}}),
+				        {"Número de documento"}, {{"ReembSOL", each List.Min([Reembolsable]), type nullable number}}),
+				    #"Cruce OC" = Table.ExpandTableColumn(
+				        Table.NestedJoin(#"Tipo cambiado1", {"No. Orden de Compra"}, ReembOC, {"Número de documento"}, "R1", JoinKind.LeftOuter),
+				        "R1", {"ReembOC"}),
+				    #"Cruce SOLPED" = Table.ExpandTableColumn(
+				        Table.NestedJoin(#"Cruce OC", {"No. Solped"}, ReembSOL, {"Número de documento"}, "R2", JoinKind.LeftOuter),
+				        "R2", {"ReembSOL"}),
+				    #"Reembolsable" = Table.RemoveColumns(
+				        Table.AddColumn(#"Cruce SOLPED", "Reembolsable",
+				            each if [ReembOC] <> null then [ReembOC] else if [ReembSOL] <> null then [ReembSOL] else 2,
+				            Int64.Type),
+				        {"ReembOC", "ReembSOL"})
 				in
-				    #"Tipo cambiado1"
+				    #"Reembolsable"
 
 	annotation PBI_NavigationStepName = Navegación
 
