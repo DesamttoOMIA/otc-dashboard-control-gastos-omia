@@ -1,0 +1,45 @@
+name: Funcionalidad
+description: Proponer una nueva funcionalidad o mejora
+title: "feat: "
+labels: ["type/feat", "status/needs-triage"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema u oportunidad
+      description: ¿Qué necesidad cubre esta propuesta?
+    validations:
+      required: true
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: Describe la solución esperada.
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - modelo
+        - reporte
+        - datos
+        - pipeline
+        - github / ci
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: false

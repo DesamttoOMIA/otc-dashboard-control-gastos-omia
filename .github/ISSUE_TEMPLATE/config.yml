@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Reporte de seguridad
+    url: https://github.com/DesamttoOMIA/otc-dashboard-control-gastos-omia/security/advisories/new
+    about: No reportes vulnerabilidades en issues públicos.
+  - name: Guía de contribución
+    url: https://github.com/DesamttoOMIA/otc-dashboard-control-gastos-omia/blob/dev/CONTRIBUTING.md
+    about: Ramas, commits, revisión y merges.

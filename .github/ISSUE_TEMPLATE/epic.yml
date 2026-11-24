@@ -1,0 +1,49 @@
+name: Épica
+description: Agrupar varias tareas bajo un objetivo común
+title: "Épica N · "
+labels: ["type/epic", "status/needs-triage"]
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: ¿Qué se quiere lograr con esta épica?
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance
+      description: Issues que la componen (enlázalos como sub-issues).
+      placeholder: |
+        - [ ] #N — Descripción de la tarea
+    validations:
+      required: true
+  - type: dropdown
+    id: entrega
+    attributes:
+      label: Entrega
+      options:
+        - Plan Piloto Turpial
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - modelo
+        - reporte
+        - datos
+        - pipeline
+        - github / ci
+    validations:
+      required: false
+  - type: textarea
+    id: terminado
+    attributes:
+      label: Definición de terminado
+      placeholder: |
+        - [ ] ...
+    validations:
+      required: false

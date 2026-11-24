@@ -1,0 +1,34 @@
+name: guard-main
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  solo-owner-promueve:
+    name: solo-owner-promueve
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validar origen y autor del PR
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: |
+          echo "Rama de origen: $HEAD_REF"
+          echo "Autor del PR: $AUTHOR"
+
+          if [ "$HEAD_REF" != "dev" ]; then
+            echo "::error::Solo se permite promover dev -> main. Este PR viene de '$HEAD_REF'."
+            exit 1
+          fi
+
+          if [ "$AUTHOR" != "DesamttoOMIA" ]; then
+            echo "::error::Solo el owner puede promover dev -> main."
+            exit 1
+          fi
+
+          echo "OK: promocion autorizada."

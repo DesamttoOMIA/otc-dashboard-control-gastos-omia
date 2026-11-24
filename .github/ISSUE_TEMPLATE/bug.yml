@@ -1,0 +1,40 @@
+name: Bug
+description: Reportar un comportamiento incorrecto
+title: "fix: "
+labels: ["type/fix", "status/needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. No incluyas secretos, credenciales ni datos personales.
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: ¿Qué ocurre y qué esperabas que ocurriera?
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Abrir el .pbip en Power BI Desktop...
+        2. Ir a la página ...
+        3. Ver el error
+    validations:
+      required: true
+  - type: textarea
+    id: entorno
+    attributes:
+      label: Entorno
+      description: Versión de Power BI Desktop, commit/rama.
+    validations:
+      required: false
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Logs, capturas o mensajes de error relevantes.
+    validations:
+      required: false
